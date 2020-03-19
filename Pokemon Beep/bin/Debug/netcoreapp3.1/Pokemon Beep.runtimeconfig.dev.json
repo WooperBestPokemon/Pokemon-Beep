@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Jqcob\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Jqcob\\.nuget\\packages"
+    ]
+  }
+}

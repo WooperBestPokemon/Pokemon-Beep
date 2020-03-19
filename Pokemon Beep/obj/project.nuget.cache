@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "BeajOqStABOrMQoIFjm+qd664LMPWnC07KkyEVdk0AjIW8dBIG83ja1M1GpnCYTy+a6OUvUDThcXoNI7hUEFOw==",
+  "success": true,
+  "projectFilePath": "T:\\Git\\Pokemon Beep\\Pokemon Beep\\Pokemon Beep.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jqcob\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Jqcob\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Jqcob\\.nuget\\packages\\naudio\\1.10.0\\naudio.1.10.0.nupkg.sha512",
+    "C:\\Users\\Jqcob\\.nuget\\packages\\system.resources.extensions\\4.7.0\\system.resources.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\Jqcob\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Jqcob\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
