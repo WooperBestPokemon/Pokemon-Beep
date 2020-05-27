@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<world>
+	<posX></posX>
+	<posY></posY>
+	<mapID></mapID>
+</world>
+<player>
+	<money></money>
+</player>
+<pokemon>
+	<p1>
+		<boxID></boxID>
+		<pokemonID></pokemonID>
+		<name></name>
+		<nature></nature>
+		<XP></XP>
+		<mov1></mov1>
+		<mov1></mov2>
+		<mov1></mov3>
+		<mov1></mov4>
+	</p1>
+</pokemon>
+<story>
+	<starter></starter>
+</story>

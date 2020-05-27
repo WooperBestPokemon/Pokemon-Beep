@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pokemon_Beep.pokemon
+namespace Pokemon_Beep.Player
 {
-    class Pokemon
+    class Inventory
     {
     }
 }

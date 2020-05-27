@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Pokemon_Beep.Battle;
+using Pokemon_Beep.pokemon;
+using Pokemon_Beep.Pokemon;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,9 +9,50 @@ namespace Pokemon_Beep
 {
     class World
     {
+        private List<PocketMonster> pokemons = new List<PocketMonster>();
         private List<Map> maps = new List<Map>();
         private Map currentMap;
         public void init()
+        {
+            initPokemon();
+            initMap();           
+        }
+        public bool hit(int posX, int posY)
+        {
+            return currentMap.hit(posX, posY);
+        }
+        public void changeMap(int width, int height)
+        {
+            Console.Clear();
+            Console.SetWindowSize(width, height);
+        }
+        public void printMap(int mapID)
+        {
+            maps[mapID].printMap();
+        }
+        public void printOldCharacter(int posX, int posY)
+        {
+            currentMap.printOldCharacter(posX, posY);
+        }
+        private void initPokemon()
+        {
+            //Type
+            Types grass = new Types();
+
+            //Ability
+            Ability Overgrow = new Ability();
+            Ability LeafGuard = new Ability();
+            //Pokemon
+            //001
+            List<Ability> chikoritaAbility = new List<Ability>();
+            chikoritaAbility.Add(Overgrow);
+            chikoritaAbility.Add(LeafGuard);
+            List<Types> chikoritaTypes = new List<Types>();
+            chikoritaTypes.Add(grass);
+            //PocketMonster chikorita = new PocketMonster(1, "Chikorita", "2'11", "14.1 lbs.", chikoritaAbility, true, chikoritaTypes);
+            //pokemons.Add(chikorita);
+        }
+        private void initMap()
         {
             //Map 1
             int[,] collision = new int[121, 37];
@@ -93,7 +137,7 @@ namespace Pokemon_Beep
             {
                 charact[i, 0] = new Character(' ', "black");
                 for (int y = 0; y < 37; y++)
-                    charact[i,y] = new Character(' ', "black");
+                    charact[i, y] = new Character(' ', "black");
             }
             for (int i = 11; i < 23; i++)
                 charact[i, 5] = new Character('_', "white");
@@ -144,31 +188,7 @@ namespace Pokemon_Beep
                 }
             }
             maps.Add(new Map(1, 0, buildings, new Hitbox(collision), charact));
-            currentMap = maps[0];            
-        }
-        public bool hit(int posX, int posY)
-        {
-            return currentMap.hit(posX, posY);
-        }
-        public void changeMap(int mapID, int submapID, int nbLine)
-        {
-            clearScreen(nbLine);
-        }
-        private void clearScreen(int nbLine)
-        {
-            Console.SetCursorPosition(0, 0);
-            for (int i = 0; i < nbLine; i++)
-            {
-                Console.WriteLine("                                                                                                                        ");
-            }           
-        }
-        public void printMap(int mapID)
-        {
-            maps[mapID].printMap();
-        }
-        public void printOldCharacter(int posX, int posY)
-        {
-            currentMap.printOldCharacter(posX, posY);
+            currentMap = maps[0];
         }
     }
 }

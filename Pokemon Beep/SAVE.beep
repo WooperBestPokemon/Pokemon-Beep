@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<world>
+	<posX>10</posX>
+	<posY>10</posY>
+	<mapID>1</mapID>
+</world>
+<player>
+	<money>9000</money>
+	<inventory>
+		<it1>
+			<itemID>1</itemID>
+			<number>10</number>
+		</it1>
+	</inventory>
+</player>
+<pokemon>
+	<p1>
+		<boxID>player</boxID>
+		<pokemonID>0</pokemonID>
+		<name>MissingNo</name>
+		<nature>jolly</nature>
+		<XP>0</XP>
+		<mov1>fly</mov1>
+		<mov1>cut</mov2>
+		<mov1>surf</mov3>
+		<mov1>tm18</mov4>
+	</p1>
+</pokemon>
+<story>
+	<starter>Chikorita</starter>
+</story>
