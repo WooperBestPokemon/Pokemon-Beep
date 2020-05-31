@@ -9,10 +9,6 @@ namespace Pokemon_Beep.Factory
     {
         private EffectFactory effectFactory = new EffectFactory();
         private List<Effect> effects;
-        private enum effect
-        {
-            Null = 0,
-        }
         private enum type
         {
             Normal = 1,
@@ -38,8 +34,12 @@ namespace Pokemon_Beep.Factory
         {
             List<Move> moves = new List<Move>();
             effects = effectFactory.GetEffects();
+            //Wooper
             moves.Add(new Move("Water Gun", 40, 100, 25, (int)type.Water, effects[0], "Special"));
-            moves.Add(new Move("Mud Shot", 55, 95, 15, (int)type.Ground, effects[3], "Special"));
+            moves.Add(new Move("Tail Whip", 100, 30, (int)type.Normal, effects[1]));
+            //moves.Add(new Move("Mud Shot", 55, 95, 15, (int)type.Ground, effects[3], "Special"));
+            //Other
+            moves.Add(new Move("Pound", 40, 100, 35, (int)type.Normal, effects[0], "Physical"));
             return moves;
         }
     }

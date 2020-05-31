@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pokemon_Beep.Pokemon
+namespace Pokemon_Beep.Battle
 {
-    class Types
+    class BattleStatus
     {
     }
 }

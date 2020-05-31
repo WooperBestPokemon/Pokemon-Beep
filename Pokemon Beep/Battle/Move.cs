@@ -25,7 +25,7 @@ namespace Pokemon_Beep.Battle
             PP = pp;
             Type = type;
             Effect = effect;
-            Category = "Special";
+            Category = "Status";
         }
         public string Name { get; }
         public int Power { get; }

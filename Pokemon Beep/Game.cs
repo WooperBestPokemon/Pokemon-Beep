@@ -1,5 +1,5 @@
 ﻿using Pokemon_Beep.Player;
-using Pokemon_Beep.pokemon;
+using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
 using System.Text;

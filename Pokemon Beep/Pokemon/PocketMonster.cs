@@ -4,18 +4,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pokemon_Beep.pokemon
+namespace Pokemon_Beep.Pokemon
 {
     class PocketMonster
     {
-        private int ID;
+        private int pokedexID, experience;
         private string name, height, weight;
         private List<Ability> abilities;
         private List<char> genders;
-        private List<Types> types;
-        public PocketMonster(int ID, string name, string height, string weight, List<Ability> abilities, List<char> genders, List<Types> types)
+        public List<int> types;
+        public PocketMonster(int pokedexID, string name, string height, string weight, List<Ability> abilities, List<char> genders, List<int> types, int experience)
+        {
+            this.types = types;
+        }
+        public PocketMonster(int pokedexID, string name, string height, string weight, List<Ability> abilities, List<char> genders, List<int> types, PocketMonster evolution, int evolitionLevel)
         {
 
         }
+
     }
 }

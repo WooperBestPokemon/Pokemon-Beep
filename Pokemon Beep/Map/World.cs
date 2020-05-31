@@ -1,5 +1,4 @@
 ﻿using Pokemon_Beep.Battle;
-using Pokemon_Beep.pokemon;
 using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
@@ -36,7 +35,7 @@ namespace Pokemon_Beep
         }
         private void initPokemon()
         {
-            //Type
+            /*Type
             Types grass = new Types();
 
             //Ability
@@ -51,6 +50,7 @@ namespace Pokemon_Beep
             chikoritaTypes.Add(grass);
             //PocketMonster chikorita = new PocketMonster(1, "Chikorita", "2'11", "14.1 lbs.", chikoritaAbility, true, chikoritaTypes);
             //pokemons.Add(chikorita);
+            */
         }
         private void initMap()
         {
