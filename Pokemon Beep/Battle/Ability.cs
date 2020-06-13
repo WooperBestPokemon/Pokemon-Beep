@@ -6,9 +6,15 @@ namespace Pokemon_Beep.Battle
 {
     class Ability
     {
-        public Ability(int ID, string name)
+        public Ability(string name, string description, int effect)
         {
-
+            Name = name;
+            Description = description;
+            Effect = effect;
         }
+        public string Name { get; }
+        public string Description { get; }
+        public int Effect { get; }
+
     }
 }

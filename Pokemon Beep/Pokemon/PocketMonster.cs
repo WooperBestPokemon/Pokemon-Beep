@@ -21,6 +21,25 @@ namespace Pokemon_Beep.Pokemon
         {
 
         }
-
+        public int getLevel()
+        {
+            return 0;
+        }
+        public int getSpecialAttack()
+        {
+            return 0;
+        }
+        public int getAttack()
+        {
+            return 0;
+        }
+        public int getDefence()
+        {
+            return 0;
+        }
+        public int getSpecialDefence()
+        {
+            return 0;
+        }
     }
 }

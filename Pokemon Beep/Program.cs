@@ -1,5 +1,6 @@
 ﻿using Pokemon_Beep.Battle;
 using Pokemon_Beep.Factory;
+using Pokemon_Beep.Other;
 using System;
 using System.Collections.Generic;
 
@@ -9,31 +10,7 @@ namespace Pokemon_Beep
     {
         static void Main(string[] args)
         {
-            MoveFactory moveFactory = new MoveFactory();
-            List<Move> moves;
-            moves = moveFactory.GetMoves();
-            bool miss = false;
-            
-            while (true)
-            {
-                int choice;
-                Console.WriteLine("What do you want to do ?");
-                Console.WriteLine("1. " + moves[0]);
-                Console.WriteLine("2. " + moves[1]);
-                choice = Convert.ToInt32(Console.ReadLine());
-                while (!(miss))
-                {
-                    if (moves[choice - 1].Hit())
-                    {
-                        Console.WriteLine("The move hit!");
-                        if (moves[choice - 1].EffectHit())
-                            Console.WriteLine(moves[choice - 1].Effect.ToString());
-                    }
-                    else
-                        miss = true;
-                }
-                Console.ReadKey();
-            }
+            Testing test = new Testing();
             /*
             Game game = new Game();
             World world = new World();
@@ -41,8 +18,8 @@ namespace Pokemon_Beep
             world.init();
             world.printMap(0);
             //Console.ReadKey();
-            
-                        
+
+
             ConsoleKeyInfo keyinfo;
             bool movement= true;
             int posX = 14;
