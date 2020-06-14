@@ -32,7 +32,7 @@ namespace Pokemon_Beep.Other
         }
         public void effectivenessTest()
         {
-            Ability ability = new Ability(1, "test");
+            Ability ability = new Ability("test", "test",0);
             List<Ability> test = new List<Ability>();
             List<char> sexe = new List<char>();
             List<int> typePkm = new List<int>();
