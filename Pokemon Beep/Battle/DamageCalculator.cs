@@ -10,6 +10,7 @@ namespace Pokemon_Beep.Battle
         private Random random = new Random();
         private TypeChart typeChart = new TypeChart();
 
+        /*
         public int getDamage(PocketMonster attacker, PocketMonster defender, Move move)
         {
             double damage;
@@ -72,5 +73,7 @@ namespace Pokemon_Beep.Battle
         {
             return 0;
         }
+        */
     }
 }
+     

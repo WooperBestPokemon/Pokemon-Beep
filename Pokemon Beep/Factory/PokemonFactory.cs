@@ -1,4 +1,5 @@
-﻿using Pokemon_Beep.Pokemon;
+﻿using Pokemon_Beep.Battle;
+using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,35 +8,17 @@ namespace Pokemon_Beep.Factory
 {
     class PokemonFactory
     {
-        private enum type
-        {
-            Normal = 1,
-            Fire = 2,
-            Water = 3,
-            Electric = 4,
-            Grass = 5,
-            Ice = 6,
-            Fighting = 7,
-            Poison = 8,
-            Ground = 9,
-            Fly = 10,
-            Psy = 11,
-            Bug = 12,
-            Rock = 13,
-            Ghost = 14,
-            Dragon = 15,
-            Dark = 16,
-            Steel = 17,
-            Fairy = 18
-        }      
         public List<PocketMonster> GetPokemons()
         {
             List<PocketMonster> pokemons = new List<PocketMonster>();
-            //Wooper
-            List<int> typeWooper = new List<int>();
-            typeWooper.Add((int)type.Water);
-            typeWooper.Add((int)type.Ground);
-            //pokemons.Add(new PocketMonster(001,"Wooper", "uwu", "uwu",))
+            AbilityFactory abilityFactory = new AbilityFactory();
+            List<Ability> abilities = abilityFactory.GetAbilities();
+            //Chikorita
+            List<Ability> abilitiesChikorita = new List<Ability>();
+            List<Learnset> learnsetChikorita = new List<Learnset>();
+            abilitiesChikorita.Add(abilities[(int) Enum.ability.Overgrow]);
+            abilitiesChikorita.Add(abilities[(int)Enum.ability.Leaf_Guard]);
+            pokemons.Add(new PocketMonster(001, "Chikorita", "A sweet aroma gently wafts from the leaf on its head. It is docile and loves to soak up the sun's rays.", (int)Enum.gender.both, 0.9, 6.4, (int)Enum.colour.Green, (int)Enum.shape.Flower, (int)Enum.type.Grass, abilitiesChikorita, 45, (int)Enum.experience.Medium_Slow, 64, 45, 49, 65, 49, 65, 45, learnsetChikorita));
             return pokemons;
         }
     }

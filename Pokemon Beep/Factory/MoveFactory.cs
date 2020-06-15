@@ -9,37 +9,16 @@ namespace Pokemon_Beep.Factory
     {
         private EffectFactory effectFactory = new EffectFactory();
         private List<Effect> effects;
-        private enum type
-        {
-            Normal = 1,
-            Fire = 2,
-            Water = 3,
-            Electric = 4,
-            Grass = 5,
-            Ice = 6,
-            Fighting = 7,
-            Poison = 8,
-            Ground = 9,
-            Fly = 10,
-            Psy = 11,
-            Bug = 12,
-            Rock = 13,
-            Ghost = 14,
-            Dragon = 15,
-            Dark = 16,
-            Steel = 17,
-            Fairy = 18
-        }
         public List<Move> GetMoves()
         {
             List<Move> moves = new List<Move>();
             effects = effectFactory.GetEffects();
             //Wooper
-            moves.Add(new Move("Water Gun", 40, 100, 25, (int)type.Water, effects[0], "Special"));
-            moves.Add(new Move("Tail Whip", 100, 30, (int)type.Normal, effects[1]));
+            moves.Add(new Move("Water Gun", 40, 100, 25, (int)Enum.type.Water, effects[0], "Special"));
+            moves.Add(new Move("Tail Whip", 100, 30, (int)Enum.type.Normal, effects[1]));
             //moves.Add(new Move("Mud Shot", 55, 95, 15, (int)type.Ground, effects[3], "Special"));
             //Other
-            moves.Add(new Move("Pound", 40, 100, 35, (int)type.Normal, effects[0], "Physical"));
+            moves.Add(new Move("Pound", 40, 100, 35, (int)Enum.type.Normal, effects[0], "Physical"));
             return moves;
         }
     }

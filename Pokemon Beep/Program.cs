@@ -10,7 +10,13 @@ namespace Pokemon_Beep
     {
         static void Main(string[] args)
         {
-            Testing test = new Testing();
+            int baseAttack = 54;
+            int ivAttack = 31;
+            int Level = 100;
+            double natureAttack = 1;
+            int attack = (int)Math.Abs((Math.Abs(((2 * baseAttack + ivAttack + 31) * Level) / 100) + 5) * natureAttack);
+            Console.Write(attack);
+            Console.ReadKey();
             /*
             Game game = new Game();
             World world = new World();
@@ -74,5 +80,6 @@ namespace Pokemon_Beep
             }
             */
         }
+
     }
 }
