@@ -16,6 +16,18 @@ namespace Pokemon_Beep.Battle
             Type = type;
             Effect = effect;
             Category = category;
+            Priority = 0;
+        }
+        public Move(string name, int power, int accuracy, int pp, int type, Effect effect, string category, int priority)
+        {
+            Name = name;
+            Power = power;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effect = effect;
+            Category = category;
+            Priority = priority;
         }
         public Move(string name, int accuracy, int pp, int type, Effect effect)
         {
@@ -26,6 +38,18 @@ namespace Pokemon_Beep.Battle
             Type = type;
             Effect = effect;
             Category = "Status";
+            Priority = 0;
+        }
+        public Move(string name, int accuracy, int pp, int type, Effect effect, int priority)
+        {
+            Name = name;
+            Power = 0;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effect = effect;
+            Category = "Status";
+            Priority = priority;
         }
         public string Name { get; }
         public int Power { get; }
@@ -34,6 +58,7 @@ namespace Pokemon_Beep.Battle
         public int Type { get; }
         public Effect Effect { get; }
         public string Category { get; }
+        public int Priority { get; }
         public bool Hit()
         {
             if (rand.Next(1, 101) <= Accuracy)

@@ -52,6 +52,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Plus", "Ups Sp. Atk if another Pokémon has Plus or Minus.", (int)Enum.ability.Plus));
             abilities.Add(new Ability("Poison Point", "Contact with the Pokémon may poison the attacker.", (int)Enum.ability.Poison_Point));
             abilities.Add(new Ability("Pressure", "The Pokémon raises the foe's PP usage.", (int)Enum.ability.Pressure));
+            abilities.Add(new Ability("Pure Power", "Boosts the Pokémon’s Attack stat.", (int)Enum.ability.Pressure));
             abilities.Add(new Ability("Rain Dish", "Raises the Pokémon's Attack stat.", (int)Enum.ability.Rain_Dish));
             abilities.Add(new Ability("Rock_Head", "Protects the Pokémon from recoil damage.", (int)Enum.ability.Rock_Head));
             abilities.Add(new Ability("Rough Skin", "Inflicts damage to the attacker on contact.", (int)Enum.ability.Rough_Skin));
@@ -77,6 +78,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Torrent", "Powers up Water-type moves in a pinch.", (int)Enum.ability.Torrent));
             abilities.Add(new Ability("Trace", "The Pokémon copies a foe's Ability.", (int)Enum.ability.Trace));
             abilities.Add(new Ability("Truant", "Pokémon can't attack on consecutive turns.", (int)Enum.ability.Truant));
+            abilities.Add(new Ability("Unaware", "When attacking, the Pokémon ignores the target Pokémon’s stat changes.", (int)Enum.ability.Unaware));
             abilities.Add(new Ability("Vital Spirit", "Prevents the Pokémon from falling asleep.", (int)Enum.ability.Vital_Spirit));
             abilities.Add(new Ability("Volt Absorb", "Restores HP if hit by an Electric-type move.", (int)Enum.ability.Volt_Absorb));
             abilities.Add(new Ability("Water Absorb", "Restores HP if hit by a Water-type move.", (int)Enum.ability.Water_Absorb));
