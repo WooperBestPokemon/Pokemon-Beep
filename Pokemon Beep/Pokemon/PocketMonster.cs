@@ -37,6 +37,7 @@ namespace Pokemon_Beep.Pokemon
         double natureSpecialDefense = 1;
         double natureSpeed = 1;
         private int nature = (int) Enum.nature.Docile;
+
         //Pokemon with 2 types and 2 & more abilities
         public PocketMonster(int pokedexID,string name,string description, int sexe, double height, double weight, int colour, int shape, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset)
         {
@@ -285,8 +286,11 @@ namespace Pokemon_Beep.Pokemon
             else
             {
                 List<int> numbers = new List<int>();
+                //Adding the last move the pokemon learned
+                numbers.Add(pkmMoves.Count - 1);
                 int number;
-                for (int i = 0; i < (pkmMoves.Count - 1); i++)
+                //Randomize the rest of the moves
+                for (int i = 0; i < 3; i++)
                 {
                     do
                     {

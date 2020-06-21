@@ -12,12 +12,16 @@ namespace Pokemon_Beep.Other
         public void damageTest()
         {
             //Init Pokemons
-            Pokedex pokedex = new Pokedex();
+            //Pokedex pokedex = new Pokedex();
+            PokemonFactory factory = new PokemonFactory();
             //Get Attacker and Defender
-            PocketMonster attacker = pokedex.getPokemon(0);
-            attacker.generateWildPokemon(16);
+            PocketMonster attacker = factory.pachirisu();
+            PocketMonster defender = factory.wooper();
+            attacker.generateWildPokemon(24);
+            defender.generateWildPokemon(50);
             Console.WriteLine(attacker);
             Console.WriteLine("______________________________________________________________________________");
+            Console.WriteLine(defender);
             Console.ReadKey();
         }
     }

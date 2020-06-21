@@ -24,21 +24,12 @@ namespace Pokemon_Beep.Factory
         {
             List<PocketMonster> pokemons = new List<PocketMonster>();
             pokemons.Add(wooper());
-            pokemons.Add(pachirisu());
+            pokemons.Add(pachirisu());           
 
-
-            //TESTING-------------------------------------------------------
-            
-            /*---------------------------------------------------------------------------------------------------
-            List<Ability> abilitiesChikorita = new List<Ability>();
-            List<Learnset> learnsetChikorita = new List<Learnset>();
-            abilitiesChikorita.Add(abilities[(int) Enum.ability.Overgrow]);
-            abilitiesChikorita.Add(abilities[(int)Enum.ability.Leaf_Guard]);
-            pokemons.Add(new PocketMonster(001, "Chikorita", "A sweet aroma gently wafts from the leaf on its head. It is docile and loves to soak up the sun's rays.", (int)Enum.gender.both, 0.9, 6.4, (int)Enum.colour.Green, (int)Enum.shape.Flower, (int)Enum.type.Grass, abilitiesChikorita, 45, (int)Enum.experience.Medium_Slow, 64, 45, 49, 65, 49, 65, 45, learnsetChikorita));
-            */
             return pokemons;
         }
-        PocketMonster wooper()
+
+        public PocketMonster wooper()
         {
             //General Information
             int pokedex = 001;
@@ -59,20 +50,28 @@ namespace Pokemon_Beep.Factory
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Unaware]);
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Water_Absorb]);
             //Moves
-            List<Learnset> learnset = new List<Learnset>();
             List<Move> movesPokemon = new List<Move>();
             movesPokemon.Add(moves[(int) Enum.move.Tail_Whip]);
             movesPokemon.Add(moves[(int)Enum.move.Water_Gun]);
             movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             movesPokemon.Add(moves[(int)Enum.move.Mud_Shot]);
-
+            movesPokemon.Add(moves[(int)Enum.move.Haze]);
+            movesPokemon.Add(moves[(int)Enum.move.Acid_Spray]);
             movesPokemon.Add(moves[(int)Enum.move.Slam]);
+            movesPokemon.Add(moves[(int)Enum.move.Yawn]);
+            movesPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
+            //Learnset
+            List<Learnset> learnset = new List<Learnset>();
             learnset.Add(new Learnset(movesPokemon[0], 1));
             learnset.Add(new Learnset(movesPokemon[1], 1));
             learnset.Add(new Learnset(movesPokemon[2], 4));
             learnset.Add(new Learnset(movesPokemon[3], 8));
+            learnset.Add(new Learnset(movesPokemon[4], 12));
+            learnset.Add(new Learnset(movesPokemon[5], 12));
+            learnset.Add(new Learnset(movesPokemon[6], 16));
+            learnset.Add(new Learnset(movesPokemon[7], 21));
+            learnset.Add(new Learnset(movesPokemon[8], 24));
 
-            learnset.Add(new Learnset(movesPokemon[4], 16));
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Medium_Fast;
@@ -87,7 +86,7 @@ namespace Pokemon_Beep.Factory
 
             return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, learnset);
         }
-        PocketMonster pachirisu()
+        public PocketMonster pachirisu()
         {
             //General Information
             int pokedex = 002;
@@ -98,22 +97,81 @@ namespace Pokemon_Beep.Factory
             double weight = 3.9;
             int colour = (int)Enum.colour.White;
             int shape = (int)Enum.shape.Bull;
+
             //Typing
             int type = (int)Enum.type.Electric;
+
             //Abilities
             List<Ability> abilitiesPokemon = new List<Ability>();
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Run_Away]);
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Pickup]);
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Volt_Absorb]);
+
             //Moves
-            List<Learnset> learnset = new List<Learnset>();
             List<Move> movesPokemon = new List<Move>();
-            movesPokemon.Add(moves[0]);
+            //Leveling
+            movesPokemon.Add(moves[(int)Enum.move.Growl]);
+            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
+            movesPokemon.Add(moves[(int)Enum.move.Charm]);
+            movesPokemon.Add(moves[(int)Enum.move.Spark]);
+            movesPokemon.Add(moves[(int)Enum.move.Endure]);
+            movesPokemon.Add(moves[(int)Enum.move.Nuzzle]);
+            movesPokemon.Add(moves[(int)Enum.move.Swift]);
+            movesPokemon.Add(moves[(int)Enum.move.Electro_Ball]);
+            movesPokemon.Add(moves[(int)Enum.move.Sweet_Kiss]);
+            movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
+            movesPokemon.Add(moves[(int)Enum.move.Super_Fang]);
+            movesPokemon.Add(moves[(int)Enum.move.Discharge]);
+            movesPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
+            movesPokemon.Add(moves[(int)Enum.move.Hyper_Fang]);
+
+            //TM
+            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
+            //movesPokemon.Add(moves[(int)Enum.move.Hidden_Power]);
+            //movesPokemon.Add(moves[(int)Enum.move.Light_Screen]);
+            movesPokemon.Add(moves[(int)Enum.move.Protect]);
+            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            movesPokemon.Add(moves[(int)Enum.move.Thunderbold]);
+            movesPokemon.Add(moves[(int)Enum.move.Thunder]);
+            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
+            //movesPokemon.Add(moves[(int)Enum.move.Rest]);
+            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
+            //movesPokemon.Add(moves[(int)Enum.move.Round]);
+            //movesPokemon.Add(moves[(int)Enum.move.Echoed_Voice]);
+            //movesPokemon.Add(moves[(int)Enum.move.Fling]);
+            //movesPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
+            //movesPokemon.Add(moves[(int)Enum.move.Volt_Switch]);
+            movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
+            //movesPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //movesPokemon.Add(moves[(int)Enum.move.Sleep_Talk]);
+            //movesPokemon.Add(moves[(int)Enum.move.U_turn]);
+            //movesPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //movesPokemon.Add(moves[(int)Enum.move.Confide]);
+
+            //Learnset
+            List<Learnset> learnset = new List<Learnset>();
             learnset.Add(new Learnset(movesPokemon[0], 1));
+            learnset.Add(new Learnset(movesPokemon[1], 5));
+            learnset.Add(new Learnset(movesPokemon[2], 9));
+            learnset.Add(new Learnset(movesPokemon[3], 13));
+            learnset.Add(new Learnset(movesPokemon[4], 17));
+            learnset.Add(new Learnset(movesPokemon[5], 19));
+            learnset.Add(new Learnset(movesPokemon[6], 21));
+            learnset.Add(new Learnset(movesPokemon[7], 25));
+            learnset.Add(new Learnset(movesPokemon[8], 29));
+            learnset.Add(new Learnset(movesPokemon[9], 33));
+            learnset.Add(new Learnset(movesPokemon[10], 37));
+            learnset.Add(new Learnset(movesPokemon[11], 41));
+            learnset.Add(new Learnset(movesPokemon[12], 45));
+            learnset.Add(new Learnset(movesPokemon[13], 49));
+
             //Battle
             int catchrate = 200;
             int experience = (int)Enum.experience.Medium_Fast;
             int experienceYield = 120;
+
             //Stats
             int baseHP = 60;
             int baseAttack = 45;

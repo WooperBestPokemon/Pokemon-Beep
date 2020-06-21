@@ -39,6 +39,10 @@ namespace Pokemon_Beep.Factory
             moves.Add(new Move("Vine Whip", 45, 100, 25, (int)Enum.type.Grass, noEffect, "Physical"));
             moves.Add(new Move("Water Gun", 40, 100, 25, (int)Enum.type.Water, noEffect, "Special"));
             moves.Add(new Move("Wing Attack", 60, 100, 35, (int)Enum.type.Fly, noEffect, "Physical"));
+
+            //Move with priority
+            moves.Add(new Move("Quick Attack", 40, 100, 30, (int)Enum.type.Normal, noEffect, "Physical"));
+
             //Move that lower attack by 1 stage
             Effect lowerAttack1Stage = new Effect((int)Enum.effect.lowerAttack);
             moves.Add(new Move("Growl", 100, 40, (int)Enum.type.Normal, lowerAttack1Stage));
@@ -112,9 +116,115 @@ namespace Pokemon_Beep.Factory
             //Meteo
             Effect rain = new Effect((int)Enum.effect.rain);
             moves.Add(new Move("Rain Dance", 100, 5, (int)Enum.type.Water, rain));
+            Effect sunny = new Effect((int)Enum.effect.sunny);
+            moves.Add(new Move("Sunny Day", 100, 5, (int)Enum.type.Fire, sunny));
+            Effect sandstorm = new Effect((int)Enum.effect.sandstorm);
+            moves.Add(new Move("Sandstorm", 100, 10, (int)Enum.type.Rock, sandstorm));
+            Effect snow = new Effect((int)Enum.effect.snow);
+            moves.Add(new Move("Hail", 100, 10, (int)Enum.type.Ice, snow));
 
+            //Burn Status
+            Effect burn = new Effect((int)Enum.effect.burn);
+            moves.Add(new Move("Inferno", 100, 50, 5, (int)Enum.type.Fire, burn, "Special"));
+            moves.Add(new Move("Will-O-Wisp", 85, 15, (int)Enum.type.Fire, burn));
+            Effect mayBurn = new Effect((int)Enum.effect.burn,1,10);
+            moves.Add(new Move("Ember", 40, 100, 25, (int)Enum.type.Fire, mayBurn, "Special"));
+            moves.Add(new Move("Fire Blast", 110, 85, 5, (int)Enum.type.Fire, mayBurn, "Special"));
+            moves.Add(new Move("Fire Fang", 65, 95, 15, (int)Enum.type.Fire, mayBurn, "Physical"));
+            moves.Add(new Move("Fire Punch", 75, 100, 15, (int)Enum.type.Fire, mayBurn, "Physical"));
+            moves.Add(new Move("Flame Wheel", 60, 100, 25, (int)Enum.type.Fire, mayBurn, "Physical"));
+            moves.Add(new Move("Flamethrower", 90, 100, 15, (int)Enum.type.Fire, mayBurn, "Special"));
+            moves.Add(new Move("Heat Wave", 95, 90, 10, (int)Enum.type.Fire, mayBurn, "Special"));
+            Effect mayBurn30 = new Effect((int)Enum.effect.burn, 1, 30);
+            moves.Add(new Move("Lava Plume", 80, 100, 15, (int)Enum.type.Fire, mayBurn30, "Special"));
+            moves.Add(new Move("Scald", 80, 100, 15, (int)Enum.type.Water, mayBurn30, "Special"));
+            Effect mayBurn50 = new Effect((int)Enum.effect.burn, 1, 50);
+            moves.Add(new Move("Sacred Fire", 100, 95, 5, (int)Enum.type.Fire, mayBurn50, "Special"));
+
+            //Paralysis Status
+            Effect paralysis = new Effect((int)Enum.effect.paralysis);
+            moves.Add(new Move("Glare", 100, 30, (int)Enum.type.Normal, paralysis));
+            moves.Add(new Move("Nuzzle", 20, 100, 20, (int)Enum.type.Electric, paralysis, "Physical"));
+            moves.Add(new Move("Stun Spore", 75, 30, (int)Enum.type.Grass, paralysis));
+            moves.Add(new Move("Thunder Wave", 90, 20, (int)Enum.type.Electric, paralysis));
+            moves.Add(new Move("Zap Cannon", 120, 50, 5, (int)Enum.type.Electric, paralysis, "Special"));
+            Effect mayParalyze = new Effect((int)Enum.effect.paralysis, 1, 10);
+            moves.Add(new Move("Thunder Punch", 75, 100, 15, (int)Enum.type.Electric, mayParalyze, "Physical"));
+            moves.Add(new Move("Thunder Shock", 40, 100, 30, (int)Enum.type.Electric, mayParalyze, "Special"));
+            moves.Add(new Move("Thunderbold", 90, 100, 15, (int)Enum.type.Electric, mayParalyze, "Special"));
+            Effect mayParalyze30 = new Effect((int)Enum.effect.paralysis, 1, 30);
+            moves.Add(new Move("Body Slam", 85, 100, 15, (int)Enum.type.Normal, mayParalyze30, "Physical"));
+            moves.Add(new Move("Bounce", 95, 85, 5, (int)Enum.type.Fly, mayParalyze30, "Physical"));
+            moves.Add(new Move("Discharge", 80, 100, 15, (int)Enum.type.Electric, mayParalyze30, "Special"));
+            moves.Add(new Move("Dragon Breath", 60, 100, 20, (int)Enum.type.Dragon, mayParalyze30, "Special"));
+            moves.Add(new Move("Force Palm", 60, 100, 10, (int)Enum.type.Fighting, mayParalyze30, "Physical"));
+            moves.Add(new Move("Lick", 30, 100, 30, (int)Enum.type.Ghost, mayParalyze30, "Physical"));
+            moves.Add(new Move("Spark", 65, 100, 20, (int)Enum.type.Electric, mayParalyze30, "Physical"));
+            moves.Add(new Move("Thunder", 110, 70, 10, (int)Enum.type.Electric, mayParalyze30, "Special"));            
+            //Poison Status
+            Effect poison = new Effect((int)Enum.effect.poison);
+            moves.Add(new Move("Poison Powder", 75, 35, (int)Enum.type.Poison, poison));
+            Effect strongPoison = new Effect((int)Enum.effect.poison,2);
+            moves.Add(new Move("Toxic", 90, 10, (int)Enum.type.Poison, strongPoison));
+            Effect mayPoison = new Effect((int)Enum.effect.poison, 1, 10);
+            moves.Add(new Move("Sludge Wave", 95, 100, 10, (int)Enum.type.Poison, mayPoison, "Special"));
+            Effect mayPoison30 = new Effect((int)Enum.effect.poison, 1, 30);
+            moves.Add(new Move("Sludge Bomb", 90, 100, 10, (int)Enum.type.Poison, mayPoison30, "Special"));
+
+            //Sleep Status
+            Effect sleep = new Effect((int)Enum.effect.sleep);
+            moves.Add(new Move("Grass Whistle", 55, 15, (int)Enum.type.Grass, sleep));
+            moves.Add(new Move("Hypnosis", 60, 20, (int)Enum.type.Psy, sleep));
+            moves.Add(new Move("Lovely Kiss", 75, 10, (int)Enum.type.Normal, sleep));
+            moves.Add(new Move("Sing", 55, 15, (int)Enum.type.Normal, sleep));
+            moves.Add(new Move("Sleep Powder", 75, 15, (int)Enum.type.Grass, sleep));
+            Effect yawn = new Effect((int)Enum.effect.yawn);
+            moves.Add(new Move("Yawn", 100, 10, (int)Enum.type.Normal, yawn));
+
+            //Confusion Status
+            Effect confusion = new Effect((int)Enum.effect.confusion);
+            moves.Add(new Move("Sweet Kiss", 75, 10, (int)Enum.type.Fairy, confusion));
+
+            //Defense
+            Effect endure = new Effect((int)Enum.effect.endure);
+            moves.Add(new Move("Endure", 100, 10, (int)Enum.type.Normal, endure, 4));
+            Effect protect = new Effect((int)Enum.effect.protect);
+            moves.Add(new Move("Protect", 100, 10, (int)Enum.type.Normal, protect, 4));
+            moves.Add(new Move("Detect", 100, 5, (int)Enum.type.Fighting, protect, 4));
+
+            //Moves that cannot miss ((400 is sure to never miss because 400 * 0.25 (6th stage of accuracy) = 100)
+            moves.Add(new Move("Aerial Ace", 60, 400, 20, (int)Enum.type.Fly, noEffect, "Physical"));
+            moves.Add(new Move("Aura Sphere", 80, 400, 20, (int)Enum.type.Fighting, noEffect, "Special"));
+            moves.Add(new Move("Disarming Voice", 40, 400, 15, (int)Enum.type.Fairy, noEffect, "Special"));
+            moves.Add(new Move("Feint Attack", 60, 400, 20, (int)Enum.type.Dark, noEffect, "Physical"));
+            moves.Add(new Move("Magical Leaf", 60, 400, 20, (int)Enum.type.Grass, noEffect, "Special"));
+            moves.Add(new Move("Magnet Bomb", 60, 400, 20, (int)Enum.type.Steel, noEffect, "Physical"));
+            moves.Add(new Move("Shadow Punch", 60, 400, 20, (int)Enum.type.Ghost, noEffect, "Physical"));
+            moves.Add(new Move("Shock Wave", 60, 400, 20, (int)Enum.type.Electric, noEffect, "Special"));
+            moves.Add(new Move("Swift", 60, 400, 20, (int)Enum.type.Normal, noEffect, "Special"));
+            moves.Add(new Move("Vital Throw", 70, 400, 10, (int)Enum.type.Fighting, noEffect, "Physical", -1));
+            moves.Add(new Move("Smart Strike", 70, 400, 10, (int)Enum.type.Steel, noEffect, "Physical"));
+
+            //Moves that cause the defending pokemon to flinch
+            Effect mayFlinch = new Effect((int)Enum.effect.flinch,1,10);
+            moves.Add(new Move("Hyper Fang", 80, 90, 15, (int)Enum.type.Normal, mayFlinch, "Physical"));
+            //Other
+            Effect resetStat = new Effect((int)Enum.effect.resetStat);
+            moves.Add(new Move("Haze", 100, 30, (int)Enum.type.Ice, resetStat));
+            Effect electroBall = new Effect((int)Enum.effect.electroBall);
+            moves.Add(new Move("Electro Ball", 0, 100, 10, (int)Enum.type.Electric, electroBall, "Special"));
+            Effect halvesHP = new Effect((int)Enum.effect.halvesHP);
+            moves.Add(new Move("Super Fang", 0, 90, 10, (int)Enum.type.Normal, halvesHP, "Physical"));
             //sorting by name
             moves = moves.OrderBy(q => q.Name).ToList();
+
+            /*
+            for (int i = 0; i < moves.Count; i++)
+            {
+                Console.WriteLine(moves[i].Name + ",");
+            }           
+            Console.ReadKey();
+            */
             return moves;
         }
     }
