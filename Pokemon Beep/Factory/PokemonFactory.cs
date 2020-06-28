@@ -23,12 +23,11 @@ namespace Pokemon_Beep.Factory
         public List<PocketMonster> GetPokemons()
         {
             List<PocketMonster> pokemons = new List<PocketMonster>();
-            pokemons.Add(wooper());
-            pokemons.Add(pachirisu());           
+            pokemons.Add(Pachirisu());
 
             return pokemons;
         }
-
+        /*
         public PocketMonster wooper()
         {
             //General Information
@@ -86,7 +85,91 @@ namespace Pokemon_Beep.Factory
 
             return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, learnset);
         }
-        public PocketMonster pachirisu()
+        */ 
+        public PocketMonster Raticate()
+        {
+            //General Information
+            int pokedex = 011;
+            string name = "Raticate";
+            string description = "Its hind feet are webbed. They act as flippers, so it can swim in rivers and hunt for prey.";
+            int gender = (int)Enum.gender.Both;
+            double height = 0.7;
+            double weight = 18.5;
+            int colour = (int)Enum.colour.Brown;
+            int shape = (int)Enum.shape.Bull;
+
+            //Typing
+            int type = (int)Enum.type.Normal;
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Run_Away]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Guts]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Hustle]);
+
+            //Moves
+            List<Move> movesPokemon = new List<Move>();
+            //Leveling
+            //movesPokemon.Add(moves[(int)Enum.move.Fury_Swipes]);
+            movesPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            movesPokemon.Add(moves[(int)Enum.move.Tackle]);
+            movesPokemon.Add(moves[(int)Enum.move.Tail_Whip]);
+            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
+            //movesPokemon.Add(moves[(int)Enum.move.Focus_Energy]);
+            //movesPokemon.Add(moves[(int)Enum.move.Bite]);
+            movesPokemon.Add(moves[(int)Enum.move.Super_Fang]);
+            movesPokemon.Add(moves[(int)Enum.move.Crunch]);
+            movesPokemon.Add(moves[(int)Enum.move.Hyper_Fang]);
+            //movesPokemon.Add(moves[(int)Enum.move.Sucker_Punch]);
+            //movesPokemon.Add(moves[(int)Enum.move.Double_Edge]);
+            //TM
+            //movesPokemon.Add(moves[(int)Enum.move.Headbutt]);
+            //movesPokemon.Add(moves[(int)Enum.move.Taunt]);
+            //movesPokemon.Add(moves[(int)Enum.move.Rest]);
+            movesPokemon.Add(moves[(int)Enum.move.Protect]);
+            //movesPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //movesPokemon.Add(moves[(int)Enum.move.Dig]);
+            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
+            movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
+            //movesPokemon.Add(moves[(int)Enum.move.U_turn]);
+            movesPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
+            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
+            movesPokemon.Add(moves[(int)Enum.move.Thunderbold]);
+            movesPokemon.Add(moves[(int)Enum.move.Thunder]);
+            movesPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
+            //movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            //movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            //movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            //Learnset
+            List<Learnset> learnset = new List<Learnset>();
+            //learnset.Add(new Learnset(movesPokemon[0], 1));
+            //learnset.Add(new Learnset(movesPokemon[1], 1));
+            //learnset.Add(new Learnset(movesPokemon[2], 1));
+            //learnset.Add(new Learnset(movesPokemon[3], 3));
+            //learnset.Add(new Learnset(movesPokemon[4], 6));
+            //learnset.Add(new Learnset(movesPokemon[5], 9));
+            //learnset.Add(new Learnset(movesPokemon[6], 12));
+            //learnset.Add(new Learnset(movesPokemon[7], 15));
+            //learnset.Add(new Learnset(movesPokemon[8], 18));
+            //learnset.Add(new Learnset(movesPokemon[9], 26));
+            //learnset.Add(new Learnset(movesPokemon[10], 34));
+            //learnset.Add(new Learnset(movesPokemon[11], 42));
+            //Battle
+            int catchrate = 200;
+            int experience = (int)Enum.experience.Medium_Fast;
+            int experienceYield = 127;
+
+            //Stats
+            int baseHP = 55;
+            int baseAttack = 81;
+            int baseDefense = 60;
+            int baseSpecialDefence = 50;
+            int baseSpecialAttack = 70;
+            int baseSpeed = 97;
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, movesPokemon, learnset);
+        }
+        public PocketMonster Pachirisu()
         {
             //General Information
             int pokedex = 002;
@@ -140,7 +223,7 @@ namespace Pokemon_Beep.Factory
             //movesPokemon.Add(moves[(int)Enum.move.Round]);
             //movesPokemon.Add(moves[(int)Enum.move.Echoed_Voice]);
             //movesPokemon.Add(moves[(int)Enum.move.Fling]);
-            //movesPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
+            movesPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
             //movesPokemon.Add(moves[(int)Enum.move.Volt_Switch]);
             movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
             //movesPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
@@ -180,7 +263,7 @@ namespace Pokemon_Beep.Factory
             int baseSpecialAttack = 90;
             int baseSpeed = 95;
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, movesPokemon, learnset);
         }
     }
 }

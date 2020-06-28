@@ -2,6 +2,7 @@
 using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -19,9 +20,13 @@ namespace Pokemon_Beep.Pokemon
         private List<Ability> abilities;
         private int catchRate, experience, baseExperienceYield;
         private int baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed;
-        private List<Learnset> learnset;
-        //Pokemon Stat
         private List<Move> moves = new List<Move>();
+        private List<Learnset> learnset;
+        private bool canEvolve = false;
+        private PocketMonster evolution;
+        private int levelEvolution;
+        //Pokemon Stat
+        private List<Move> moveset = new List<Move>();
         private Ability ability;
         private char gender;
         private int ivHP = 0;
@@ -38,8 +43,11 @@ namespace Pokemon_Beep.Pokemon
         double natureSpeed = 1;
         private int nature = (int) Enum.nature.Docile;
 
+
+        // Without Evolion
+
         //Pokemon with 2 types and 2 & more abilities
-        public PocketMonster(int pokedexID,string name,string description, int sexe, double height, double weight, int colour, int shape, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset)
+        public PocketMonster(int pokedexID,string name,string description, int sexe, double height, double weight, int colour, int shape, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -63,7 +71,7 @@ namespace Pokemon_Beep.Pokemon
             this.learnset = learnset;
         }
         //Pokemon with 1 type and 2 & more abilities
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, int type, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, int type, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -91,7 +99,7 @@ namespace Pokemon_Beep.Pokemon
             this.learnset = learnset;
         }
         //Pokemon with 2 types and 1 ability
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, List<int> types, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, List<int> types, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -119,7 +127,7 @@ namespace Pokemon_Beep.Pokemon
             this.learnset = learnset;
         }
         //Pokemon with 1 type and 1 ability
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, int type, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, int type, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -149,6 +157,135 @@ namespace Pokemon_Beep.Pokemon
             this.baseSpeed = baseSpeed;
             this.learnset = learnset;
         }
+
+        // With Evolution
+        //Pokemon with 2 types and 2 & more abilities With Evolution
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        {
+            this.pokedexID = pokedexID;
+            this.name = name;
+            this.description = description;
+            this.sexe = sexe;
+            this.height = height;
+            this.weight = weight;
+            this.colour = colour;
+            this.shape = shape;
+            this.types = types;
+            this.abilities = abilities;
+            this.catchRate = catchRate;
+            this.experience = experience;
+            this.baseExperienceYield = baseExperienceYield;
+            this.baseHP = baseHP;
+            this.baseAttack = baseAttack;
+            this.baseDefense = baseDefense;
+            this.baseSpecialAttack = baseSpecialAttack;
+            this.baseSpecialDefense = baseSpecialDefense;
+            this.baseSpeed = baseSpeed;
+            this.learnset = learnset;
+
+            this.evolution = evolution;
+            this.levelEvolution = levelEvolution;
+            canEvolve = true;
+        }
+        //Pokemon with 1 type and 2 & more abilities With Evolution
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, int type, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        {
+            this.pokedexID = pokedexID;
+            this.name = name;
+            this.description = description;
+            this.sexe = sexe;
+            this.height = height;
+            this.weight = weight;
+            this.colour = colour;
+            this.shape = shape;
+
+            List<int> typePkm = new List<int>();
+            typePkm.Add(type);
+            types = typePkm;
+
+            this.abilities = abilities;
+            this.catchRate = catchRate;
+            this.experience = experience;
+            this.baseExperienceYield = baseExperienceYield;
+            this.baseHP = baseHP;
+            this.baseAttack = baseAttack;
+            this.baseDefense = baseDefense;
+            this.baseSpecialAttack = baseSpecialAttack;
+            this.baseSpecialDefense = baseSpecialDefense;
+            this.baseSpeed = baseSpeed;
+            this.learnset = learnset;
+
+            this.evolution = evolution;
+            this.levelEvolution = levelEvolution;
+            canEvolve = true;
+        }
+        //Pokemon with 2 types and 1 ability With Evolution
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, List<int> types, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        {
+            this.pokedexID = pokedexID;
+            this.name = name;
+            this.description = description;
+            this.sexe = sexe;
+            this.height = height;
+            this.weight = weight;
+            this.colour = colour;
+            this.shape = shape;
+            this.types = types;
+
+            List<Ability> abilityPkm = new List<Ability>();
+            abilityPkm.Add(ability);
+            abilities = abilityPkm;
+
+            this.catchRate = catchRate;
+            this.experience = experience;
+            this.baseExperienceYield = baseExperienceYield;
+            this.baseHP = baseHP;
+            this.baseAttack = baseAttack;
+            this.baseDefense = baseDefense;
+            this.baseSpecialAttack = baseSpecialAttack;
+            this.baseSpecialDefense = baseSpecialDefense;
+            this.baseSpeed = baseSpeed;
+            this.learnset = learnset;
+
+            this.evolution = evolution;
+            this.levelEvolution = levelEvolution;
+            canEvolve = true;
+        }
+        //Pokemon with 1 type and 1 ability With Evolution
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int colour, int shape, int type, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        {
+            this.pokedexID = pokedexID;
+            this.name = name;
+            this.description = description;
+            this.sexe = sexe;
+            this.height = height;
+            this.weight = weight;
+            this.colour = colour;
+            this.shape = shape;
+
+            List<int> typePkm = new List<int>();
+            typePkm.Add(type);
+            types = typePkm;
+
+            List<Ability> abilityPkm = new List<Ability>();
+            abilityPkm.Add(ability);
+            abilities = abilityPkm;
+
+            this.catchRate = catchRate;
+            this.experience = experience;
+            this.baseExperienceYield = baseExperienceYield;
+            this.baseHP = baseHP;
+            this.baseAttack = baseAttack;
+            this.baseDefense = baseDefense;
+            this.baseSpecialAttack = baseSpecialAttack;
+            this.baseSpecialDefense = baseSpecialDefense;
+            this.baseSpeed = baseSpeed;
+            this.learnset = learnset;
+
+            this.evolution = evolution;
+            this.levelEvolution = levelEvolution;
+            canEvolve = true;
+        }
         public void generateWildPokemon(int level)
         {
             Level = level;
@@ -162,13 +299,10 @@ namespace Pokemon_Beep.Pokemon
         public void levelUp()
         {
             Level++;
+            if(canEvolve)
+                checkEvolution();
             generateStats();
         }
-        public List<int> Types
-        {
-            get { return types; }
-        }
-        public int Level { get; set; }
         private void generateIvs()
         {
             ivHP = Utilities.RandomNumber(0, 32);
@@ -279,7 +413,7 @@ namespace Pokemon_Beep.Pokemon
             {
                 for (int i = 0; i < pkmMoves.Count; i++)
                 {
-                    moves.Add(pkmMoves[i]);
+                    moveset.Add(pkmMoves[i]);
                 }
             }
             //If there is more
@@ -301,15 +435,15 @@ namespace Pokemon_Beep.Pokemon
                 }
                 for (int i = 0; i < numbers.Count; i++)
                 {
-                    moves.Add(pkmMoves[numbers[i]]);
+                    moveset.Add(pkmMoves[numbers[i]]);
                 }
             }
         }
         private void generateStats()
         {           
-            //hp
+            //HP
             hp = Math.Abs((((2 * baseHP + ivHP + 31) * Level) / 100) + Level + 10);
-            //other stat
+            //Other Stat
             attack = (int) Math.Abs((Math.Abs(((2 * baseAttack + ivAttack + 31) * Level) / 100) + 5) * natureAttack);
             defense = (int)Math.Abs((Math.Abs(((2 * baseDefense + ivDefense + 31) * Level) / 100) + 5) * natureDefense);
             specialAttack = (int)Math.Abs((Math.Abs(((2 * baseSpecialAttack + ivSpecialAttack + 31) * Level) / 100) + 5) * natureSpecialAttack);
@@ -337,7 +471,159 @@ namespace Pokemon_Beep.Pokemon
             else
                 gender = 'N';
         }
-        public string getNature()
+        private void checkEvolution()
+        {
+            //Now we check if the level is equal or superior to the evolution level
+            if(Level >= levelEvolution)
+            {
+                //todo - When UI is done, ask here if you want to evolve your pokemon
+                if(true)
+                {
+                    name = evolution.Name;
+                    description = evolution.Description;
+                    height = evolution.Height;
+                    weight = evolution.Weight;
+                    colour = evolution.Colour;
+                    shape = evolution.Shape;
+                    types = evolution.Types;
+                    moves = evolution.Moves;
+                    learnset = evolution.Learnset;
+                    //todo something about abilities
+                    //Stats
+                    baseHP = evolution.BaseHP;
+                    baseAttack = evolution.BaseAttack;
+                    baseDefense = evolution.BaseDefense;
+                    baseSpecialAttack = evolution.BaseSpecialAttack;
+                    baseSpecialDefense = evolution.BaseSpecialDefense;
+                    baseSpeed = evolution.BaseSpeed;
+                    //If the evolution has an evolution
+                    if (evolution.CanEvolve)
+                    {
+                        levelEvolution = evolution.LevelEvolution;
+                        evolution = evolution.Evolution;
+                    }
+                }
+            }
+        }
+        //Get values
+        public int PokedexID
+        {
+            get { return pokedexID; }
+        }
+        public string Name
+        {
+            get { return name; }
+        }
+        public char Gender
+        {
+            get { return gender; }
+        }
+        public string Description
+        {
+            get { return description; }
+        }
+        public double Height
+        {
+            get { return height; }
+        }
+        public double Weight
+        {
+            get { return weight; }
+        }
+        public int Colour
+        {
+            get { return colour; }
+        }
+        public int Shape
+        {
+            get { return shape; }
+        }
+        public List<int> Types
+        {
+            get { return types; }
+        }
+        public int Level { get; set; }
+        public List<Move> Moves
+        {
+            get { return moves; }
+        }
+        public List<Move> Moveset
+        {
+            get { return moveset; }
+        }
+        public List<Learnset> Learnset
+        {
+            get { return learnset; }
+        }
+        public Ability Ability
+        {
+            get { return ability; }
+        }
+        public int BaseHP
+        {
+            get { return baseHP; }
+        }
+        public int BaseAttack
+        {
+            get { return baseAttack; }
+        }
+        public int BaseDefense
+        {
+            get { return baseDefense; }
+        }
+        public int BaseSpecialAttack
+        {
+            get { return baseSpecialAttack; }
+        }
+        public int BaseSpecialDefense
+        {
+            get { return baseSpecialDefense; }
+        }
+        public int BaseSpeed
+        {
+            get { return baseSpeed; }
+        }
+        public int IvHP
+        {
+            get { return ivHP; }
+        }
+        public int IvAttack
+        {
+            get { return ivAttack; }
+        }
+        public int IvDefense
+        {
+            get { return ivDefense; }
+        }
+        public int IvSpecialAttack
+        {
+            get { return ivSpecialAttack; }
+        }
+        public int IvSpecialDefense
+        {
+            get { return ivSpecialDefense; }
+        }
+        public int IvSpeed
+        {
+            get { return ivSpeed; }
+        }
+
+
+        //Evolution stuff
+        public PocketMonster Evolution
+        {
+            get { return evolution; }
+        }
+        public bool CanEvolve
+        {
+            get { return canEvolve; }
+        }
+        public int LevelEvolution
+        {
+            get { return levelEvolution; }
+        }
+        //Other
+        public string getNatureName()
         {
             string result = "Error";
             switch(nature)
@@ -424,7 +710,7 @@ namespace Pokemon_Beep.Pokemon
         {
             String description =  "Name : " + name + "\n" +
                 "Level : " + Level + "\n" +
-                "Nature : " + getNature() + "\n" +
+                "Nature : " + getNatureName() + "\n" +
                 "Sexe : " + gender + "\n" +
                 "Ability : " + ability.Name + "\n" +
                 "------------------" + "\n" +
@@ -448,9 +734,9 @@ namespace Pokemon_Beep.Pokemon
                 "------------------" + "\n" +
                 "Moves" + "\n" +
                 "------------------" + "\n";
-            for (int i = 0; i < moves.Count; i++)
+            for (int i = 0; i < moveset.Count; i++)
             {
-                description += i + 1 + ". " + moves[i].Name + "\n";
+                description += i + 1 + ". " + moveset[i].Name + "\n";
             }
             return description;
         }

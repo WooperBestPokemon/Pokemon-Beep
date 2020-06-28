@@ -108,11 +108,37 @@ namespace Pokemon_Beep.Factory
             moves.Add(new Move("Cotton Spore", 100, 40, (int)Enum.type.Grass, lowerSpeed2Stage));
             moves.Add(new Move("Scary Face", 100, 10, (int)Enum.type.Normal, lowerSpeed2Stage));
             moves.Add(new Move("String Shot", 95, 40, (int)Enum.type.Bug, lowerSpeed2Stage));
-            //Move that raise Attack
+            //Moves that raise Attack
             Effect raiseAttack = new Effect((int)Enum.effect.increaseAttack);
             moves.Add(new Move("Meditate", 100, 40, (int)Enum.type.Psy, raiseAttack));
             moves.Add(new Move("Sharpen", 100, 30, (int)Enum.type.Normal, raiseAttack));
-
+            Effect raiseAttack2Stage = new Effect((int)Enum.effect.increaseAttack, 2);
+            moves.Add(new Move("Swords Dance", 100, 20, (int)Enum.type.Normal, raiseAttack2Stage));
+            //Moves that raise Defense
+            Effect raiseDefense = new Effect((int)Enum.effect.increaseDefense);
+            moves.Add(new Move("Defense Curl", 100, 40, (int)Enum.type.Normal, raiseDefense));
+            moves.Add(new Move("Harden", 100, 30, (int)Enum.type.Normal, raiseDefense));
+            moves.Add(new Move("Withdraw", 100, 40, (int)Enum.type.Water, raiseDefense));
+            Effect raiseDefense2Stage = new Effect((int)Enum.effect.increaseDefense,2);
+            moves.Add(new Move("Acid Armor", 100, 20, (int)Enum.type.Poison, raiseDefense2Stage));
+            moves.Add(new Move("Barrier", 100, 20, (int)Enum.type.Psy, raiseDefense2Stage));
+            moves.Add(new Move("Iron Defense", 100, 15, (int)Enum.type.Steel, raiseDefense2Stage));
+            Effect raiseDefense3Stage = new Effect((int)Enum.effect.increaseDefense, 3);
+            moves.Add(new Move("Cotton Guard", 100, 10, (int)Enum.type.Grass, raiseDefense3Stage));
+            //Moves that raise Special Attack
+            Effect mayRaiseSpecialAttack70 = new Effect((int)Enum.effect.increaseSpecialAttack,1,70);
+            moves.Add(new Move("Charge Beam", 50, 90, 10, (int)Enum.type.Electric, mayRaiseSpecialAttack70, "Special"));
+            Effect raiseSpecialAttack2Stage = new Effect((int)Enum.effect.increaseSpecialAttack, 2);
+            moves.Add(new Move("Nasty Plot", 100, 20, (int)Enum.type.Dark, raiseSpecialAttack2Stage));
+            //Move thar raise Special Defense
+            Effect raiseSpecialDefense2Stage = new Effect((int)Enum.effect.increaseSpecialDefense, 2);
+            moves.Add(new Move("Amnesia", 100, 20, (int)Enum.type.Psy, raiseSpecialAttack2Stage));
+            //Move thar raise Speed
+            Effect raiseSpeed = new Effect((int)Enum.effect.increaseSpeed);
+            moves.Add(new Move("Flame Charge", 50, 100, 20, (int)Enum.type.Fire, raiseSpeed, "Physical"));
+            Effect raiseSpeed2Stage = new Effect((int)Enum.effect.increaseSpeed, 2);
+            moves.Add(new Move("Agility", 100, 30, (int)Enum.type.Psy, raiseSpeed2Stage));
+            moves.Add(new Move("Rock Polish", 100, 20, (int)Enum.type.Rock, raiseSpeed2Stage));
             //Meteo
             Effect rain = new Effect((int)Enum.effect.rain);
             moves.Add(new Move("Rain Dance", 100, 5, (int)Enum.type.Water, rain));
