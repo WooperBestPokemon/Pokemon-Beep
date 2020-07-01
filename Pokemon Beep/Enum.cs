@@ -6,6 +6,23 @@ namespace Pokemon_Beep
 {
     public static class Enum
     {
+        //Pokemon
+        public enum pokemon
+        {
+            Chikorita,
+            Bayleef,
+            Meganium,
+            Cyndaquil,
+            Quilava,
+            Typhlosion,
+            Totodile,
+            Croconaw,
+            Feraligatr,
+            Rattata,
+            Raticate,
+            Sentret,
+            Furret,
+        }
         public enum ability
         {
             Arena_Trap,
@@ -164,60 +181,9 @@ namespace Pokemon_Beep
             Blue,
             White,
             Brown,
+            Purple,
         }
-        public enum effect
-        {
-            noEffect,
-            //StatChange
-            lowerAttack,
-            lowerDefense,
-            lowerSpecialAttack,
-            lowerSpecialDefense,
-            lowerSpeed,
-            lowerAccuracy,
-            lowerEvasion,
-            increaseAttack,
-            increaseDefense,
-            increaseSpecialAttack,
-            increaseSpecialDefense,
-            increaseSpeed,
-            increaseEvasion,
-            increaseCritical,
-            //Status condition
-            poison,
-            burn,
-            paralysis,
-            sleep,
-            yawn,
-            frozen,
-            bound,
-            healStatus,
-            confusion,
-            //HP base
-            heal,
-            drain,
-            knockback,
-            //counter
-            counter,
-            mirror,
-            //protection
-            protect,
-            protectStatus,
-            lightScreen,
-            reflect,
-            endure,
-            //Meteo
-            fog,
-            rain,
-            sandstorm,
-            snow,
-            sunny,
-            //Other
-            resetStat,
-            electroBall,
-            halvesHP,
-            flinch,
-        }
+        //Battle
         public enum move
         {
             Acid,
@@ -361,21 +327,85 @@ namespace Pokemon_Beep
             Yawn,
             Zap_Cannon,
         }
-        public enum pokemon
+        public enum effect
         {
-            Chikorita,
-            Bayleef,
-            Meganium,
-            Cyndaquil,
-            Quilava,
-            Typhlosion,
-            Totodile,
-            Croconaw,
-            Feraligatr,
-            Rattata,
-            Raticate,
-            Sentret,
-            Furret,
+            noEffect,
+            //StatChange
+            lowerAttack,
+            lowerDefense,
+            lowerSpecialAttack,
+            lowerSpecialDefense,
+            lowerSpeed,
+            lowerAccuracy,
+            lowerEvasion,
+            increaseAttack,
+            increaseDefense,
+            increaseSpecialAttack,
+            increaseSpecialDefense,
+            increaseSpeed,
+            increaseEvasion,
+            increaseCritical,
+            //Status condition
+            poison,
+            burn,
+            paralysis,
+            sleep,
+            yawn,
+            frozen,
+            bound,
+            healStatus,
+            confusion,
+            //HP base
+            heal,
+            drain,
+            knockback,
+            //counter
+            counter,
+            mirror,
+            //protection
+            protect,
+            protectStatus,
+            lightScreen,
+            reflect,
+            endure,
+            //Meteo
+            fog,
+            rain,
+            sandstorm,
+            snow,
+            sunny,
+            //Other
+            resetStat,
+            electroBall,
+            halvesHP,
+            flinch,
+        }
+        public enum weather
+        {
+            Clear,
+            Rain,
+            Sunny,
+            Sandstorm,
+            Hail,
+        }
+        public enum status
+        {
+            None,
+            Poisoned,
+            Badly_Poisoned,
+            Paralyzed,
+            Sleep,
+            Frozen,
+            Burned,
+        }
+        public enum stat
+        {
+            Attack,
+            Defense,
+            SpecialAttack,
+            SpecialDefense,
+            Speed,
+            Critical,
         }
     }
 }

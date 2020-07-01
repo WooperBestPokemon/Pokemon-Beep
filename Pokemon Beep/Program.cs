@@ -11,6 +11,8 @@ namespace Pokemon_Beep
         static void Main(string[] args)
         {
             Testing testing = new Testing();
+            //testing.statsTest();
+            //testing.evolutionTest();
             testing.damageTest();
             /*
             Game game = new Game();

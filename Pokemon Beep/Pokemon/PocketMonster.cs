@@ -36,13 +36,17 @@ namespace Pokemon_Beep.Pokemon
         private int ivSpecialDefense = 0;
         private int ivSpeed = 0;
         private int hp, attack, defense, specialAttack, specialDefense, speed;
-        double natureAttack = 1;
-        double natureDefense = 1;
-        double natureSpecialAttack = 1;
-        double natureSpecialDefense = 1;
-        double natureSpeed = 1;
+        private double natureAttack = 1;
+        private double natureDefense = 1;
+        private double natureSpecialAttack = 1;
+        private double natureSpecialDefense = 1;
+        private double natureSpeed = 1;
         private int nature = (int) Enum.nature.Docile;
 
+        //Battle
+        private int status = (int) Enum.status.None;
+        public int[] stages = new int[6];
+        public int currentHP;
 
         // Without Evolion
 
@@ -502,8 +506,26 @@ namespace Pokemon_Beep.Pokemon
                         levelEvolution = evolution.LevelEvolution;
                         evolution = evolution.Evolution;
                     }
+                    else
+                    {
+                        evolution = null;
+                        //So It won't ask the next time it level up to evolve
+                        levelEvolution = 255;
+                    }
                 }
             }
+        }
+        //battle
+        public void resetStage()
+        {
+            for (int i = 0; i < stages.Length; i++)
+            {
+                stages[i] = 0;
+            }
+        }
+        public int getStage(int stat)
+        {
+            return stages[stat];
         }
         //Get values
         public int PokedexID
@@ -559,6 +581,7 @@ namespace Pokemon_Beep.Pokemon
         {
             get { return ability; }
         }
+        //Base Stats
         public int BaseHP
         {
             get { return baseHP; }
@@ -583,6 +606,32 @@ namespace Pokemon_Beep.Pokemon
         {
             get { return baseSpeed; }
         }
+        //Stats
+        public int HP
+        {
+            get { return hp; }
+        }
+        public int Attack
+        {
+            get { return attack; }
+        }
+        public int Defense
+        {
+            get { return defense; }
+        }
+        public int SpecialAttack
+        {
+            get { return specialAttack; }
+        }
+        public int SpecialDefense
+        {
+            get { return specialDefense; }
+        }
+        public int Speed
+        {
+            get { return speed; }
+        }
+        //Ivs
         public int IvHP
         {
             get { return ivHP; }
@@ -607,7 +656,11 @@ namespace Pokemon_Beep.Pokemon
         {
             get { return ivSpeed; }
         }
-
+        //Battle
+        public int Status
+        {
+            get { return status; }
+        }
 
         //Evolution stuff
         public PocketMonster Evolution
@@ -622,7 +675,7 @@ namespace Pokemon_Beep.Pokemon
         {
             get { return levelEvolution; }
         }
-        //Other
+        //Int to String
         public string getNatureName()
         {
             string result = "Error";
@@ -702,6 +755,32 @@ namespace Pokemon_Beep.Pokemon
                     break;
                 case 24:
                     result = "Timid";
+                    break;
+            }
+            return result;
+        }
+        public string getStatusName()
+        {
+            string result = "Null";
+            switch(status)
+            {
+                case 1:
+                    result = "Poisoned";
+                        break;
+                case 2:
+                    result = "Badly Poisoned";
+                    break;
+                case 3:
+                    result = "Paralyzed";
+                    break;
+                case 4:
+                    result = "Sleep";
+                    break;
+                case 5:
+                    result = "Frozen";
+                    break;
+                case 6:
+                    result = "Burned";
                     break;
             }
             return result;
