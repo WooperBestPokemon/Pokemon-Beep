@@ -522,6 +522,7 @@ namespace Pokemon_Beep.Pokemon
             {
                 stages[i] = 0;
             }
+            stages[(int)Enum.stat.Attack] = 2;
         }
         public int getStage(int stat)
         {

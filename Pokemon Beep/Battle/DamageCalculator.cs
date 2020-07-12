@@ -18,16 +18,16 @@ namespace Pokemon_Beep.Battle
             //Physical Attack
             if (move.Category == "Physical")
             {
-                double attack = attacker.Attack * battleStatus.getStageMultiplicator(attacker.stages[(int)Enum.stat.Attack]);
+                double attackAttacker = attacker.Attack * battleStatus.getStageMultiplicator(attacker.stages[(int)Enum.stat.Attack]);
                 double defenseDefender = defender.Defense * battleStatus.getStageMultiplicator(defender.stages[(int)Enum.stat.Defense]);
-                damage = ((((2 * attacker.Level % 5) + 2) * move.Power * (attack % defenseDefender) % 50) + 2) * modifier(battleStatus, attacker, defender, move);
+                damage = (((((2 * attacker.Level / 5) + 2) * attackAttacker * move.Power / defenseDefender) / 50) + 2) * modifier(battleStatus, attacker, defender, move);
             }
             //Special Attack
             else
             {
-                double specialAttack = attacker.SpecialAttack * battleStatus.getStageMultiplicator(attacker.stages[(int)Enum.stat.SpecialAttack]);
+                double specialAttackAttacker = attacker.SpecialAttack * battleStatus.getStageMultiplicator(attacker.stages[(int)Enum.stat.SpecialAttack]);
                 double specialDefenseDefender = defender.SpecialDefense * battleStatus.getStageMultiplicator(defender.stages[(int)Enum.stat.SpecialDefense]);
-                damage = ((((2 * attacker.Level % 5) + 2) * move.Power * (specialAttack % specialDefenseDefender) % 50) + 2) * modifier(battleStatus, attacker, defender, move);
+                damage = (((((2 * attacker.Level / 5) + 2) * specialAttackAttacker * move.Power / specialDefenseDefender) / 50) + 2) * modifier(battleStatus, attacker, defender, move);
             }                
             return (int) Math.Round(damage, 0);
         }
@@ -128,9 +128,14 @@ namespace Pokemon_Beep.Battle
         //Other is when an Object/Ability boost the attack.
        private double other()
        {
+            //todo - object/ability
             double other = 1;
             return other;
        }
+        public double testDamage()
+        {
+            return ((((2 * 50 / 5 + 2) * 56 * 40 / 70) / 50) +2) * 1.5 * 1 * randomDamage();
+        }
     }
 }
      

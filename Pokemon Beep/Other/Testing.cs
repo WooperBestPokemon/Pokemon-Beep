@@ -42,19 +42,19 @@ namespace Pokemon_Beep.Other
         }
         public void damageTest()
         {
-            BattleStatus battleStatus = new BattleStatus();
             DamageCalculator damageCalculator = new DamageCalculator();
+            BattleStatus battleStatus = new BattleStatus();
             PokemonFactory factory = new PokemonFactory();
             PocketMonster attacker = factory.Rattata();
             PocketMonster defender = factory.Pachirisu();
             attacker.generateWildPokemon(50);
-            defender.generateWildPokemon(50);
+            defender.generateWildPokemon(100);
             defender.currentHP = defender.HP;
             Console.Write(attacker);
             Console.Write(defender);
             Console.ReadKey();
             Console.Clear();
-
+            attacker.resetStage();
             while (true)
             {
                 Console.WriteLine("Attacker : " + attacker.Name);

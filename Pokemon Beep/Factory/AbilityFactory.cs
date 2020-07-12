@@ -26,6 +26,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Effect Spore", "Contact may poison or cause paralysis or sleep.", (int)Enum.ability.Effect_Spore));
             abilities.Add(new Ability("Flame Body", "Contact with the Pokémon may burn the attacker.", (int)Enum.ability.Flame_Body));
             abilities.Add(new Ability("Flash Fire", "It powers up Fire-type moves if it's hit by one.", (int)Enum.ability.Flash_Fire));
+            abilities.Add(new Ability("Frisk", "The Pokémon can check the foe’s held item.", (int)Enum.ability.Frisk));
             abilities.Add(new Ability("Guts", "Boosts Attack if there is a status problem.", (int)Enum.ability.Guts));
             abilities.Add(new Ability("Huge Power", "Raises the Pokémon's Attack stat.", (int)Enum.ability.Huge_Power));
             abilities.Add(new Ability("Hustle", "Boosts the Attack stat, but lowers accuracy.", (int)Enum.ability.Hustle));
