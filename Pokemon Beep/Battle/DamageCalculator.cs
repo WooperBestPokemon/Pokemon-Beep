@@ -132,10 +132,6 @@ namespace Pokemon_Beep.Battle
             double other = 1;
             return other;
        }
-        public double testDamage()
-        {
-            return ((((2 * 50 / 5 + 2) * 56 * 40 / 70) / 50) +2) * 1.5 * 1 * randomDamage();
-        }
     }
 }
      

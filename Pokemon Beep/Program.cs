@@ -13,7 +13,7 @@ namespace Pokemon_Beep
             Testing testing = new Testing();
             //testing.statsTest();
             //testing.evolutionTest();
-            testing.damageTest();
+            testing.battleTest();
             /*
             Game game = new Game();
             World world = new World();

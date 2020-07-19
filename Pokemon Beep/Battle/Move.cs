@@ -6,77 +6,126 @@ namespace Pokemon_Beep.Battle
 {
     class Move
     {
-        private Random rand = new Random();
-        public Move(string name, int power, int accuracy, int pp, int type, Effect effect, string category)
+        public Move(string name, int power, int accuracy, int pp, int type, Effect effect, int effectChance, string category, string description)
         {
             Name = name;
             Power = power;
             Accuracy = accuracy;
             PP = pp;
             Type = type;
-            Effect = effect;
+            Effects.Add(effect);
+            EffectsChance.Add(effectChance);
             Category = category;
             Priority = 0;
+            Description = description;
         }
-        public Move(string name, int power, int accuracy, int pp, int type, Effect effect, string category, int priority)
+        public Move(string name, int power, int accuracy, int pp, int type, Effect effect, int effectChance, string category, int priority, string description)
         {
             Name = name;
             Power = power;
             Accuracy = accuracy;
             PP = pp;
             Type = type;
-            Effect = effect;
+            Effects.Add(effect);
+            EffectsChance.Add(effectChance);
             Category = category;
             Priority = priority;
+            Description = description;
         }
-        public Move(string name, int accuracy, int pp, int type, Effect effect)
+        public Move(string name, int accuracy, int pp, int type, Effect effect, int effectChance, string description)
         {
             Name = name;
             Power = 0;
             Accuracy = accuracy;
             PP = pp;
             Type = type;
-            Effect = effect;
+            Effects.Add(effect);
+            EffectsChance.Add(effectChance);
             Category = "Status";
             Priority = 0;
+            Description = description;
         }
-        public Move(string name, int accuracy, int pp, int type, Effect effect, int priority)
+        public Move(string name, int accuracy, int pp, int type, Effect effect, int effectChance, int priority, string description)
         {
             Name = name;
             Power = 0;
             Accuracy = accuracy;
             PP = pp;
             Type = type;
-            Effect = effect;
+            Effects.Add(effect);
+            EffectsChance.Add(effectChance);
             Category = "Status";
             Priority = priority;
+            Description = description;
+        }
+
+
+        public Move(string name, int power, int accuracy, int pp, int type, List<Effect> effects, List<int> effectChance, string category, string description)
+        {
+            Name = name;
+            Power = power;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance = effectChance;
+            Category = category;
+            Priority = 0;
+            Description = description;
+        }
+        public Move(string name, int power, int accuracy, int pp, int type, List<Effect> effects, List<int> effectChance, string category, int priority, string description)
+        {
+            Name = name;
+            Power = power;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance = effectChance;
+            Category = category;
+            Priority = priority;
+            Description = description;
+        }
+        public Move(string name, int accuracy, int pp, int type, List<Effect> effects, List<int> effectChance, string description)
+        {
+            Name = name;
+            Power = 0;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance = effectChance;
+            Category = "Status";
+            Priority = 0;
+            Description = description;
+        }
+        public Move(string name, int accuracy, int pp, int type, List<Effect> effects, List<int> effectChance, int priority, string description)
+        {
+            Name = name;
+            Power = 0;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance = effectChance;
+            Category = "Status";
+            Priority = priority;
+            Description = description;
         }
         public string Name { get; }
         public int Power { get; }
         public int Accuracy { get; }
         public int PP { get; }
         public int Type { get; }
-        public Effect Effect { get; }
+        public List<Effect> Effects { get; }
+        public List<int> EffectsChance { get; }
         public string Category { get; }
         public int Priority { get; }
-        public bool Hit()
-        {
-            if (rand.Next(1, 101) <= Accuracy)
-                return true;
-            else
-                return false;
-        }
-        public bool EffectHit()
-        {
-            if (rand.Next(1, 101) <= Effect.Chance)
-                return true;
-            else
-                return false;
-        }
+        public string Description { get; }
 
         public override string ToString()
         {
-            return Name + " : " + Category + " attack with " + Power + " power and " + Accuracy + " % chance of hit ! " + Effect.ToString();
+            return Name + " : " + Category + " attack with " + Power + " power and " + Accuracy + " % chance of hit ! ";
         }
     }
 }

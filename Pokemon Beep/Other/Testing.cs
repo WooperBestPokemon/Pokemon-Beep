@@ -88,5 +88,23 @@ namespace Pokemon_Beep.Other
                 Console.Clear();
             }            
         }
+        public void battleTest()
+        {
+            PokemonFactory factory = new PokemonFactory();
+            PocketMonster defender = factory.Furret();
+            defender.generateWildPokemon(50);
+            defender.currentHP = defender.HP;
+            PkmnBattleInfo pkmnA = new PkmnBattleInfo(defender);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("HP : " + pkmnA.Pokemon.currentHP + "/" + pkmnA.Pokemon.HP);
+            Console.ReadKey();
+            Console.Clear();
+            pkmnA.Pokemon.currentHP -= 10;
+            Console.WriteLine("HP : " + defender.currentHP + "/" + defender.HP);
+            Console.ReadKey();
+
+            //Conclusion : pkmnA can modify the Pokemon (Defender)
+
+        }
     }
 }
