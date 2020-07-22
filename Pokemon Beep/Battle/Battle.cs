@@ -6,5 +6,9 @@ namespace Pokemon_Beep.Battle
 {
     class Battle
     {
+        public Battle()
+        {
+
+        }
     }
 }

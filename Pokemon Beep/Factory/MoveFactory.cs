@@ -1,6 +1,7 @@
 ﻿using Pokemon_Beep.Battle;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 
@@ -11,6 +12,11 @@ namespace Pokemon_Beep.Factory
         public List<Move> GetMoves()
         {
             List<Move> moves = new List<Move>();
+            //Effect List
+            Effect increaseAccuracy = new Effect((int)Enum.effect.selfIncreaseAccuracy);
+            Effect restoreFullHp = new Effect((int)Enum.effect.restoreFullHp);
+            Effect selfSleep = new Effect((int)Enum.effect.selfSleep);
+
             //Moves with no effect
             Effect noEffect = new Effect((int)Enum.effect.noEffect);
             moves.Add(new Move("Aqua Tail", 90, 90, 10, (int) Enum.type.Water, noEffect, 100, "Physical", "The user attacks by swinging its tail as if it were a vicious wave in a raging storm."));
@@ -44,99 +50,98 @@ namespace Pokemon_Beep.Factory
             moves.Add(new Move("Quick Attack", 40, 100, 30, (int)Enum.type.Normal, noEffect, 100, "Physical", 1 , "The user lunges at the foe at a speed that makes it almost invisible. It is sure to strike first."));
 
             //Move that lower attack by 1 stage
-            Effect lowerAttack1Stage = new Effect((int)Enum.effect.lowerAttack);
-            moves.Add(new Move("Growl", 100, 40, (int)Enum.type.Normal, lowerAttack1Stage, 100, "The user growls in an endearing way, making the foe less wary. The target's Attack stat is lowered."));
-            moves.Add(new Move("Aurora Beam", 65, 100, 20, (int)Enum.type.Ice, lowerAttack1Stage, 10, "Special", "The foe is hit with a rainbow-colored beam. It may also lower the target's Attack stat."));
-            moves.Add(new Move("Play Rough", 90, 90, 10, (int)Enum.type.Fairy, lowerAttack1Stage, 10, "Physical", "The user plays rough with the target and attacks it. This may also lower the target's Attack stat."));
+            Effect foeLowerAttack1Stage = new Effect((int)Enum.effect.foeLowerAttack);
+            moves.Add(new Move("Growl", 100, 40, (int)Enum.type.Normal, foeLowerAttack1Stage, 100, "The user growls in an endearing way, making the foe less wary. The target's Attack stat is lowered."));
+            moves.Add(new Move("Aurora Beam", 65, 100, 20, (int)Enum.type.Ice, foeLowerAttack1Stage, 10, "Special", "The foe is hit with a rainbow-colored beam. It may also lower the target's Attack stat."));
+            moves.Add(new Move("Play Rough", 90, 90, 10, (int)Enum.type.Fairy, foeLowerAttack1Stage, 10, "Physical", "The user plays rough with the target and attacks it. This may also lower the target's Attack stat."));
             //Moves that lower attack by 2 stage
-            Effect lowerAttack2Stage = new Effect((int)Enum.effect.lowerAttack,2);
-            moves.Add(new Move("Charm", 100, 20, (int)Enum.type.Fairy, lowerAttack2Stage, 100, "The user charmingly stares at the foe, making it less wary. The target's Attack is sharply lowered."));
-            moves.Add(new Move("Feather Dance", 100, 15, (int)Enum.type.Fly, lowerAttack2Stage, 100, "The user covers the foe with a mass of down that sharply lowers the Attack stat."));
+            Effect foeLowerAttack2Stage = new Effect((int)Enum.effect.foeLowerAttack, 2);
+            moves.Add(new Move("Charm", 100, 20, (int)Enum.type.Fairy, foeLowerAttack2Stage, 100, "The user charmingly stares at the foe, making it less wary. The target's Attack is sharply lowered."));
+            moves.Add(new Move("Feather Dance", 100, 15, (int)Enum.type.Fly, foeLowerAttack2Stage, 100, "The user covers the foe with a mass of down that sharply lowers the Attack stat."));
             
             //Moves that lower defence by 1 stage
-            Effect lowerDefence1Stage = new Effect((int)Enum.effect.lowerDefense);
-            moves.Add(new Move("Leer", 100, 30, (int)Enum.type.Normal, lowerDefence1Stage, 100, "The foe is given an intimidating leer with sharp eyes. The target's Defense stat is reduced."));
-            moves.Add(new Move("Tail Whip", 100, 30, (int)Enum.type.Normal, lowerDefence1Stage, 100, "The user wags its tail cutely, making the foe less wary. The target's Defense stat is lowered."));
-            moves.Add(new Move("Crunch", 80, 100, 15, (int)Enum.type.Dark, lowerDefence1Stage, 20, "Physical", "The user crunches up the foe with sharp fangs. It may also lower the target's Defense stat."));
-            moves.Add(new Move("Liquidation", 85, 100, 10, (int)Enum.type.Water, lowerDefence1Stage, 20, "Physical", "The user slams into the target using a full-force blast of water. This may also lower the target's Defense stat."));
-            moves.Add(new Move("Iron Tail", 100, 75, 15, (int)Enum.type.Steel, lowerDefence1Stage, 30, "Physical", "The foe is slammed with a steel-hard tail. It may also lower the target's Defense stat."));
-            moves.Add(new Move("Crush Claw", 75, 95, 10, (int)Enum.type.Normal, lowerDefence1Stage, 50, "Physical", "The user slashes the foe with hard and sharp claws. It may also lower the target's Defense."));
-            moves.Add(new Move("Razor Shell", 75, 95, 10, (int)Enum.type.Water, lowerDefence1Stage, 50, "Physical", "The user cuts its target with sharp shells. This attack may also lower the target's Defense stat."));
+            Effect foeLowerDefence1Stage = new Effect((int)Enum.effect.foeLowerDefense);
+            moves.Add(new Move("Leer", 100, 30, (int)Enum.type.Normal, foeLowerDefence1Stage, 100, "The foe is given an intimidating leer with sharp eyes. The target's Defense stat is reduced."));
+            moves.Add(new Move("Tail Whip", 100, 30, (int)Enum.type.Normal, foeLowerDefence1Stage, 100, "The user wags its tail cutely, making the foe less wary. The target's Defense stat is lowered."));
+            moves.Add(new Move("Crunch", 80, 100, 15, (int)Enum.type.Dark, foeLowerDefence1Stage, 20, "Physical", "The user crunches up the foe with sharp fangs. It may also lower the target's Defense stat."));
+            moves.Add(new Move("Liquidation", 85, 100, 10, (int)Enum.type.Water, foeLowerDefence1Stage, 20, "Physical", "The user slams into the target using a full-force blast of water. This may also lower the target's Defense stat."));
+            moves.Add(new Move("Iron Tail", 100, 75, 15, (int)Enum.type.Steel, foeLowerDefence1Stage, 30, "Physical", "The foe is slammed with a steel-hard tail. It may also lower the target's Defense stat."));
+            moves.Add(new Move("Crush Claw", 75, 95, 10, (int)Enum.type.Normal, foeLowerDefence1Stage, 50, "Physical", "The user slashes the foe with hard and sharp claws. It may also lower the target's Defense."));
+            moves.Add(new Move("Razor Shell", 75, 95, 10, (int)Enum.type.Water, foeLowerDefence1Stage, 50, "Physical", "The user cuts its target with sharp shells. This attack may also lower the target's Defense stat."));
             //Move that lower defence by 2 stage
-            Effect lowerDefence2Stages = new Effect((int)Enum.effect.lowerDefense,2);
-            moves.Add(new Move("Screech", 85, 40, (int)Enum.type.Normal, lowerDefence2Stages, 100, "An earsplitting screech is emitted to sharply reduce the foe's Defense stat."));
+            Effect foeLowerDefence2Stages = new Effect((int)Enum.effect.foeLowerDefense,2);
+            moves.Add(new Move("Screech", 85, 40, (int)Enum.type.Normal, foeLowerDefence2Stages, 100, "An earsplitting screech is emitted to sharply reduce the foe's Defense stat."));
 
             //Moves that lower special attack
-            Effect lowerSpecialAttack1Stage = new Effect((int)Enum.effect.lowerSpecialAttack);
-            moves.Add(new Move("Confide", 100, 20, (int)Enum.type.Normal, lowerSpecialAttack1Stage, 100, "The user tells the target a secret, and the target loses its ability to concentrate. This lowers the target's Sp. Atk stat."));
-            moves.Add(new Move("Mystical Fire", 75, 100, 10, (int)Enum.type.Fire, lowerSpecialAttack1Stage, 100, "Special", "The user attacks by breathing a special, hot fire. This also lowers the target's Sp. Atk stat."));
-            moves.Add(new Move("Snarl", 55, 95, 15, (int)Enum.type.Dark, lowerSpecialAttack1Stage, 100, "Special", "The user yells as if it is ranting about something, making the target's Sp. Atk stat decrease."));
-            moves.Add(new Move("Struggle Bug", 50, 100, 20, (int)Enum.type.Bug, lowerSpecialAttack1Stage, 100, "Special", "While resisting, the user attacks the opposing Pokémon. The targets' Sp. Atk stat is reduced."));
-            moves.Add(new Move("Moonblast", 95, 100, 15, (int)Enum.type.Fairy, lowerSpecialAttack1Stage, 30, "Special", "Borrowing the power of the moon, the user attacks the target. This may also lower the target's Sp. Atk stat."));
-            //Moves that lower special attack by 2 stages
-            Effect lowerSpecialAttack2Stage = new Effect((int)Enum.effect.lowerSpecialAttack,2);
-            moves.Add(new Move("Eerie Impulse", 100, 15, (int)Enum.type.Electric, lowerSpecialAttack2Stage, 100, "The user's body generates an eerie impulse. Exposing the target to it harshly lowers the target's Sp. Atk stat."));
+            Effect foeLowerSpecialAttack1Stage = new Effect((int)Enum.effect.foeLowerSpecialAttack);
+            moves.Add(new Move("Confide", 100, 20, (int)Enum.type.Normal, foeLowerSpecialAttack1Stage, 100, "The user tells the target a secret, and the target loses its ability to concentrate. This lowers the target's Sp. Atk stat."));
+            moves.Add(new Move("Mystical Fire", 75, 100, 10, (int)Enum.type.Fire, foeLowerSpecialAttack1Stage, 100, "Special", "The user attacks by breathing a special, hot fire. This also lowers the target's Sp. Atk stat."));
+            moves.Add(new Move("Snarl", 55, 95, 15, (int)Enum.type.Dark, foeLowerSpecialAttack1Stage, 100, "Special", "The user yells as if it is ranting about something, making the target's Sp. Atk stat decrease."));
+            moves.Add(new Move("Struggle Bug", 50, 100, 20, (int)Enum.type.Bug, foeLowerSpecialAttack1Stage, 100, "Special", "While resisting, the user attacks the opposing Pokémon. The targets' Sp. Atk stat is reduced."));
+            moves.Add(new Move("Moonblast", 95, 100, 15, (int)Enum.type.Fairy, foeLowerSpecialAttack1Stage, 30, "Special", "Borrowing the power of the moon, the user attacks the target. This may also lower the target's Sp. Atk stat."));
+            Effect foeLowerSpecialAttack2Stage = new Effect((int)Enum.effect.foeLowerSpecialAttack,2);
+            moves.Add(new Move("Eerie Impulse", 100, 15, (int)Enum.type.Electric, foeLowerSpecialAttack2Stage, 100, "The user's body generates an eerie impulse. Exposing the target to it harshly lowers the target's Sp. Atk stat."));
 
             //Moves that lower Special Defense
-            Effect lowerSpecialDefense1Stages = new Effect((int)Enum.effect.lowerSpecialDefense);
-            moves.Add(new Move("Acid", 40, 100, 30, (int)Enum.type.Poison, lowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Bug Buzz", 90, 100, 10, (int)Enum.type.Bug, lowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Earth Power", 90, 100, 10, (int)Enum.type.Ground, lowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Energy Ball", 90, 100, 10, (int)Enum.type.Grass, lowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Flash Cannon", 80, 100, 10, (int)Enum.type.Steel, lowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Focus Blast", 120, 70, 5, (int)Enum.type.Fighting, lowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Psychic", 90, 100, 10, (int)Enum.type.Psy, lowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Shadow Ball", 80, 100, 15, (int)Enum.type.Ghost, lowerSpecialDefense1Stages, 20, "Special", ""));
-            Effect lowerSpecialDefense2Stages = new Effect((int)Enum.effect.lowerSpecialDefense, 2);
-            moves.Add(new Move("Acid Spray", 40, 100, 20, (int)Enum.type.Poison, lowerSpecialDefense2Stages, 100, "Special", ""));
-            moves.Add(new Move("Fake Tears", 100, 20, (int)Enum.type.Dark, lowerSpecialDefense2Stages, 100, ""));
-            moves.Add(new Move("Metal Sound", 85, 40, (int)Enum.type.Steel, lowerSpecialDefense2Stages, 100, ""));
+            Effect foelowerSpecialDefense1Stages = new Effect((int)Enum.effect.foeLowerSpecialDefense);
+            moves.Add(new Move("Acid", 40, 100, 30, (int)Enum.type.Poison, foelowerSpecialDefense1Stages, 10, "Special", ""));
+            moves.Add(new Move("Bug Buzz", 90, 100, 10, (int)Enum.type.Bug, foelowerSpecialDefense1Stages, 10, "Special", ""));
+            moves.Add(new Move("Earth Power", 90, 100, 10, (int)Enum.type.Ground, foelowerSpecialDefense1Stages, 10, "Special", ""));
+            moves.Add(new Move("Energy Ball", 90, 100, 10, (int)Enum.type.Grass, foelowerSpecialDefense1Stages, 10, "Special", ""));
+            moves.Add(new Move("Flash Cannon", 80, 100, 10, (int)Enum.type.Steel, foelowerSpecialDefense1Stages, 10, "Special", ""));
+            moves.Add(new Move("Focus Blast", 120, 70, 5, (int)Enum.type.Fighting, foelowerSpecialDefense1Stages, 10, "Special", ""));
+            moves.Add(new Move("Psychic", 90, 100, 10, (int)Enum.type.Psy, foelowerSpecialDefense1Stages, 10, "Special", ""));
+            moves.Add(new Move("Shadow Ball", 80, 100, 15, (int)Enum.type.Ghost, foelowerSpecialDefense1Stages, 20, "Special", ""));
+            Effect foeLowerSpecialDefense2Stages = new Effect((int)Enum.effect.foeLowerSpecialDefense, 2);
+            moves.Add(new Move("Acid Spray", 40, 100, 20, (int)Enum.type.Poison, foeLowerSpecialDefense2Stages, 100, "Special", ""));
+            moves.Add(new Move("Fake Tears", 100, 20, (int)Enum.type.Dark, foeLowerSpecialDefense2Stages, 100, ""));
+            moves.Add(new Move("Metal Sound", 85, 40, (int)Enum.type.Steel, foeLowerSpecialDefense2Stages, 100, ""));
 
             //Moves that lower Speed
-            Effect lowerSpeed = new Effect((int)Enum.effect.lowerSpeed);
-            moves.Add(new Move("Icy Wind", 55, 95, 15, (int)Enum.type.Ice, lowerSpeed, 100, "Special", ""));
-            moves.Add(new Move("Mud Shot", 55, 95, 15, (int)Enum.type.Ground, lowerSpeed, 100, "Special", ""));
-            moves.Add(new Move("Rock Tomb", 60, 95, 15, (int)Enum.type.Rock, lowerSpeed, 100, "Physical", ""));
-            Effect lowerSpeed2Stage = new Effect((int)Enum.effect.lowerSpeed,2);
-            moves.Add(new Move("Cotton Spore", 100, 40, (int)Enum.type.Grass, lowerSpeed2Stage, 100, ""));
-            moves.Add(new Move("Scary Face", 100, 10, (int)Enum.type.Normal, lowerSpeed2Stage, 100, ""));
-            moves.Add(new Move("String Shot", 95, 40, (int)Enum.type.Bug, lowerSpeed2Stage, 100, ""));
+            Effect foeLowerSpeed = new Effect((int)Enum.effect.foeLowerSpeed);
+            moves.Add(new Move("Icy Wind", 55, 95, 15, (int)Enum.type.Ice, foeLowerSpeed, 100, "Special", ""));
+            moves.Add(new Move("Mud Shot", 55, 95, 15, (int)Enum.type.Ground, foeLowerSpeed, 100, "Special", ""));
+            moves.Add(new Move("Rock Tomb", 60, 95, 15, (int)Enum.type.Rock, foeLowerSpeed, 100, "Physical", ""));
+            Effect foeLowerSpeed2Stage = new Effect((int)Enum.effect.foeLowerSpeed, 2);
+            moves.Add(new Move("Cotton Spore", 100, 40, (int)Enum.type.Grass, foeLowerSpeed2Stage, 100, ""));
+            moves.Add(new Move("Scary Face", 100, 10, (int)Enum.type.Normal, foeLowerSpeed2Stage, 100, ""));
+            moves.Add(new Move("String Shot", 95, 40, (int)Enum.type.Bug, foeLowerSpeed2Stage, 100, ""));
 
             //Moves that raise Attack
-            Effect raiseAttack = new Effect((int)Enum.effect.increaseAttack);
-            moves.Add(new Move("Meditate", 100, 40, (int)Enum.type.Psy, raiseAttack, 100, ""));
-            moves.Add(new Move("Sharpen", 100, 30, (int)Enum.type.Normal, raiseAttack, 100, ""));
-            Effect raiseAttack2Stage = new Effect((int)Enum.effect.increaseAttack, 2);
-            moves.Add(new Move("Swords Dance", 100, 20, (int)Enum.type.Normal, raiseAttack2Stage, 100, ""));
+            Effect selfRaiseAttack = new Effect((int)Enum.effect.selfIncreaseAttack);
+            moves.Add(new Move("Meditate", 100, 40, (int)Enum.type.Psy, selfRaiseAttack, 100, ""));
+            moves.Add(new Move("Sharpen", 100, 30, (int)Enum.type.Normal, selfRaiseAttack, 100, ""));
+            Effect selfRaiseAttack2Stage = new Effect((int)Enum.effect.selfIncreaseAttack, 2);
+            moves.Add(new Move("Swords Dance", 100, 20, (int)Enum.type.Normal, selfRaiseAttack2Stage, 100, ""));
 
             //Moves that raise Defense
-            Effect raiseDefense = new Effect((int)Enum.effect.increaseDefense);
-            moves.Add(new Move("Defense Curl", 100, 40, (int)Enum.type.Normal, raiseDefense, 100, ""));
-            moves.Add(new Move("Harden", 100, 30, (int)Enum.type.Normal, raiseDefense, 100, ""));
-            moves.Add(new Move("Withdraw", 100, 40, (int)Enum.type.Water, raiseDefense, 100, ""));
-            Effect raiseDefense2Stage = new Effect((int)Enum.effect.increaseDefense,2);
-            moves.Add(new Move("Acid Armor", 100, 20, (int)Enum.type.Poison, raiseDefense2Stage, 100, ""));
-            moves.Add(new Move("Barrier", 100, 20, (int)Enum.type.Psy, raiseDefense2Stage, 100, ""));
-            moves.Add(new Move("Iron Defense", 100, 15, (int)Enum.type.Steel, raiseDefense2Stage, 100, ""));
-            Effect raiseDefense3Stage = new Effect((int)Enum.effect.increaseDefense, 3);
-            moves.Add(new Move("Cotton Guard", 100, 10, (int)Enum.type.Grass, raiseDefense3Stage, 100, ""));
+            Effect selfRaiseDefense = new Effect((int)Enum.effect.selfIncreaseDefense);
+            moves.Add(new Move("Defense Curl", 100, 40, (int)Enum.type.Normal, selfRaiseDefense, 100, ""));
+            moves.Add(new Move("Harden", 100, 30, (int)Enum.type.Normal, selfRaiseDefense, 100, ""));
+            moves.Add(new Move("Withdraw", 100, 40, (int)Enum.type.Water, selfRaiseDefense, 100, ""));
+            Effect selfRaiseDefense2Stage = new Effect((int)Enum.effect.selfIncreaseDefense, 2);
+            moves.Add(new Move("Acid Armor", 100, 20, (int)Enum.type.Poison, selfRaiseDefense2Stage, 100, ""));
+            moves.Add(new Move("Barrier", 100, 20, (int)Enum.type.Psy, selfRaiseDefense2Stage, 100, ""));
+            moves.Add(new Move("Iron Defense", 100, 15, (int)Enum.type.Steel, selfRaiseDefense2Stage, 100, ""));
+            Effect selfRaiseDefense3Stage = new Effect((int)Enum.effect.selfIncreaseDefense, 3);
+            moves.Add(new Move("Cotton Guard", 100, 10, (int)Enum.type.Grass, selfRaiseDefense3Stage, 100, ""));
 
             //Moves that raise Special Attack
-            Effect raiseSpecialAttack = new Effect((int)Enum.effect.increaseSpecialAttack);
-            moves.Add(new Move("Charge Beam", 50, 90, 10, (int)Enum.type.Electric, raiseSpecialAttack, 70, "Special", ""));
-            Effect raiseSpecialAttack2Stage = new Effect((int)Enum.effect.increaseSpecialAttack, 2);
-            moves.Add(new Move("Nasty Plot", 100, 20, (int)Enum.type.Dark, raiseSpecialAttack2Stage, 100, ""));
+            Effect selfRaiseSpecialAttack = new Effect((int)Enum.effect.selfIncreaseSpecialAttack);
+            moves.Add(new Move("Charge Beam", 50, 90, 10, (int)Enum.type.Electric, selfRaiseSpecialAttack, 70, "Special", ""));
+            Effect selfRaiseSpecialAttack2Stage = new Effect((int)Enum.effect.selfIncreaseSpecialAttack, 2);
+            moves.Add(new Move("Nasty Plot", 100, 20, (int)Enum.type.Dark, selfRaiseSpecialAttack2Stage, 100, ""));
 
             //Move thar raise Special Defense
-            Effect raiseSpecialDefense2Stage = new Effect((int)Enum.effect.increaseSpecialDefense, 2);
-            moves.Add(new Move("Amnesia", 100, 20, (int)Enum.type.Psy, raiseSpecialAttack2Stage, 100, ""));
+            Effect selfRaiseSpecialDefense2Stage = new Effect((int)Enum.effect.selfIncreaseSpecialDefense, 2);
+            moves.Add(new Move("Amnesia", 100, 20, (int)Enum.type.Psy, selfRaiseSpecialDefense2Stage, 100, ""));
 
             //Move thar raise Speed
-            Effect raiseSpeed1Stage = new Effect((int)Enum.effect.increaseSpeed);
-            moves.Add(new Move("Flame Charge", 50, 100, 20, (int)Enum.type.Fire, raiseSpeed1Stage, 100, "Physical", ""));
-            Effect raiseSpeed2Stage = new Effect((int)Enum.effect.increaseSpeed, 2);
-            moves.Add(new Move("Agility", 100, 30, (int)Enum.type.Psy, raiseSpeed2Stage, 100, ""));
-            moves.Add(new Move("Rock Polish", 100, 20, (int)Enum.type.Rock, raiseSpeed2Stage, 100, ""));
+            Effect selfRaiseSpeed1Stage = new Effect((int)Enum.effect.selfIncreaseSpeed);
+            moves.Add(new Move("Flame Charge", 50, 100, 20, (int)Enum.type.Fire, selfRaiseSpeed1Stage, 100, "Physical", ""));
+            Effect selfRaiseSpeed2Stage = new Effect((int)Enum.effect.selfIncreaseSpeed, 2);
+            moves.Add(new Move("Agility", 100, 30, (int)Enum.type.Psy, selfRaiseSpeed2Stage, 100, ""));
+            moves.Add(new Move("Rock Polish", 100, 20, (int)Enum.type.Rock, selfRaiseSpeed2Stage, 100, ""));
 
             //Meteo
             Effect rain = new Effect((int)Enum.effect.rain);
@@ -165,7 +170,7 @@ namespace Pokemon_Beep.Factory
 
             //Paralysis Status
             Effect paralysis = new Effect((int)Enum.effect.paralysis);
-            moves.Add(new Move("Glare", 100, 30, (int)Enum.type.Normal, paralysis, 100, ""));
+            moves.Add(new Move("Glare", 100, 30, (int)Enum.type.Normal, paralysis, 100, "The user intimidates the foe with the pattern on its belly to cause paralysis."));
             moves.Add(new Move("Nuzzle", 20, 100, 20, (int)Enum.type.Electric, paralysis, 100, "Physical", ""));
             moves.Add(new Move("Stun Spore", 75, 30, (int)Enum.type.Grass, paralysis, 100, ""));
             moves.Add(new Move("Thunder Wave", 90, 20, (int)Enum.type.Electric, paralysis, 100, ""));
@@ -292,6 +297,16 @@ namespace Pokemon_Beep.Factory
             recoilFire.Add(burn);
             recoilFireChance.Add(10);
             moves.Add(new Move("Flare Blitz", 120, 100, 15, (int)Enum.type.Fire, recoilFire, recoilFireChance, "Physical", "The user cloaks itself in fire and charges at the target. The user sustains serious damage and may leave the target burned."));
+            List<Effect> coil = new List<Effect>();
+            coil.Add(selfRaiseAttack);
+            coil.Add(selfRaiseDefense);
+            coil.Add(increaseAccuracy);
+            moves.Add(new Move("Coil", 100, 20, (int)Enum.type.Poison, coil, 100, "The user coils up and concentrates. This raises its Attack and Defense stats as well as its accuracy."));
+            List<Effect> rest = new List<Effect>();
+            rest.Add(restoreFullHp);
+            rest.Add(selfSleep);
+            moves.Add(new Move("Rest", 100, 10, (int)Enum.type.Psy, rest, 100, "The user goes to sleep for two turns. It fully restores the user's HP and heals any status problem."));
+
 
             //sorting by name
             moves = moves.OrderBy(q => q.Name).ToList();

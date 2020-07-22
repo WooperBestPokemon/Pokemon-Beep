@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Pokemon_Beep.Factory
 {
+    /// <summary>
+    /// Where all the Abilities are created
+    /// </summary>
     class AbilityFactory
     {
         public List<Ability> GetAbilities()
@@ -60,9 +63,11 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Run Away", "Enables a sure getaway from wild Pokémon.", (int)Enum.ability.Run_Away));
             abilities.Add(new Ability("Sand Stream", "The Pokémon summons a sandstorm in battle.", (int)Enum.ability.Sand_Stream));
             abilities.Add(new Ability("Sand Veil", "Boosts the Pokémon's evasion in a sandstorm.", (int)Enum.ability.Sand_Veil));
+            abilities.Add(new Ability("Scrappy", "Enables moves to hit Ghost-type foes.", (int)Enum.ability.Scrappy));
             abilities.Add(new Ability("Serene Grace", "Boosts the likelihood of added effects appearing.", (int)Enum.ability.Serene_Grace));
             abilities.Add(new Ability("Shadow Tag", "Prevents the foe from escaping.", (int)Enum.ability.Shadow_Tag));
             abilities.Add(new Ability("Shed Skin", "The Pokémon may heal its own status problems.", (int)Enum.ability.Shed_Skin));
+            abilities.Add(new Ability("Sheer Force", "Increases the power of moves that have beneficial secondary effects by 30%, but removes those additional effects.", (int)Enum.ability.Sheer_Force));
             abilities.Add(new Ability("Shell Armor", "The Pokémon is protected against critical hits.", (int)Enum.ability.Shell_Armor));
             abilities.Add(new Ability("Shield Dust", "Blocks the added effects of attacks taken.", (int)Enum.ability.Shield_Dust));
             abilities.Add(new Ability("Soundproof", "Gives immunity to 'sound - based' moves.", (int)Enum.ability.Soundproof));

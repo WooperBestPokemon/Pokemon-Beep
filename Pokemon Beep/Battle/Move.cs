@@ -59,6 +59,58 @@ namespace Pokemon_Beep.Battle
             Description = description;
         }
 
+        public Move(string name, int power, int accuracy, int pp, int type, List<Effect> effects, int effectChance, string category, string description)
+        {
+            Name = name;
+            Power = power;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance.Add(effectChance);
+            Category = category;
+            Priority = 0;
+            Description = description;
+        }
+        public Move(string name, int power, int accuracy, int pp, int type, List<Effect> effects, int effectChance, string category, int priority, string description)
+        {
+            Name = name;
+            Power = power;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance.Add(effectChance);
+            Category = category;
+            Priority = priority;
+            Description = description;
+        }
+        public Move(string name, int accuracy, int pp, int type, List<Effect> effects, int effectChance, string description)
+        {
+            Name = name;
+            Power = 0;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance.Add(effectChance);
+            Category = "Status";
+            Priority = 0;
+            Description = description;
+        }
+        public Move(string name, int accuracy, int pp, int type, List<Effect> effects, int effectChance, int priority, string description)
+        {
+            Name = name;
+            Power = 0;
+            Accuracy = accuracy;
+            PP = pp;
+            Type = type;
+            Effects = effects;
+            EffectsChance.Add(effectChance);
+            Category = "Status";
+            Priority = priority;
+            Description = description;
+        }
 
         public Move(string name, int power, int accuracy, int pp, int type, List<Effect> effects, List<int> effectChance, string category, string description)
         {
