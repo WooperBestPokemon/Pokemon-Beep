@@ -302,6 +302,7 @@ namespace Pokemon_Beep.Pokemon
         }
         public void levelUp()
         {
+            //TODO generate move
             Level++;
             if(canEvolve)
                 checkEvolution();
@@ -573,6 +574,7 @@ namespace Pokemon_Beep.Pokemon
         public List<Move> Moveset
         {
             get { return moveset; }
+            set { moveset = value; }
         }
         public List<Learnset> Learnset
         {

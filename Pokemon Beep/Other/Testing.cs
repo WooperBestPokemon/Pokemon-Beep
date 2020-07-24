@@ -4,6 +4,7 @@ using Pokemon_Beep.Player;
 using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Pokemon_Beep.Other
@@ -105,6 +106,120 @@ namespace Pokemon_Beep.Other
 
             //Conclusion : pkmnA can modify the Pokemon (Defender)
 
+        }
+        public void graphic()
+        {
+            Console.CursorVisible = false;
+            /*
+            int oldPosX = 0;
+            int posY = 4;
+            for (int i = 1; i < 121; i++)
+            {
+                Console.SetCursorPosition(i, posY);
+                Console.Write("O");
+                Console.SetCursorPosition(oldPosX, posY);
+                Console.Write(" ");
+                oldPosX++;
+                System.Threading.Thread.Sleep(5);
+            }
+            */
+            int posX = 50;
+            int posY = 10;
+            
+            while (true)
+            {
+                System.Threading.Thread.Sleep(100);
+                Console.SetCursorPosition(posX, posY);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("@");
+                System.Threading.Thread.Sleep(100);
+                Console.SetCursorPosition(posX, posY);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("@");
+                System.Threading.Thread.Sleep(100);
+                Console.SetCursorPosition(posX, posY);
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.Write("@");
+            }
+        }
+        public void proprietyTest()
+        {
+            PokemonFactory factory = new PokemonFactory();
+            MoveFactory moveFactory = new MoveFactory();
+            List<Move> moves = moveFactory.GetMoves();
+
+            Fight battle = new Fight();
+
+            PocketMonster pachirisu = factory.Pachirisu();
+            pachirisu.generateWildPokemon(5);
+
+            PocketMonster sentret = factory.Sentret();
+            sentret.generateWildPokemon(5);
+
+            PkmnBattleInfo pokemonA = new PkmnBattleInfo(sentret);
+            PkmnBattleInfo pokemonB = new PkmnBattleInfo(pachirisu);
+
+            Console.WriteLine(pachirisu);
+            Console.WriteLine("========================================================================");
+            Console.WriteLine(sentret);
+            Console.ReadKey();
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Test 1 : Sentret is slower than pachirisu, but use Quick Attack");
+            Console.ForegroundColor = ConsoleColor.White;
+            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int) Enum.move.Quick_Attack], moves[(int)Enum.move.Tackle]))
+            {
+                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
+            }
+            else
+            {
+                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Test 2 : Sentret is slower than pachirisu, they both use the same move");
+            Console.ForegroundColor = ConsoleColor.White;
+            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Tackle], moves[(int)Enum.move.Tackle]))
+            {
+                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
+            }
+            else
+            {
+                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Test 3 : Sentret is slower than pachirisu, they both use the same move with a proprity");
+            Console.ForegroundColor = ConsoleColor.White;
+            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Quick_Attack], moves[(int)Enum.move.Quick_Attack]))
+            {
+                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
+            }
+            else
+            {
+                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Test 4 : Sentret use protect, but pachirisu use Quick Attack.");
+            Console.ForegroundColor = ConsoleColor.White;
+            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Protect], moves[(int)Enum.move.Quick_Attack]))
+            {
+                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
+            }
+            else
+            {
+                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Test 5 : Sentret is slower, but his speed stage is maxed !");
+            Console.ForegroundColor = ConsoleColor.White;
+            pokemonA.Pokemon.stages[(int)Enum.stat.Speed] = 6;
+            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Protect], moves[(int)Enum.move.Quick_Attack]))
+            {
+                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
+            }
+            else
+            {
+                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
+            }
         }
     }
 }

@@ -13,7 +13,9 @@ namespace Pokemon_Beep.Battle
             Accuracy = accuracy;
             PP = pp;
             Type = type;
+            Effects = new List<Effect>();
             Effects.Add(effect);
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = category;
             Priority = 0;
@@ -26,7 +28,9 @@ namespace Pokemon_Beep.Battle
             Accuracy = accuracy;
             PP = pp;
             Type = type;
+            Effects = new List<Effect>();
             Effects.Add(effect);
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = category;
             Priority = priority;
@@ -39,7 +43,9 @@ namespace Pokemon_Beep.Battle
             Accuracy = accuracy;
             PP = pp;
             Type = type;
+            Effects = new List<Effect>();
             Effects.Add(effect);
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = "Status";
             Priority = 0;
@@ -52,7 +58,9 @@ namespace Pokemon_Beep.Battle
             Accuracy = accuracy;
             PP = pp;
             Type = type;
+            Effects = new List<Effect>();
             Effects.Add(effect);
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = "Status";
             Priority = priority;
@@ -67,6 +75,7 @@ namespace Pokemon_Beep.Battle
             PP = pp;
             Type = type;
             Effects = effects;
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = category;
             Priority = 0;
@@ -80,6 +89,7 @@ namespace Pokemon_Beep.Battle
             PP = pp;
             Type = type;
             Effects = effects;
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = category;
             Priority = priority;
@@ -93,6 +103,7 @@ namespace Pokemon_Beep.Battle
             PP = pp;
             Type = type;
             Effects = effects;
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = "Status";
             Priority = 0;
@@ -106,6 +117,7 @@ namespace Pokemon_Beep.Battle
             PP = pp;
             Type = type;
             Effects = effects;
+            EffectsChance = new List<int>();
             EffectsChance.Add(effectChance);
             Category = "Status";
             Priority = priority;

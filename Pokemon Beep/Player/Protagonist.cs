@@ -8,16 +8,16 @@ namespace Pokemon_Beep.Player
     /// <summary>
     /// Class that store the information of the player, like the name, the gender, ect... 
     /// </summary>
-    class Character
+    class Protagonist
     {
         //When you create a character
-        public Character(string name, int sexe)
+        public Protagonist(string name, int sexe)
         {
             Name = name;
             Sexe = sexe;
         }
         //When you load a character
-        public Character(string name, int sexe, int money, Inventory inventory, List<PocketMonster> pokemons, Story journal, PC computer)
+        public Protagonist(string name, int sexe, int money, Inventory inventory, List<PocketMonster> pokemons, Story journal, PC computer)
         {
             Name = name;
             Sexe = sexe;

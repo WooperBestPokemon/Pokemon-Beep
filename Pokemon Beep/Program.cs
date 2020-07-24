@@ -10,10 +10,11 @@ namespace Pokemon_Beep
     {
         static void Main(string[] args)
         {
+            Console.SetWindowSize(121, 37);
             Testing testing = new Testing();
             //testing.statsTest();
             //testing.evolutionTest();
-            testing.battleTest();
+            testing.proprietyTest();
             /*
             Game game = new Game();
             World world = new World();
