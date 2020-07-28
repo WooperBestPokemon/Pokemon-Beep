@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TrueColorConsole;
 
 namespace Pokemon_Beep
 {
@@ -15,6 +16,14 @@ namespace Pokemon_Beep
             { // synchronize
                 return random.Next(min, max);
             }
+        }
+        public static void clearConsole()
+        {
+            for (int i = 1; i < 28; i++)
+            {
+                Console.SetCursorPosition(2, i);
+                VTConsole.Write("                                                                               ");
+            }            
         }
     }
 }

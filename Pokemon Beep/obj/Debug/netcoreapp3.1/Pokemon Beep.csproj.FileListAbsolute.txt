@@ -12,5 +12,7 @@ T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\netcoreapp3.1\System.Resources.Extens
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\netcoreapp3.1\Pokemon Beep.csproj.CopyComplete
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\netcoreapp3.1\Pokemon Beep.dll
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\netcoreapp3.1\Pokemon Beep.pdb
-T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\netcoreapp3.1\Pokemon Beep.csproj.CoreCompileInputs.cache
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\netcoreapp3.1\Pokemon Beep.genruntimeconfig.cache
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\netcoreapp3.1\TrueColorConsole.dll
+T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\netcoreapp3.1\Pokemon Beep.csproj.CoreCompileInputs.cache

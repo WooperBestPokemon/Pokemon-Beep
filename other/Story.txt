@@ -1,0 +1,54 @@
+Game's Name : Pokemon Beep
+Region's Name : Gotooh
+
+Objectif : 
+-A lot of jokes about coding, anime and video games.
+
+10 cities : 
+
+1.  (hometown)
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+
+============
+Professor Log
+============
+
+Personality :
+
+============
+      Rival
+============
+
+Personality : 
+
+==========
+Gym Leader
+==========
+Gym 1:
+Gym 2:
+Gym 3:
+Gym 4:
+Gym 5:
+Gym 6:
+Gym 7:
+Gym 8:
+
+(poison) Python
+(fire) Ruby
+(bug) *glitched*
+
+=========
+Team JS
+=========
+ Leader : Lucie
+	
+
+

@@ -1,0 +1,2 @@
+Max Character Name : 7
+The player is always at the middle of the room.                    

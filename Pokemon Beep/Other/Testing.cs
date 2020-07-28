@@ -1,11 +1,15 @@
 ﻿using Pokemon_Beep.Battle;
 using Pokemon_Beep.Factory;
+using Pokemon_Beep.Graphic;
 using Pokemon_Beep.Player;
 using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 using System.Security.Cryptography;
 using System.Text;
+using TrueColorConsole;
 
 namespace Pokemon_Beep.Other
 {
@@ -220,6 +224,58 @@ namespace Pokemon_Beep.Other
             {
                 Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
             }
+        }
+        public void asciiTest()
+        {
+            VTConsole.SetColorBackground(Color.FromArgb(0,64,8));
+            
+            Animation animation = new Animation();
+            Console.SetWindowSize(82, 30);
+            Console.SetBufferSize(82, 30);
+            Console.CursorVisible = false;
+            Console.Clear();
+            VTConsole.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                               ╔══════════╗    ║");
+            VTConsole.WriteLine(" ║                                                               ║Pokédex < ║    ║");
+            VTConsole.WriteLine(" ║                                                               ║Pokémon   ║    ║");
+            VTConsole.WriteLine(" ║                                                               ║Bag       ║    ║");
+            VTConsole.WriteLine(" ║                                                               ║PlayerName║    ║");
+            VTConsole.WriteLine(" ║                                                               ║Save      ║    ║");
+            VTConsole.WriteLine(" ║                                                               ║Option    ║    ║");
+            VTConsole.WriteLine(" ║                                                               ║Exit      ║    ║");
+            VTConsole.WriteLine(" ║                                                               ║          ║    ║");
+            VTConsole.WriteLine(" ║                                                               ╚══════════╝    ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                               ║");
+            VTConsole.WriteLine(" ║                                                                ╔════╗         ║");
+            VTConsole.WriteLine(" ║                                                                ║Yes<║         ║");
+            VTConsole.WriteLine(" ║                                                                ║No< ║         ║");
+            VTConsole.WriteLine(" ║                                                                ╚════╝         ║");
+            VTConsole.WriteLine(" ║    ╔═════════════════════════════════════════════════════════════════════╗    ║");
+            VTConsole.WriteLine(" ║    ║ Hi ! Welcome to the Poké-center. Would you like me to heal your     ║    ║");
+            VTConsole.WriteLine(" ║    ║ Pokémon ?                                                           ║    ║");
+            VTConsole.WriteLine(" ║    ╚═════════════════════════════════════════════════════════════════════╝    ║");
+            VTConsole.WriteLine(" ╚═══════════════════════════════════════════════════════════════════════════════╝");
+            Console.SetCursorPosition(41, 14);
+            VTConsole.SetColorForeground(Color.Red);
+            VTConsole.WriteLine("+");
+            Console.ReadKey();
+            animation.wildPokemonBattleAnimation();
+            Console.ReadKey();
+        }
+        public void mapTesting()
+        {
+            World world = new World();
+            world.init();
+            world.printMap(0);
+            Console.ReadKey();
         }
     }
 }

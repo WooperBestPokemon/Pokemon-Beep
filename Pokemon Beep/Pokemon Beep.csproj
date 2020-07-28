@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="NAudio" Version="1.10.0" />
+    <PackageReference Include="TrueColorConsole" Version="1.0.2" />
   </ItemGroup>
 
 </Project>

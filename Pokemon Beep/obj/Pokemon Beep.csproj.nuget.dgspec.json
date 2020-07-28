@@ -41,6 +41,10 @@
             "NAudio": {
               "target": "Package",
               "version": "[1.10.0, )"
+            },
+            "TrueColorConsole": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [

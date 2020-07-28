@@ -13,7 +13,6 @@ namespace Pokemon_Beep
         private Map currentMap;
         public void init()
         {
-            initPokemon();
             initMap();           
         }
         public bool hit(int posX, int posY)
@@ -32,25 +31,6 @@ namespace Pokemon_Beep
         public void printOldCharacter(int posX, int posY)
         {
             currentMap.printOldCharacter(posX, posY);
-        }
-        private void initPokemon()
-        {
-            /*Type
-            Types grass = new Types();
-
-            //Ability
-            Ability Overgrow = new Ability();
-            Ability LeafGuard = new Ability();
-            //Pokemon
-            //001
-            List<Ability> chikoritaAbility = new List<Ability>();
-            chikoritaAbility.Add(Overgrow);
-            chikoritaAbility.Add(LeafGuard);
-            List<Types> chikoritaTypes = new List<Types>();
-            chikoritaTypes.Add(grass);
-            //PocketMonster chikorita = new PocketMonster(1, "Chikorita", "2'11", "14.1 lbs.", chikoritaAbility, true, chikoritaTypes);
-            //pokemons.Add(chikorita);
-            */
         }
         private void initMap()
         {
