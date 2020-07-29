@@ -1,4 +1,4 @@
-﻿using Pokemon_Beep.Battle;
+﻿using Pokemon_Beep.Combat;
 using System;
 using System.Collections.Generic;
 using System.Text;

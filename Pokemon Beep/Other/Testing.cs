@@ -1,15 +1,10 @@
-﻿using Pokemon_Beep.Battle;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using Pokemon_Beep.Combat;
 using Pokemon_Beep.Factory;
 using Pokemon_Beep.Graphic;
-using Pokemon_Beep.Player;
 using Pokemon_Beep.Pokemon;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Security.Cryptography;
-using System.Text;
-using TrueColorConsole;
 
 namespace Pokemon_Beep.Other
 {
@@ -152,7 +147,7 @@ namespace Pokemon_Beep.Other
             MoveFactory moveFactory = new MoveFactory();
             List<Move> moves = moveFactory.GetMoves();
 
-            Fight battle = new Fight();
+            Battle battle = new Battle();
 
             PocketMonster pachirisu = factory.Pachirisu();
             pachirisu.generateWildPokemon(5);
@@ -227,45 +222,45 @@ namespace Pokemon_Beep.Other
         }
         public void asciiTest()
         {
-            VTConsole.SetColorBackground(Color.FromArgb(0,64,8));
-            
             Animation animation = new Animation();
-            Console.SetWindowSize(82, 30);
-            Console.SetBufferSize(82, 30);
+            Console.SetWindowSize(83, 30);
+            Console.SetBufferSize(83, 30);
             Console.CursorVisible = false;
+            Utilities.changeBackgroundColor(47, 53, 32);
             Console.Clear();
-            VTConsole.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                               ╔══════════╗    ║");
-            VTConsole.WriteLine(" ║                                                               ║Pokédex < ║    ║");
-            VTConsole.WriteLine(" ║                                                               ║Pokémon   ║    ║");
-            VTConsole.WriteLine(" ║                                                               ║Bag       ║    ║");
-            VTConsole.WriteLine(" ║                                                               ║PlayerName║    ║");
-            VTConsole.WriteLine(" ║                                                               ║Save      ║    ║");
-            VTConsole.WriteLine(" ║                                                               ║Option    ║    ║");
-            VTConsole.WriteLine(" ║                                                               ║Exit      ║    ║");
-            VTConsole.WriteLine(" ║                                                               ║          ║    ║");
-            VTConsole.WriteLine(" ║                                                               ╚══════════╝    ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                               ║");
-            VTConsole.WriteLine(" ║                                                                ╔════╗         ║");
-            VTConsole.WriteLine(" ║                                                                ║Yes<║         ║");
-            VTConsole.WriteLine(" ║                                                                ║No< ║         ║");
-            VTConsole.WriteLine(" ║                                                                ╚════╝         ║");
-            VTConsole.WriteLine(" ║    ╔═════════════════════════════════════════════════════════════════════╗    ║");
-            VTConsole.WriteLine(" ║    ║ Hi ! Welcome to the Poké-center. Would you like me to heal your     ║    ║");
-            VTConsole.WriteLine(" ║    ║ Pokémon ?                                                           ║    ║");
-            VTConsole.WriteLine(" ║    ╚═════════════════════════════════════════════════════════════════════╝    ║");
-            VTConsole.WriteLine(" ╚═══════════════════════════════════════════════════════════════════════════════╝");
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                               ╔══════════╗    ║");
+            Console.WriteLine(" ║                                                               ║Pokédex < ║    ║");
+            Console.WriteLine(" ║                                                               ║Pokémon   ║    ║");
+            Console.WriteLine(" ║                                                               ║Bag       ║    ║");
+            Console.WriteLine(" ║                                                               ║PlayerName║    ║");
+            Console.WriteLine(" ║                                                               ║Save      ║    ║");
+            Console.WriteLine(" ║                                                               ║Option    ║    ║");
+            Console.WriteLine(" ║                                                               ║Exit      ║    ║");
+            Console.WriteLine(" ║                                                               ║          ║    ║");
+            Console.WriteLine(" ║                                                               ╚══════════╝    ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                ╔════╗         ║");
+            Console.WriteLine(" ║                                                                ║Yes<║         ║");
+            Console.WriteLine(" ║                                                                ║No< ║         ║");
+            Console.WriteLine(" ║                                                                ╚════╝         ║");
+            Console.WriteLine(" ║    ╔═════════════════════════════════════════════════════════════════════╗    ║");
+            Console.WriteLine(" ║    ║ Hi ! Welcome to the Poké-center. Would you like me to heal your     ║    ║");
+            Console.WriteLine(" ║    ║ Pokémon ?                                                           ║    ║");
+            Console.WriteLine(" ║    ╚═════════════════════════════════════════════════════════════════════╝    ║");
+            Console.WriteLine(" ╚═══════════════════════════════════════════════════════════════════════════════╝");
             Console.SetCursorPosition(41, 14);
-            VTConsole.SetColorForeground(Color.Red);
-            VTConsole.WriteLine("+");
+            Utilities.changeForegroundColor(255, 163, 255);
+            Console.WriteLine("+");
             Console.ReadKey();
             animation.wildPokemonBattleAnimation();
             Console.ReadKey();

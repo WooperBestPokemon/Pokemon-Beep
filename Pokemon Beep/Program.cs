@@ -1,9 +1,10 @@
-﻿using Pokemon_Beep.Battle;
-using Pokemon_Beep.Factory;
-using Pokemon_Beep.Other;
+﻿using Pokemon_Beep.Other;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Pokemon_Beep
 {
@@ -14,6 +15,14 @@ namespace Pokemon_Beep
         public const int SC_MAXIMIZE = 0xF030;
         public const int SC_SIZE = 0xF000;
 
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool SetConsoleMode(IntPtr hConsoleHandle, int mode);
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool GetConsoleMode(IntPtr handle, out int mode);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern IntPtr GetStdHandle(int handle);
+
         [DllImport("user32.dll")]
         public static extern int DeleteMenu(IntPtr hMenu, int nPosition, int wFlags);
 
@@ -22,7 +31,6 @@ namespace Pokemon_Beep
 
         [DllImport("kernel32.dll", ExactSpelling = true)]
         private static extern IntPtr GetConsoleWindow();
-
         static void Main(string[] args)
         {
             IntPtr handle = GetConsoleWindow();
@@ -34,74 +42,15 @@ namespace Pokemon_Beep
                 DeleteMenu(sysMenu, SC_MAXIMIZE, MF_BYCOMMAND);
                 DeleteMenu(sysMenu, SC_SIZE, MF_BYCOMMAND);
             }
+
+            var hand = GetStdHandle(-11);
+            int mode;
+            GetConsoleMode(hand, out mode);
+            SetConsoleMode(hand, mode | 0x4);
+
             Testing testing = new Testing();
-            //testing.statsTest();
-            //testing.evolutionTest();
-            //testing.asciiTest();
             testing.asciiTest();
-            /*
-            Game game = new Game();
-            World world = new World();
-            game.init();           
-            world.init();
-            world.printMap(0);
-            //Console.ReadKey();
-
-
-            ConsoleKeyInfo keyinfo;
-            bool movement= true;
-            int posX = 14;
-            int posY = 13;
-            int oldX = posX;
-            int oldY = posY;
-            while (movement == true)
-            {
-                keyinfo = Console.ReadKey(true);
-                if (keyinfo.Key == ConsoleKey.S)
-                {
-                    oldY = posY;
-                    oldX = posX;
-                    posY++;
-                }
-                else if (keyinfo.Key == ConsoleKey.A)
-                {
-                    oldY = posY;
-                    oldX = posX;
-                    posX--;
-                }
-                else if (keyinfo.Key == ConsoleKey.W)
-                {
-                    oldY = posY;
-                    oldX = posX;
-                    posY--;
-                }
-                else if (keyinfo.Key == ConsoleKey.D)
-                {
-                    oldY = posY;
-                    oldX = posX;
-                    posX++;
-                }
-                else
-                    movement = false;
-                if(world.hit(posX,posY))
-                {
-                    posX = oldX;
-                    posY = oldY;
-                }                    
-                else
-                    printPlayer();
-            }
-            void printPlayer()
-            {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.SetCursorPosition(posX, posY);
-                Console.Write('O');
-                Console.SetCursorPosition(oldX, oldY);                
-                Console.Write(' ');
-                world.printOldCharacter(oldX, oldY);
-            }
-            */
+            Console.ReadKey();
         }
-
     }
 }

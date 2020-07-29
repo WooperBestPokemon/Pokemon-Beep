@@ -1,0 +1,20 @@
+D:\Desktop\Pkmn\Pokemon Beep\obj\Debug\Pokemon Beep.csprojAssemblyReference.cache
+D:\Desktop\Pkmn\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CoreCompileInputs.cache
+D:\Desktop\Pkmn\Pokemon Beep\bin\Debug\Pokemon Beep.exe.config
+D:\Desktop\Pkmn\Pokemon Beep\bin\Debug\Pokemon Beep.exe
+D:\Desktop\Pkmn\Pokemon Beep\bin\Debug\Pokemon Beep.pdb
+D:\Desktop\Pkmn\Pokemon Beep\bin\Debug\NAudio.dll
+D:\Desktop\Pkmn\Pokemon Beep\bin\Debug\NAudio.xml
+D:\Desktop\Pkmn\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CopyComplete
+D:\Desktop\Pkmn\Pokemon Beep\obj\Debug\Pokemon Beep.exe
+D:\Desktop\Pkmn\Pokemon Beep\obj\Debug\Pokemon Beep.pdb
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Pokemon Beep.exe.config
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Pokemon Beep.exe
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Pokemon Beep.pdb
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\NAudio.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\NAudio.xml
+T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.csprojAssemblyReference.cache
+T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CoreCompileInputs.cache
+T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CopyComplete
+T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.exe
+T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.pdb
