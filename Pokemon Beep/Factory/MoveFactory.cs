@@ -120,7 +120,7 @@ namespace Pokemon_Beep.Factory
             moves.Add(new Move("Harden", 100, 30, (int)Enum.type.Normal, selfRaiseDefense, 100, ""));
             moves.Add(new Move("Withdraw", 100, 40, (int)Enum.type.Water, selfRaiseDefense, 100, ""));
             Effect selfRaiseDefense2Stage = new Effect((int)Enum.effect.selfIncreaseDefense, 2);
-            moves.Add(new Move("Acid Armor", 100, 20, (int)Enum.type.Poison, selfRaiseDefense2Stage, 100, ""));
+            moves.Add(new Move("Acid Armor", 100, 20, (int)Enum.type.Poison, selfRaiseDefense2Stage, 100, "The user alters its cellular structure to liquefy itself, sharply raising its Defense stat."));
             moves.Add(new Move("Barrier", 100, 20, (int)Enum.type.Psy, selfRaiseDefense2Stage, 100, ""));
             moves.Add(new Move("Iron Defense", 100, 15, (int)Enum.type.Steel, selfRaiseDefense2Stage, 100, ""));
             Effect selfRaiseDefense3Stage = new Effect((int)Enum.effect.selfIncreaseDefense, 3);

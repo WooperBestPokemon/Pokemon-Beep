@@ -203,6 +203,11 @@ namespace Pokemon_Beep
             Magenta,
             Light_Blue,
         }
+        public enum side
+        {
+            Left,
+            Right,
+        }
         //Battle
         public enum move
         {

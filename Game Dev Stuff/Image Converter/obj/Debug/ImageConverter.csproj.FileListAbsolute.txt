@@ -1,0 +1,7 @@
+T:\Git\ImageConverter\bin\Debug\ImageConverter.exe.config
+T:\Git\ImageConverter\bin\Debug\ImageConverter.exe
+T:\Git\ImageConverter\bin\Debug\ImageConverter.pdb
+T:\Git\ImageConverter\obj\Debug\ImageConverter.csprojAssemblyReference.cache
+T:\Git\ImageConverter\obj\Debug\ImageConverter.csproj.CoreCompileInputs.cache
+T:\Git\ImageConverter\obj\Debug\ImageConverter.exe
+T:\Git\ImageConverter\obj\Debug\ImageConverter.pdb
