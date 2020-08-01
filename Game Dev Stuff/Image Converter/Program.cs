@@ -12,7 +12,7 @@ namespace ImageConverter
         static void Main(string[] args)
         {
             ImageConverter imageConverter = new ImageConverter();
-            imageConverter.convertImage("Zapdos");
+            imageConverter.convertImage("Dunsparce_S");
         }
     }
 }

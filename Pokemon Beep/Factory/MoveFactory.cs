@@ -84,210 +84,210 @@ namespace Pokemon_Beep.Factory
 
             //Moves that lower Special Defense
             Effect foelowerSpecialDefense1Stages = new Effect((int)Enum.effect.foeLowerSpecialDefense);
-            moves.Add(new Move("Acid", 40, 100, 30, (int)Enum.type.Poison, foelowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Bug Buzz", 90, 100, 10, (int)Enum.type.Bug, foelowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Earth Power", 90, 100, 10, (int)Enum.type.Ground, foelowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Energy Ball", 90, 100, 10, (int)Enum.type.Grass, foelowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Flash Cannon", 80, 100, 10, (int)Enum.type.Steel, foelowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Focus Blast", 120, 70, 5, (int)Enum.type.Fighting, foelowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Psychic", 90, 100, 10, (int)Enum.type.Psy, foelowerSpecialDefense1Stages, 10, "Special", ""));
-            moves.Add(new Move("Shadow Ball", 80, 100, 15, (int)Enum.type.Ghost, foelowerSpecialDefense1Stages, 20, "Special", ""));
+            moves.Add(new Move("Acid", 40, 100, 30, (int)Enum.type.Poison, foelowerSpecialDefense1Stages, 10, "Special", "The foe is attacked with a spray of harsh acid. It may also lower the target's Sp. Def stat."));
+            moves.Add(new Move("Bug Buzz", 90, 100, 10, (int)Enum.type.Bug, foelowerSpecialDefense1Stages, 10, "Special", "The user vibrates its wings to generate a damaging sound wave. It may also lower the foe's Sp. Def stat."));
+            moves.Add(new Move("Earth Power", 90, 100, 10, (int)Enum.type.Ground, foelowerSpecialDefense1Stages, 10, "Special", "The user makes the ground under the foe erupt with power. It may also lower the target's Sp. Def."));
+            moves.Add(new Move("Energy Ball", 90, 100, 10, (int)Enum.type.Grass, foelowerSpecialDefense1Stages, 10, "Special", "The user draws power from nature and fires it at the foe. It may also lower the target's Sp. Def."));
+            moves.Add(new Move("Flash Cannon", 80, 100, 10, (int)Enum.type.Steel, foelowerSpecialDefense1Stages, 10, "Special", "The user gathers all its light energy and releases it at once. It may also lower the foe's Sp. Def stat."));
+            moves.Add(new Move("Focus Blast", 120, 70, 5, (int)Enum.type.Fighting, foelowerSpecialDefense1Stages, 10, "Special", "The user heightens its mental focus and unleashes its power. It may also lower the target's Sp. Def."));
+            moves.Add(new Move("Psychic", 90, 100, 10, (int)Enum.type.Psy, foelowerSpecialDefense1Stages, 10, "Special", "The foe is hit by a strong telekinetic force. It may also reduce the foe's Sp. Def stat."));
+            moves.Add(new Move("Shadow Ball", 80, 100, 15, (int)Enum.type.Ghost, foelowerSpecialDefense1Stages, 20, "Special", "The user hurls a shadowy blob at the foe. It may also lower the foe's Sp. Def stat."));
             Effect foeLowerSpecialDefense2Stages = new Effect((int)Enum.effect.foeLowerSpecialDefense, 2);
-            moves.Add(new Move("Acid Spray", 40, 100, 20, (int)Enum.type.Poison, foeLowerSpecialDefense2Stages, 100, "Special", ""));
-            moves.Add(new Move("Fake Tears", 100, 20, (int)Enum.type.Dark, foeLowerSpecialDefense2Stages, 100, ""));
-            moves.Add(new Move("Metal Sound", 85, 40, (int)Enum.type.Steel, foeLowerSpecialDefense2Stages, 100, ""));
+            moves.Add(new Move("Acid Spray", 40, 100, 20, (int)Enum.type.Poison, foeLowerSpecialDefense2Stages, 100, "Special", "The user spits fluid that works to melt the target. This harshly lowers the target's Sp. Def stat."));
+            moves.Add(new Move("Fake Tears", 100, 20, (int)Enum.type.Dark, foeLowerSpecialDefense2Stages, 100, "The user feigns crying to make the foe feel flustered, sharply lowering its Sp. Def stat."));
+            moves.Add(new Move("Metal Sound", 85, 40, (int)Enum.type.Steel, foeLowerSpecialDefense2Stages, 100, "A horrible sound like scraping metal is emitted to sharply reduce the foe's Sp. Def stat."));
 
             //Moves that lower Speed
             Effect foeLowerSpeed = new Effect((int)Enum.effect.foeLowerSpeed);
-            moves.Add(new Move("Icy Wind", 55, 95, 15, (int)Enum.type.Ice, foeLowerSpeed, 100, "Special", ""));
-            moves.Add(new Move("Mud Shot", 55, 95, 15, (int)Enum.type.Ground, foeLowerSpeed, 100, "Special", ""));
-            moves.Add(new Move("Rock Tomb", 60, 95, 15, (int)Enum.type.Rock, foeLowerSpeed, 100, "Physical", ""));
+            moves.Add(new Move("Icy Wind", 55, 95, 15, (int)Enum.type.Ice, foeLowerSpeed, 100, "Special", "The user attacks with a gust of chilled air. It also lowers the target's Speed stat."));
+            moves.Add(new Move("Mud Shot", 55, 95, 15, (int)Enum.type.Ground, foeLowerSpeed, 100, "Special", "The user attacks by hurling a blob of mud at the foe. It also reduces the target's Speed."));
+            moves.Add(new Move("Rock Tomb", 60, 95, 15, (int)Enum.type.Rock, foeLowerSpeed, 100, "Physical", "Boulders are hurled at the foe. It also lowers the foe's Speed by preventing its movement."));
             Effect foeLowerSpeed2Stage = new Effect((int)Enum.effect.foeLowerSpeed, 2);
-            moves.Add(new Move("Cotton Spore", 100, 40, (int)Enum.type.Grass, foeLowerSpeed2Stage, 100, ""));
-            moves.Add(new Move("Scary Face", 100, 10, (int)Enum.type.Normal, foeLowerSpeed2Stage, 100, ""));
-            moves.Add(new Move("String Shot", 95, 40, (int)Enum.type.Bug, foeLowerSpeed2Stage, 100, ""));
+            moves.Add(new Move("Cotton Spore", 100, 40, (int)Enum.type.Grass, foeLowerSpeed2Stage, 100, "The user releases cottonlike spores that cling to the foe, sharply reducing its Speed stat."));
+            moves.Add(new Move("Scary Face", 100, 10, (int)Enum.type.Normal, foeLowerSpeed2Stage, 100, "The user frightens the foe with a scary face to sharply reduce its Speed stat."));
+            moves.Add(new Move("String Shot", 95, 40, (int)Enum.type.Bug, foeLowerSpeed2Stage, 100, "The foe is bound with silk blown from the user's mouth. It reduces the target's Speed stat."));
 
             //Moves that raise Attack
             Effect selfRaiseAttack = new Effect((int)Enum.effect.selfIncreaseAttack);
-            moves.Add(new Move("Meditate", 100, 40, (int)Enum.type.Psy, selfRaiseAttack, 100, ""));
-            moves.Add(new Move("Sharpen", 100, 30, (int)Enum.type.Normal, selfRaiseAttack, 100, ""));
+            moves.Add(new Move("Meditate", 100, 40, (int)Enum.type.Psy, selfRaiseAttack, 100, "The user meditates to awaken the power deep within its body and raise its Attack stat."));
+            moves.Add(new Move("Sharpen", 100, 30, (int)Enum.type.Normal, selfRaiseAttack, 100, "The user reduces its polygon count to make itself more jagged, raising the Attack stat."));
             Effect selfRaiseAttack2Stage = new Effect((int)Enum.effect.selfIncreaseAttack, 2);
-            moves.Add(new Move("Swords Dance", 100, 20, (int)Enum.type.Normal, selfRaiseAttack2Stage, 100, ""));
+            moves.Add(new Move("Swords Dance", 100, 20, (int)Enum.type.Normal, selfRaiseAttack2Stage, 100, "A frenetic dance to uplift the fighting spirit. It sharply raises the user's Attack stat."));
 
             //Moves that raise Defense
             Effect selfRaiseDefense = new Effect((int)Enum.effect.selfIncreaseDefense);
-            moves.Add(new Move("Defense Curl", 100, 40, (int)Enum.type.Normal, selfRaiseDefense, 100, ""));
-            moves.Add(new Move("Harden", 100, 30, (int)Enum.type.Normal, selfRaiseDefense, 100, ""));
-            moves.Add(new Move("Withdraw", 100, 40, (int)Enum.type.Water, selfRaiseDefense, 100, ""));
+            moves.Add(new Move("Defense Curl", 100, 40, (int)Enum.type.Normal, selfRaiseDefense, 100, "The user curls up to conceal weak spots and raise its Defense stat."));
+            moves.Add(new Move("Harden", 100, 30, (int)Enum.type.Normal, selfRaiseDefense, 100, "The user stiffens all the muscles in its body to raise its Defense stat."));
+            moves.Add(new Move("Withdraw", 100, 40, (int)Enum.type.Water, selfRaiseDefense, 100, "The user withdraws its body into its hard shell, raising its Defense stat."));
             Effect selfRaiseDefense2Stage = new Effect((int)Enum.effect.selfIncreaseDefense, 2);
             moves.Add(new Move("Acid Armor", 100, 20, (int)Enum.type.Poison, selfRaiseDefense2Stage, 100, "The user alters its cellular structure to liquefy itself, sharply raising its Defense stat."));
-            moves.Add(new Move("Barrier", 100, 20, (int)Enum.type.Psy, selfRaiseDefense2Stage, 100, ""));
-            moves.Add(new Move("Iron Defense", 100, 15, (int)Enum.type.Steel, selfRaiseDefense2Stage, 100, ""));
+            moves.Add(new Move("Barrier", 100, 20, (int)Enum.type.Psy, selfRaiseDefense2Stage, 100, "The user throws up a sturdy wall that sharply raises its Defense stat."));
+            moves.Add(new Move("Iron Defense", 100, 15, (int)Enum.type.Steel, selfRaiseDefense2Stage, 100, "The user hardens its body's surface like iron, sharply raising its Defense stat."));
             Effect selfRaiseDefense3Stage = new Effect((int)Enum.effect.selfIncreaseDefense, 3);
-            moves.Add(new Move("Cotton Guard", 100, 10, (int)Enum.type.Grass, selfRaiseDefense3Stage, 100, ""));
+            moves.Add(new Move("Cotton Guard", 100, 10, (int)Enum.type.Grass, selfRaiseDefense3Stage, 100, "The user protects itself by wrapping its body in soft cotton, which drastically raises the user's Defense stat."));
 
             //Moves that raise Special Attack
             Effect selfRaiseSpecialAttack = new Effect((int)Enum.effect.selfIncreaseSpecialAttack);
-            moves.Add(new Move("Charge Beam", 50, 90, 10, (int)Enum.type.Electric, selfRaiseSpecialAttack, 70, "Special", ""));
+            moves.Add(new Move("Charge Beam", 50, 90, 10, (int)Enum.type.Electric, selfRaiseSpecialAttack, 70, "Special", "The user fires a concentrated bundle of electricity. It may also raise the user's Sp. Atk stat."));
             Effect selfRaiseSpecialAttack2Stage = new Effect((int)Enum.effect.selfIncreaseSpecialAttack, 2);
-            moves.Add(new Move("Nasty Plot", 100, 20, (int)Enum.type.Dark, selfRaiseSpecialAttack2Stage, 100, ""));
+            moves.Add(new Move("Nasty Plot", 100, 20, (int)Enum.type.Dark, selfRaiseSpecialAttack2Stage, 100, "The user stimulates its brain by thinking bad thoughts. It sharply raises the user's Sp. Atk."));
 
-            //Move thar raise Special Defense
+            //Move that raise Special Defense
             Effect selfRaiseSpecialDefense2Stage = new Effect((int)Enum.effect.selfIncreaseSpecialDefense, 2);
-            moves.Add(new Move("Amnesia", 100, 20, (int)Enum.type.Psy, selfRaiseSpecialDefense2Stage, 100, ""));
+            moves.Add(new Move("Amnesia", 100, 20, (int)Enum.type.Psy, selfRaiseSpecialDefense2Stage, 100, "The user temporarily empties its mind to forget its concerns. It sharply raises the user's Sp. Def stat."));
 
-            //Move thar raise Speed
+            //Move that raise Speed
             Effect selfRaiseSpeed1Stage = new Effect((int)Enum.effect.selfIncreaseSpeed);
-            moves.Add(new Move("Flame Charge", 50, 100, 20, (int)Enum.type.Fire, selfRaiseSpeed1Stage, 100, "Physical", ""));
+            moves.Add(new Move("Flame Charge", 50, 100, 20, (int)Enum.type.Fire, selfRaiseSpeed1Stage, 100, "Physical", "Cloaking itself in flame, the user attacks the target. Then, building up more power, the user raises its Speed stat."));
             Effect selfRaiseSpeed2Stage = new Effect((int)Enum.effect.selfIncreaseSpeed, 2);
-            moves.Add(new Move("Agility", 100, 30, (int)Enum.type.Psy, selfRaiseSpeed2Stage, 100, ""));
-            moves.Add(new Move("Rock Polish", 100, 20, (int)Enum.type.Rock, selfRaiseSpeed2Stage, 100, ""));
+            moves.Add(new Move("Agility", 100, 30, (int)Enum.type.Psy, selfRaiseSpeed2Stage, 100, "The user relaxes and lightens its body to move faster. It sharply boosts the Speed stat."));
+            moves.Add(new Move("Rock Polish", 100, 20, (int)Enum.type.Rock, selfRaiseSpeed2Stage, 100, "The user polishes its body to reduce drag. It can sharply raise the Speed stat."));
 
             //Meteo
             Effect rain = new Effect((int)Enum.effect.rain);
-            moves.Add(new Move("Rain Dance", 100, 5, (int)Enum.type.Water, rain, 100, ""));
+            moves.Add(new Move("Rain Dance", 100, 5, (int)Enum.type.Water, rain, 100, "The user summons a heavy rain that falls for five turns, powering up Water-type moves."));
             Effect sunny = new Effect((int)Enum.effect.sunny);
-            moves.Add(new Move("Sunny Day", 100, 5, (int)Enum.type.Fire, sunny, 100, ""));
+            moves.Add(new Move("Sunny Day", 100, 5, (int)Enum.type.Fire, sunny, 100, "The user intensifies the sun for five turns, powering up Fire-type moves."));
             Effect sandstorm = new Effect((int)Enum.effect.sandstorm);
-            moves.Add(new Move("Sandstorm", 100, 10, (int)Enum.type.Rock, sandstorm, 100, ""));
+            moves.Add(new Move("Sandstorm", 100, 10, (int)Enum.type.Rock, sandstorm, 100, "A five-turn sandstorm is summoned to hurt all combatant types except Rock, Ground, and Steel."));
             Effect snow = new Effect((int)Enum.effect.snow);
-            moves.Add(new Move("Hail", 100, 10, (int)Enum.type.Ice, snow, 100, ""));
+            moves.Add(new Move("Hail", 100, 10, (int)Enum.type.Ice, snow, 100, "The user summons a hailstorm lasting five turns. It damages all Pokémon except the Ice type."));
 
             //Burn Status
             Effect burn = new Effect((int)Enum.effect.burn);
-            moves.Add(new Move("Inferno", 100, 50, 5, (int)Enum.type.Fire, burn, 100, "Special", ""));
-            moves.Add(new Move("Will-O-Wisp", 85, 15, (int)Enum.type.Fire, burn, 100, ""));
-            moves.Add(new Move("Ember", 40, 100, 25, (int)Enum.type.Fire, burn, 10, "Special", ""));
-            moves.Add(new Move("Fire Blast", 110, 85, 5, (int)Enum.type.Fire, burn, 10, "Special", ""));
-            moves.Add(new Move("Fire Fang", 65, 95, 15, (int)Enum.type.Fire, burn, 10, "Physical", ""));
-            moves.Add(new Move("Fire Punch", 75, 100, 15, (int)Enum.type.Fire, burn, 10, "Physical", ""));
-            moves.Add(new Move("Flame Wheel", 60, 100, 25, (int)Enum.type.Fire, burn, 10, "Physical", ""));
-            moves.Add(new Move("Flamethrower", 90, 100, 15, (int)Enum.type.Fire, burn, 10, "Special", ""));
-            moves.Add(new Move("Heat Wave", 95, 90, 10, (int)Enum.type.Fire, burn, 10, "Special", ""));
-            moves.Add(new Move("Lava Plume", 80, 100, 15, (int)Enum.type.Fire, burn, 30, "Special", ""));
-            moves.Add(new Move("Scald", 80, 100, 15, (int)Enum.type.Water, burn, 30, "Special", ""));
-            moves.Add(new Move("Sacred Fire", 100, 95, 5, (int)Enum.type.Fire, burn, 50, "Special", ""));
+            moves.Add(new Move("Inferno", 100, 50, 5, (int)Enum.type.Fire, burn, 100, "Special", "The user attacks by engulfing the target in an intense fire. This leaves the target with a burn."));
+            moves.Add(new Move("Will-O-Wisp", 85, 15, (int)Enum.type.Fire, burn, 100, "The user shoots a sinister, bluish white flame at the foe to inflict a burn."));
+            moves.Add(new Move("Ember", 40, 100, 25, (int)Enum.type.Fire, burn, 10, "Special", "The foe is attacked with small flames. The target may also be left with a burn."));
+            moves.Add(new Move("Fire Blast", 110, 85, 5, (int)Enum.type.Fire, burn, 10, "Special", "The foe is attacked with an intense blast of all-consuming fire. It may also leave the target with a burn."));
+            moves.Add(new Move("Fire Fang", 65, 95, 15, (int)Enum.type.Fire, burn, 10, "Physical", "The user bites with flame-cloaked fangs. It may also make the foe flinch or sustain a burn."));
+            moves.Add(new Move("Fire Punch", 75, 100, 15, (int)Enum.type.Fire, burn, 10, "Physical", "The foe is punched with a fiery fist. It may leave the target with a burn."));
+            moves.Add(new Move("Flame Wheel", 60, 100, 25, (int)Enum.type.Fire, burn, 10, "Physical", "The user cloaks itself in fire and charges at the foe. It may also leave the target with a burn."));
+            moves.Add(new Move("Flamethrower", 90, 100, 15, (int)Enum.type.Fire, burn, 10, "Special", "The foe is scorched with an intense blast of fire. The target may also be left with a burn."));
+            moves.Add(new Move("Heat Wave", 95, 90, 10, (int)Enum.type.Fire, burn, 10, "Special", "The foe is scorched with an intense blast of fire. The target may also be left with a burn."));
+            moves.Add(new Move("Lava Plume", 80, 100, 15, (int)Enum.type.Fire, burn, 30, "Special", "An inferno of scarlet flames washes over all Pokémon in battle. It may also inflict burns."));
+            moves.Add(new Move("Scald", 80, 100, 15, (int)Enum.type.Water, burn, 30, "Special", "The user shoots boiling hot water at its target. This may also leave the target with a burn."));
+            moves.Add(new Move("Sacred Fire", 100, 95, 5, (int)Enum.type.Fire, burn, 50, "Special", "The foe is razed with a mystical fire of great intensity. It may also leave the target with a burn."));
 
             //Paralysis Status
             Effect paralysis = new Effect((int)Enum.effect.paralysis);
             moves.Add(new Move("Glare", 100, 30, (int)Enum.type.Normal, paralysis, 100, "The user intimidates the foe with the pattern on its belly to cause paralysis."));
-            moves.Add(new Move("Nuzzle", 20, 100, 20, (int)Enum.type.Electric, paralysis, 100, "Physical", ""));
-            moves.Add(new Move("Stun Spore", 75, 30, (int)Enum.type.Grass, paralysis, 100, ""));
-            moves.Add(new Move("Thunder Wave", 90, 20, (int)Enum.type.Electric, paralysis, 100, ""));
-            moves.Add(new Move("Zap Cannon", 120, 50, 5, (int)Enum.type.Electric, paralysis, 100, "Special", ""));
-            moves.Add(new Move("Thunder Punch", 75, 100, 15, (int)Enum.type.Electric, paralysis, 10, "Physical", ""));
-            moves.Add(new Move("Thunder Shock", 40, 100, 30, (int)Enum.type.Electric, paralysis, 10, "Special", ""));
-            moves.Add(new Move("Thunderbolt", 90, 100, 15, (int)Enum.type.Electric, paralysis, 10, "Special", ""));
-            moves.Add(new Move("Body Slam", 85, 100, 15, (int)Enum.type.Normal, paralysis, 30, "Physical", ""));
-            moves.Add(new Move("Bounce", 95, 85, 5, (int)Enum.type.Fly, paralysis, 30, "Physical", ""));
-            moves.Add(new Move("Discharge", 80, 100, 15, (int)Enum.type.Electric, paralysis, 30, "Special", ""));
-            moves.Add(new Move("Dragon Breath", 60, 100, 20, (int)Enum.type.Dragon, paralysis, 30, "Special", ""));
-            moves.Add(new Move("Force Palm", 60, 100, 10, (int)Enum.type.Fighting, paralysis, 30, "Physical", ""));
-            moves.Add(new Move("Lick", 30, 100, 30, (int)Enum.type.Ghost, paralysis, 30, "Physical", ""));
-            moves.Add(new Move("Spark", 65, 100, 20, (int)Enum.type.Electric, paralysis, 30, "Physical", ""));
-            moves.Add(new Move("Thunder", 110, 70, 10, (int)Enum.type.Electric, paralysis, 30, "Special", ""));
+            moves.Add(new Move("Nuzzle", 20, 100, 20, (int)Enum.type.Electric, paralysis, 100, "Physical", "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis."));
+            moves.Add(new Move("Stun Spore", 75, 30, (int)Enum.type.Grass, paralysis, 100, "The user scatters a cloud of paralyzing powder. It may paralyze the target."));
+            moves.Add(new Move("Thunder Wave", 90, 20, (int)Enum.type.Electric, paralysis, 100, "A weak electric charge is launched at the foe. It causes paralysis if it hits."));
+            moves.Add(new Move("Zap Cannon", 120, 50, 5, (int)Enum.type.Electric, paralysis, 100, "Special", "The user fires an electric blast like a cannon to inflict damage and cause paralysis."));
+            moves.Add(new Move("Thunder Punch", 75, 100, 15, (int)Enum.type.Electric, paralysis, 10, "Physical", "The foe is punched with an electrified fist. It may leave the target with paralysis."));
+            moves.Add(new Move("Thunder Shock", 40, 100, 30, (int)Enum.type.Electric, paralysis, 10, "Special", "A jolt of electricity is hurled at the foe to inflict damage. It may also leave the foe paralyzed."));
+            moves.Add(new Move("Thunderbolt", 90, 100, 15, (int)Enum.type.Electric, paralysis, 10, "Special", "A strong electric blast is loosed at the foe. It may also leave the foe paralyzed."));
+            moves.Add(new Move("Body Slam", 85, 100, 15, (int)Enum.type.Normal, paralysis, 30, "Physical", "The user drops onto the foe with its full body weight. It may leave the foe paralyzed."));
+            moves.Add(new Move("Bounce", 95, 85, 5, (int)Enum.type.Fly, paralysis, 30, "Physical", "The user bounces up high, then drops on the foe on the second turn. It may also paralyze the foe."));
+            moves.Add(new Move("Discharge", 80, 100, 15, (int)Enum.type.Electric, paralysis, 30, "Special", "A flare of electricity is loosed to strike all Pokémon in battle. It may also cause paralysis."));
+            moves.Add(new Move("Dragon Breath", 60, 100, 20, (int)Enum.type.Dragon, paralysis, 30, "Special", "The user exhales a mighty gust that inflicts damage. It may also paralyze the target."));
+            moves.Add(new Move("Force Palm", 60, 100, 10, (int)Enum.type.Fighting, paralysis, 30, "Physical", "The foe is attacked with a shock wave. It may also leave the target paralyzed."));
+            moves.Add(new Move("Lick", 30, 100, 30, (int)Enum.type.Ghost, paralysis, 30, "Physical", "The foe is licked with a long tongue, causing damage. It may also paralyze the target."));
+            moves.Add(new Move("Spark", 65, 100, 20, (int)Enum.type.Electric, paralysis, 30, "Physical", "The user throws an electrically charged tackle at the foe. It may also leave the target paralyzed."));
+            moves.Add(new Move("Thunder", 110, 70, 10, (int)Enum.type.Electric, paralysis, 30, "Special", "A wicked thunderbolt is dropped on the foe to inflict damage. It may also leave the target paralyzed."));
             
             //Poison Status
             Effect poison = new Effect((int)Enum.effect.poison);
-            moves.Add(new Move("Poison Powder", 75, 35, (int)Enum.type.Poison, poison, 100, ""));
-            moves.Add(new Move("Sludge Wave", 95, 100, 10, (int)Enum.type.Poison, poison, 10, "Special", ""));
-            moves.Add(new Move("Sludge Bomb", 90, 100, 10, (int)Enum.type.Poison, poison, 30, "Special", ""));
+            moves.Add(new Move("Poison Powder", 75, 35, (int)Enum.type.Poison, poison, 100, "A cloud of poisonous dust is scattered on the foe. It may poison the target."));
+            moves.Add(new Move("Sludge Wave", 95, 100, 10, (int)Enum.type.Poison, poison, 10, "Special", "The user strikes everything around it by swamping the area with a giant sludge wave. This may also poison those hit."));
+            moves.Add(new Move("Sludge Bomb", 90, 100, 10, (int)Enum.type.Poison, poison, 30, "Special", "The user attacks by hurling filthy sludge at the foe. It may also poison the target."));
             Effect strongPoison = new Effect((int)Enum.effect.poison,2);
-            moves.Add(new Move("Toxic", 90, 10, (int)Enum.type.Poison, strongPoison, 100, ""));
+            moves.Add(new Move("Toxic", 90, 10, (int)Enum.type.Poison, strongPoison, 100, "A move that leaves the target badly poisoned. Its poison damage worsens every turn."));
 
             //Freeze Status
             Effect freeze = new Effect((int)Enum.effect.freeze);
-            moves.Add(new Move("Blizzard", 110, 70, 5, (int)Enum.type.Ice, freeze, 10, "Special", ""));
-            moves.Add(new Move("Ice Beam", 90, 100, 10, (int)Enum.type.Ice, freeze, 10, "Special", ""));
-            moves.Add(new Move("Ice Punch", 90, 100, 15, (int)Enum.type.Ice, freeze, 10, "Physical", ""));
-            moves.Add(new Move("Powder Snow", 40, 100, 25, (int)Enum.type.Ice, freeze, 10, "Special", ""));
+            moves.Add(new Move("Blizzard", 110, 70, 5, (int)Enum.type.Ice, freeze, 10, "Special", "A howling blizzard is summoned to strike the foe. It may also freeze the target solid."));
+            moves.Add(new Move("Ice Beam", 90, 100, 10, (int)Enum.type.Ice, freeze, 10, "Special", "The foe is struck with an icy-cold beam of energy. It may also freeze the target solid."));
+            moves.Add(new Move("Ice Punch", 90, 100, 15, (int)Enum.type.Ice, freeze, 10, "Physical", "The foe is punched with an icy fist. It may leave the target frozen."));
+            moves.Add(new Move("Powder Snow", 40, 100, 25, (int)Enum.type.Ice, freeze, 10, "Special", "The user attacks with a chilling gust of powdery snow. It may also freeze the target."));
 
             //Sleep Status
             Effect sleep = new Effect((int)Enum.effect.sleep);
-            moves.Add(new Move("Grass Whistle", 55, 15, (int)Enum.type.Grass, sleep, 100, ""));
-            moves.Add(new Move("Hypnosis", 60, 20, (int)Enum.type.Psy, sleep, 100, ""));
-            moves.Add(new Move("Lovely Kiss", 75, 10, (int)Enum.type.Normal, sleep, 100, ""));
-            moves.Add(new Move("Sing", 55, 15, (int)Enum.type.Normal, sleep, 100, ""));
-            moves.Add(new Move("Sleep Powder", 75, 15, (int)Enum.type.Grass, sleep, 100, ""));
+            moves.Add(new Move("Grass Whistle", 55, 15, (int)Enum.type.Grass, sleep, 100, "The user plays a pleasant melody that lulls the foe into a deep sleep."));
+            moves.Add(new Move("Hypnosis", 60, 20, (int)Enum.type.Psy, sleep, 100, "The user employs hypnotic suggestion to make the target fall into a deep sleep."));
+            moves.Add(new Move("Lovely Kiss", 75, 10, (int)Enum.type.Normal, sleep, 100, "With a scary face, the user forces a kiss on the foe. It may make the target fall asleep."));
+            moves.Add(new Move("Sing", 55, 15, (int)Enum.type.Normal, sleep, 100, "A soothing lullaby is sung in a calming voice that puts the foe into a deep slumber."));
+            moves.Add(new Move("Sleep Powder", 75, 15, (int)Enum.type.Grass, sleep, 100, "The user scatters a big cloud of sleep-inducing dust around the foe."));
             Effect yawn = new Effect((int)Enum.effect.yawn);
-            moves.Add(new Move("Yawn", 100, 10, (int)Enum.type.Normal, yawn, 100, ""));
+            moves.Add(new Move("Yawn", 100, 10, (int)Enum.type.Normal, yawn, 100, "The user lets loose a huge yawn that lulls the foe into falling asleep on the next turn."));
 
             //Confusion Status
             Effect confusion = new Effect((int)Enum.effect.confusion);
-            moves.Add(new Move("Sweet Kiss", 75, 10, (int)Enum.type.Fairy, confusion, 100, ""));
+            moves.Add(new Move("Sweet Kiss", 75, 10, (int)Enum.type.Fairy, confusion, 100, "The user kisses the foe with a sweet, angelic cuteness that causes confusion."));
 
             //Defense
             Effect endure = new Effect((int)Enum.effect.endure);
-            moves.Add(new Move("Endure", 100, 10, (int)Enum.type.Normal, endure, 100, 4, ""));
+            moves.Add(new Move("Endure", 100, 10, (int)Enum.type.Normal, endure, 100, 4, "The user endures any attack, leaving 1 HP. Its chance of failing rises if it is used in succession."));
             Effect protect = new Effect((int)Enum.effect.protect);
-            moves.Add(new Move("Protect", 100, 10, (int)Enum.type.Normal, protect, 100, 4, ""));
-            moves.Add(new Move("Detect", 100, 5, (int)Enum.type.Fighting, protect, 100, 4, ""));
+            moves.Add(new Move("Protect", 100, 10, (int)Enum.type.Normal, protect, 100, 4, "It enables the user to evade all attacks. Its chance of failing rises if it is used in succession."));
+            moves.Add(new Move("Detect", 100, 5, (int)Enum.type.Fighting, protect, 100, 4, "It enables the user to evade all attacks. Its chance of failing rises if it is used in succession."));
 
             //Moves that cannot miss ((1600 is sure to never miss because 0.0625 * 1600 (6th stage of accuracy + 6th stage of evasion) = 100)
-            moves.Add(new Move("Aerial Ace", 60, 1600, 20, (int)Enum.type.Fly, noEffect, 100, "Physical", ""));
-            moves.Add(new Move("Aura Sphere", 80, 1600, 20, (int)Enum.type.Fighting, noEffect, 100, "Special", ""));
-            moves.Add(new Move("Disarming Voice", 40, 1600, 15, (int)Enum.type.Fairy, noEffect, 100, "Special", ""));
-            moves.Add(new Move("Feint Attack", 60, 1600, 20, (int)Enum.type.Dark, noEffect, 100, "Physical", ""));
-            moves.Add(new Move("Magical Leaf", 60, 1600, 20, (int)Enum.type.Grass, noEffect, 100, "Special", ""));
-            moves.Add(new Move("Magnet Bomb", 60, 1600, 20, (int)Enum.type.Steel, noEffect, 100, "Physical", ""));
-            moves.Add(new Move("Shadow Punch", 60, 1600, 20, (int)Enum.type.Ghost, noEffect, 100, "Physical", ""));
-            moves.Add(new Move("Shock Wave", 60, 1600, 20, (int)Enum.type.Electric, noEffect, 100, "Special", ""));
-            moves.Add(new Move("Swift", 60, 1600, 20, (int)Enum.type.Normal, noEffect, 100, "Special", ""));
-            moves.Add(new Move("Vital Throw", 70, 1600, 10, (int)Enum.type.Fighting, noEffect, 100, "Physical", -1, ""));
-            moves.Add(new Move("Smart Strike", 70, 1600, 10, (int)Enum.type.Steel, noEffect, 100, "Physical", ""));
+            moves.Add(new Move("Aerial Ace", 60, 1600, 20, (int)Enum.type.Fly, noEffect, 100, "Physical", "The user confounds the foe with speed, then slashes. The attack lands without fail."));
+            moves.Add(new Move("Aura Sphere", 80, 1600, 20, (int)Enum.type.Fighting, noEffect, 100, "Special", "The user looses a blast of aura power from deep within its body. This move is certain to hit."));
+            moves.Add(new Move("Disarming Voice", 40, 1600, 15, (int)Enum.type.Fairy, noEffect, 100, "Special", "Letting out a charming cry, the user does emotional damage to opposing Pokémon. This attack never misses."));
+            moves.Add(new Move("Feint Attack", 60, 1600, 20, (int)Enum.type.Dark, noEffect, 100, "Physical", "The user draws up to the foe disarmingly, then throws a sucker punch. It hits without fail."));
+            moves.Add(new Move("Magical Leaf", 60, 1600, 20, (int)Enum.type.Grass, noEffect, 100, "Special", "The user scatters curious leaves that chase the foe. This attack will not miss."));
+            moves.Add(new Move("Magnet Bomb", 60, 1600, 20, (int)Enum.type.Steel, noEffect, 100, "Physical", "The user launches a steel bomb that sticks to the target. This attack will not miss."));
+            moves.Add(new Move("Shadow Punch", 60, 1600, 20, (int)Enum.type.Ghost, noEffect, 100, "Physical", "The user throws a punch at the foe from the shadows. The punch lands without fail."));
+            moves.Add(new Move("Shock Wave", 60, 1600, 20, (int)Enum.type.Electric, noEffect, 100, "Special", "The user strikes the foe with a quick jolt of electricity. This attack cannot be evaded."));
+            moves.Add(new Move("Swift", 60, 1600, 20, (int)Enum.type.Normal, noEffect, 100, "Special", "Star-shaped rays are shot at the foe. This attack never misses."));
+            moves.Add(new Move("Vital Throw", 70, 1600, 10, (int)Enum.type.Fighting, noEffect, 100, "Physical", -1, "The user allows the foe to attack first. In return, this throw move is guaranteed not to miss."));
+            moves.Add(new Move("Smart Strike", 70, 1600, 10, (int)Enum.type.Steel, noEffect, 100, "Physical", "The user stabs the target with a sharp horn. This attack never misses."));
 
             //Moves that cause the defending pokemon to flinch
             Effect flinch = new Effect((int)Enum.effect.flinch);
-            moves.Add(new Move("Extrasensory", 80, 100, 20, (int)Enum.type.Psy, flinch, 10, "Special", ""));
-            moves.Add(new Move("Hyper Fang", 80, 90, 15, (int)Enum.type.Normal, flinch, 10, "Physical", ""));
+            moves.Add(new Move("Extrasensory", 80, 100, 20, (int)Enum.type.Psy, flinch, 10, "Special", "The user attacks with an odd, unseeable power. It may also make the foe flinch."));
+            moves.Add(new Move("Hyper Fang", 80, 90, 15, (int)Enum.type.Normal, flinch, 10, "Physical", "The user bites hard on the foe with its sharp front fangs. It may also make the target flinch."));
 
-            moves.Add(new Move("Dark Pulse", 80, 100, 15, (int)Enum.type.Dark, flinch, 20, "Special", ""));
-            moves.Add(new Move("Dragon Rush", 100, 75, 10, (int)Enum.type.Dragon, flinch, 20, "Physical", ""));
-            moves.Add(new Move("Waterfall", 80, 100, 15, (int)Enum.type.Water, flinch, 20, "Physical", ""));
-            moves.Add(new Move("Zen Headbutt", 80, 90, 15, (int)Enum.type.Psy, flinch, 20, "Physical", ""));
+            moves.Add(new Move("Dark Pulse", 80, 100, 15, (int)Enum.type.Dark, flinch, 20, "Special", "The user releases a horrible aura imbued with dark thoughts. It may also make the target flinch."));
+            moves.Add(new Move("Dragon Rush", 100, 75, 10, (int)Enum.type.Dragon, flinch, 20, "Physical", "The user tackles the foe while exhibiting overwhelming menace. It may also make the target flinch."));
+            moves.Add(new Move("Waterfall", 80, 100, 15, (int)Enum.type.Water, flinch, 20, "Physical", "The user charges the foe at an awesome speed. It can also be used to climb a waterfall."));
+            moves.Add(new Move("Zen Headbutt", 80, 90, 15, (int)Enum.type.Psy, flinch, 20, "Physical", "The user focuses its willpower to its head and rams the foe. It may also make the target flinch."));
 
-            moves.Add(new Move("Stomp", 65, 100, 20, (int)Enum.type.Normal, flinch, 30, "Physical", ""));
-            moves.Add(new Move("Rock Slide", 75, 90, 10, (int)Enum.type.Rock, flinch, 30, "Physical", ""));
-            moves.Add(new Move("Iron Head", 80, 100, 15, (int)Enum.type.Steel, flinch, 30, "Physical", ""));
-            moves.Add(new Move("Headbutt", 70, 100, 15, (int)Enum.type.Normal, flinch, 30, "Physical", ""));
-            moves.Add(new Move("Bite", 60, 100, 25, (int)Enum.type.Dark, flinch, 30, "Physical", ""));
-            moves.Add(new Move("Astonish", 30, 100, 15, (int)Enum.type.Ghost, flinch, 30, "Physical", ""));
-            moves.Add(new Move("Air Slash", 75, 95, 15, (int)Enum.type.Fly, flinch, 30, "Special", ""));
+            moves.Add(new Move("Stomp", 65, 100, 20, (int)Enum.type.Normal, flinch, 30, "Physical", "The foe is stomped with a big foot. It may also make the target flinch."));
+            moves.Add(new Move("Rock Slide", 75, 90, 10, (int)Enum.type.Rock, flinch, 30, "Physical", "Large boulders are hurled at the foe to inflict damage. It may also make the target flinch."));
+            moves.Add(new Move("Iron Head", 80, 100, 15, (int)Enum.type.Steel, flinch, 30, "Physical", "The foe slams the target with its steel-hard head. It may also make the target flinch."));
+            moves.Add(new Move("Headbutt", 70, 100, 15, (int)Enum.type.Normal, flinch, 30, "Physical", "The user sticks its head out and rams straight forward. It may make the foe flinch."));
+            moves.Add(new Move("Bite", 60, 100, 25, (int)Enum.type.Dark, flinch, 30, "Physical", "The foe is bitten with viciously sharp fangs. It may make the target flinch."));
+            moves.Add(new Move("Astonish", 30, 100, 15, (int)Enum.type.Ghost, flinch, 30, "Physical", "The user attacks the foe while shouting in a startling fashion. It may also make the target flinch."));
+            moves.Add(new Move("Air Slash", 75, 95, 15, (int)Enum.type.Fly, flinch, 30, "Special", "The user attacks with a blade of air that slices even the sky. It may also make the target flinch."));
 
             //Moves that cause a recoil
             Effect recoil = new Effect((int)Enum.effect.recoil);
-            moves.Add(new Move("Brave Bird", 120, 100, 15, (int)Enum.type.Fly, recoil, 100, "Physical", ""));
-            moves.Add(new Move("Double-Edge", 120, 100, 15, (int)Enum.type.Normal, recoil, 100, "Physical", ""));
-            moves.Add(new Move("Head Charge", 120, 100, 15, (int)Enum.type.Normal, recoil, 100, "Physical", ""));
-            moves.Add(new Move("Submission", 80, 80, 20, (int)Enum.type.Fighting, recoil, 100, "Physical", ""));
-            moves.Add(new Move("Take Down", 90, 85, 20, (int)Enum.type.Normal, recoil, 100, "Physical", ""));
+            moves.Add(new Move("Brave Bird", 120, 100, 15, (int)Enum.type.Fly, recoil, 100, "Physical", "The user tucks in its wings and charges from a low altitude. The user also takes serious damage."));
+            moves.Add(new Move("Double-Edge", 120, 100, 15, (int)Enum.type.Normal, recoil, 100, "Physical", "A reckless, life-risking tackle. It also damages the user by a fairly large amount, however."));
+            moves.Add(new Move("Head Charge", 120, 100, 15, (int)Enum.type.Normal, recoil, 100, "Physical", "The user charges its head into its target, using its powerful guard hair. It also damages the user a little."));
+            moves.Add(new Move("Submission", 80, 80, 20, (int)Enum.type.Fighting, recoil, 100, "Physical", "The user grabs the foe and recklessly dives for the ground. It also hurts the user slightly."));
+            moves.Add(new Move("Take Down", 90, 85, 20, (int)Enum.type.Normal, recoil, 100, "Physical", "A reckless, full-body charge attack for slamming into the foe. It also damages the user a little."));
 
             //Moves that user must recharge next turn.
             Effect mustRecharge = new Effect((int)Enum.effect.mustRecharge);
-            moves.Add(new Move("Giga Impact", 150, 90, 5, (int)Enum.type.Normal, mustRecharge, 100, "Physical", ""));
-            moves.Add(new Move("Hyper Beam", 150, 90, 5, (int)Enum.type.Normal, mustRecharge, 100, "Special", ""));
+            moves.Add(new Move("Giga Impact", 150, 90, 5, (int)Enum.type.Normal, mustRecharge, 100, "Physical", "The user charges at the foe using every bit of its power. The user must rest on the next turn."));
+            moves.Add(new Move("Hyper Beam", 150, 90, 5, (int)Enum.type.Normal, mustRecharge, 100, "Special", "The foe is attacked with a powerful beam. The user must rest on the next turn to regain its energy."));
 
             //Moves that has multiple hit
             Effect multiHit = new Effect((int)Enum.effect.multiHit);
-            moves.Add(new Move("Bullet Seed", 25, 100, 30, (int)Enum.type.Grass, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Comet Punch", 18, 85, 15, (int)Enum.type.Normal, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Fury Swipes", 18, 80, 15, (int)Enum.type.Normal, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Icicle Spear", 25, 100, 30, (int)Enum.type.Ice, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Pin Missile", 25, 95, 20, (int)Enum.type.Bug, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Rock Blast", 25, 90, 10, (int)Enum.type.Rock, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Scale Shot", 25, 90, 20, (int)Enum.type.Dragon, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Spike Cannon", 20, 100, 15, (int)Enum.type.Normal, multiHit, 100, "Physical", ""));
-            moves.Add(new Move("Tail Slap", 25, 85, 10, (int)Enum.type.Normal, multiHit, 100, "Physical", ""));
+            moves.Add(new Move("Bullet Seed", 25, 100, 30, (int)Enum.type.Grass, multiHit, 100, "Physical", "The user forcefully shoots seeds at the foe. Two to five seeds are shot in rapid succession."));
+            moves.Add(new Move("Comet Punch", 18, 85, 15, (int)Enum.type.Normal, multiHit, 100, "Physical", "The foe is hit with a flurry of punches that strike two to five times in a row."));
+            moves.Add(new Move("Fury Swipes", 18, 80, 15, (int)Enum.type.Normal, multiHit, 100, "Physical", "The foe is raked with sharp claws or scythes for two to five times in quick succession."));
+            moves.Add(new Move("Icicle Spear", 25, 100, 30, (int)Enum.type.Ice, multiHit, 100, "Physical", "The user launches sharp icicles at the foe. It strikes two to five times in a row."));
+            moves.Add(new Move("Pin Missile", 25, 95, 20, (int)Enum.type.Bug, multiHit, 100, "Physical", "Sharp pins are shot at the foe in rapid succession. They hit two to five times in a row."));
+            moves.Add(new Move("Rock Blast", 25, 90, 10, (int)Enum.type.Rock, multiHit, 100, "Physical", "The user hurls hard rocks at the foe. Two to five rocks are launched in quick succession."));
+            moves.Add(new Move("Scale Shot", 25, 90, 20, (int)Enum.type.Dragon, multiHit, 100, "Physical", "The user attacks by shooting scales two to five times in a row. This move boosts the user's Speed stat but lowers its Defense stat."));
+            moves.Add(new Move("Spike Cannon", 20, 100, 15, (int)Enum.type.Normal, multiHit, 100, "Physical", "Sharp spikes are fired at the foe to strike two to five times in rapid succession."));
+            moves.Add(new Move("Tail Slap", 25, 85, 10, (int)Enum.type.Normal, multiHit, 100, "Physical", "The user attacks by striking the target with its hard tail. It hits the target two to five times in a row."));
 
             //unique Moves
             Effect suckerPunch = new Effect((int)Enum.effect.suckerPunch);
-            moves.Add(new Move("Sucker Punch", 70, 100, 5, (int)Enum.type.Dark, suckerPunch, 100, "Physical", 1, ""));
+            moves.Add(new Move("Sucker Punch", 70, 100, 5, (int)Enum.type.Dark, suckerPunch, 100, "Physical", 1, "This move enables the user to attack first. It fails if the foe is not readying an attack, however."));
             Effect resetStat = new Effect((int)Enum.effect.resetStat);
-            moves.Add(new Move("Haze", 100, 30, (int)Enum.type.Ice, resetStat, 100, ""));
+            moves.Add(new Move("Haze", 100, 30, (int)Enum.type.Ice, resetStat, 100, "The user creates a haze that eliminates every stat change among all the Pokémon engaged in battle."));
             Effect electroBall = new Effect((int)Enum.effect.electroBall);
-            moves.Add(new Move("Electro Ball", 0, 100, 10, (int)Enum.type.Electric, electroBall, 100, "Special", ""));
+            moves.Add(new Move("Electro Ball", 0, 100, 10, (int)Enum.type.Electric, electroBall, 100, "Special", "The user hurls an electric orb at the target. The faster the user is than the target, the greater the move's power."));
             Effect halvesHP = new Effect((int)Enum.effect.halvesHP);
-            moves.Add(new Move("Super Fang", 0, 90, 10, (int)Enum.type.Normal, halvesHP, 100, "Physical", ""));
+            moves.Add(new Move("Super Fang", 0, 90, 10, (int)Enum.type.Normal, halvesHP, 100, "Physical", "The user chomps hard on the foe with its sharp front fangs. It cuts the target's HP to half."));
 
             //Moves that has multiple effect
             List<Effect> recoilFire = new List<Effect>();

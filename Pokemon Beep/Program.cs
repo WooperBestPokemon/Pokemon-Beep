@@ -38,9 +38,9 @@ namespace Pokemon_Beep
 
             if (handle != IntPtr.Zero)
             {
-                DeleteMenu(sysMenu, SC_MINIMIZE, MF_BYCOMMAND);
-                DeleteMenu(sysMenu, SC_MAXIMIZE, MF_BYCOMMAND);
-                DeleteMenu(sysMenu, SC_SIZE, MF_BYCOMMAND);
+                //DeleteMenu(sysMenu, SC_MINIMIZE, MF_BYCOMMAND);
+                //DeleteMenu(sysMenu, SC_MAXIMIZE, MF_BYCOMMAND);
+                //DeleteMenu(sysMenu, SC_SIZE, MF_BYCOMMAND);
             }
 
             var hand = GetStdHandle(-11);
