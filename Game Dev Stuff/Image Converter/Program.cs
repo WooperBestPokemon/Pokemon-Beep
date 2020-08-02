@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,13 @@ namespace ImageConverter
     {
         static void Main(string[] args)
         {
+            string[] filePaths = Directory.GetFiles("Images\\");
             ImageConverter imageConverter = new ImageConverter();
-            imageConverter.convertImage("Dunsparce_S");
+
+            foreach(string str in filePaths)
+            {
+                imageConverter.convertImage(str);
+            }
         }
     }
 }
