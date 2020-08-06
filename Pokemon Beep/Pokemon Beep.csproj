@@ -67,6 +67,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="Graphic\Animation.cs" />
     <Compile Include="Graphic\Ascii.cs" />
+    <Compile Include="Graphic\BattleBackground.cs" />
     <Compile Include="Graphic\BattleScene.cs" />
     <Compile Include="Graphic\Camera.cs" />
     <Compile Include="Map\Building.cs" />

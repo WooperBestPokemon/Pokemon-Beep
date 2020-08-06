@@ -36,6 +36,20 @@ namespace Pokemon_Beep
             Starly,
             Staravia,
             Staraptor,
+            Caterpie,
+            Metapod,
+            Butterfree,
+            Wurmple,
+            Silcoon,
+            Beautifly,
+            Oddish,
+            Gloom,
+            Vileplume,
+            Bellossom,
+            Paras,
+            Parasect,
+            Spinarak,
+            Ariados,
         }
         public enum ability
         {
@@ -147,16 +161,6 @@ namespace Pokemon_Beep
             Slow = 1250000,
             Fluctuating = 1640000
         }
-        public enum shape
-        {
-            Flower,
-            Bird,
-            Snake,
-            Bull,
-            Seal,
-            Dragon,
-            Bug
-        }
         public enum nature
         {
             Adamant,
@@ -191,17 +195,6 @@ namespace Pokemon_Beep
             Female_Only,
             Male_Only,
             No_Gender
-        }
-        public enum colour
-        {
-            Red,
-            Blue,
-            Yellow,
-            Green,
-            White,
-            Gray,
-            Magenta,
-            Light_Blue,
         }
         public enum side
         {

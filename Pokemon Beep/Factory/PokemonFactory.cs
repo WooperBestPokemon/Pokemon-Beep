@@ -40,9 +40,7 @@ namespace Pokemon_Beep.Factory
             string description = "When walking on land, it covers its body with a poisonous film that keeps its skin from dehydrating.";
             int gender = (int)Enum.gender.Both;
             double height = 0.4;
-            double weight = 8.5;
-            int colour = (int)Enum.colour.Blue;
-            int shape = (int)Enum.shape.Seal;           
+            double weight = 8.5;         
             //Typing
             List<int> type = new List<int>();
             type.Add((int)Enum.type.Water);
@@ -87,7 +85,7 @@ namespace Pokemon_Beep.Factory
             int baseSpecialAttack = 25;
             int baseSpeed = 15;
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, learnset);
         }
         */
         //Chikorita
@@ -105,8 +103,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 0.6;
             double weight = 9.5;
-            int colour = (int)Enum.colour.Light_Blue;
-            int shape = (int)Enum.shape.Seal;
 
             //Typing
             int type = (int)Enum.type.Water;
@@ -190,7 +186,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[13], 48));
             learnset.Add(new Learnset(movesPokemon[14], 50));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Croconaw(), 18);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Croconaw(), 18);
         }
         public PocketMonster Croconaw()
         {
@@ -201,8 +197,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 1.1;
             double weight = 25;
-            int colour = (int)Enum.colour.Light_Blue;
-            int shape = (int)Enum.shape.Seal;
 
             //Typing
             int type = (int)Enum.type.Water;
@@ -286,7 +280,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[13], 57));
             learnset.Add(new Learnset(movesPokemon[14], 60));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Feraligatr(), 30);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Feraligatr(), 30);
         }
         public PocketMonster Feraligatr()
         {
@@ -297,8 +291,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 2.3;
             double weight = 88.8;
-            int colour = (int)Enum.colour.Light_Blue;
-            int shape = (int)Enum.shape.Seal;
 
             //Typing
             int type = (int)Enum.type.Water;
@@ -389,7 +381,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[14], 71));
             learnset.Add(new Learnset(movesPokemon[15], 76));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
         }
         public PocketMonster Rattata()
         {
@@ -400,8 +392,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 0.3;
             double weight = 3.5;
-            int colour = (int)Enum.colour.Magenta;
-            int shape = (int)Enum.shape.Bull;
 
             //Typing
             int type = (int)Enum.type.Normal;
@@ -468,7 +458,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[8], 24));
             learnset.Add(new Learnset(movesPokemon[9], 27));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Raticate(), 20);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Raticate(), 20);
         }
         public PocketMonster Raticate()
         {
@@ -479,8 +469,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 0.7;
             double weight = 18.5;
-            int colour = (int)Enum.colour.Gray;
-            int shape = (int)Enum.shape.Bull;
 
             //Typing
             int type = (int)Enum.type.Normal;
@@ -550,7 +538,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[9], 34));
             learnset.Add(new Learnset(movesPokemon[10], 42));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
         }
         public PocketMonster Sentret()
         {
@@ -561,8 +549,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 0.8;
             double weight = 6;
-            int colour = (int)Enum.colour.Gray;
-            int shape = (int)Enum.shape.Bull;
 
             //Typing
             int type = (int)Enum.type.Normal;
@@ -646,7 +632,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[9], 31));
             learnset.Add(new Learnset(movesPokemon[10], 36));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Furret(), 15);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Furret(), 15);
         }
         public PocketMonster Furret()
         {
@@ -657,8 +643,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 1.8;
             double weight = 32.5;
-            int colour = (int)Enum.colour.Gray;
-            int shape = (int)Enum.shape.Bull;
 
             //Typing
             int type = (int)Enum.type.Normal;
@@ -748,7 +732,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[12], 42));
             learnset.Add(new Learnset(movesPokemon[13], 46));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
         }
         //Zigzagoon
         //Linoone
@@ -768,8 +752,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 0.3;
             double weight = 2.3;
-            int colour = (int)Enum.colour.Red;
-            int shape = (int)Enum.shape.Bird;
 
             //Typing
             List<int> types = new List<int>();
@@ -838,7 +820,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[9], 36));
             learnset.Add(new Learnset(movesPokemon[10], 41));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Swellow(), 22);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Swellow(), 22);
         }
         public PocketMonster Swellow()
         {
@@ -849,8 +831,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 0.7;
             double weight = 19.8;
-            int colour = (int)Enum.colour.Red;
-            int shape = (int)Enum.shape.Bird;
 
             //Typing
             List<int> types = new List<int>();
@@ -923,11 +903,25 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[10], 45));
             learnset.Add(new Learnset(movesPokemon[11], 51));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
         }
         //Starly
         //Staravia
         //Staraptor
+        //Caterpie,
+        //Metapod
+        //Butterfree
+        //Wurmple
+        //Silcoon
+        //Beautifly
+        //Oddish
+        //Gloom
+        //Vileplume
+        //Bellossom
+        //Paras
+        //Parasect
+        //Spinarak
+        //Ariados
         public PocketMonster Pachirisu()
         {
             //General Information
@@ -937,8 +931,6 @@ namespace Pokemon_Beep.Factory
             int gender = (int)Enum.gender.Both;
             double height = 0.4;
             double weight = 3.9;
-            int colour = (int)Enum.colour.White;
-            int shape = (int)Enum.shape.Bull;
 
             //Typing
             int type = (int)Enum.type.Electric;
@@ -1019,7 +1011,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(movesPokemon[12], 45));
             learnset.Add(new Learnset(movesPokemon[13], 49));
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, colour, shape, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
         }
     }
 }
