@@ -13,98 +13,71 @@ namespace Pokemon_Beep.Other
         /// <summary>
         /// This class is used for testing. Will be removed when the game is done.
         /// </summary>
-        public void statsTest()
-        {
-            //Init Pokemons
-            PokemonFactory factory = new PokemonFactory();
-            //Get Attacker and Defender
-            PocketMonster attacker = factory.Pachirisu();
-            PocketMonster defender = factory.Pachirisu();
-            attacker.generateWildPokemon(24);
-            defender.generateWildPokemon(50);
-            Console.WriteLine(attacker);
-            Console.WriteLine("______________________________________________________________________________");
-            Console.WriteLine(defender);
-            Console.ReadKey();
-        }
-        public void evolutionTest()
-        {
-            PokemonFactory factory = new PokemonFactory();
-            PocketMonster testPokemon = factory.Rattata();
-            testPokemon.generateWildPokemon(1);
-            while (true)
-            {
-                Console.WriteLine(testPokemon);            
-                Console.ReadKey();
-                testPokemon.levelUp();
-                Console.Clear();
-            }
-        }
-        public void damageTest()
-        {
-            DamageCalculator damageCalculator = new DamageCalculator();
-            BattleStatus battleStatus = new BattleStatus();
-            PokemonFactory factory = new PokemonFactory();
-            PocketMonster attacker = factory.Rattata();
-            PocketMonster defender = factory.Pachirisu();
-            attacker.generateWildPokemon(50);
-            defender.generateWildPokemon(100);
-            defender.currentHP = defender.HP;
-            Console.Write(attacker);
-            Console.Write(defender);
-            Console.ReadKey();
-            Console.Clear();
-            attacker.resetStage();
-            while (true)
-            {
-                Console.WriteLine("Attacker : " + attacker.Name);
-                Console.WriteLine("Defender : " + defender.Name + "\n");
-
-                Console.WriteLine("============================" + "\n" +
-                    "Attacker" + "\n" +
-                    "============================");
-                Console.WriteLine("Attack : " + attacker.Attack);
-                Console.WriteLine("Special Attack : " + attacker.SpecialAttack + "\n");
-                Console.WriteLine("============================" + "\n" +
-                    "Defender" + "\n" +
-                    "============================");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("HP : " + defender.currentHP + "/" + defender.HP);
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Defense : " + defender.Defense);
-                Console.WriteLine("Special Defense : " + defender.SpecialDefense + "\n");
-
-                Console.WriteLine("");
-                Console.WriteLine("Choose a move");
-                for (int i = 0; i < attacker.Moveset.Count; i++)
-                {
-                    Console.WriteLine(i + ". " + attacker.Moveset[i].Name);
-                }
-                int choice = Convert.ToInt32(Console.ReadLine());
-                int damage = damageCalculator.getDamage(attacker, defender, attacker.Moveset[choice], battleStatus);
-                Console.WriteLine("The wild " + defender.Name + "lost " + damage + " HP !");
-                defender.currentHP -= damage;
-                Console.ReadKey();
-                Console.Clear();
-            }            
-        }
         public void battleTest()
         {
             PokemonFactory factory = new PokemonFactory();
-            PocketMonster defender = factory.Furret();
-            defender.generateWildPokemon(50);
-            defender.currentHP = defender.HP;
-            PkmnBattleInfo pkmnA = new PkmnBattleInfo(defender);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("HP : " + pkmnA.Pokemon.currentHP + "/" + pkmnA.Pokemon.HP);
-            Console.ReadKey();
-            Console.Clear();
-            pkmnA.Pokemon.currentHP -= 10;
-            Console.WriteLine("HP : " + defender.currentHP + "/" + defender.HP);
-            Console.ReadKey();
+            PocketMonster player = factory.MissingNo();
+            PocketMonster foe = factory.testing();
+            BattleStatus battleStatus = new BattleStatus();
+            Battle battle = new Battle();
+            player.generateWildPokemon(50);
+            foe.generateWildPokemon(50);
+            PkmnBattleInfo playerPkmn = new PkmnBattleInfo(player);
+            PkmnBattleInfo foePkmn = new PkmnBattleInfo(foe);
+            DamageCalculator damageCalculator = new DamageCalculator();
+            while (true)
+            {
+                Utilities.changeForegroundColor(255, 0, 0);
+                Console.WriteLine("Foe : " + foe.Name);
+                Console.WriteLine("Lv : " + foe.Level);
+                Console.WriteLine("HP : " + foe.currentHP + " / " + foe.HP);
+                if (foe.Status != 0)
+                    Console.WriteLine("Burned");
+                Console.WriteLine("");
+                Utilities.changeForegroundColor(0, 255, 0);
+                Console.WriteLine("Player : " + player.Name);
+                Console.WriteLine("Lv : " + player.Level);
+                Console.WriteLine("HP : " + player.currentHP + " / " + player.HP);
+                Utilities.changeForegroundColor(255, 255, 255);
+                Console.WriteLine("------------------------");
+                Console.WriteLine("Please choose a move");
+                Console.WriteLine("");
+                for (int i = 0; i < player.Moveset.Count; i++)
+                {
+                    Console.WriteLine(i + ". " + player.Moveset[i].Name);
+                }
+                int playerChoice = Convert.ToInt32(Console.ReadLine());
+                int aiChoice = Utilities.RandomNumber(0, (foe.Moveset.Count - 1));
 
-            //Conclusion : pkmnA can modify the Pokemon (Defender)
+                if(battle.playerAttackFirst(playerPkmn, foePkmn, player.Moveset[playerChoice], foe.Moveset[aiChoice]))
+                {
+                    int damage = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
+                    foe.currentHP -= damage;
+                    Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damage + " damage !");
+                    player.Moveset[playerChoice].doEffect(playerPkmn, foePkmn);
 
+                    int damageFoe = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
+                    player.currentHP -= damage;
+                    Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damageFoe + " damage !");
+                    foe.Moveset[aiChoice].doEffect(foePkmn, playerPkmn);
+                }
+                else
+                {
+                    int damage = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
+                    player.currentHP -= damage;
+                    Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damage + " damage !");
+                    foe.Moveset[aiChoice].doEffect(foePkmn, playerPkmn);
+
+                    int damagePlayer = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
+                    foe.currentHP -= damage;
+                    Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damagePlayer + " damage !");
+                    player.Moveset[playerChoice].doEffect(playerPkmn, foePkmn);
+                }
+
+
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
         public void graphic()
         {
@@ -139,85 +112,6 @@ namespace Pokemon_Beep.Other
                 Console.SetCursorPosition(posX, posY);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Write("@");
-            }
-        }
-        public void proprietyTest()
-        {
-            PokemonFactory factory = new PokemonFactory();
-            MoveFactory moveFactory = new MoveFactory();
-            List<Move> moves = moveFactory.GetMoves();
-
-            Battle battle = new Battle();
-
-            PocketMonster pachirisu = factory.Pachirisu();
-            pachirisu.generateWildPokemon(5);
-
-            PocketMonster sentret = factory.Sentret();
-            sentret.generateWildPokemon(5);
-
-            PkmnBattleInfo pokemonA = new PkmnBattleInfo(sentret);
-            PkmnBattleInfo pokemonB = new PkmnBattleInfo(pachirisu);
-
-            Console.WriteLine(pachirisu);
-            Console.WriteLine("========================================================================");
-            Console.WriteLine(sentret);
-            Console.ReadKey();
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Test 1 : Sentret is slower than pachirisu, but use Quick Attack");
-            Console.ForegroundColor = ConsoleColor.White;
-            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int) Enum.move.Quick_Attack], moves[(int)Enum.move.Tackle]))
-            {
-                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
-            }
-            else
-            {
-                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
-            }
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Test 2 : Sentret is slower than pachirisu, they both use the same move");
-            Console.ForegroundColor = ConsoleColor.White;
-            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Tackle], moves[(int)Enum.move.Tackle]))
-            {
-                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
-            }
-            else
-            {
-                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
-            }
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Test 3 : Sentret is slower than pachirisu, they both use the same move with a proprity");
-            Console.ForegroundColor = ConsoleColor.White;
-            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Quick_Attack], moves[(int)Enum.move.Quick_Attack]))
-            {
-                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
-            }
-            else
-            {
-                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
-            }
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Test 4 : Sentret use protect, but pachirisu use Quick Attack.");
-            Console.ForegroundColor = ConsoleColor.White;
-            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Protect], moves[(int)Enum.move.Quick_Attack]))
-            {
-                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
-            }
-            else
-            {
-                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
-            }
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Test 5 : Sentret is slower, but his speed stage is maxed !");
-            Console.ForegroundColor = ConsoleColor.White;
-            pokemonA.Pokemon.stages[(int)Enum.stat.Speed] = 6;
-            if (battle.playerAttackFirst(pokemonA, pokemonB, moves[(int)Enum.move.Protect], moves[(int)Enum.move.Quick_Attack]))
-            {
-                Console.WriteLine("The " + pokemonA.Pokemon.Name + " Attack First");
-            }
-            else
-            {
-                Console.WriteLine("The " + pokemonB.Pokemon.Name + " Attack First");
             }
         }
         public void asciiTest()
@@ -271,25 +165,28 @@ namespace Pokemon_Beep.Other
             Console.SetBufferSize(152, 40);
             Utilities.changeBackgroundColor(50, 50, 50);
             Console.Clear();
-            Console.WriteLine("      \x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;255;255;115m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;255;255;115m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;255;255;115m██\x1b[38;2;213;189;41m██\x1b[38;2;213;189;41m██\x1b[38;2;0;0;0m██      \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("\x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;213;189;41m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;0;0;0m██  \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;213;189;41m██\x1b[38;2;255;255;115m██\x1b[38;2;82;82;82m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;82;82;82m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;82;82;82m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;255;255;115m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;180;180;197m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("      \x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;131;189;246m██\x1b[38;2;255;238;189m██\x1b[38;2;255;238;189m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;82;82;82m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;131;189;246m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("      \x1b[38;2;0;0;0m██\x1b[38;2;82;82;82m██\x1b[38;2;82;82;82m██\x1b[38;2;255;238;189m██\x1b[38;2;255;238;189m██\x1b[38;2;255;238;189m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;82;156;230m██\x1b[38;2;255;238;189m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;82;82;82m██\x1b[38;2;255;255;115m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;255m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;255;238;189m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;180;180;197m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;213;189;41m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;180;180;197m██\x1b[38;2;180;180;197m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;82;82;82m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;131;189;246m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;255;255;115m██\x1b[38;2;213;189;41m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("      \x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;82;82;82m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;255;238;189m██\x1b[38;2;255;238;189m██\x1b[38;2;82;82;82m██\x1b[38;2;131;189;246m██\x1b[38;2;255;255;115m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("        \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;213;189;41m██\x1b[38;2;82;82;82m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;255;238;189m██\x1b[38;2;82;82;82m██\x1b[38;2;255;238;189m██\x1b[38;2;131;189;246m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;82;156;230m██");
-            Console.WriteLine("            \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;82;82;82m██\x1b[38;2;255;238;189m██\x1b[38;2;255;238;189m██\x1b[38;2;82;156;230m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;41;106;172m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                  \x1b[38;2;0;0;0m██\x1b[38;2;213;189;41m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;82;156;230m██\x1b[38;2;213;189;41m██\x1b[38;2;82;82;82m██\x1b[38;2;41;106;172m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                    \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;82;156;230m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                              \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("                            \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("                          \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("                        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("                        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("                          \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("                            \x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("          \x1b[38;2;0;0;0m██        \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██  \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("      \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;255;181;72m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;255;181;72m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("\x1b[38;2;0;0;0m██\x1b[38;2;217;217;217m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;254;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;217;217;217m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("      \x1b[38;2;0;0;0m██  \x1b[38;2;0;0;0m██\x1b[38;2;217;217;217m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("            \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██");
+            Console.WriteLine("                \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
+
         }
         public void battleGraphic()
         {
@@ -299,15 +196,15 @@ namespace Pokemon_Beep.Other
             Utilities.changeBackgroundColor(50, 50, 50);
             Console.Clear();
             //Background
-            background.writeBackground(14);
+            background.writeBackground(3);
             //Player's Pokemon
             writePlayerPokemon(8, 16);
             //Foe's Pokemon
-            writeFoePokemon(100, 1);
+            writeFoePokemon(100, 10);
             //UI
             writeUI(60, 32);
             //Text
-            writeText("A wild Raticate Appears !", 62, 33);
+            writeText("A wild Dunspace Appears !", 62, 33);
 
 
             void writePlayerPokemon(int x, int y)
@@ -1331,11 +1228,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;115m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1347,20 +1241,14 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
+                Console.Write("\x1b[38;2;0;0;0m████");
+                x += 4;
                 Console.SetCursorPosition(x += 6, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
+                Console.Write("\x1b[38;2;213;189;41m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;255;255;115m██");
                 x += 2;
@@ -1372,14 +1260,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;255m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
@@ -1387,20 +1269,11 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;115m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
+                Console.Write("\x1b[38;2;213;189;41m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1409,23 +1282,14 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;255m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
+                Console.Write("\x1b[38;2;0;0;0m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
@@ -1433,11 +1297,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;255;255;115m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
+                Console.Write("\x1b[38;2;213;189;41m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1446,17 +1307,11 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
+                Console.Write("\x1b[38;2;0;0;0m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;255m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;180;180;197m██");
                 x += 2;
@@ -1464,11 +1319,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;148;197m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;255;255;115m██");
                 x += 2;
@@ -1476,11 +1328,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
+                Console.Write("\x1b[38;2;82;82;82m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1495,35 +1344,23 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;255;186;218m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;115m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
+                Console.Write("\x1b[38;2;82;82;82m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;255;148;197m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;238;189m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;255;186;218m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;148;197m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1541,17 +1378,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;255;148;197m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;115m████████");
+                x += 8;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1562,20 +1390,11 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;255;148;197m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;238;189m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
+                Console.Write("\x1b[38;2;82;82;82m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1596,17 +1415,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;255;255;255m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;115m████████");
+                x += 8;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1623,14 +1433,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;255m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1639,35 +1443,14 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;148;197m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;115m████████████");
+                x += 12;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
+                Console.Write("\x1b[38;2;213;189;41m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
@@ -1678,14 +1461,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;180;180;197m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;255m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1697,50 +1474,26 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;115m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;115m████████");
+                x += 8;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;255;186;218m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;148;197m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;213;189;41m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
+                Console.Write("\x1b[38;2;82;82;82m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;255;255m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;255;255m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;180;180;197m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;180;180;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;180;180;197m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1749,11 +1502,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;148;197m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1767,11 +1517,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;238;189m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;255;148;197m██");
                 x += 2;
@@ -1785,11 +1532,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;82;82;82m██");
-                x += 2;
+                Console.Write("\x1b[38;2;82;82;82m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1807,11 +1551,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;148;197m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1837,11 +1578,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;213;189;41m██");
-                x += 2;
+                Console.Write("\x1b[38;2;213;189;41m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 x += 2;
@@ -1850,14 +1588,8 @@ namespace Pokemon_Beep.Other
                 y++;
                 x = oldX;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
+                Console.Write("\x1b[38;2;0;0;0m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;90;139m██");
                 x += 2;
@@ -1871,11 +1603,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;255;148;197m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;238;189m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;238;189m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;82;82;82m██");
                 x += 2;
@@ -1886,11 +1615,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
+                Console.Write("\x1b[38;2;0;0;0m████");
+                x += 4;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1908,14 +1634,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;255;148;197m██");
-                x += 2;
+                Console.Write("\x1b[38;2;255;148;197m██████");
+                x += 6;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;213;189;41m██");
                 x += 2;
@@ -1930,14 +1650,8 @@ namespace Pokemon_Beep.Other
                 Console.Write("\x1b[38;2;255;148;197m██");
                 x += 2;
                 Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m████");
-                x += 4;
-                Console.SetCursorPosition(x, y);
-                Console.Write("\x1b[38;2;0;0;0m██");
-                x += 2;
+                Console.Write("\x1b[38;2;0;0;0m████████");
+                x += 8;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
                 y++;
@@ -1947,7 +1661,6 @@ namespace Pokemon_Beep.Other
                 x += 2;
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
-
             }
             void writeUI(int x, int y)
             {
@@ -1964,9 +1677,6 @@ namespace Pokemon_Beep.Other
                 Console.SetCursorPosition(x, y);
                 Console.WriteLine("█                                               █");
                 y++;
-                //Console.SetCursorPosition(x, y);
-                //Console.WriteLine("█                                               █");
-                //y++;
                 Console.SetCursorPosition(x, y);
                 Console.WriteLine("█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█");
                 y++;

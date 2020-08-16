@@ -431,6 +431,7 @@ namespace Pokemon_Beep.Pokemon
         {           
             //HP
             hp = Math.Abs((((2 * baseHP + ivHP + 31) * Level) / 100) + Level + 10);
+            currentHP = hp;
             //Other Stat
             attack = (int) Math.Abs((Math.Abs(((2 * baseAttack + ivAttack + 31) * Level) / 100) + 5) * natureAttack);
             defense = (int)Math.Abs((Math.Abs(((2 * baseDefense + ivDefense + 31) * Level) / 100) + 5) * natureDefense);
@@ -636,6 +637,7 @@ namespace Pokemon_Beep.Pokemon
         public int Status
         {
             get { return status; }
+            set { status = value; }
         }
 
         //Evolution stuff

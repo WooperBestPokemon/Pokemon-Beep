@@ -115,14 +115,16 @@ namespace Pokemon_Beep.Combat
         private double burn(PocketMonster attacker, string categoryMove)
         {
             double burn = 1;
-            if(categoryMove == "Physical")
+            if(attacker.Status == (int)Enum.status.Burned)
             {
-                if(!(attacker.Ability.Name == "Guts"))
+                if (categoryMove == "Physical")
                 {
-                    burn = 0.5;
+                    if (!(attacker.Ability.Name == "Guts"))
+                    {
+                        burn = 0.5;
+                    }
                 }
             }
-
             return burn;
         }
         //Other is when an Object/Ability boost the attack.

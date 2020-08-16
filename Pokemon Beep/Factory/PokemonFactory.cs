@@ -88,6 +88,95 @@ namespace Pokemon_Beep.Factory
             return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, learnset);
         }
         */
+        public PocketMonster MissingNo()
+        {
+            //General Information
+            int pokedex = 000;
+            string name = "MissingNo";
+            string description = "";
+            int gender = (int)Enum.gender.Both;
+            double height = 0;
+            double weight = 0;
+
+            //Typing
+            int type = (int)Enum.type.Fly;
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Torrent]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Sheer_Force]);
+
+            //Stats
+            int baseHP = 50;
+            int baseAttack = 65;
+            int baseDefense = 64;
+            int baseSpecialAttack = 44;
+            int baseSpecialDefense = 48;
+            int baseSpeed = 43;
+
+            //Battle
+            int catchrate = 45;
+            int experience = (int)Enum.experience.Medium_Slow;
+            int experienceYield = 63;
+
+            //Moves
+            List<Move> movesPokemon = new List<Move>();
+            //========================================================Leveling
+            movesPokemon.Add(moves[(int)Enum.move.Scald]);
+            movesPokemon.Add(moves[(int)Enum.move.Tackle]);
+
+            //========================================================TM
+
+            //========================================================Learnset
+            List<Learnset> learnset = new List<Learnset>();
+            learnset.Add(new Learnset(movesPokemon[0], 1));
+            learnset.Add(new Learnset(movesPokemon[1], 1));
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Croconaw(), 18);
+        }
+        public PocketMonster testing()
+        {
+            //General Information
+            int pokedex = 000;
+            string name = "14-S";
+            string description = "";
+            int gender = (int)Enum.gender.Both;
+            double height = 0;
+            double weight = 0;
+
+            //Typing
+            int type = (int)Enum.type.Fly;
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Torrent]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Sheer_Force]);
+
+            //Stats
+            int baseHP = 50;
+            int baseAttack = 65;
+            int baseDefense = 64;
+            int baseSpecialAttack = 44;
+            int baseSpecialDefense = 48;
+            int baseSpeed = 43;
+
+            //Battle
+            int catchrate = 45;
+            int experience = (int)Enum.experience.Medium_Slow;
+            int experienceYield = 63;
+
+            //Moves
+            List<Move> movesPokemon = new List<Move>();
+            //========================================================Leveling
+            movesPokemon.Add(moves[(int)Enum.move.Tackle]);
+
+            //========================================================TM
+
+            //========================================================Learnset
+            List<Learnset> learnset = new List<Learnset>();
+            learnset.Add(new Learnset(movesPokemon[0], 1));
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Croconaw(), 18);
+        }
         //Chikorita
         //Bayleef
         //Meganium

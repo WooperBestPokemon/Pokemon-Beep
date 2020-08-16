@@ -7,27 +7,6 @@ namespace Pokemon_Beep.Combat
 {
     class TypeChart
     {
-        private enum type
-        {
-            Normal = 1,
-            Fire = 2,
-            Water = 3,
-            Electric = 4,
-            Grass = 5,
-            Ice = 6,
-            Fighting = 7,
-            Poison = 8,
-            Ground = 9,
-            Fly = 10,
-            Psy = 11,
-            Bug = 12,
-            Rock = 13,
-            Ghost = 14,
-            Dragon = 15,
-            Dark = 16,
-            Steel = 17,
-            Fairy = 18
-        }
         public double effectivity(int typeMove, PocketMonster defendingPokemon)
         {
             double effective = 1;
@@ -42,315 +21,315 @@ namespace Pokemon_Beep.Combat
                 if(effective != 0)
                 {
                     //normal
-                    if (typeMove == (int)type.Normal)
+                    if (typeMove == (int)Enum.type.Normal)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Ghost)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Ghost)
                             effective = 0;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
                     }
                     //fire
-                    else if (typeMove == (int)type.Fire)
+                    else if (typeMove == (int)Enum.type.Fire)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Water)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Water)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ice)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ice)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Bug)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Bug)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Dragon)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dragon)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 2;
                     }
                     //water
-                    else if (typeMove == (int)type.Water)
+                    else if (typeMove == (int)Enum.type.Water)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Water)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Water)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ground)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ground)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Dragon)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dragon)
                             effective *= 0.5;
                     }
                     //Electric
-                    else if (typeMove == (int)type.Electric)
+                    else if (typeMove == (int)Enum.type.Electric)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Water)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Water)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Electric)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Electric)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ground)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ground)
                             effective = 0;
-                        else if (defendingPokemon.Types[i] == (int)type.Fly)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fly)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Dragon)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dragon)
                             effective *= 0.5;
                     }
                     //Grass
-                    else if (typeMove == (int)type.Grass)
+                    else if (typeMove == (int)Enum.type.Grass)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Water)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Water)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Poison)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Poison)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ground)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ground)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Fly)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fly)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Bug)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Bug)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Dragon)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dragon)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
                     }
                     //Ice
-                    else if (typeMove == (int)type.Ice)
+                    else if (typeMove == (int)Enum.type.Ice)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Water)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Water)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ice)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ice)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ground)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ground)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Fly)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fly)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Dragon)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dragon)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
                     }
                     //Fighting
-                    else if (typeMove == (int)type.Fighting)
+                    else if (typeMove == (int)Enum.type.Fighting)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Normal)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Normal)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ice)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ice)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Poison)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Poison)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fly)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fly)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Psy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Psy)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Bug)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Bug)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ghost)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ghost)
                             effective = 0;
-                        else if (defendingPokemon.Types[i] == (int)type.Dark)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dark)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Fairy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fairy)
                             effective *= 0.5;
                     }
                     //Poison
-                    else if (typeMove == (int)type.Poison)
+                    else if (typeMove == (int)Enum.type.Poison)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Grass)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Poison)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Poison)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ground)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ground)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ghost)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ghost)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective = 0;
-                        else if (defendingPokemon.Types[i] == (int)type.Fairy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fairy)
                             effective *= 2;
                     }
                     //Ground
-                    else if (typeMove == (int)type.Ground)
+                    else if (typeMove == (int)Enum.type.Ground)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Electric)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Electric)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Poison)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Poison)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Fly)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fly)
                             effective = 0;
-                        else if (defendingPokemon.Types[i] == (int)type.Bug)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Bug)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 2;
                     }
                     //Fly
-                    else if (typeMove == (int)type.Fly)
+                    else if (typeMove == (int)Enum.type.Fly)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Electric)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Electric)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Fighting)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fighting)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Bug)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Bug)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
                     }
                     //Psy
-                    else if (typeMove == (int)type.Psy)
+                    else if (typeMove == (int)Enum.type.Psy)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fighting)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fighting)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Poison)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Poison)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Psy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Psy)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Dark)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dark)
                             effective = 0;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
                     }
                     //Bug
-                    else if (typeMove == (int)type.Bug)
+                    else if (typeMove == (int)Enum.type.Bug)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Grass)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Grass)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Fighting)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fighting)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Poison)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Poison)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fly)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fly)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Psy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Psy)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ghost)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ghost)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Dark)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dark)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fairy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fairy)
                             effective *= 0.5;
                     }
                     //Rock
-                    else if(typeMove == (int)type.Rock)
+                    else if(typeMove == (int)Enum.type.Rock)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ice)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ice)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Fighting)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fighting)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ground)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ground)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fly)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fly)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Bug)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Bug)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
                     }
                     //Ghost
-                    else if (typeMove == (int)type.Ghost)
+                    else if (typeMove == (int)Enum.type.Ghost)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Normal)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Normal)
                             effective = 0;
-                        else if (defendingPokemon.Types[i] == (int)type.Psy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Psy)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ghost)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ghost)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Dark)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dark)
                             effective *= 0.5;
                     }
                     //Dragon
-                    else if (typeMove == (int)type.Dragon)
+                    else if (typeMove == (int)Enum.type.Dragon)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Dragon)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Dragon)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fairy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fairy)
                             effective = 0;
                     }
                     //Dark
-                    else if (typeMove == (int)type.Dark)
+                    else if (typeMove == (int)Enum.type.Dark)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fighting)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fighting)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Psy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Psy)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Ghost)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ghost)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Dark)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dark)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fairy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fairy)
                             effective *= 0.5;
                     }
                     //Steel
-                    else if (typeMove == (int)type.Steel)
+                    else if (typeMove == (int)Enum.type.Steel)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Water)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Water)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Electric)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Electric)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Ice)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Ice)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Rock)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Rock)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fairy)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fairy)
                             effective *= 2;
                     }
                     //Fairy
-                    else if(typeMove == (int)type.Fairy)
+                    else if(typeMove == (int)Enum.type.Fairy)
                     {
-                        if (defendingPokemon.Types[i] == (int)type.Fire)
+                        if (defendingPokemon.Types[i] == (int)Enum.type.Fire)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Fighting)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Fighting)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Poison)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Poison)
                             effective *= 0.5;
-                        else if (defendingPokemon.Types[i] == (int)type.Dragon)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dragon)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Dark)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Dark)
                             effective *= 2;
-                        else if (defendingPokemon.Types[i] == (int)type.Steel)
+                        else if (defendingPokemon.Types[i] == (int)Enum.type.Steel)
                             effective *= 0.5;
                     }
                 }               

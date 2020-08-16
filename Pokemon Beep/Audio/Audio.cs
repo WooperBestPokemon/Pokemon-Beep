@@ -9,6 +9,7 @@ namespace Pokemon_Beep
     class Audio
     {
         private List<AudioFileReader> backgroundMusic = new List<AudioFileReader>();
+
         WaveOutEvent output = new WaveOutEvent();
         public void init()
         {
@@ -30,9 +31,14 @@ namespace Pokemon_Beep
                     musidId = 0;
                     break;
             }
+            
             LoopStream loop = new LoopStream(backgroundMusic[musidId]);
             output.Init(loop);
             output.Play();
+        }       
+        public void changeVolume(int volume)
+        {
+            output.Volume = volume;
         }
     }
 }

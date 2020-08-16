@@ -14,7 +14,7 @@ Objectif :
 6.
 7.
 8.
-9.
+9. (Villain City) Ajax City
 10.
 
 ============
@@ -32,23 +32,17 @@ Personality :
 ==========
 Gym Leader
 ==========
-Gym 1:
-Gym 2:
-Gym 3:
-Gym 4:
-Gym 5:
-Gym 6:
-Gym 7:
-Gym 8:
-
-(poison) Python
-(fire) Ruby
-(bug) *glitched*
+Gym 1: Bug          -  *glitched*
+Gym 2: Flying     -  Swift
+Gym 3: Normal   -  Pascal
+Gym 4: Fire        -  Ruby
+Gym 5: Water    -  Shell
+Gym 6: Ice         -  Crystal
+Gym 7: Poison    -  Python
+Gym 8: Dark      -  Dart
 
 =========
 Team JS
 =========
  Leader : Lucie
-	
-
 
