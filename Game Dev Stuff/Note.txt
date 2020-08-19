@@ -3,3 +3,8 @@ The player is always at the middle of the console.
 
 
 All unicode : Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+
+Moves Description : Pokemon DPP (Black and White if they aren't existing)
+
+Pokemon Moves : Pokemon Black and White

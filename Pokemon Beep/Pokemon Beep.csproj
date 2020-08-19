@@ -58,6 +58,7 @@
     <Compile Include="Combat\Effect.cs" />
     <Compile Include="Combat\Battle.cs" />
     <Compile Include="Combat\Move.cs" />
+    <Compile Include="Combat\MoveEffects.cs" />
     <Compile Include="Combat\PkmnBattleInfo.cs" />
     <Compile Include="Combat\TypeChart.cs" />
     <Compile Include="Enum.cs" />

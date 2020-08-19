@@ -75,6 +75,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Static", "Contact with the Pokémon may cause paralysis.", (int)Enum.ability.Static));
             abilities.Add(new Ability("Stench", "The stench may cause the target to flinch.", (int)Enum.ability.Stench));
             abilities.Add(new Ability("Sticky Hold", "Protects the Pokémon from item theft.", (int)Enum.ability.Sticky_Hold));
+            abilities.Add(new Ability("Storm Drain", "Absorbs all Water-type moves to boost its Sp. Atk stat.", (int)Enum.ability.Sticky_Hold));
             abilities.Add(new Ability("Sturdy", "It cannot be knocked out with one hit.", (int)Enum.ability.Sturdy));
             abilities.Add(new Ability("Suction Cups", "Negates all moves that force switching out.", (int)Enum.ability.Suction_Cups));
             abilities.Add(new Ability("Swarm", "Powers up Bug-type moves when health is below 1/3.", (int)Enum.ability.Swarm));

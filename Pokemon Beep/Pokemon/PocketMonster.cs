@@ -44,13 +44,13 @@ namespace Pokemon_Beep.Pokemon
 
         //Battle
         private int status = (int) Enum.status.None;
-        public int[] stages = new int[6];
+        public int[] stages = new int[8];
         public int currentHP;
 
         // Without Evolion
 
         //Pokemon with 2 types and 2 & more abilities
-        public PocketMonster(int pokedexID,string name,string description, int sexe, double height, double weight, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
+        public PocketMonster(int pokedexID,string name,string description, int sexe, double height, double weight, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -72,7 +72,7 @@ namespace Pokemon_Beep.Pokemon
             this.learnset = learnset;
         }
         //Pokemon with 1 type and 2 & more abilities
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -98,7 +98,7 @@ namespace Pokemon_Beep.Pokemon
             this.learnset = learnset;
         }
         //Pokemon with 2 types and 1 ability
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, List<int> types, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, List<int> types, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -124,7 +124,7 @@ namespace Pokemon_Beep.Pokemon
             this.learnset = learnset;
         }
         //Pokemon with 1 type and 1 ability
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -155,7 +155,7 @@ namespace Pokemon_Beep.Pokemon
 
         // With Evolution
         //Pokemon with 2 types and 2 & more abilities With Evolution
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, List<int> types, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset, PocketMonster evolution, int levelEvolution)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -181,7 +181,7 @@ namespace Pokemon_Beep.Pokemon
             canEvolve = true;
         }
         //Pokemon with 1 type and 2 & more abilities With Evolution
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, List<Ability> abilities, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset, PocketMonster evolution, int levelEvolution)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -211,7 +211,7 @@ namespace Pokemon_Beep.Pokemon
             canEvolve = true;
         }
         //Pokemon with 2 types and 1 ability With Evolution
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, List<int> types, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, List<int> types, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset, PocketMonster evolution, int levelEvolution)
         {
             this.pokedexID = pokedexID;
             this.name = name;
@@ -241,7 +241,7 @@ namespace Pokemon_Beep.Pokemon
             canEvolve = true;
         }
         //Pokemon with 1 type and 1 ability With Evolution
-        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Move> moveset, List<Learnset> learnset, PocketMonster evolution, int levelEvolution)
+        public PocketMonster(int pokedexID, string name, string description, int sexe, double height, double weight, int type, Ability ability, int catchRate, int experience, int baseExperienceYield, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, List<Learnset> learnset, List<Move> tmset, PocketMonster evolution, int levelEvolution)
         {
             this.pokedexID = pokedexID;
             this.name = name;

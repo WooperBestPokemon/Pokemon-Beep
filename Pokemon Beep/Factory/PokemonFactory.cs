@@ -32,7 +32,7 @@ namespace Pokemon_Beep.Factory
             return pokemons;
         }
         /*
-        public PocketMonster wooper()
+        public PocketMonster Wooper()
         {
             //General Information
             int pokedex = 001;
@@ -51,7 +51,7 @@ namespace Pokemon_Beep.Factory
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Unaware]);
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Water_Absorb]);
             //Moves
-            List<Move> movesPokemon = new List<Move>();
+            List<Learnset> learnset = new List<Learnset>();
             movesPokemon.Add(moves[(int) Enum.move.Tail_Whip]);
             movesPokemon.Add(moves[(int)Enum.move.Water_Gun]);
             movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
@@ -104,7 +104,6 @@ namespace Pokemon_Beep.Factory
             //Abilities
             List<Ability> abilitiesPokemon = new List<Ability>();
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Torrent]);
-            abilitiesPokemon.Add(abilities[(int)Enum.ability.Sheer_Force]);
 
             //Stats
             int baseHP = 50;
@@ -112,7 +111,7 @@ namespace Pokemon_Beep.Factory
             int baseDefense = 64;
             int baseSpecialAttack = 44;
             int baseSpecialDefense = 48;
-            int baseSpeed = 43;
+            int baseSpeed = 100;
 
             //Battle
             int catchrate = 45;
@@ -120,18 +119,17 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 63;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Scald]);
-            movesPokemon.Add(moves[(int)Enum.move.Tackle]);
-
-            //========================================================TM
-
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Croconaw(), 18);
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scald], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Inferno], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growl], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Defense_Curl], 1));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         public PocketMonster testing()
         {
@@ -149,7 +147,6 @@ namespace Pokemon_Beep.Factory
             //Abilities
             List<Ability> abilitiesPokemon = new List<Ability>();
             abilitiesPokemon.Add(abilities[(int)Enum.ability.Torrent]);
-            abilitiesPokemon.Add(abilities[(int)Enum.ability.Sheer_Force]);
 
             //Stats
             int baseHP = 50;
@@ -165,18 +162,17 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 63;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
             //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Tackle]);
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tackle], 1));
 
             //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
 
-            //========================================================Learnset
-            List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Croconaw(), 18);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
+        //---------------------------------------------------------
         //Chikorita
         //Bayleef
         //Meganium
@@ -215,67 +211,71 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 63;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Leer]);
-            movesPokemon.Add(moves[(int)Enum.move.Scratch]);
-            movesPokemon.Add(moves[(int)Enum.move.Water_Gun]);
-            movesPokemon.Add(moves[(int)Enum.move.Bite]);
-            movesPokemon.Add(moves[(int)Enum.move.Scary_Face]);
-            //movesPokemon.Add(moves[(int)Enum.move.Ice_Fang]);
-            //movesPokemon.Add(moves[(int)Enum.move.Flail]);
-            movesPokemon.Add(moves[(int)Enum.move.Crunch]);
-            //movesPokemon.Add(moves[(int)Enum.move.Chip_Away]);
-            //movesPokemon.Add(moves[(int)Enum.move.Slash]);
-            movesPokemon.Add(moves[(int)Enum.move.Screech]);
-            //movesPokemon.Add(moves[(int)Enum.move.Trash]);
-            movesPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
-            //movesPokemon.Add(moves[(int)Enum.move.Superpower]);
-            movesPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
-            //========================================================TM
-            //movesPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            movesPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Hail]);
-            movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Brick_Break]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            movesPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
-            movesPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            movesPokemon.Add(moves[(int)Enum.move.Scald]);
-            //movesPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
-            movesPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.Surf]);
-            movesPokemon.Add(moves[(int)Enum.move.Waterfall]);
-            movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[2], 6));
-            learnset.Add(new Learnset(movesPokemon[3], 13));
-            learnset.Add(new Learnset(movesPokemon[4], 15));
-            learnset.Add(new Learnset(movesPokemon[5], 20));
-            learnset.Add(new Learnset(movesPokemon[6], 22));
-            learnset.Add(new Learnset(movesPokemon[7], 27));
-            learnset.Add(new Learnset(movesPokemon[8], 29));
-            learnset.Add(new Learnset(movesPokemon[9], 34));
-            learnset.Add(new Learnset(movesPokemon[10], 36));
-            learnset.Add(new Learnset(movesPokemon[11], 41));
-            learnset.Add(new Learnset(movesPokemon[12], 43));
-            learnset.Add(new Learnset(movesPokemon[13], 48));
-            learnset.Add(new Learnset(movesPokemon[14], 50));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Leer], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scratch], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Water_Gun], 6));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Rage], 8));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 15));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Ice_Fang], 20));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 22));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 27));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Chip_Away], 29));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Slash], 34));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Screech], 36));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Thrash], 41));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aqua_Tail], 43));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 48));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hydro_Pump], 50));
+            //========================================================TM
+            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Roar]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Hail]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            tmPokemon.Add(moves[(int)Enum.move.Scald]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fling]);
+            //tmPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            //tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
+            //tmPokemon.Add(moves[(int)Enum.move.Block]);
+            tmPokemon.Add(moves[(int)Enum.move.Crunch]);
+            tmPokemon.Add(moves[(int)Enum.move.Dragon_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
+            tmPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Punch]);
+            //tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            //tmPokemon.Add(moves[(int)Enum.move.Mud_Sport]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thrash]);
+            //tmPokemon.Add(moves[(int)Enum.move.Water_Pulse]);
+            //tmPokemon.Add(moves[(int)Enum.move.Water_Sport]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);
+            tmPokemon.Add(moves[(int)Enum.move.Strength]);
+            tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Croconaw(), 18);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Croconaw(), 18);
         }
         public PocketMonster Croconaw()
         {
@@ -309,67 +309,71 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 142;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Leer]);
-            movesPokemon.Add(moves[(int)Enum.move.Scratch]);
-            movesPokemon.Add(moves[(int)Enum.move.Water_Gun]);
-            movesPokemon.Add(moves[(int)Enum.move.Bite]);
-            movesPokemon.Add(moves[(int)Enum.move.Scary_Face]);
-            //movesPokemon.Add(moves[(int)Enum.move.Ice_Fang]);
-            //movesPokemon.Add(moves[(int)Enum.move.Flail]);
-            movesPokemon.Add(moves[(int)Enum.move.Crunch]);
-            //movesPokemon.Add(moves[(int)Enum.move.Chip_Away]);
-            //movesPokemon.Add(moves[(int)Enum.move.Slash]);
-            movesPokemon.Add(moves[(int)Enum.move.Screech]);
-            //movesPokemon.Add(moves[(int)Enum.move.Trash]);
-            movesPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
-            //movesPokemon.Add(moves[(int)Enum.move.Superpower]);
-            movesPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
-            //========================================================TM
-            //movesPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            movesPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Hail]);
-            movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Brick_Break]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            movesPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
-            movesPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            movesPokemon.Add(moves[(int)Enum.move.Scald]);
-            //movesPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
-            movesPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.Surf]);
-            movesPokemon.Add(moves[(int)Enum.move.Waterfall]);
-            movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[2], 6));
-            learnset.Add(new Learnset(movesPokemon[3], 13));
-            learnset.Add(new Learnset(movesPokemon[4], 15));
-            learnset.Add(new Learnset(movesPokemon[5], 21));
-            learnset.Add(new Learnset(movesPokemon[6], 24));
-            learnset.Add(new Learnset(movesPokemon[7], 30));
-            learnset.Add(new Learnset(movesPokemon[8], 33));
-            learnset.Add(new Learnset(movesPokemon[9], 39));
-            learnset.Add(new Learnset(movesPokemon[10], 42));
-            learnset.Add(new Learnset(movesPokemon[11], 48));
-            learnset.Add(new Learnset(movesPokemon[12], 51));
-            learnset.Add(new Learnset(movesPokemon[13], 57));
-            learnset.Add(new Learnset(movesPokemon[14], 60));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Leer], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scratch], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Water_Gun], 6));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Rage], 8));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 15));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Ice_Fang], 21));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 24));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 30));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Chip_Away], 33));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Slash], 39));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Screech], 42));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Thrash], 48));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aqua_Tail], 51));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 57));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hydro_Pump], 60));
+            //========================================================TM
+            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Roar]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Hail]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            tmPokemon.Add(moves[(int)Enum.move.Scald]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fling]);
+            //tmPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            //tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
+            //tmPokemon.Add(moves[(int)Enum.move.Block]);
+            tmPokemon.Add(moves[(int)Enum.move.Crunch]);
+            tmPokemon.Add(moves[(int)Enum.move.Dragon_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
+            tmPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Punch]);
+            //tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            //tmPokemon.Add(moves[(int)Enum.move.Mud_Sport]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thrash]);
+            //tmPokemon.Add(moves[(int)Enum.move.Water_Pulse]);
+            //tmPokemon.Add(moves[(int)Enum.move.Water_Sport]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);
+            tmPokemon.Add(moves[(int)Enum.move.Strength]);
+            tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Feraligatr(), 30);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Feraligatr(), 30);
         }
         public PocketMonster Feraligatr()
         {
@@ -403,74 +407,78 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 239;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Agility]);
-            movesPokemon.Add(moves[(int)Enum.move.Leer]);
-            movesPokemon.Add(moves[(int)Enum.move.Scratch]);
-            movesPokemon.Add(moves[(int)Enum.move.Water_Gun]);
-            movesPokemon.Add(moves[(int)Enum.move.Bite]);
-            movesPokemon.Add(moves[(int)Enum.move.Scary_Face]);
-            //movesPokemon.Add(moves[(int)Enum.move.Ice_Fang]);
-            //movesPokemon.Add(moves[(int)Enum.move.Flail]);
-            movesPokemon.Add(moves[(int)Enum.move.Crunch]);
-            //movesPokemon.Add(moves[(int)Enum.move.Chip_Away]);
-            //movesPokemon.Add(moves[(int)Enum.move.Slash]);
-            movesPokemon.Add(moves[(int)Enum.move.Screech]);
-            //movesPokemon.Add(moves[(int)Enum.move.Trash]);
-            movesPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
-            //movesPokemon.Add(moves[(int)Enum.move.Superpower]);
-            movesPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
-            //========================================================TM
-            //movesPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            movesPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Hail]);
-            movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Earthquake]);
-            //movesPokemon.Add(moves[(int)Enum.move.Brick_Break]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            movesPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
-            movesPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            movesPokemon.Add(moves[(int)Enum.move.Focus_Blast]);
-            movesPokemon.Add(moves[(int)Enum.move.Scald]);
-            //movesPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
-            movesPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Bulldoze]);
-            movesPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
-            //movesPokemon.Add(moves[(int)Enum.move.Dragon_Tail]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.Surf]);
-            movesPokemon.Add(moves[(int)Enum.move.Waterfall]);
-            movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[2], 1));
-            learnset.Add(new Learnset(movesPokemon[3], 6));
-            learnset.Add(new Learnset(movesPokemon[4], 13));
-            learnset.Add(new Learnset(movesPokemon[5], 15));
-            learnset.Add(new Learnset(movesPokemon[6], 21));
-            learnset.Add(new Learnset(movesPokemon[7], 24));
-            learnset.Add(new Learnset(movesPokemon[8], 32));
-            learnset.Add(new Learnset(movesPokemon[9], 37));
-            learnset.Add(new Learnset(movesPokemon[10], 45));
-            learnset.Add(new Learnset(movesPokemon[11], 50));
-            learnset.Add(new Learnset(movesPokemon[12], 58));
-            learnset.Add(new Learnset(movesPokemon[13], 63));
-            learnset.Add(new Learnset(movesPokemon[14], 71));
-            learnset.Add(new Learnset(movesPokemon[15], 76));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Leer], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scratch], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Water_Gun], 6));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Rage], 8));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 15));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Ice_Fang], 21));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 24));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Agility], 30));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 32));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Chip_Away], 37));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Slash], 45));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Screech], 50));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Thrash], 58));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aqua_Tail], 63));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 71));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hydro_Pump], 76));
+            //========================================================TM
+            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Roar]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Hail]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Earthquake]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            tmPokemon.Add(moves[(int)Enum.move.Focus_Blast]);
+            tmPokemon.Add(moves[(int)Enum.move.Scald]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fling]);
+            //tmPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Bulldoze]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dragon_Tail]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            //tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
+            //tmPokemon.Add(moves[(int)Enum.move.Block]);
+            tmPokemon.Add(moves[(int)Enum.move.Crunch]);
+            tmPokemon.Add(moves[(int)Enum.move.Dragon_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
+            tmPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Punch]);
+            //tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            //tmPokemon.Add(moves[(int)Enum.move.Mud_Sport]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thrash]);
+            //tmPokemon.Add(moves[(int)Enum.move.Water_Pulse]);
+            //tmPokemon.Add(moves[(int)Enum.move.Water_Sport]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);
+            tmPokemon.Add(moves[(int)Enum.move.Strength]);
+            tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         public PocketMonster Rattata()
         {
@@ -505,49 +513,63 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 57;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Tackle]);
-            movesPokemon.Add(moves[(int)Enum.move.Tail_Whip]);
-            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
-            movesPokemon.Add(moves[(int)Enum.move.Fury_Swipes]);
-            movesPokemon.Add(moves[(int)Enum.move.Bite]);
-            movesPokemon.Add(moves[(int)Enum.move.Super_Fang]);
-            movesPokemon.Add(moves[(int)Enum.move.Crunch]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Fang]);
-            movesPokemon.Add(moves[(int)Enum.move.Sucker_Punch]);
-            movesPokemon.Add(moves[(int)Enum.move.Double_Edge]);
-            //=======================================================TM
-            movesPokemon.Add(moves[(int)Enum.move.Headbutt]);
-            //movesPokemon.Add(moves[(int)Enum.move.Taunt]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            //movesPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //movesPokemon.Add(moves[(int)Enum.move.Dig]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
-            //movesPokemon.Add(moves[(int)Enum.move.U_turn]);
-            movesPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder]);
-            movesPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
-            movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
-            movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
-            //=======================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 3));
-            learnset.Add(new Learnset(movesPokemon[2], 6));
-            learnset.Add(new Learnset(movesPokemon[3], 9));
-            learnset.Add(new Learnset(movesPokemon[4], 12));
-            learnset.Add(new Learnset(movesPokemon[5], 15));
-            learnset.Add(new Learnset(movesPokemon[6], 18));
-            learnset.Add(new Learnset(movesPokemon[7], 21));
-            learnset.Add(new Learnset(movesPokemon[8], 24));
-            learnset.Add(new Learnset(movesPokemon[9], 27));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tackle], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tail_Whip], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 4));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Focus_Energy], 7));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 10));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Pursuit], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Fang], 16));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Sucker_Punch], 19));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 22));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Assurance], 25));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Super_Fang], 28));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Double_Edge], 31));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 34));
+            //=======================================================TM
+            //tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            //tmPokemon.Add(moves[(int)Enum.move.Taunt]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Retaliate]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
+            tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pluck]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //tmPokemon.Add(moves[(int)Enum.move.Wild_Charge]);
+            tmPokemon.Add(moves[(int)Enum.move.Bite]);
+            //tmPokemon.Add(moves[(int)Enum.move.Counter]);
+            //tmPokemon.Add(moves[(int)Enum.move.Final_Gambit]);
+            tmPokemon.Add(moves[(int)Enum.move.Flame_Wheel]);
+            tmPokemon.Add(moves[(int)Enum.move.Fury_Swipes]);
+            //tmPokemon.Add(moves[(int)Enum.move.Last_Resort]);
+            //tmPokemon.Add(moves[(int)Enum.move.Revenge]);
+            tmPokemon.Add(moves[(int)Enum.move.Screech]);
+            //tmPokemon.Add(moves[(int)Enum.move.Uproar]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);                     
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Raticate(), 20);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Raticate(), 20);
         }
         public PocketMonster Raticate()
         {
@@ -582,52 +604,69 @@ namespace Pokemon_Beep.Factory
             int baseSpeed = 97;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Fury_Swipes]);
-            movesPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
-            movesPokemon.Add(moves[(int)Enum.move.Tackle]);
-            movesPokemon.Add(moves[(int)Enum.move.Tail_Whip]);
-            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
-            movesPokemon.Add(moves[(int)Enum.move.Bite]);
-            movesPokemon.Add(moves[(int)Enum.move.Super_Fang]);
-            movesPokemon.Add(moves[(int)Enum.move.Crunch]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Fang]);
-            movesPokemon.Add(moves[(int)Enum.move.Sucker_Punch]);
-            movesPokemon.Add(moves[(int)Enum.move.Double_Edge]);
-            //========================================================TM
-            movesPokemon.Add(moves[(int)Enum.move.Headbutt]);
-            //movesPokemon.Add(moves[(int)Enum.move.Taunt]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            //movesPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //movesPokemon.Add(moves[(int)Enum.move.Dig]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
-            //movesPokemon.Add(moves[(int)Enum.move.U_turn]);
-            movesPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder]);
-            movesPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
-            movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[2], 1));
-            learnset.Add(new Learnset(movesPokemon[3], 3));
-            learnset.Add(new Learnset(movesPokemon[4], 6));
-            learnset.Add(new Learnset(movesPokemon[5], 12));
-            learnset.Add(new Learnset(movesPokemon[6], 15));
-            learnset.Add(new Learnset(movesPokemon[7], 18));
-            learnset.Add(new Learnset(movesPokemon[8], 26));
-            learnset.Add(new Learnset(movesPokemon[9], 34));
-            learnset.Add(new Learnset(movesPokemon[10], 42));
-
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Swords_Dance], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tackle], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tail_Whip], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 4));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Focus_Energy], 7));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 10));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Pursuit], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Fang], 16));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Sucker_Punch], 19));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 20));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 24));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Assurance], 29));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Super_Fang], 34));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Double_Edge], 39));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 44));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Roar]);
+            //tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            //tmPokemon.Add(moves[(int)Enum.move.Taunt]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Retaliate]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
+            tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pluck]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //tmPokemon.Add(moves[(int)Enum.move.Wild_Charge]);
+            tmPokemon.Add(moves[(int)Enum.move.Bite]);
+            //tmPokemon.Add(moves[(int)Enum.move.Counter]);
+            //tmPokemon.Add(moves[(int)Enum.move.Final_Gambit]);
+            tmPokemon.Add(moves[(int)Enum.move.Flame_Wheel]);
+            tmPokemon.Add(moves[(int)Enum.move.Fury_Swipes]);
+            //tmPokemon.Add(moves[(int)Enum.move.Last_Resort]);
+            //tmPokemon.Add(moves[(int)Enum.move.Revenge]);
+            tmPokemon.Add(moves[(int)Enum.move.Screech]);
+            //tmPokemon.Add(moves[(int)Enum.move.Uproar]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+            tmPokemon.Add(moves[(int)Enum.move.Strength]);
+         
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         public PocketMonster Sentret()
         {
@@ -662,66 +701,62 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 43;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Charm]);
-            movesPokemon.Add(moves[(int)Enum.move.Scratch]);
-            movesPokemon.Add(moves[(int)Enum.move.Defense_Curl]);
-            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);         
-            movesPokemon.Add(moves[(int)Enum.move.Fury_Swipes]);
-            movesPokemon.Add(moves[(int)Enum.move.Swift]);
-            movesPokemon.Add(moves[(int)Enum.move.Slam]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            movesPokemon.Add(moves[(int)Enum.move.Sucker_Punch]);
-            movesPokemon.Add(moves[(int)Enum.move.Amnesia]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Voice]);
-            //=======================================================TM
-            //movesPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder]);
-            movesPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
-            //movesPokemon.Add(moves[(int)Enum.move.Brick_Break]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            movesPokemon.Add(moves[(int)Enum.move.Flamethrower]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            //movesPokemon.Add(moves[(int)Enum.move.Thief]);
-            movesPokemon.Add(moves[(int)Enum.move.Focus_Blast]);
-            movesPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
-            //movesPokemon.Add(moves[(int)Enum.move.Brutal_Swing]);
-            //movesPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
-            //movesPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.Sleep_Talk]);
-            //movesPokemon.Add(moves[(int)Enum.move.U_Turn]);
-            //movesPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //movesPokemon.Add(moves[(int)Enum.move.Surf]);
-            //movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //=======================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[2], 4));
-            learnset.Add(new Learnset(movesPokemon[3], 7));
-            learnset.Add(new Learnset(movesPokemon[4], 13));
-            learnset.Add(new Learnset(movesPokemon[5], 16));
-            learnset.Add(new Learnset(movesPokemon[6], 19));
-            learnset.Add(new Learnset(movesPokemon[7], 25));
-            learnset.Add(new Learnset(movesPokemon[8], 28));
-            learnset.Add(new Learnset(movesPokemon[9], 31));
-            learnset.Add(new Learnset(movesPokemon[10], 36));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Charm], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scratch], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Defense_Curl], 4));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 7));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Fury_Swipes], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Swift], 16));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Slam], 19));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Rest], 25));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Sucker_Punch], 28));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Amnesia], 31));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Voice], 36));
+            //=======================================================TM
+            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
+            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Focus_Blast]);
+            tmPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
+            //tmPokemon.Add(moves[(int)Enum.move.Retaliate]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //tmPokemon.Add(moves[(int)Enum.move.Assist]);
+            tmPokemon.Add(moves[(int)Enum.move.Charm]);
+            //tmPokemon.Add(moves[(int)Enum.move.Covet]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Edge]);
+            //tmPokemon.Add(moves[(int)Enum.move.Focus_Energy]);
+            tmPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
+            //tmPokemon.Add(moves[(int)Enum.move.Last_Resort]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pursuit]);
+            //tmPokemon.Add(moves[(int)Enum.move.Reversal]);
+            //tmPokemon.Add(moves[(int)Enum.move.Slash]);
+            //tmPokemon.Add(moves[(int)Enum.move.Trick]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);           
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Furret(), 15);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Furret(), 15);
         }
         public PocketMonster Furret()
         {
@@ -756,72 +791,70 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 116;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Agility]);
-            movesPokemon.Add(moves[(int)Enum.move.Coil]);
-            movesPokemon.Add(moves[(int)Enum.move.Defense_Curl]);
-            movesPokemon.Add(moves[(int)Enum.move.Charm]);
-            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
-            movesPokemon.Add(moves[(int)Enum.move.Scratch]);
-            movesPokemon.Add(moves[(int)Enum.move.Fury_Swipes]);
-            movesPokemon.Add(moves[(int)Enum.move.Charm]);
-            movesPokemon.Add(moves[(int)Enum.move.Swift]);
-            movesPokemon.Add(moves[(int)Enum.move.Slam]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            movesPokemon.Add(moves[(int)Enum.move.Sucker_Punch]);
-            movesPokemon.Add(moves[(int)Enum.move.Amnesia]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Voice]);
-            //=======================================================TM
-            //movesPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            movesPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Blizzard]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder]);
-            movesPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
-            //movesPokemon.Add(moves[(int)Enum.move.Brick_Break]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            movesPokemon.Add(moves[(int)Enum.move.Flamethrower]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            //movesPokemon.Add(moves[(int)Enum.move.Thief]);
-            movesPokemon.Add(moves[(int)Enum.move.Focus_Blast]);
-            movesPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
-            //movesPokemon.Add(moves[(int)Enum.move.Brutal_Swing]);
-            //movesPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
-            movesPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
-            //movesPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.Sleep_Talk]);
-            //movesPokemon.Add(moves[(int)Enum.move.U_Turn]);
-            //movesPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //movesPokemon.Add(moves[(int)Enum.move.Surf]);
-            //movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //=======================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[2], 1));
-            learnset.Add(new Learnset(movesPokemon[3], 1));
-            learnset.Add(new Learnset(movesPokemon[4], 1));
-            learnset.Add(new Learnset(movesPokemon[5], 1));
-            learnset.Add(new Learnset(movesPokemon[6], 13));
-            learnset.Add(new Learnset(movesPokemon[7], 17));
-            learnset.Add(new Learnset(movesPokemon[8], 21));
-            learnset.Add(new Learnset(movesPokemon[9], 28));
-            learnset.Add(new Learnset(movesPokemon[10], 32));
-            learnset.Add(new Learnset(movesPokemon[11], 36));
-            learnset.Add(new Learnset(movesPokemon[12], 42));
-            learnset.Add(new Learnset(movesPokemon[13], 46));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Agility], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Coil], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Defense_Curl], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Charm], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scratch], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Fury_Swipes], 13));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Assist], 17));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Swift], 21));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Slam], 28));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Rest], 32));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Sucker_Punch], 36));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Amnesia], 42));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Voice], 46));
+            //=======================================================TM
+            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
+            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Focus_Blast]);
+            tmPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
+            //tmPokemon.Add(moves[(int)Enum.move.Retaliate]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            //tmPokemon.Add(moves[(int)Enum.move.Assist]);
+            tmPokemon.Add(moves[(int)Enum.move.Charm]);
+            //tmPokemon.Add(moves[(int)Enum.move.Covet]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Edge]);
+            //tmPokemon.Add(moves[(int)Enum.move.Focus_Energy]);
+            tmPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
+            //tmPokemon.Add(moves[(int)Enum.move.Last_Resort]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pursuit]);
+            //tmPokemon.Add(moves[(int)Enum.move.Reversal]);
+            //tmPokemon.Add(moves[(int)Enum.move.Slash]);
+            //tmPokemon.Add(moves[(int)Enum.move.Trick]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);
+            tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         //Zigzagoon
         //Linoone
@@ -830,8 +863,181 @@ namespace Pokemon_Beep.Factory
         //Pidgey
         //Pidgeotto
         //Pidgeot
-        //Hoothoot
-        //Noctowl
+        public PocketMonster Hoothoot()
+        {
+            //General Information
+            int pokedex = 022;
+            string name = "Hoothoot";
+            string description = "It switches its standing foot so quickly, it can’t be seen. It cries at the same time every day.";
+            int gender = (int)Enum.gender.Both;
+            double height = 0.7;
+            double weight = 21.2;
+
+            //Typing
+            List<int> types = new List<int>();
+            types.Add((int)Enum.type.Normal);
+            types.Add((int)Enum.type.Fly);
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Insomnia]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Keen_Eye]);
+
+            //Stats
+            int baseHP = 60;
+            int baseAttack = 30;
+            int baseDefense = 30;
+            int baseSpecialAttack = 36;
+            int baseSpecialDefense = 56;
+            int baseSpeed = 50;
+
+            //Battle
+            int catchrate = 255;
+            int experience = (int)Enum.experience.Medium_Fast;
+            int experienceYield = 52;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Foresight], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growl], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tackle], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hypnosis], 5));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Peck], 9));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Uproar], 13));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Confusion], 21));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Take_Down], 25));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 29));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Zen_Headbutt], 33));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Extrasensory], 41));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Psycho_Shift], 49));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Roost], 53));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Dream_Eater], 57));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Psychic]);
+            tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //tmPokemon.Add(moves[(int)Enum.move.Reflect]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dream_Eater]);
+            //tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pluck]);;
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            tmPokemon.Add(moves[(int)Enum.move.Agility]);
+            tmPokemon.Add(moves[(int)Enum.move.Defog]);
+            tmPokemon.Add(moves[(int)Enum.move.Feather_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Feint_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Mirror_Move]);
+            //tmPokemon.Add(moves[(int)Enum.move.Night_Shade]);
+            //tmPokemon.Add(moves[(int)Enum.move.Sky_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Supersonic]);
+            //tmPokemon.Add(moves[(int)Enum.move.Whirlwind]);
+            tmPokemon.Add(moves[(int)Enum.move.Wing_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fly]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Noctowl(), 20);
+        }
+        public PocketMonster Noctowl()
+        {
+            //General Information
+            int pokedex = 022;
+            string name = "Noctowl";
+            string description = "If it flips its head upside down, it’s a sign that it is engaged in very complex thinking.";
+            int gender = (int)Enum.gender.Both;
+            double height = 1.6;
+            double weight = 40.8;
+
+            //Typing
+            List<int> types = new List<int>();
+            types.Add((int)Enum.type.Normal);
+            types.Add((int)Enum.type.Fly);
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Insomnia]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Keen_Eye]);
+
+            //Stats
+            int baseHP = 100;
+            int baseAttack = 50;
+            int baseDefense = 50;
+            int baseSpecialAttack = 86;
+            int baseSpecialDefense = 96;
+            int baseSpeed = 70;
+
+            //Battle
+            int catchrate = 90;
+            int experience = (int)Enum.experience.Medium_Fast;
+            int experienceYield = 158;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Foresight], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growl], 1));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Sky_Attack], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tackle], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hypnosis], 5));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Peck], 9));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Uproar], 13));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Confusion], 22));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Take_Down], 32));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 37));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Zen_Headbutt], 42));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Extrasensory], 47));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Psycho_Shift], 52));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Roost], 57));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Dream_Eater], 62));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Psychic]);
+            tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //tmPokemon.Add(moves[(int)Enum.move.Reflect]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dream_Eater]);
+            //tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pluck]);;
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            tmPokemon.Add(moves[(int)Enum.move.Agility]);
+            tmPokemon.Add(moves[(int)Enum.move.Defog]);
+            tmPokemon.Add(moves[(int)Enum.move.Feather_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Feint_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Mirror_Move]);
+            //tmPokemon.Add(moves[(int)Enum.move.Night_Shade]);
+            //tmPokemon.Add(moves[(int)Enum.move.Sky_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Supersonic]);
+            //tmPokemon.Add(moves[(int)Enum.move.Whirlwind]);
+            tmPokemon.Add(moves[(int)Enum.move.Wing_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fly]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+        }
         public PocketMonster Taillow()
         {
             //General Information
@@ -866,50 +1072,47 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 54;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Growl]);
-            movesPokemon.Add(moves[(int)Enum.move.Peck]);
-            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
-            movesPokemon.Add(moves[(int)Enum.move.Wing_Attack]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            movesPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            movesPokemon.Add(moves[(int)Enum.move.Agility]);
-            movesPokemon.Add(moves[(int)Enum.move.Air_Slash]);
-            //movesPokemon.Add(moves[(int)Enum.move.Steel_Wing]);
-            movesPokemon.Add(moves[(int)Enum.move.Brave_Bird]);
-            //movesPokemon.Add(moves[(int)Enum.move.Reversal]);
-            //========================================================TM
-            //movesPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Roost]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            //movesPokemon.Add(moves[(int)Enum.move.Thief]);
-            //movesPokemon.Add(moves[(int)Enum.move.Fly]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.U_turn]);
-            movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[3], 9));
-            learnset.Add(new Learnset(movesPokemon[4], 13));
-            learnset.Add(new Learnset(movesPokemon[5], 17));
-            learnset.Add(new Learnset(movesPokemon[6], 21));
-            learnset.Add(new Learnset(movesPokemon[7], 25));
-            learnset.Add(new Learnset(movesPokemon[8], 29));
-            learnset.Add(new Learnset(movesPokemon[8], 32));
-            learnset.Add(new Learnset(movesPokemon[9], 36));
-            learnset.Add(new Learnset(movesPokemon[10], 41));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growl], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Peck], 1));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Focus_Energy], 4));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 8));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Wing_Attack], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Double_Team], 19));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 26));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aerial_Ace], 34));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Agility], 43));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 53));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pluck]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_turn]);
+            tmPokemon.Add(moves[(int)Enum.move.Brave_Bird]);
+            tmPokemon.Add(moves[(int)Enum.move.Defog]);
+            //tmPokemon.Add(moves[(int)Enum.move.Mirror_Move]);
+            //tmPokemon.Add(moves[(int)Enum.move.Rage]);
+            //tmPokemon.Add(moves[(int)Enum.move.Refresh]);
+            //tmPokemon.Add(moves[(int)Enum.move.Roost]);
+            //tmPokemon.Add(moves[(int)Enum.move.Sky_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Steel_Wing]);
+            //tmPokemon.Add(moves[(int)Enum.move.Supersonic]);
+            //tmPokemon.Add(moves[(int)Enum.move.Whirlwind]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fly]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset, Swellow(), 22);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Swellow(), 22);
         }
         public PocketMonster Swellow()
         {
@@ -945,54 +1148,50 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 159;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Growl]);
-            movesPokemon.Add(moves[(int)Enum.move.Peck]);
-            //movesPokemon.Add(moves[(int)Enum.move.Pluck]);
-            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
-            movesPokemon.Add(moves[(int)Enum.move.Wing_Attack]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            movesPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            movesPokemon.Add(moves[(int)Enum.move.Agility]);
-            movesPokemon.Add(moves[(int)Enum.move.Air_Slash]);
-            //movesPokemon.Add(moves[(int)Enum.move.Steel_Wing]);
-            movesPokemon.Add(moves[(int)Enum.move.Brave_Bird]);
-            //movesPokemon.Add(moves[(int)Enum.move.Reversal]);
-            //========================================================TM
-            //movesPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            movesPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            //movesPokemon.Add(moves[(int)Enum.move.Roost]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            //movesPokemon.Add(moves[(int)Enum.move.Thief]);
-            movesPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
-            //movesPokemon.Add(moves[(int)Enum.move.Fly]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.U_turn]);
-            movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 1));
-            learnset.Add(new Learnset(movesPokemon[2], 1));
-            learnset.Add(new Learnset(movesPokemon[3], 1));
-            learnset.Add(new Learnset(movesPokemon[4], 13));
-            learnset.Add(new Learnset(movesPokemon[5], 17));
-            learnset.Add(new Learnset(movesPokemon[6], 21));
-            learnset.Add(new Learnset(movesPokemon[7], 27));
-            learnset.Add(new Learnset(movesPokemon[8], 33));
-            learnset.Add(new Learnset(movesPokemon[9], 39));
-            learnset.Add(new Learnset(movesPokemon[10], 45));
-            learnset.Add(new Learnset(movesPokemon[11], 51));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growl], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Peck], 1));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Pluck], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 1));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Focus_Energy], 4));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Wing_Attack], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Double_Team], 19));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 28));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aerial_Ace], 38));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Agility], 49));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 61));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            //tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
+            //tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pluck]);;
+            //tmPokemon.Add(moves[(int)Enum.move.U_turn]);
+            tmPokemon.Add(moves[(int)Enum.move.Brave_Bird]);
+            tmPokemon.Add(moves[(int)Enum.move.Defog]);
+            //tmPokemon.Add(moves[(int)Enum.move.Mirror_Move]);
+            //tmPokemon.Add(moves[(int)Enum.move.Rage]);
+            //tmPokemon.Add(moves[(int)Enum.move.Refresh]);
+            //tmPokemon.Add(moves[(int)Enum.move.Roost]);
+            //tmPokemon.Add(moves[(int)Enum.move.Sky_Attack]);
+            //tmPokemon.Add(moves[(int)Enum.move.Steel_Wing]);
+            //tmPokemon.Add(moves[(int)Enum.move.Supersonic]);
+            //tmPokemon.Add(moves[(int)Enum.move.Whirlwind]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fly]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         //Starly
         //Staravia
@@ -1011,6 +1210,342 @@ namespace Pokemon_Beep.Factory
         //Parasect
         //Spinarak
         //Ariados
+        //Scyther
+        //Scizor
+        //Pinsir
+        //Surskit
+        //Masquerain
+        //Horsea
+        //Seadra
+        //Kingdra
+        public PocketMonster Finneon()
+        {
+            //General Information
+            int pokedex = 050;
+            string name = "Finneon";
+            string description = "After long exposure to sunlight, the patterns on its tail fins shine vividly when darkness arrives.";
+            int gender = (int)Enum.gender.Both;
+            double height = 0.4;
+            double weight = 7;
+
+            //Typing
+            List<int> types = new List<int>();
+            types.Add((int)Enum.type.Water);
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Swift_Swim]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Storm_Drain]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Water_Veil]);
+
+            //Stats
+            int baseHP = 49;
+            int baseAttack = 49;
+            int baseDefense = 56;
+            int baseSpecialAttack = 49;
+            int baseSpecialDefense = 61;
+            int baseSpeed = 66;
+
+            //Battle
+            int catchrate = 190;
+            int experience = (int)Enum.experience.Erratic;
+            int experienceYield = 66;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Pound], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Water_Gun], 6));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Attract], 10));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Rain_Dance], 13));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Gust], 17));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Water_Pulse], 22));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Captivate], 26));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 29));
+            //learnset.Add(new Learnsetmoves[(int)Enum.move.Aqua_Ring], 33));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Whirlpool], 38));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.U_Turn], 42));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bounce], 45));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Silver_Wing], 49));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Soak], 54));
+
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Hail]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Safeguard]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            tmPokemon.Add(moves[(int)Enum.move.Scald]);
+            //tmPokemon.Add(moves[(int)Enum.move.Payback]);
+            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            tmPokemon.Add(moves[(int)Enum.move.Agility]);
+            tmPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
+            tmPokemon.Add(moves[(int)Enum.move.Aurora_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Brine]);
+            tmPokemon.Add(moves[(int)Enum.move.Charm]);
+            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            //tmPokemon.Add(moves[(int)Enum.move.Psybeam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Signal_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Splash]);
+            tmPokemon.Add(moves[(int)Enum.move.Sweet_Kiss]);
+            //tmPokemon.Add(moves[(int)Enum.move.Tickle]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);
+            tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dive]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+        }
+        public PocketMonster Lumineon()
+        {
+            //General Information
+            int pokedex = 051;
+            string name = "Lumineon";
+            string description = "It crawls along the seafloor using its long front fins like legs. It competes for food with Lanturn.";
+            int gender = (int)Enum.gender.Both;
+            double height = 1.2;
+            double weight = 24;
+
+            //Typing
+            List<int> types = new List<int>();
+            types.Add((int)Enum.type.Water);
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Swift_Swim]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Storm_Drain]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Water_Veil]);
+
+            //Stats
+            int baseHP = 69;
+            int baseAttack = 69;
+            int baseDefense = 76;
+            int baseSpecialAttack = 69;
+            int baseSpecialDefense = 86;
+            int baseSpeed = 91;
+
+            //Battle
+            int catchrate = 75;
+            int experience = (int)Enum.experience.Erratic;
+            int experienceYield = 161;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Attract], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Pound], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Water_Gun], 6));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Rain_Dance], 13));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Gust], 17));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Water_Pulse], 22));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Captivate], 26));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 29));
+            //learnset.Add(new Learnsetmoves[(int)Enum.move.Aqua_Ring], 35));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Whirlpool], 42));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.U_Turn], 48));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bounce], 53));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Silver_Wing], 59));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Soak], 66));
+
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Hail]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            //tmPokemon.Add(moves[(int)Enum.move.Safeguard]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            tmPokemon.Add(moves[(int)Enum.move.Scald]);
+            //tmPokemon.Add(moves[(int)Enum.move.Payback]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            //tmPokemon.Add(moves[(int)Enum.move.Flash]);
+            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
+            tmPokemon.Add(moves[(int)Enum.move.Agility]);
+            tmPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
+            tmPokemon.Add(moves[(int)Enum.move.Aurora_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Brine]);
+            tmPokemon.Add(moves[(int)Enum.move.Charm]);
+            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            //tmPokemon.Add(moves[(int)Enum.move.Psybeam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Signal_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Splash]);
+            tmPokemon.Add(moves[(int)Enum.move.Sweet_Kiss]);
+            //tmPokemon.Add(moves[(int)Enum.move.Tickle]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);
+            tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dive]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+        }
+        public PocketMonster Magikarp()
+        {
+            //General Information
+            int pokedex = 052;
+            string name = "Magikarp";
+            string description = "It is said to be the world’s weakest Pokémon. No one knows why it has managed to survive.";
+            int gender = (int)Enum.gender.Both;
+            double height = 0.9;
+            double weight = 10;
+
+            //Typing
+            int type = (int)Enum.type.Water;
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Swift_Swim]);
+
+            //Stats
+            int baseHP = 20;
+            int baseAttack = 10;
+            int baseDefense = 55;
+            int baseSpecialAttack = 15;
+            int baseSpecialDefense = 20;
+            int baseSpeed = 80;
+
+            //Battle
+            int catchrate = 255;
+            int experience = (int)Enum.experience.Slow;
+            int experienceYield = 40;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Splash], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Tackle], 15));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 30));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Bounce]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Gyarados(), 20);
+        }
+        public PocketMonster Gyarados()
+        {
+            //General Information
+            int pokedex = 053;
+            string name = "Gyarados";
+            string description = "Once it appears, its rage never settles until it has razed the fields and mountains around it.";
+            int gender = (int)Enum.gender.Both;
+            double height = 6.5;
+            double weight = 235;
+
+            //Typing
+            List<int> types = new List<int>();
+            types.Add((int)Enum.type.Water);
+            types.Add((int)Enum.type.Fly);
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Intimidate]);
+
+            //Stats
+            int baseHP = 95;
+            int baseAttack = 125;
+            int baseDefense = 79;
+            int baseSpecialAttack = 60;
+            int baseSpecialDefense = 100;
+            int baseSpeed = 81;
+
+            //Battle
+            int catchrate = 45;
+            int experience = (int)Enum.experience.Slow;
+            int experienceYield = 189;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Thrash], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 20));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Dragon_Rage], 23));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Leer], 26));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Twister], 29));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Ice_Fang], 32));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aqua_Tail], 35));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Rain_Dance], 38));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hydro_Pump], 41));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Dragon_Dance], 44));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Beam], 47));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Roar]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            tmPokemon.Add(moves[(int)Enum.move.Hail]);
+            //tmPokemon.Add(moves[(int)Enum.move.Taunt]);
+            tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder]);
+            //tmPokemon.Add(moves[(int)Enum.move.Earthquake]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
+            tmPokemon.Add(moves[(int)Enum.move.Sandstorm]);
+            tmPokemon.Add(moves[(int)Enum.move.Fire_Blast]);
+            //tmPokemon.Add(moves[(int)Enum.move.Torment]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            tmPokemon.Add(moves[(int)Enum.move.Scald]);
+            //tmPokemon.Add(moves[(int)Enum.move.Incinerate]);
+            //tmPokemon.Add(moves[(int)Enum.move.Payback]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            //tmPokemon.Add(moves[(int)Enum.move.Stone_Edge]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
+            tmPokemon.Add(moves[(int)Enum.move.Bulldoze]);
+            tmPokemon.Add(moves[(int)Enum.move.Dragon_Tail]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            //tmPokemon.Add(moves[(int)Enum.move.Surf]);
+            tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dive]);
+            tmPokemon.Add(moves[(int)Enum.move.Strength]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+        }
+        //Nidoran♀
+        //Nidorina
+        //Nidoqueen
+        //Nidoran♂
+        //Nidorino
+        //Nidoking
+        //Diglett
+        //Dugtrio
+        //Aron
+        //Lairon
+        //Aggron
+        //Kabuto
+        //Kabutops
+        //Shieldon
+        //Bastiodon
+        //Dunsparce
+        //Onix
+        //Phanpy
+        //Donphan
+        //Sandshrew
+        //Sandslash
+        //Farfetch'd
+        //Sudowoodo
+        //Swablu
+        //Altaria
         public PocketMonster Pachirisu()
         {
             //General Information
@@ -1044,63 +1579,55 @@ namespace Pokemon_Beep.Factory
             int experienceYield = 120;
 
             //Moves
-            List<Move> movesPokemon = new List<Move>();
-            //========================================================Leveling
-            movesPokemon.Add(moves[(int)Enum.move.Growl]);
-            movesPokemon.Add(moves[(int)Enum.move.Quick_Attack]);
-            movesPokemon.Add(moves[(int)Enum.move.Charm]);
-            movesPokemon.Add(moves[(int)Enum.move.Spark]);
-            movesPokemon.Add(moves[(int)Enum.move.Endure]);
-            movesPokemon.Add(moves[(int)Enum.move.Nuzzle]);
-            movesPokemon.Add(moves[(int)Enum.move.Swift]);
-            movesPokemon.Add(moves[(int)Enum.move.Electro_Ball]);
-            movesPokemon.Add(moves[(int)Enum.move.Sweet_Kiss]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
-            movesPokemon.Add(moves[(int)Enum.move.Super_Fang]);
-            movesPokemon.Add(moves[(int)Enum.move.Discharge]);
-            movesPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
-            movesPokemon.Add(moves[(int)Enum.move.Hyper_Fang]);
-            //========================================================TM
-            movesPokemon.Add(moves[(int)Enum.move.Toxic]);
-            //movesPokemon.Add(moves[(int)Enum.move.Light_Screen]);
-            movesPokemon.Add(moves[(int)Enum.move.Protect]);
-            movesPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder]);
-            //movesPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //movesPokemon.Add(moves[(int)Enum.move.Facade]);
-            movesPokemon.Add(moves[(int)Enum.move.Rest]);
-            //movesPokemon.Add(moves[(int)Enum.move.Attract]);
-            //movesPokemon.Add(moves[(int)Enum.move.Round]);
-            //movesPokemon.Add(moves[(int)Enum.move.Echoed_Voice]);
-            //movesPokemon.Add(moves[(int)Enum.move.Fling]);
-            movesPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
-            //movesPokemon.Add(moves[(int)Enum.move.Volt_Switch]);
-            movesPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
-            //movesPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
-            //movesPokemon.Add(moves[(int)Enum.move.Swagger]);
-            //movesPokemon.Add(moves[(int)Enum.move.Sleep_Talk]);
-            //movesPokemon.Add(moves[(int)Enum.move.U_turn]);
-            //movesPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //movesPokemon.Add(moves[(int)Enum.move.Confide]);
-            //========================================================Learnset
             List<Learnset> learnset = new List<Learnset>();
-            learnset.Add(new Learnset(movesPokemon[0], 1));
-            learnset.Add(new Learnset(movesPokemon[1], 5));
-            learnset.Add(new Learnset(movesPokemon[2], 9));
-            learnset.Add(new Learnset(movesPokemon[3], 13));
-            learnset.Add(new Learnset(movesPokemon[4], 17));
-            learnset.Add(new Learnset(movesPokemon[5], 19));
-            learnset.Add(new Learnset(movesPokemon[6], 21));
-            learnset.Add(new Learnset(movesPokemon[7], 25));
-            learnset.Add(new Learnset(movesPokemon[8], 29));
-            learnset.Add(new Learnset(movesPokemon[9], 33));
-            learnset.Add(new Learnset(movesPokemon[10], 37));
-            learnset.Add(new Learnset(movesPokemon[11], 41));
-            learnset.Add(new Learnset(movesPokemon[12], 45));
-            learnset.Add(new Learnset(movesPokemon[13], 49));
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growl], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 5));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Charm], 9));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Spark], 13));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Endure], 17));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Nuzzle], 19));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Swift], 21));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Electro_Ball], 25));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Sweet_Kiss], 29));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Thunder_Wave], 33));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Super_Fang], 37));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Discharge], 41));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Iron_Tail], 45));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Fang], 49));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            //tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            //tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Fling]);
+            tmPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Volt_Switch]);
+            tmPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
+            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.U_turn]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+            tmPokemon.Add(moves[(int)Enum.move.Bite]);
+            //tmPokemon.Add(moves[(int)Enum.move.Charge]);
+            tmPokemon.Add(moves[(int)Enum.move.Defense_Curl]);
+            tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
+            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            //tmPokemon.Add(moves[(int)Enum.move.Flatter]);
+            tmPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
+            //tmPokemon.Add(moves[(int)Enum.move.Rollout]);
+            tmPokemon.Add(moves[(int)Enum.move.Tail_Whip]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, movesPokemon, learnset);
+            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
     }
 }

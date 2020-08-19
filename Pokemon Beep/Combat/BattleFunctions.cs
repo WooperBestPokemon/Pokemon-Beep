@@ -10,6 +10,7 @@ namespace Pokemon_Beep.Combat
 {
     partial class Battle
     {
+        private BattleStatus battleStatus = new BattleStatus();
         private PocketMonster getPlayerPokemon(Protagonist player)
         {
             return player.Pokemons.Find(x => x.currentHP != 0);
@@ -48,6 +49,24 @@ namespace Pokemon_Beep.Combat
                     playerAttackFirst = false;
             }
             return playerAttackFirst;
+        }
+        public bool attackHit(PkmnBattleInfo attacker, PkmnBattleInfo defender, Move move)
+        {
+            double otherMods = 1;
+
+            //Check the abilities that modify the accuracy
+            if (move.Category == "Physical" && attacker.Pokemon.Ability.Effect == (int)Enum.ability.Hustle)
+                otherMods -= 0.2;
+            else if(attacker.Pokemon.Ability.Effect == (int)Enum.ability.Compound_Eyes)
+                otherMods += 0.3;
+
+            double A = move.Accuracy * (battleStatus.getStageMultiplicator(defender.Pokemon.stages[(int)Enum.stat.Evasion]) / battleStatus.getStageMultiplicator(attacker.Pokemon.stages[(int)Enum.stat.Accuracy])) * otherMods;
+            int random = Utilities.RandomNumber(1, 100);
+
+            if (random <= A)
+                return true;
+            else
+                return false;
         }
     }
 }

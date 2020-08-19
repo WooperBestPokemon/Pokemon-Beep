@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Pokemon_Beep.Combat
 {
-    class Move
+    partial class Move
     {
         public Move(string name, int power, int accuracy, int pp, int type, string category, string description)
         {
@@ -239,48 +239,10 @@ namespace Pokemon_Beep.Combat
         public string Category { get; }
         public int Priority { get; }
         public string Description { get; }
-        public void doEffect(PkmnBattleInfo player, PkmnBattleInfo foe)
+        public void doMove()
         {
-            //If the move has an effect
-            if(Effects.Count != 0)
-            {
-                for (int i = 0; i < Effects.Count; i++)
-                {
-                    //Status
-                    if(Effects[i].ID == (int)Enum.effect.burn)
-                    {
-                        int random = Utilities.RandomNumber(1, 100);
-                        if(EffectsChance.Count > 1)
-                        {
-                            if (EffectsChance[i] >= random)
-                                foe.Pokemon.Status = (int)Enum.status.Burned;
-                        }
-                        else
-                        {
-                            if (EffectsChance[0] >= random)
-                                foe.Pokemon.Status = (int)Enum.status.Burned;
-                        }
-                        //TODO "The FoePokemonName was burned"
-                    }
-                    if (Effects[i].ID == (int)Enum.effect.sleep)
-                    {
-                        int random = Utilities.RandomNumber(1, 100);
-                        if (EffectsChance.Count > 1)
-                        {
-                            if (EffectsChance[i] >= random)
-                                foe.Pokemon.Status = (int)Enum.status.Sleep;
-                        }
-                        else
-                        {
-                            if (EffectsChance[0] >= random)
-                                foe.Pokemon.Status = (int)Enum.status.Sleep;
-                        }
-                        //TODO "The FoePokemonName is asleep"
-                    }
-                }
-            }
-        }
 
+        }
         public override string ToString()
         {
             string description = Name + " : " + Category + " attack with " + Power + " power and " + Accuracy + " % chance of hit ! \n";

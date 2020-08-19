@@ -32,12 +32,36 @@ namespace Pokemon_Beep.Other
                 Console.WriteLine("Lv : " + foe.Level);
                 Console.WriteLine("HP : " + foe.currentHP + " / " + foe.HP);
                 if (foe.Status != 0)
-                    Console.WriteLine("Burned");
+                {
+                    if(foe.Status == (int)Enum.status.Burned)
+                        Console.WriteLine("Burned");
+                    else if(foe.Status == (int)Enum.status.Frozen)
+                        Console.WriteLine("Frozen");
+                    else if (foe.Status == (int)Enum.status.Paralyzed)
+                        Console.WriteLine("Paralyzed");
+                    else if (foe.Status == (int)Enum.status.Poisoned || foe.Status == (int)Enum.status.Badly_Poisoned)
+                        Console.WriteLine("Poisoned");
+                    else if (foe.Status == (int)Enum.status.Sleep)
+                        Console.WriteLine("Asleep");
+                }
                 Console.WriteLine("");
                 Utilities.changeForegroundColor(0, 255, 0);
                 Console.WriteLine("Player : " + player.Name);
                 Console.WriteLine("Lv : " + player.Level);
                 Console.WriteLine("HP : " + player.currentHP + " / " + player.HP);
+                if (player.Status != 0)
+                {
+                    if (player.Status == (int)Enum.status.Burned)
+                        Console.WriteLine("Burned");
+                    else if (player.Status == (int)Enum.status.Frozen)
+                        Console.WriteLine("Frozen");
+                    else if (player.Status == (int)Enum.status.Paralyzed)
+                        Console.WriteLine("Paralyzed");
+                    else if (player.Status == (int)Enum.status.Poisoned || player.Status == (int)Enum.status.Badly_Poisoned)
+                        Console.WriteLine("Poisoned");
+                    else if (player.Status == (int)Enum.status.Sleep)
+                        Console.WriteLine("Asleep");
+                }
                 Utilities.changeForegroundColor(255, 255, 255);
                 Console.WriteLine("------------------------");
                 Console.WriteLine("Please choose a move");
@@ -51,27 +75,44 @@ namespace Pokemon_Beep.Other
 
                 if(battle.playerAttackFirst(playerPkmn, foePkmn, player.Moveset[playerChoice], foe.Moveset[aiChoice]))
                 {
-                    int damage = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
-                    foe.currentHP -= damage;
-                    Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damage + " damage !");
-                    player.Moveset[playerChoice].doEffect(playerPkmn, foePkmn);
-
-                    int damageFoe = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
-                    player.currentHP -= damage;
-                    Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damageFoe + " damage !");
-                    foe.Moveset[aiChoice].doEffect(foePkmn, playerPkmn);
+                    int damage = 0;
+                    int damageFoe = 0;
+                    if (battle.attackHit(playerPkmn, foePkmn, player.Moveset[playerChoice]))
+                    {
+                        damage = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
+                        foe.currentHP -= damage;
+                        Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damage + " damage !");
+                        player.Moveset[playerChoice].doEffect(playerPkmn, foePkmn);
+                    }
+                    else
+                        Console.WriteLine(playerPkmn.Pokemon.Name + "'s attack missed!");
+                    if (battle.attackHit(foePkmn, playerPkmn, foe.Moveset[aiChoice]))
+                    {
+                        damageFoe = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
+                        player.currentHP -= damageFoe;
+                        Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damageFoe + " damage !");
+                        foe.Moveset[aiChoice].doEffect(foePkmn, playerPkmn);
+                    }
+                    else
+                        Console.WriteLine(foePkmn.Pokemon.Name + "'s attack missed!");
                 }
                 else
                 {
-                    int damage = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
-                    player.currentHP -= damage;
-                    Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damage + " damage !");
-                    foe.Moveset[aiChoice].doEffect(foePkmn, playerPkmn);
+                    if(battle.attackHit(foePkmn, playerPkmn, foe.Moveset[aiChoice]))
+                    {
+                        int damage = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
+                        player.currentHP -= damage;
+                        Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damage + " damage !");
+                        foe.Moveset[aiChoice].doEffect(foePkmn, playerPkmn);
 
-                    int damagePlayer = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
-                    foe.currentHP -= damage;
-                    Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damagePlayer + " damage !");
-                    player.Moveset[playerChoice].doEffect(playerPkmn, foePkmn);
+                        int damagePlayer = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
+                        foe.currentHP -= damage;
+                        Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damagePlayer + " damage !");
+                        player.Moveset[playerChoice].doEffect(playerPkmn, foePkmn);
+                    }
+                    else
+                        Console.WriteLine(foePkmn.Pokemon.Name + "'s attack missed!");
+
                 }
 
 
