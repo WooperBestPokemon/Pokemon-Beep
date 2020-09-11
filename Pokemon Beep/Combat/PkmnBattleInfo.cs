@@ -12,5 +12,6 @@ namespace Pokemon_Beep.Combat
             Pokemon = pokemon;
         }
         public PocketMonster Pokemon { get; }
+        public bool[] secondaryStatus = new bool[11];
     }
 }

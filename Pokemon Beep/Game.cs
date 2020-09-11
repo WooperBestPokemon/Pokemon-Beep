@@ -15,7 +15,6 @@ namespace Pokemon_Beep
         {
             Console.SetWindowSize(121, 37);
             Console.CursorVisible = false;
-            audio.init();
             world.init();
             save.init();
         }

@@ -18,3 +18,18 @@ T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CoreCompileInputs
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CopyComplete
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.exe
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.pdb
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Melanchall.DryWetMidi.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Melanchall.DryWetMidi.xml
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\NAudio.Vorbis.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\NVorbis.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Buffers.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Memory.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Numerics.Vectors.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.ValueTuple.dll
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\NVorbis.xml
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Buffers.xml
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Memory.xml
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Numerics.Vectors.xml
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.ValueTuple.xml
