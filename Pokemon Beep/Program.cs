@@ -47,9 +47,9 @@ namespace Pokemon_Beep
             int mode;
             GetConsoleMode(hand, out mode);
             SetConsoleMode(hand, mode | 0x4);
-
+            
             Testing testing = new Testing();
-            testing.battleTest();
+            testing.testAudio();
             Console.ReadKey();
         }
     }

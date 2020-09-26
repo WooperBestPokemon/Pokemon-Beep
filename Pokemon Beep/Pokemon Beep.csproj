@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Melanchall.DryWetMidi, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Melanchall.DryWetMidi.5.1.1\lib\net45\Melanchall.DryWetMidi.dll</HintPath>
-    </Reference>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
     </Reference>
@@ -74,6 +71,7 @@
   <ItemGroup>
     <Compile Include="AI\GymLeaderAI.cs" />
     <Compile Include="AI\TrainerAI.cs" />
+    <Compile Include="AI\WildPokemonAI.cs" />
     <Compile Include="Audio\Audio.cs" />
     <Compile Include="Audio\LoopStream.cs" />
     <Compile Include="Combat\Ability.cs" />
@@ -92,6 +90,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="Graphic\Animation.cs" />
     <Compile Include="Graphic\Ascii.cs" />
+    <Compile Include="Graphic\Background.cs" />
     <Compile Include="Graphic\BattleBackground.cs" />
     <Compile Include="Graphic\BattleScene.cs" />
     <Compile Include="Graphic\Camera.cs" />

@@ -60,5 +60,9 @@ namespace Pokemon_Beep.Combat
                 return 1;
         }     
         public int Weather { get; set; }
+        public int Spike { get; set; }
+        public int LightScreen { get; set; }
+        public int Reflect { get; set; }
+        public bool StealthRock { get; set; }
     }
 }

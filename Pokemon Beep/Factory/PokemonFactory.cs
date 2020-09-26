@@ -213,11 +213,11 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Razor_Leaf], 6));
             learnset.Add(new Learnset(moves[(int)Enum.move.Poison_Powder], 9));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Synthesis], 12));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
             learnset.Add(new Learnset(moves[(int)Enum.move.Magical_Leaf], 20));
             learnset.Add(new Learnset(moves[(int)Enum.move.Petal_Dance], 23));
             learnset.Add(new Learnset(moves[(int)Enum.move.Sweet_Scent], 28));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 31));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 31));
             learnset.Add(new Learnset(moves[(int)Enum.move.Body_Slam], 34));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 39));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 42));
@@ -225,13 +225,13 @@ namespace Pokemon_Beep.Factory
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            //tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
+            tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
             tmPokemon.Add(moves[(int)Enum.move.Protect]);
             //tmPokemon.Add(moves[(int)Enum.move.Safeguard]);
             //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Reflect]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Reflect]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Energy_Ball]);
@@ -240,12 +240,11 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
-
-            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
             //tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
             tmPokemon.Add(moves[(int)Enum.move.Body_Slam]);
             //tmPokemon.Add(moves[(int)Enum.move.Counter]);
-            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
             tmPokemon.Add(moves[(int)Enum.move.Grass_Whistle]);
             //tmPokemon.Add(moves[(int)Enum.move.Heal_Pulse]);
             //tmPokemon.Add(moves[(int)Enum.move.Ingrain]);
@@ -301,11 +300,11 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Razor_Leaf], 6));
             learnset.Add(new Learnset(moves[(int)Enum.move.Poison_Powder], 9));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Synthesis], 12));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 18));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 18));
             learnset.Add(new Learnset(moves[(int)Enum.move.Magical_Leaf], 22));
             learnset.Add(new Learnset(moves[(int)Enum.move.Petal_Dance], 26));
             learnset.Add(new Learnset(moves[(int)Enum.move.Sweet_Scent], 32));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 34));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 34));
             learnset.Add(new Learnset(moves[(int)Enum.move.Body_Slam], 40));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 46));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 50));
@@ -313,13 +312,13 @@ namespace Pokemon_Beep.Factory
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            //tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
+            tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
             tmPokemon.Add(moves[(int)Enum.move.Protect]);
             //tmPokemon.Add(moves[(int)Enum.move.Safeguard]);
             //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Reflect]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Reflect]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Energy_Ball]);
@@ -329,11 +328,11 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
 
-            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
             //tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
             tmPokemon.Add(moves[(int)Enum.move.Body_Slam]);
             //tmPokemon.Add(moves[(int)Enum.move.Counter]);
-            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
             tmPokemon.Add(moves[(int)Enum.move.Grass_Whistle]);
             //tmPokemon.Add(moves[(int)Enum.move.Heal_Pulse]);
             //tmPokemon.Add(moves[(int)Enum.move.Ingrain]);
@@ -389,11 +388,11 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Razor_Leaf], 6));
             learnset.Add(new Learnset(moves[(int)Enum.move.Poison_Powder], 9));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Synthesis], 12));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 18));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 18));
             learnset.Add(new Learnset(moves[(int)Enum.move.Magical_Leaf], 22));
             learnset.Add(new Learnset(moves[(int)Enum.move.Petal_Dance], 26));
             learnset.Add(new Learnset(moves[(int)Enum.move.Sweet_Scent], 32));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 34));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 34));
             learnset.Add(new Learnset(moves[(int)Enum.move.Body_Slam], 40));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 46));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 54));
@@ -402,14 +401,14 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
             tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
-            //tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
+            tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
             tmPokemon.Add(moves[(int)Enum.move.Protect]);
             //tmPokemon.Add(moves[(int)Enum.move.Safeguard]);
             //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
             //tmPokemon.Add(moves[(int)Enum.move.Earthquake]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Reflect]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Reflect]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Energy_Ball]);
@@ -422,11 +421,11 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
 
-            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
             //tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
             tmPokemon.Add(moves[(int)Enum.move.Body_Slam]);
             //tmPokemon.Add(moves[(int)Enum.move.Counter]);
-            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
             tmPokemon.Add(moves[(int)Enum.move.Grass_Whistle]);
             //tmPokemon.Add(moves[(int)Enum.move.Heal_Pulse]);
             //tmPokemon.Add(moves[(int)Enum.move.Ingrain]);
@@ -501,7 +500,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
             tmPokemon.Add(moves[(int)Enum.move.Fire_Blast]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Flame_Charge]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
@@ -589,7 +588,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
             tmPokemon.Add(moves[(int)Enum.move.Fire_Blast]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Flame_Charge]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
@@ -686,7 +685,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Fire_Blast]);
             tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Flame_Charge]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
@@ -766,17 +765,17 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 13));
             learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 15));
             learnset.Add(new Learnset(moves[(int)Enum.move.Ice_Fang], 20));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 22));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 22));
             learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 27));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Chip_Away], 29));
             learnset.Add(new Learnset(moves[(int)Enum.move.Slash], 34));
             learnset.Add(new Learnset(moves[(int)Enum.move.Screech], 36));
             learnset.Add(new Learnset(moves[(int)Enum.move.Thrash], 41));
             learnset.Add(new Learnset(moves[(int)Enum.move.Aqua_Tail], 43));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 48));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 48));
             learnset.Add(new Learnset(moves[(int)Enum.move.Hydro_Pump], 50));
             //========================================================TM
-            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
             tmPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
             //tmPokemon.Add(moves[(int)Enum.move.Roar]);
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -790,7 +789,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Scald]);
@@ -800,15 +799,15 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
-            //tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
+            tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
             tmPokemon.Add(moves[(int)Enum.move.Block]);
             tmPokemon.Add(moves[(int)Enum.move.Crunch]);
             tmPokemon.Add(moves[(int)Enum.move.Dragon_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
             tmPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Punch]);
-            //tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
             //tmPokemon.Add(moves[(int)Enum.move.Mud_Sport]);
             tmPokemon.Add(moves[(int)Enum.move.Thrash]);
             //tmPokemon.Add(moves[(int)Enum.move.Water_Pulse]);
@@ -864,17 +863,17 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 13));
             learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 15));
             learnset.Add(new Learnset(moves[(int)Enum.move.Ice_Fang], 21));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 24));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 24));
             learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 30));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Chip_Away], 33));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Slash], 39));
             learnset.Add(new Learnset(moves[(int)Enum.move.Screech], 42));
             learnset.Add(new Learnset(moves[(int)Enum.move.Thrash], 48));
             learnset.Add(new Learnset(moves[(int)Enum.move.Aqua_Tail], 51));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 57));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 57));
             learnset.Add(new Learnset(moves[(int)Enum.move.Hydro_Pump], 60));
             //========================================================TM
-            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
             tmPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
             //tmPokemon.Add(moves[(int)Enum.move.Roar]);
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -888,7 +887,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Scald]);
@@ -898,15 +897,15 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rock_Slide]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
-            //tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
-            //tmPokemon.Add(moves[(int)Enum.move.Block]);
+            tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
+            tmPokemon.Add(moves[(int)Enum.move.Block]);
             tmPokemon.Add(moves[(int)Enum.move.Crunch]);
             tmPokemon.Add(moves[(int)Enum.move.Dragon_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
             tmPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Punch]);
-            //tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
             //tmPokemon.Add(moves[(int)Enum.move.Mud_Sport]);
             tmPokemon.Add(moves[(int)Enum.move.Thrash]);
             //tmPokemon.Add(moves[(int)Enum.move.Water_Pulse]);
@@ -962,7 +961,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Bite], 13));
             learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 15));
             learnset.Add(new Learnset(moves[(int)Enum.move.Ice_Fang], 21));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 24));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 24));
             learnset.Add(new Learnset(moves[(int)Enum.move.Agility], 30));
             learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 32));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Chip_Away], 37));
@@ -970,10 +969,10 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Screech], 50));
             learnset.Add(new Learnset(moves[(int)Enum.move.Thrash], 58));
             learnset.Add(new Learnset(moves[(int)Enum.move.Aqua_Tail], 63));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 71));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Superpower], 71));
             learnset.Add(new Learnset(moves[(int)Enum.move.Hydro_Pump], 76));
             //========================================================TM
-            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
             tmPokemon.Add(moves[(int)Enum.move.Dragon_Claw]);
             //tmPokemon.Add(moves[(int)Enum.move.Roar]);
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -989,7 +988,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Focus_Blast]);
@@ -1003,15 +1002,15 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Dragon_Tail]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
-            //tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
-            //tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
-            //tmPokemon.Add(moves[(int)Enum.move.Block]);
+            tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
+            tmPokemon.Add(moves[(int)Enum.move.Aqua_Jet]);
+            tmPokemon.Add(moves[(int)Enum.move.Block]);
             tmPokemon.Add(moves[(int)Enum.move.Crunch]);
             tmPokemon.Add(moves[(int)Enum.move.Dragon_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
             tmPokemon.Add(moves[(int)Enum.move.Hydro_Pump]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Punch]);
-            //tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
             //tmPokemon.Add(moves[(int)Enum.move.Mud_Sport]);
             tmPokemon.Add(moves[(int)Enum.move.Thrash]);
             //tmPokemon.Add(moves[(int)Enum.move.Water_Pulse]);
@@ -1070,14 +1069,14 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Fang], 16));
             learnset.Add(new Learnset(moves[(int)Enum.move.Sucker_Punch], 19));
             learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 22));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Assurance], 25));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Assurance], 25));
             learnset.Add(new Learnset(moves[(int)Enum.move.Super_Fang], 28));
             learnset.Add(new Learnset(moves[(int)Enum.move.Double_Edge], 31));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 34));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 34));
             //=======================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            //tmPokemon.Add(moves[(int)Enum.move.Taunt]);
+            tmPokemon.Add(moves[(int)Enum.move.Taunt]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
             tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
             tmPokemon.Add(moves[(int)Enum.move.Protect]);
@@ -1087,7 +1086,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
             tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
@@ -1163,15 +1162,15 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Sucker_Punch], 19));
             learnset.Add(new Learnset(moves[(int)Enum.move.Scary_Face], 20));
             learnset.Add(new Learnset(moves[(int)Enum.move.Crunch], 24));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Assurance], 29));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Assurance], 29));
             learnset.Add(new Learnset(moves[(int)Enum.move.Super_Fang], 34));
             learnset.Add(new Learnset(moves[(int)Enum.move.Double_Edge], 39));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 44));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 44));
             //========================================================TM
             //tmPokemon.Add(moves[(int)Enum.move.Roar]);
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
-            //tmPokemon.Add(moves[(int)Enum.move.Taunt]);
+            tmPokemon.Add(moves[(int)Enum.move.Taunt]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
             tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
             tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
@@ -1182,7 +1181,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
             tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
@@ -1261,7 +1260,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Amnesia], 31));
             learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Voice], 36));
             //=======================================================TM
-            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
@@ -1274,7 +1273,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
@@ -1354,7 +1353,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Amnesia], 42));
             learnset.Add(new Learnset(moves[(int)Enum.move.Hyper_Voice], 46));
             //=======================================================TM
-            //tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
@@ -1370,7 +1369,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
@@ -1451,14 +1450,14 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Hypnosis], 5));
             learnset.Add(new Learnset(moves[(int)Enum.move.Peck], 9));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Uproar], 13));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Confusion], 21));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Confusion], 21));
             learnset.Add(new Learnset(moves[(int)Enum.move.Take_Down], 25));
             learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 29));
             learnset.Add(new Learnset(moves[(int)Enum.move.Zen_Headbutt], 33));
             learnset.Add(new Learnset(moves[(int)Enum.move.Extrasensory], 41));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Psycho_Shift], 49));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Roost], 53));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Roost], 53));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Dream_Eater], 57));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -1468,13 +1467,13 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Psychic]);
             tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Reflect]);
+            tmPokemon.Add(moves[(int)Enum.move.Reflect]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
-            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
             tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
             //tmPokemon.Add(moves[(int)Enum.move.Dream_Eater]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
@@ -1538,14 +1537,14 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Hypnosis], 5));
             learnset.Add(new Learnset(moves[(int)Enum.move.Peck], 9));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Uproar], 13));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Reflect], 17));
             learnset.Add(new Learnset(moves[(int)Enum.move.Confusion], 22));
             learnset.Add(new Learnset(moves[(int)Enum.move.Take_Down], 32));
             learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 37));
             learnset.Add(new Learnset(moves[(int)Enum.move.Zen_Headbutt], 42));
             learnset.Add(new Learnset(moves[(int)Enum.move.Extrasensory], 47));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Psycho_Shift], 52));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Roost], 57));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Roost], 57));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Dream_Eater], 62));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -1556,14 +1555,14 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Psychic]);
             tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Reflect]);
+            tmPokemon.Add(moves[(int)Enum.move.Reflect]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
             tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
-            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
             tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
             //tmPokemon.Add(moves[(int)Enum.move.Dream_Eater]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
@@ -1626,7 +1625,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Quick_Attack], 8));
             learnset.Add(new Learnset(moves[(int)Enum.move.Wing_Attack], 13));
             learnset.Add(new Learnset(moves[(int)Enum.move.Double_Team], 19));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 26));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 26));
             learnset.Add(new Learnset(moves[(int)Enum.move.Aerial_Ace], 34));
             learnset.Add(new Learnset(moves[(int)Enum.move.Agility], 43));
             learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 53));
@@ -1637,7 +1636,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
@@ -1650,7 +1649,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Mirror_Move]);
             //tmPokemon.Add(moves[(int)Enum.move.Rage]);
             //tmPokemon.Add(moves[(int)Enum.move.Refresh]);
-            //tmPokemon.Add(moves[(int)Enum.move.Roost]);
+            tmPokemon.Add(moves[(int)Enum.move.Roost]);
             //tmPokemon.Add(moves[(int)Enum.move.Sky_Attack]);
             //tmPokemon.Add(moves[(int)Enum.move.Steel_Wing]);
             tmPokemon.Add(moves[(int)Enum.move.Supersonic]);
@@ -1703,7 +1702,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Focus_Energy], 4));
             learnset.Add(new Learnset(moves[(int)Enum.move.Wing_Attack], 13));
             learnset.Add(new Learnset(moves[(int)Enum.move.Double_Team], 19));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 28));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Endeavor], 28));
             learnset.Add(new Learnset(moves[(int)Enum.move.Aerial_Ace], 38));
             learnset.Add(new Learnset(moves[(int)Enum.move.Agility], 49));
             learnset.Add(new Learnset(moves[(int)Enum.move.Air_Slash], 61));
@@ -1715,7 +1714,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Thief]);
@@ -1729,7 +1728,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Mirror_Move]);
             //tmPokemon.Add(moves[(int)Enum.move.Rage]);
             //tmPokemon.Add(moves[(int)Enum.move.Refresh]);
-            //tmPokemon.Add(moves[(int)Enum.move.Roost]);
+            tmPokemon.Add(moves[(int)Enum.move.Roost]);
             //tmPokemon.Add(moves[(int)Enum.move.Sky_Attack]);
             //tmPokemon.Add(moves[(int)Enum.move.Steel_Wing]);
             tmPokemon.Add(moves[(int)Enum.move.Supersonic]);
@@ -1812,7 +1811,7 @@ namespace Pokemon_Beep.Factory
             //learnset.Add(new Learnset(moves[(int)Enum.move.Whirlpool], 38));
             //learnset.Add(new Learnset(moves[(int)Enum.move.U_Turn], 42));
             learnset.Add(new Learnset(moves[(int)Enum.move.Bounce], 45));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Silver_Wing], 49));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Silver_Wing], 49));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Soak], 54));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -1823,26 +1822,26 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             //tmPokemon.Add(moves[(int)Enum.move.Safeguard]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Scald]);
             //tmPokemon.Add(moves[(int)Enum.move.Payback]);
-            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
             tmPokemon.Add(moves[(int)Enum.move.Agility]);
             tmPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
             tmPokemon.Add(moves[(int)Enum.move.Aurora_Beam]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brine]);
+            tmPokemon.Add(moves[(int)Enum.move.Brine]);
             tmPokemon.Add(moves[(int)Enum.move.Charm]);
-            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
             tmPokemon.Add(moves[(int)Enum.move.Psybeam]);
             tmPokemon.Add(moves[(int)Enum.move.Signal_Beam]);
-            //tmPokemon.Add(moves[(int)Enum.move.Splash]);
+            tmPokemon.Add(moves[(int)Enum.move.Splash]);
             tmPokemon.Add(moves[(int)Enum.move.Sweet_Kiss]);
-            //tmPokemon.Add(moves[(int)Enum.move.Tickle]);
+            tmPokemon.Add(moves[(int)Enum.move.Tickle]);
             //tmPokemon.Add(moves[(int)Enum.move.Surf]);
             tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
@@ -1898,7 +1897,7 @@ namespace Pokemon_Beep.Factory
             //learnset.Add(new Learnset(moves[(int)Enum.move.Whirlpool], 42));
             //learnset.Add(new Learnset(moves[(int)Enum.move.U_Turn], 48));
             learnset.Add(new Learnset(moves[(int)Enum.move.Bounce], 53));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Silver_Wing], 59));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Silver_Wing], 59));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Soak], 66));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -1910,27 +1909,27 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             //tmPokemon.Add(moves[(int)Enum.move.Safeguard]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Scald]);
             //tmPokemon.Add(moves[(int)Enum.move.Payback]);
             tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
             tmPokemon.Add(moves[(int)Enum.move.Flash]);
-            //tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
+            tmPokemon.Add(moves[(int)Enum.move.Psych_Up]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
             tmPokemon.Add(moves[(int)Enum.move.Agility]);
             tmPokemon.Add(moves[(int)Enum.move.Aqua_Tail]);
             tmPokemon.Add(moves[(int)Enum.move.Aurora_Beam]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brine]);
+            tmPokemon.Add(moves[(int)Enum.move.Brine]);
             tmPokemon.Add(moves[(int)Enum.move.Charm]);
-            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
             tmPokemon.Add(moves[(int)Enum.move.Psybeam]);
             tmPokemon.Add(moves[(int)Enum.move.Signal_Beam]);
-            //tmPokemon.Add(moves[(int)Enum.move.Splash]);
+            tmPokemon.Add(moves[(int)Enum.move.Splash]);
             tmPokemon.Add(moves[(int)Enum.move.Sweet_Kiss]);
-            //tmPokemon.Add(moves[(int)Enum.move.Tickle]);
+            tmPokemon.Add(moves[(int)Enum.move.Tickle]);
             //tmPokemon.Add(moves[(int)Enum.move.Surf]);
             tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
@@ -1971,9 +1970,9 @@ namespace Pokemon_Beep.Factory
             List<Learnset> learnset = new List<Learnset>();
             List<Move> tmPokemon = new List<Move>();
             //========================================================Leveling
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Splash], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Splash], 1));
             learnset.Add(new Learnset(moves[(int)Enum.move.Tackle], 15));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 30));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Flail], 30));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Bounce]);
 
@@ -2030,7 +2029,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Roar]);
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
             tmPokemon.Add(moves[(int)Enum.move.Hail]);
-            //tmPokemon.Add(moves[(int)Enum.move.Taunt]);
+            tmPokemon.Add(moves[(int)Enum.move.Taunt]);
             tmPokemon.Add(moves[(int)Enum.move.Ice_Beam]);
             tmPokemon.Add(moves[(int)Enum.move.Blizzard]);
             tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
@@ -2043,8 +2042,8 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
             tmPokemon.Add(moves[(int)Enum.move.Sandstorm]);
             tmPokemon.Add(moves[(int)Enum.move.Fire_Blast]);
-            //tmPokemon.Add(moves[(int)Enum.move.Torment]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Torment]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             tmPokemon.Add(moves[(int)Enum.move.Scald]);
@@ -2148,7 +2147,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Thunder]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
-            //tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
             tmPokemon.Add(moves[(int)Enum.move.Rest]);
             tmPokemon.Add(moves[(int)Enum.move.Attract]);
             //tmPokemon.Add(moves[(int)Enum.move.Fling]);
@@ -2163,8 +2162,8 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Charge]);
             tmPokemon.Add(moves[(int)Enum.move.Defense_Curl]);
             tmPokemon.Add(moves[(int)Enum.move.Fake_Tears]);
-            //tmPokemon.Add(moves[(int)Enum.move.Flail]);
-            //tmPokemon.Add(moves[(int)Enum.move.Flatter]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Flatter]);
             tmPokemon.Add(moves[(int)Enum.move.Iron_Tail]);
             //tmPokemon.Add(moves[(int)Enum.move.Rollout]);
             tmPokemon.Add(moves[(int)Enum.move.Tail_Whip]);

@@ -18,8 +18,6 @@ T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CoreCompileInputs
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CopyComplete
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.exe
 T:\Git\Pokemon Beep\Pokemon Beep\obj\Debug\Pokemon Beep.pdb
-T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Melanchall.DryWetMidi.dll
-T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Melanchall.DryWetMidi.xml
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\NAudio.Vorbis.dll
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\NVorbis.dll
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Buffers.dll

@@ -1,31 +1,91 @@
 ﻿using NAudio.Wave;
 using NAudio.Vorbis;
+using System.Threading;
 using System.Collections.Generic;
+using System;
+using NAudio.Wave.SampleProviders;
 
 namespace Pokemon_Beep
 {
     class Audio
     {
         List<VorbisWaveReader> musics = new List<VorbisWaveReader>();
-        public void testUwU()
-        {
-            var intro = new VorbisWaveReader("Audio/intro.ogg");
-            var loop = new VorbisWaveReader("Audio/loop.ogg");
-            var waveOut = new DirectSoundOut(); // or WaveOutEvent()
-            var waveOut2 = new DirectSoundOut();
-            LoopStream loopStream = new LoopStream(loop);
-            loopStream.EnableLooping = true;
-            waveOut.Init(intro);
-            waveOut2.Init(loopStream);
-            waveOut.Play();
-            while (waveOut.PlaybackState != PlaybackState.Stopped) ;
-            waveOut2.Play();
-            
-            
-        }
+        WaveOut waveOutIntro = new WaveOut();
+        WaveOut waveOutLoop = new WaveOut();
         public void init()
         {
+            musics.Add(new VorbisWaveReader("Audio/test_battleintro.ogg"));
+            musics.Add(new VorbisWaveReader("Audio/test_battleloop.ogg"));
+            musics.Add(new VorbisWaveReader("Audio/test_roadintro.ogg"));
+            musics.Add(new VorbisWaveReader("Audio/test_roadloop.ogg"));
 
+            waveOutIntro.Volume = (float)0.5;
+            waveOutLoop.Volume = (float)0.5;
+        }
+        public void ChangeMusic(int musicID)
+        {
+            //Fade
+            for (int i = 0; i < 20; i++)
+            {
+                waveOutIntro.Volume -= (float)0.01;
+                waveOutLoop.Volume -= (float)0.01;
+                Thread.Sleep(50);
+            }
+            
+            waveOutIntro.Pause();
+            waveOutLoop.Pause();
+            waveOutIntro.Dispose();
+            waveOutLoop.Dispose();
+
+            LoopStream loopStream = new LoopStream(musics[musicID]);
+            loopStream.EnableLooping = true;
+
+            waveOutLoop.Init(loopStream);
+            waveOutLoop.Volume = (float)0.5;
+            waveOutLoop.Play();
+        }
+        public void ChangeMusic(int musicIDIntro, int musicIDLoop)
+        {
+            //Fade
+            for (int i = 0; i < 4; i++)
+            {
+                waveOutIntro.Volume -= (float)0.05;
+                waveOutLoop.Volume -= (float)0.05;
+                Thread.Sleep(100);
+            }
+
+            waveOutIntro.Pause();
+            waveOutLoop.Pause();
+            waveOutIntro.Dispose();
+            waveOutLoop.Dispose();
+
+            LoopStream loopStream = new LoopStream(musics[musicIDLoop]);
+            loopStream.EnableLooping = true;
+
+            waveOutIntro.Init(musics[musicIDIntro]);
+            waveOutLoop.Init(loopStream);
+
+            waveOutIntro.Volume = (float)0.5;
+            waveOutLoop.Volume = (float)0.5;
+            waveOutIntro.Play();
+
+            while (waveOutIntro.PlaybackState != PlaybackState.Stopped) ;
+            waveOutLoop.Play();
+        }
+        public void startMusic(int musicID)
+        {
+            switch (musicID)
+            {
+                case 0:
+                    LoopStream loopStream = new LoopStream(musics[1]);
+                    loopStream.EnableLooping = true;
+                    waveOutIntro.Init(musics[0]);
+                    waveOutLoop.Init(loopStream);
+                    waveOutIntro.Play();
+                    while (waveOutIntro.PlaybackState != PlaybackState.Stopped) ;
+                    waveOutLoop.Play();
+                    break;
+            }
         }
     }
 }

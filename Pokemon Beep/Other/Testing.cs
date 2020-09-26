@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Security.Permissions;
+using System.Threading;
 using Pokemon_Beep.Combat;
 using Pokemon_Beep.Factory;
 using Pokemon_Beep.Graphic;
@@ -13,6 +15,7 @@ namespace Pokemon_Beep.Other
         /// <summary>
         /// This class is used for testing. Will be removed when the game is done.
         /// </summary>
+        private Thread music = new Thread(() => Utilities.startMusic(0));
         public void battleTest()
         {
             PokemonFactory factory = new PokemonFactory();
@@ -1742,10 +1745,13 @@ namespace Pokemon_Beep.Other
             background.writeBackground(3);
             //Player's Pokemon
             writePlayerPokemon(8, 16);
-            //Foe's Pokemon
-            writeFoePokemon(100, 10);
-            Audio audio = new Audio();
-            audio.testUwU();
+            writeFoePokemon(90, 16);
+            music.Start();
+            Console.Beep(100, 1000);
+            Console.ReadKey();
+            Utilities.ChangeMusic(2);
+            Console.ReadKey();
+            Utilities.ChangeMusic(0,1);
 
             void writePlayerPokemon(int x, int y)
             {
@@ -3202,6 +3208,27 @@ namespace Pokemon_Beep.Other
                 Console.SetCursorPosition(x, y);
                 Console.Write("\x1b[38;2;0;0;0m██");
             }
+        }
+        public void testThread()
+        {
+            Thread music = new Thread(() => Utilities.startMusic(0));
+            music.Start();
+            Console.ReadKey();
+        }
+        public void layerTesting()
+        {
+            Console.SetWindowSize(152, 41);
+            Console.SetBufferSize(152, 41);
+            Utilities.changeBackgroundColor(50, 50, 50);
+            Console.Clear();
+            Background back = new Background();
+            string[,] background = back.getBackground();
+
+
+
+            BattleBackground background2 = new BattleBackground();
+            background2.writeBackground(2);
+
         }
     }
 }

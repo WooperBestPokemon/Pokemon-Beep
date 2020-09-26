@@ -90,7 +90,7 @@ namespace Pokemon_Beep.Combat
         }
         private double randomDamage()
         {
-            return (double)Utilities.RandomNumber(85, 101) / 100;
+            return (double)Utilities.RandomNumber(85, 100) / 100;
         }
         private double stab(List<int> attackerType, int moveType)
         {
