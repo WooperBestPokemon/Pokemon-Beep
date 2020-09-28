@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Pokemon_Beep.Combat
+﻿namespace Pokemon_Beep.Combat
 {
     class Ability
     {

@@ -15,6 +15,7 @@ namespace Pokemon_Beep.Player
         {
             Name = name;
             Sexe = sexe;
+            Pokemons = new List<PocketMonster>();
         }
         //When you load a character
         public Protagonist(string name, int sexe, int money, Inventory inventory, List<PocketMonster> pokemons, Story journal, PC computer)

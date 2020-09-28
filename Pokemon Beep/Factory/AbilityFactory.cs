@@ -25,6 +25,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Damp", "Prevents the use of self-destructing moves.", (int)Enum.ability.Damp));
             abilities.Add(new Ability("Drizzle", "The Pokémon makes it rain when it enters a battle.", (int)Enum.ability.Drizzle));
             abilities.Add(new Ability("Drought", "The Pokémon makes it sunny when it enters a battle.", (int)Enum.ability.Drought));
+            abilities.Add(new Ability("Dry Skin", "Reduces HP if it is hot. Water restores HP.", (int)Enum.ability.Dry_Skin));
             abilities.Add(new Ability("Early Bird", "The Pokémon awakens quickly from sleep.", (int)Enum.ability.Early_Bird));
             abilities.Add(new Ability("Effect Spore", "Contact may poison or cause paralysis or sleep.", (int)Enum.ability.Effect_Spore));
             abilities.Add(new Ability("Flame Body", "Contact with the Pokémon may burn the attacker.", (int)Enum.ability.Flame_Body));

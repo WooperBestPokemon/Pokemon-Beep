@@ -2,8 +2,6 @@
 using NAudio.Vorbis;
 using System.Threading;
 using System.Collections.Generic;
-using System;
-using NAudio.Wave.SampleProviders;
 
 namespace Pokemon_Beep
 {
@@ -74,18 +72,24 @@ namespace Pokemon_Beep
         }
         public void startMusic(int musicID)
         {
-            switch (musicID)
-            {
-                case 0:
-                    LoopStream loopStream = new LoopStream(musics[1]);
-                    loopStream.EnableLooping = true;
-                    waveOutIntro.Init(musics[0]);
-                    waveOutLoop.Init(loopStream);
-                    waveOutIntro.Play();
-                    while (waveOutIntro.PlaybackState != PlaybackState.Stopped) ;
-                    waveOutLoop.Play();
-                    break;
-            }
+            LoopStream loopStream = new LoopStream(musics[musicID]);
+            loopStream.EnableLooping = true;
+
+            waveOutLoop.Init(loopStream);
+            waveOutLoop.Play();
+        }
+        public void startMusic(int musicIDIntro, int musicIDLoop)
+        {
+            LoopStream loopStream = new LoopStream(musics[musicIDLoop]);
+            loopStream.EnableLooping = true;
+
+            waveOutIntro.Init(musics[musicIDIntro]);
+            waveOutLoop.Init(loopStream);
+
+            waveOutIntro.Play();
+
+            while (waveOutIntro.PlaybackState != PlaybackState.Stopped) ;
+            waveOutLoop.Play();
         }
     }
 }

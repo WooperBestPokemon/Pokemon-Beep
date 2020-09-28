@@ -1,7 +1,6 @@
 ﻿using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Pokemon_Beep.Combat
 {
@@ -12,29 +11,29 @@ namespace Pokemon_Beep.Combat
         /// </summary>
         private Random random = new Random();
         private TypeChart typeChart = new TypeChart();
-        public int getDamage(PocketMonster attacker, PocketMonster defender, Move move, BattleStatus battleStatus)
+        public int getDamage(PocketMonster attacker, PocketMonster defender, Move move, int weatherID)
         {
             double damage;
             //Physical Attack
             if (move.Category == "Physical")
             {
-                double attackAttacker = attacker.Attack * battleStatus.getStageMultiplicator(attacker.stages[(int)Enum.stat.Attack]);
-                double defenseDefender = defender.Defense * battleStatus.getStageMultiplicator(defender.stages[(int)Enum.stat.Defense]);
-                damage = (((((2 * attacker.Level / 5) + 2) * attackAttacker * move.Power / defenseDefender) / 50) + 2) * modifier(battleStatus, attacker, defender, move);
+                double attackAttacker = attacker.Attack * getStageMultiplicator(attacker.stages[(int)Enum.stat.Attack]);
+                double defenseDefender = defender.Defense * getStageMultiplicator(defender.stages[(int)Enum.stat.Defense]);
+                damage = ((((2 * attacker.Level / 5) + 2) * attackAttacker * move.Power / defenseDefender / 50) + 2) * modifier(weatherID, attacker, defender, move);
             }
             //Special Attack
             else
             {
-                double specialAttackAttacker = attacker.SpecialAttack * battleStatus.getStageMultiplicator(attacker.stages[(int)Enum.stat.SpecialAttack]);
-                double specialDefenseDefender = defender.SpecialDefense * battleStatus.getStageMultiplicator(defender.stages[(int)Enum.stat.SpecialDefense]);
-                damage = (((((2 * attacker.Level / 5) + 2) * specialAttackAttacker * move.Power / specialDefenseDefender) / 50) + 2) * modifier(battleStatus, attacker, defender, move);
+                double specialAttackAttacker = attacker.SpecialAttack * getStageMultiplicator(attacker.stages[(int)Enum.stat.SpecialAttack]);
+                double specialDefenseDefender = defender.SpecialDefense * getStageMultiplicator(defender.stages[(int)Enum.stat.SpecialDefense]);
+                damage = ((((2 * attacker.Level / 5) + 2) * specialAttackAttacker * move.Power / specialDefenseDefender / 50) + 2) * modifier(weatherID, attacker, defender, move);
             }                
             return (int) Math.Round(damage, 0);
         }
         //Modifier
-        private double modifier(BattleStatus battleStatus, PocketMonster attacker, PocketMonster defender, Move move)
+        private double modifier(int weatherID, PocketMonster attacker, PocketMonster defender, Move move)
         {
-            return weather(battleStatus.Weather, move.Type) * criticalHit(attacker.stages[(int)Enum.stat.Critical]) * randomDamage() * stab(attacker.Types, move.Type) * effectiveness(move.Type, defender) * burn(attacker, move.Category) * other();
+            return weather(weatherID, move.Type) * criticalHit(attacker.stages[(int)Enum.stat.Critical]) * randomDamage() * stab(attacker.Types, move.Type) * effectiveness(move.Type, defender) * burn(attacker, move.Category) * other();
         }
         //Private Function used by Modifier
         private double weather(int weatherID, int typeAttack)
@@ -109,7 +108,6 @@ namespace Pokemon_Beep.Combat
         }
         private double effectiveness(int typeMove, PocketMonster defender)
         {
-            TypeChart typeChart = new TypeChart();
             return typeChart.effectivity(typeMove, defender);
         }
         private double burn(PocketMonster attacker, string categoryMove)
@@ -128,12 +126,43 @@ namespace Pokemon_Beep.Combat
             return burn;
         }
         //Other is when an Object/Ability boost the attack.
-       private double other()
-       {
+        private double other()
+        {
             //todo - object/ability
             double other = 1;
             return other;
-       }
+        }
+        private double getStageMultiplicator(int stage)
+        {
+            if (stage == 0)
+                return 1;
+            else if (stage == 1)
+                return 1.5;
+            else if (stage == 2)
+                return 2;
+            else if (stage == 3)
+                return 2.5;
+            else if (stage == 4)
+                return 3;
+            else if (stage == 5)
+                return 3.5;
+            else if (stage == 6)
+                return 4;
+            else if (stage == -1)
+                return (double)2 / 3;
+            else if (stage == -2)
+                return (double)2 / 4;
+            else if (stage == -3)
+                return (double)2 / 5;
+            else if (stage == -4)
+                return (double)2 / 6;
+            else if (stage == -5)
+                return (double)2 / 7;
+            else if (stage == -6)
+                return (double)2 / 8;
+            else
+                return 1;
+        }
     }
 }
      

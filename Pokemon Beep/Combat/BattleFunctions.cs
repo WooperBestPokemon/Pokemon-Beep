@@ -1,16 +1,10 @@
 ﻿using Pokemon_Beep.Player;
 using Pokemon_Beep.Pokemon;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pokemon_Beep.Combat
 {
     partial class Battle
     {
-        private BattleStatus battleStatus = new BattleStatus();
         private PocketMonster getPlayerPokemon(Protagonist player)
         {
             return player.Pokemons.Find(x => x.currentHP != 0);
@@ -22,9 +16,8 @@ namespace Pokemon_Beep.Combat
             //Check if both move has the same priority
             if (movePlayer.Priority == moveFoe.Priority)
             {
-                BattleStatus battleStatus = new BattleStatus();
-                double speedPlayer = pokemonPlayer.Pokemon.Speed * battleStatus.getStageMultiplicator(pokemonPlayer.Pokemon.stages[(int)Enum.stat.Speed]);
-                double speedFoe = pokemonFoe.Pokemon.Speed * battleStatus.getStageMultiplicator(pokemonFoe.Pokemon.stages[(int)Enum.stat.Speed]);
+                double speedPlayer = pokemonPlayer.Pokemon.Speed * getStageMultiplicator(pokemonPlayer.Pokemon.stages[(int)Enum.stat.Speed]);
+                double speedFoe = pokemonFoe.Pokemon.Speed * getStageMultiplicator(pokemonFoe.Pokemon.stages[(int)Enum.stat.Speed]);
 
                 //Check the speed of the player
                 if (speedPlayer > speedFoe)
@@ -57,16 +50,47 @@ namespace Pokemon_Beep.Combat
             //Check the abilities that modify the accuracy
             if (move.Category == "Physical" && attacker.Pokemon.Ability.Effect == (int)Enum.ability.Hustle)
                 otherMods -= 0.2;
-            else if(attacker.Pokemon.Ability.Effect == (int)Enum.ability.Compound_Eyes)
+            else if (attacker.Pokemon.Ability.Effect == (int)Enum.ability.Compound_Eyes)
                 otherMods += 0.3;
 
-            double A = move.Accuracy * (battleStatus.getStageMultiplicator(defender.Pokemon.stages[(int)Enum.stat.Evasion]) / battleStatus.getStageMultiplicator(attacker.Pokemon.stages[(int)Enum.stat.Accuracy])) * otherMods;
-            int random = Utilities.RandomNumber(1, 100);
+            double A = move.Accuracy * (getStageMultiplicator(defender.Pokemon.stages[(int)Enum.stat.Evasion]) / getStageMultiplicator(attacker.Pokemon.stages[(int)Enum.stat.Accuracy])) * otherMods;
+            int random = Utilities.RandomNumber(1, 101);
 
             if (random <= A)
                 return true;
             else
                 return false;
+        }
+        private double getStageMultiplicator(int stage)
+        {
+            if (stage == 0)
+                return 1;
+            else if (stage == 1)
+                return 1.5;
+            else if (stage == 2)
+                return 2;
+            else if (stage == 3)
+                return 2.5;
+            else if (stage == 4)
+                return 3;
+            else if (stage == 5)
+                return 3.5;
+            else if (stage == 6)
+                return 4;
+            else if (stage == -1)
+                return (double)2 / 3;
+            else if (stage == -2)
+                return (double)2 / 4;
+            else if (stage == -3)
+                return (double)2 / 5;
+            else if (stage == -4)
+                return (double)2 / 6;
+            else if (stage == -5)
+                return (double)2 / 7;
+            else if (stage == -6)
+                return (double)2 / 8;
+            else
+                return 1;
         }
     }
 }

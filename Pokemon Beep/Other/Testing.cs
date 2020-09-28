@@ -6,6 +6,7 @@ using System.Threading;
 using Pokemon_Beep.Combat;
 using Pokemon_Beep.Factory;
 using Pokemon_Beep.Graphic;
+using Pokemon_Beep.Player;
 using Pokemon_Beep.Pokemon;
 
 namespace Pokemon_Beep.Other
@@ -18,111 +19,21 @@ namespace Pokemon_Beep.Other
         private Thread music = new Thread(() => Utilities.startMusic(0));
         public void battleTest()
         {
+            Protagonist protag = new Protagonist("James", 0);
             PokemonFactory factory = new PokemonFactory();
-            PocketMonster player = factory.MissingNo();
-            PocketMonster foe = factory.testing();
-            BattleStatus battleStatus = new BattleStatus();
-            Battle battle = new Battle();
+            PocketMonster player = factory.Furret();
+            PocketMonster foe = factory.Finneon();
             player.generateWildPokemon(50);
             foe.generateWildPokemon(50);
-            PkmnBattleInfo playerPkmn = new PkmnBattleInfo(player);
-            PkmnBattleInfo foePkmn = new PkmnBattleInfo(foe);
-            DamageCalculator damageCalculator = new DamageCalculator();
-            while (true)
-            {
-                Utilities.changeForegroundColor(255, 0, 0);
-                Console.WriteLine("Foe : " + foe.Name);
-                Console.WriteLine("Lv : " + foe.Level);
-                Console.WriteLine("HP : " + foe.currentHP + " / " + foe.HP);
-                Console.WriteLine("Defense Stage : " + foe.stages[(int)Enum.stat.Defense]);
-                if (foe.Status != 0)
-                {
-                    if(foe.Status == (int)Enum.status.Burned)
-                        Console.WriteLine("Burned");
-                    else if(foe.Status == (int)Enum.status.Frozen)
-                        Console.WriteLine("Frozen");
-                    else if (foe.Status == (int)Enum.status.Paralyzed)
-                        Console.WriteLine("Paralyzed");
-                    else if (foe.Status == (int)Enum.status.Poisoned || foe.Status == (int)Enum.status.Badly_Poisoned)
-                        Console.WriteLine("Poisoned");
-                    else if (foe.Status == (int)Enum.status.Sleep)
-                        Console.WriteLine("Asleep");
-                }
-                Console.WriteLine("");
-                Utilities.changeForegroundColor(0, 255, 0);
-                Console.WriteLine("Player : " + player.Name);
-                Console.WriteLine("Lv : " + player.Level);
-                Console.WriteLine("HP : " + player.currentHP + " / " + player.HP);
-                if (player.Status != 0)
-                {
-                    if (player.Status == (int)Enum.status.Burned)
-                        Console.WriteLine("Burned");
-                    else if (player.Status == (int)Enum.status.Frozen)
-                        Console.WriteLine("Frozen");
-                    else if (player.Status == (int)Enum.status.Paralyzed)
-                        Console.WriteLine("Paralyzed");
-                    else if (player.Status == (int)Enum.status.Poisoned || player.Status == (int)Enum.status.Badly_Poisoned)
-                        Console.WriteLine("Poisoned");
-                    else if (player.Status == (int)Enum.status.Sleep)
-                        Console.WriteLine("Asleep");
-                }
-                Utilities.changeForegroundColor(255, 255, 255);
-                Console.WriteLine("------------------------");
-                Console.WriteLine("Please choose a move");
-                Console.WriteLine("");
-                for (int i = 0; i < player.Moveset.Count; i++)
-                {
-                    Console.WriteLine(i + ". " + player.Moveset[i].Name);
-                }
-                int playerChoice = Convert.ToInt32(Console.ReadLine());
-                int aiChoice = Utilities.RandomNumber(0, (foe.Moveset.Count - 1));
 
-                if(battle.playerAttackFirst(playerPkmn, foePkmn, player.Moveset[playerChoice], foe.Moveset[aiChoice]))
-                {
-                    int damage = 0;
-                    int damageFoe = 0;
-                    if (battle.attackHit(playerPkmn, foePkmn, player.Moveset[playerChoice]))
-                    {
-                        damage = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
-                        foe.currentHP -= damage;
-                        Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damage + " damage !");
-                        player.Moveset[playerChoice].Effect.DynamicInvoke(playerPkmn, foePkmn, battleStatus);
-                    }
-                    else
-                        Console.WriteLine(playerPkmn.Pokemon.Name + "'s attack missed!");
-                    if (battle.attackHit(foePkmn, playerPkmn, foe.Moveset[aiChoice]))
-                    {
-                        damageFoe = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
-                        player.currentHP -= damageFoe;
-                        Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damageFoe + " damage !");
-                        foe.Moveset[aiChoice].Effect.DynamicInvoke(foePkmn, playerPkmn, battleStatus);
-                    }
-                    else
-                        Console.WriteLine(foePkmn.Pokemon.Name + "'s attack missed!");
-                }
-                else
-                {
-                    if(battle.attackHit(foePkmn, playerPkmn, foe.Moveset[aiChoice]))
-                    {
-                        int damage = damageCalculator.getDamage(foe, player, foe.Moveset[aiChoice], battleStatus);
-                        player.currentHP -= damage;
-                        Console.WriteLine(foe.Name + " used " + foe.Moveset[aiChoice].Name + " and dealt " + damage + " damage !");
-                        foe.Moveset[aiChoice].Effect.DynamicInvoke(foePkmn, playerPkmn, battleStatus);
+            protag.Pokemons.Add(player);
 
-                        int damagePlayer = damageCalculator.getDamage(player, foe, player.Moveset[playerChoice], battleStatus);
-                        foe.currentHP -= damage;
-                        Console.WriteLine(player.Name + " used " + player.Moveset[playerChoice].Name + " and dealt " + damagePlayer + " damage !");
-                        player.Moveset[playerChoice].Effect.DynamicInvoke(playerPkmn, foePkmn, battleStatus);
-                    }
-                    else
-                        Console.WriteLine(foePkmn.Pokemon.Name + "'s attack missed!");
+            Battle battle = new Battle();
 
-                }
+            Console.Clear();
 
-
-                Console.ReadKey();
-                Console.Clear();
-            }
+            battle.startWildBattle(protag, foe, 0);
+            
         }
         public void graphic()
         {
@@ -3228,6 +3139,21 @@ namespace Pokemon_Beep.Other
 
             BattleBackground background2 = new BattleBackground();
             background2.writeBackground(2);
+
+        }
+        public void battletest()
+        {
+            PokemonFactory factory = new PokemonFactory();
+            PocketMonster player = factory.MissingNo();
+            PocketMonster foe = factory.testing();
+            Battle battle = new Battle();
+
+
+            PkmnBattleInfo playerInfo = new PkmnBattleInfo(player);
+            PkmnBattleInfo foeInfo = new PkmnBattleInfo(foe);
+            Field playerField = new Field(playerInfo);
+            Field foeField = new Field(foeInfo);
+            BattleField arena = new BattleField(playerField, foeField);
 
         }
     }

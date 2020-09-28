@@ -75,8 +75,9 @@
     <Compile Include="Audio\Audio.cs" />
     <Compile Include="Audio\LoopStream.cs" />
     <Compile Include="Combat\Ability.cs" />
+    <Compile Include="Combat\BattleField.cs" />
     <Compile Include="Combat\BattleFunctions.cs" />
-    <Compile Include="Combat\BattleStatus.cs" />
+    <Compile Include="Combat\Field.cs" />
     <Compile Include="Combat\DamageCalculator.cs" />
     <Compile Include="Combat\Battle.cs" />
     <Compile Include="Combat\Move.cs" />

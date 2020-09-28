@@ -41,6 +41,11 @@ namespace Pokemon_Beep
             audio.init();
             audio.startMusic(musicID);
         }
+        public static void startMusic(int musicIDIntro, int musicIDLoop)
+        {
+            audio.init();
+            audio.startMusic(musicIDIntro, musicIDLoop);
+        }
         public static void ChangeMusic(int musicID)
         {
             audio.ChangeMusic(musicID);

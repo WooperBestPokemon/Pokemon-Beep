@@ -1,11 +1,7 @@
 ﻿using Pokemon_Beep.Combat;
 using Pokemon_Beep.Pokemon;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Pokemon_Beep.Factory
 {
@@ -220,7 +216,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 31));
             learnset.Add(new Learnset(moves[(int)Enum.move.Body_Slam], 34));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 39));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 42));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 42));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Solar_Beam], 45));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -237,11 +233,11 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Energy_Ball]);
             tmPokemon.Add(moves[(int)Enum.move.Flash]);
             tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
             tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
-            //tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
+            tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
             tmPokemon.Add(moves[(int)Enum.move.Body_Slam]);
             //tmPokemon.Add(moves[(int)Enum.move.Counter]);
             tmPokemon.Add(moves[(int)Enum.move.Flail]);
@@ -307,7 +303,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 34));
             learnset.Add(new Learnset(moves[(int)Enum.move.Body_Slam], 40));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 46));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 50));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 50));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Solar_Beam], 54));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -324,12 +320,12 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Energy_Ball]);
             tmPokemon.Add(moves[(int)Enum.move.Flash]);
             tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
 
             tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
-            //tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
+            tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
             tmPokemon.Add(moves[(int)Enum.move.Body_Slam]);
             //tmPokemon.Add(moves[(int)Enum.move.Counter]);
             tmPokemon.Add(moves[(int)Enum.move.Flail]);
@@ -395,7 +391,7 @@ namespace Pokemon_Beep.Factory
             learnset.Add(new Learnset(moves[(int)Enum.move.Light_Screen], 34));
             learnset.Add(new Learnset(moves[(int)Enum.move.Body_Slam], 40));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Safeguard], 46));
-            //learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 54));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 54));
             //learnset.Add(new Learnset(moves[(int)Enum.move.Solar_Beam], 60));
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Toxic]);
@@ -417,12 +413,12 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Bulldoze]);
             //tmPokemon.Add(moves[(int)Enum.move.Dragon_Tail]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
 
             tmPokemon.Add(moves[(int)Enum.move.Ancient_Power]);
-            //tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
+            tmPokemon.Add(moves[(int)Enum.move.Aromatherapy]);
             tmPokemon.Add(moves[(int)Enum.move.Body_Slam]);
             //tmPokemon.Add(moves[(int)Enum.move.Counter]);
             tmPokemon.Add(moves[(int)Enum.move.Flail]);
@@ -583,7 +579,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
             tmPokemon.Add(moves[(int)Enum.move.Protect]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
             tmPokemon.Add(moves[(int)Enum.move.Fire_Blast]);
@@ -679,7 +675,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
             //tmPokemon.Add(moves[(int)Enum.move.Earthquake]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
             tmPokemon.Add(moves[(int)Enum.move.Fire_Blast]);
@@ -785,7 +781,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Protect]);
             tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
@@ -883,7 +879,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Protect]);
             tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
@@ -984,7 +980,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rain_Dance]);
             //tmPokemon.Add(moves[(int)Enum.move.Earthquake]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Rock_Tomb]);
             tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
@@ -1095,7 +1091,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
             tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Pluck]);
             //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
@@ -1191,7 +1187,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
             tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
             tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.Pluck]);
             //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
@@ -1270,7 +1266,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Thunderbolt]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
             tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
             tmPokemon.Add(moves[(int)Enum.move.Facade]);
@@ -1282,7 +1278,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Shadow_Claw]);
             //tmPokemon.Add(moves[(int)Enum.move.Retaliate]);
             tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
@@ -1366,7 +1362,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Thunder]);
             //tmPokemon.Add(moves[(int)Enum.move.Dig]);
             tmPokemon.Add(moves[(int)Enum.move.Shadow_Ball]);
-            //tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
             tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
             tmPokemon.Add(moves[(int)Enum.move.Flamethrower]);
             tmPokemon.Add(moves[(int)Enum.move.Facade]);
@@ -1379,7 +1375,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Retaliate]);
             tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
             tmPokemon.Add(moves[(int)Enum.move.Work_Up]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.U_Turn]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
@@ -1750,8 +1746,197 @@ namespace Pokemon_Beep.Factory
         //Gloom
         //Vileplume
         //Bellossom
-        //Paras
-        //Parasect
+        public PocketMonster Paras()
+        {
+            //General Information
+            int pokedex = 038;
+            string name = "Paras";
+            string description = "Mushrooms named tochukaso grow on its back. They grow along with the host Paras.";
+            int gender = (int)Enum.gender.Both;
+            double height = 0.3;
+            double weight = 5.4;
+
+            //Typing
+            List<int> types = new List<int>();
+            types.Add((int)Enum.type.Bug);
+            types.Add((int)Enum.type.Grass);
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Effect_Spore]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Dry_Skin]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Damp]);
+
+            //Stats
+            int baseHP = 35;
+            int baseAttack = 70;
+            int baseDefense = 55;
+            int baseSpecialAttack = 45;
+            int baseSpecialDefense = 55;
+            int baseSpeed = 25;
+
+            //Battle
+            int catchrate = 190;
+            int experience = (int)Enum.experience.Medium_Fast;
+            int experienceYield = 57;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scratch], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Stun_Spore], 6));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Poison_Powder], 6));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Leech_Life], 11));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Fury_Cutter], 17));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Spore], 22));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Slash], 27));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growth], 33));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Giga_Drain], 38));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 43));
+            learnset.Add(new Learnset(moves[(int)Enum.move.X_Scissor], 49));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            //tmPokemon.Add(moves[(int)Enum.move.Venoshock]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Sludge_Bomb]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Energy_Ball]);
+            //tmPokemon.Add(moves[(int)Enum.move.False_Swipe]);
+            tmPokemon.Add(moves[(int)Enum.move.Flash]);
+            tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Struggle_Bug]);
+            tmPokemon.Add(moves[(int)Enum.move.X_Scissor]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+
+            tmPokemon.Add(moves[(int)Enum.move.Agility]);
+            //tmPokemon.Add(moves[(int)Enum.move.Bug_Bite]);
+            //tmPokemon.Add(moves[(int)Enum.move.Counter]);
+            tmPokemon.Add(moves[(int)Enum.move.Cross_Poison]);
+            tmPokemon.Add(moves[(int)Enum.move.Endure]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Leech_Seed]);
+            tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Psybeam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pursuit]);
+            tmPokemon.Add(moves[(int)Enum.move.Screech]);
+            tmPokemon.Add(moves[(int)Enum.move.Sweet_Scent]);
+
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+        }
+        public PocketMonster Parasect()
+        {
+            //General Information
+            int pokedex = 039;
+            string name = "Parasect";
+            string description = "It is controlled by a mushroom grown larger than the bug body. It is said to prefer damp places.";
+            int gender = (int)Enum.gender.Both;
+            double height = 1;
+            double weight = 29.5;
+
+            //Typing
+            List<int> types = new List<int>();
+            types.Add((int)Enum.type.Bug);
+            types.Add((int)Enum.type.Grass);
+
+            //Abilities
+            List<Ability> abilitiesPokemon = new List<Ability>();
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Effect_Spore]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Dry_Skin]);
+            abilitiesPokemon.Add(abilities[(int)Enum.ability.Damp]);
+
+            //Stats
+            int baseHP = 60;
+            int baseAttack = 95;
+            int baseDefense = 80;
+            int baseSpecialAttack = 60;
+            int baseSpecialDefense = 80;
+            int baseSpeed = 30;
+
+            //Battle
+            int catchrate = 75;
+            int experience = (int)Enum.experience.Medium_Fast;
+            int experienceYield = 142;
+
+            //Moves
+            List<Learnset> learnset = new List<Learnset>();
+            List<Move> tmPokemon = new List<Move>();
+            //========================================================Leveling
+            learnset.Add(new Learnset(moves[(int)Enum.move.Cross_Poison], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Scratch], 1));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Stun_Spore], 6));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Poison_Powder], 6));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Leech_Life], 11));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Fury_Cutter], 17));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Spore], 22));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Slash], 29));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Growth], 37));
+            //learnset.Add(new Learnset(moves[(int)Enum.move.Giga_Drain], 44));
+            learnset.Add(new Learnset(moves[(int)Enum.move.Aromatherapy], 51));
+            learnset.Add(new Learnset(moves[(int)Enum.move.X_Scissor], 59));
+            //========================================================TM
+            tmPokemon.Add(moves[(int)Enum.move.Hone_Claws]);
+            tmPokemon.Add(moves[(int)Enum.move.Toxic]);
+            //tmPokemon.Add(moves[(int)Enum.move.Venoshock]);
+            tmPokemon.Add(moves[(int)Enum.move.Sunny_Day]);
+            tmPokemon.Add(moves[(int)Enum.move.Hyper_Beam]);
+            tmPokemon.Add(moves[(int)Enum.move.Light_Screen]);
+            tmPokemon.Add(moves[(int)Enum.move.Protect]);
+            //tmPokemon.Add(moves[(int)Enum.move.Solar_Beam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Dig]);
+            tmPokemon.Add(moves[(int)Enum.move.Brick_Break]);
+            tmPokemon.Add(moves[(int)Enum.move.Double_Team]);
+            tmPokemon.Add(moves[(int)Enum.move.Sludge_Bomb]);
+            tmPokemon.Add(moves[(int)Enum.move.Aerial_Ace]);
+            tmPokemon.Add(moves[(int)Enum.move.Facade]);
+            tmPokemon.Add(moves[(int)Enum.move.Rest]);
+            tmPokemon.Add(moves[(int)Enum.move.Attract]);
+            //tmPokemon.Add(moves[(int)Enum.move.Thief]);
+            tmPokemon.Add(moves[(int)Enum.move.Energy_Ball]);
+            //tmPokemon.Add(moves[(int)Enum.move.False_Swipe]);
+            tmPokemon.Add(moves[(int)Enum.move.Giga_Impact]);
+            tmPokemon.Add(moves[(int)Enum.move.Flash]);
+            tmPokemon.Add(moves[(int)Enum.move.Swords_Dance]);
+            tmPokemon.Add(moves[(int)Enum.move.Struggle_Bug]);
+            tmPokemon.Add(moves[(int)Enum.move.X_Scissor]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Swagger]);
+            //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
+
+            tmPokemon.Add(moves[(int)Enum.move.Agility]);
+            //tmPokemon.Add(moves[(int)Enum.move.Bug_Bite]);
+            //tmPokemon.Add(moves[(int)Enum.move.Counter]);
+            tmPokemon.Add(moves[(int)Enum.move.Cross_Poison]);
+            tmPokemon.Add(moves[(int)Enum.move.Endure]);
+            tmPokemon.Add(moves[(int)Enum.move.Flail]);
+            tmPokemon.Add(moves[(int)Enum.move.Leech_Seed]);
+            tmPokemon.Add(moves[(int)Enum.move.Metal_Claw]);
+            tmPokemon.Add(moves[(int)Enum.move.Psybeam]);
+            //tmPokemon.Add(moves[(int)Enum.move.Pursuit]);
+            tmPokemon.Add(moves[(int)Enum.move.Screech]);
+            tmPokemon.Add(moves[(int)Enum.move.Sweet_Scent]);
+
+            tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
+            tmPokemon.Add(moves[(int)Enum.move.Cut]);
+
+            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+        }
         //Spinarak
         //Ariados
         //Scyther
@@ -2154,7 +2339,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Charge_Beam]);
             //tmPokemon.Add(moves[(int)Enum.move.Volt_Switch]);
             tmPokemon.Add(moves[(int)Enum.move.Thunder_Wave]);
-            //tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
+            tmPokemon.Add(moves[(int)Enum.move.Grass_Knot]);
             tmPokemon.Add(moves[(int)Enum.move.Swagger]);
             //tmPokemon.Add(moves[(int)Enum.move.U_turn]);
             //tmPokemon.Add(moves[(int)Enum.move.Substitute]);
