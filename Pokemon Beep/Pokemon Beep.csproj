@@ -47,6 +47,7 @@
       <HintPath>packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
@@ -86,6 +87,7 @@
     <Compile Include="Enum.cs" />
     <Compile Include="Factory\AbilityFactory.cs" />
     <Compile Include="Factory\ItemFactory.cs" />
+    <Compile Include="Factory\MapFactory.cs" />
     <Compile Include="Factory\MoveFactory.cs" />
     <Compile Include="Factory\PokemonFactory.cs" />
     <Compile Include="Game.cs" />
@@ -95,6 +97,8 @@
     <Compile Include="Graphic\BattleBackground.cs" />
     <Compile Include="Graphic\BattleScene.cs" />
     <Compile Include="Graphic\Camera.cs" />
+    <Compile Include="Graphic\Layer.cs" />
+    <Compile Include="Graphic\WorldGraphics.cs" />
     <Compile Include="Map\Building.cs" />
     <Compile Include="Map\Character.cs" />
     <Compile Include="Map\Hitbox.cs" />
@@ -118,6 +122,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\Music\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Map\Plankalkul&amp;Road1.png" />
+    <EmbeddedResource Include="Data\Map\Plankalkul&amp;Road1Hitbox.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,41 +35,6 @@ namespace Pokemon_Beep.Other
             battle.startWildBattle(protag, foe, 0);
             
         }
-        public void graphic()
-        {
-            Console.CursorVisible = false;
-            /*
-            int oldPosX = 0;
-            int posY = 4;
-            for (int i = 1; i < 121; i++)
-            {
-                Console.SetCursorPosition(i, posY);
-                Console.Write("O");
-                Console.SetCursorPosition(oldPosX, posY);
-                Console.Write(" ");
-                oldPosX++;
-                System.Threading.Thread.Sleep(5);
-            }
-            */
-            int posX = 50;
-            int posY = 10;
-            
-            while (true)
-            {
-                System.Threading.Thread.Sleep(100);
-                Console.SetCursorPosition(posX, posY);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write("@");
-                System.Threading.Thread.Sleep(100);
-                Console.SetCursorPosition(posX, posY);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("@");
-                System.Threading.Thread.Sleep(100);
-                Console.SetCursorPosition(posX, posY);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.Write("@");
-            }
-        }
         public void asciiTest()
         {
             Animation animation = new Animation();
@@ -114,35 +79,6 @@ namespace Pokemon_Beep.Other
             Console.ReadKey();
             animation.wildPokemonBattleAnimation();
             Console.ReadKey();
-        }
-        public void asciiPokemon()
-        {
-            Console.SetWindowSize(152, 40);
-            Console.SetBufferSize(152, 40);
-            Utilities.changeBackgroundColor(50, 50, 50);
-            Console.Clear();
-            Console.WriteLine("                            \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                          \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                          \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                            \x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("          \x1b[38;2;0;0;0m██        \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██  \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("        \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("      \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;255;181;72m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;255;181;72m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("\x1b[38;2;0;0;0m██\x1b[38;2;217;217;217m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;204;153;254m██\x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("  \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;254;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;217;217;217m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("    \x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;153;51;255m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("      \x1b[38;2;0;0;0m██  \x1b[38;2;0;0;0m██\x1b[38;2;217;217;217m██\x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;204;153;254m██\x1b[38;2;153;51;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("            \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██\x1b[38;2;255;255;255m██\x1b[38;2;255;255;255m██\x1b[38;2;0;0;0m██");
-            Console.WriteLine("                \x1b[38;2;0;0;0m██\x1b[38;2;0;0;0m██");
-
         }
         public void battleGraphic()
         {
@@ -3155,6 +3091,116 @@ namespace Pokemon_Beep.Other
             Field foeField = new Field(foeInfo);
             BattleField arena = new BattleField(playerField, foeField);
 
+        }
+        public void treeTest()
+        {
+            Console.CursorVisible = false;
+            Utilities.changeForegroundColor(0, 127, 14);
+            Console.WriteLine("  ()  ");
+            Console.WriteLine(" (  )");
+            Console.WriteLine("(____)");
+            Utilities.changeForegroundColor(127, 51, 0);
+            Console.WriteLine("  )( ");
+
+
+            Utilities.changeForegroundColor(0, 127, 14);
+            Console.WriteLine("  ()  ");
+            Console.WriteLine(" (  )");
+            Console.WriteLine(" (__)");
+            Utilities.changeForegroundColor(127, 51, 0);
+            Console.WriteLine("  )( ");
+
+
+            Console.WriteLine("");
+            Utilities.changeForegroundColor(0, 127, 14);
+            Console.WriteLine("  () ");
+            Console.WriteLine(" {  }");
+            Console.WriteLine("{ () }");
+            Console.WriteLine(" {  }");
+            Console.WriteLine("{ () }");
+            Console.WriteLine(" {  }");
+            Console.WriteLine("{ () }");
+            Console.WriteLine(" {  }");
+            Console.WriteLine("{____}");
+            Utilities.changeForegroundColor(127, 51, 0);
+            Console.WriteLine("  )( ");
+
+
+
+            Utilities.changeForegroundColor(222, 206, 132);
+            Console.SetCursorPosition(37, 27);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(37, 28);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(37, 29);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+
+            Console.SetCursorPosition(10, 12);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(10, 13);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(10, 14);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+
+            Console.SetCursorPosition(103, 21);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(103, 22);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░");
+            Console.SetCursorPosition(103, 23);
+            Console.WriteLine("░░░░░░░░░░░░░░░░░");
+
+            Console.SetCursorPosition(103, 12);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 13);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 14);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 15);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 16);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 17);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 18);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 19);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 20);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 21);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 22);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 23);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 24);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 25);
+            Console.WriteLine("░░░░░░");
+            Console.SetCursorPosition(103, 26);
+            Console.WriteLine("░░░░░░");
+
+            Utilities.changeForegroundColor(255, 255, 255);
+            Console.SetCursorPosition(9, 5);
+            Console.WriteLine("  ____________/\\____");
+            Console.SetCursorPosition(9, 6);
+            Console.WriteLine(" /           /  \\   \\");
+            Console.SetCursorPosition(9, 7);
+            Console.WriteLine("/___________/_[]_\\___\\");
+            Console.SetCursorPosition(9, 8);
+            Console.WriteLine(" |         /      \\  |");
+            Console.SetCursorPosition(9, 9);
+            Console.WriteLine(" |   _      [][]     |");
+            Console.SetCursorPosition(9, 10);
+            Console.WriteLine(" |  /o\\     [][]     |");
+            Console.SetCursorPosition(9, 11);
+            Console.WriteLine(" |__|_|______________|");
+        }
+        public void ressource()
+        {
+            MapFactory map = new MapFactory();
+            List<Hitbox> hitboxes = map.getHitboxes();
+            Console.Write(hitboxes[0].returnCollision(100,60));
         }
     }
 }

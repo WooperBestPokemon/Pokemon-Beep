@@ -49,7 +49,7 @@ namespace Pokemon_Beep
             SetConsoleMode(hand, mode | 0x4);
             
             Testing testing = new Testing();
-            testing.battleTest();
+            testing.ressource();
             Console.ReadKey();
         }
     }
