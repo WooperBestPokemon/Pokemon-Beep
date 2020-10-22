@@ -3090,49 +3090,50 @@ namespace Pokemon_Beep.Other
             int posJX = 100;
             int posJY = 30;
 
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ║                                                                               ║");
+            Console.WriteLine(" ╚═══════════════════════════════════════════════════════════════════════════════╝");
+
+
+            MapFactory mapFactory = new MapFactory();
+            List<Background> back = mapFactory.getBackground();
+            Camera camera = new Camera(back[0]);
+
             while (true)
             {
-                Console.SetCursorPosition(0, 0);
-                Console.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ║                                                                               ║");
-                Console.WriteLine(" ╚═══════════════════════════════════════════════════════════════════════════════╝");
+                camera.printBackground(posJX, posJY);
+
                 Console.SetCursorPosition(41, 14);
                 Utilities.changeForegroundColor(255, 163, 255);
-                Console.WriteLine("+");
+                Console.WriteLine("■");
 
-                MapFactory mapFactory = new MapFactory();
-                List<Background> back = mapFactory.getBackground();
-                Camera camera = new Camera(back[0]);
-
-
-                camera.printBackground(posJX, posJY);
-                
                 keyinfo = Console.ReadKey(true);
 
                 if (keyinfo.Key == ConsoleKey.S)

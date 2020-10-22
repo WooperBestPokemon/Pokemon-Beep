@@ -22,7 +22,7 @@ namespace Pokemon_Beep
         }
         public void printMap(int mapID)
         {
-            maps[mapID].printMap();
+            //maps[mapID].printMap();
         }
     }
 }

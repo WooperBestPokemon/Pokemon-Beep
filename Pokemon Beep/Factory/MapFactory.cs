@@ -132,19 +132,20 @@ namespace Pokemon_Beep.Factory
                 for (int x = 0; x < bmp.Width; x++)
                 {
                     Color pixelColor = bmp.GetPixel(x, y);
-                    //Step 1 : Grass
-                    if (pixelColor.R == 182 && pixelColor.G == 255 && pixelColor.B == 0)
+
+                    //Step 1 : Nothing
+                    if (pixelColor.R == 255 && pixelColor.G == 255 && pixelColor.B == 255)
                     {
                         int posX = x * 2;
 
-                        char grass = '#';
-                        string grassColour = "\x1b[38;2;109;192;103m";
+                        char nothing = ' ';
+                        string nothingColour = "\x1b[38;2;255;255;255m";
 
-                        character[posX - 1, y] = grass;
-                        character[posX, y] = grass;
+                        character[posX - 1, y] = nothing;
+                        character[posX, y] = nothing;
 
-                        colours[posX - 1, y] = grassColour;
-                        colours[posX, y] = grassColour;
+                        colours[posX - 1, y] = nothingColour;
+                        colours[posX, y] = nothingColour;
                     }
                     //Step 2 : Trees
                     else if (pixelColor.R == 127 && pixelColor.G == 51 && pixelColor.B == 0)
@@ -201,8 +202,17 @@ namespace Pokemon_Beep.Factory
                         for (int i = nbTree; i > 0; i--)
                         {
                             //Last tree in the row
-                            if(i == 1)
+                            if (i == 1)
                             {
+                                colours[posX - 3, posY] = leavesColour;
+                                character[posX - 3, posY] = ' ';
+                                colours[posX - 1, posY] = leavesColour;
+                                character[posX - 1, posY] = ' ';
+                                colours[posX, posY] = leavesColour;
+                                character[posX, posY] = ' ';
+                                colours[posX + 2, posY] = leavesColour;
+                                character[posX + 2, posY] = ' ';
+
                                 colours[posX - 2, posY] = leavesColour;
                                 colours[posX + 1, posY] = leavesColour;
 
@@ -210,38 +220,86 @@ namespace Pokemon_Beep.Factory
                                 character[posX + 1, posY] = '}';
                                 posY--;
 
-                                int tellMeX = posX;
-                                int tellMeY = posY;
+
+                                if (colours[posX - 3, posY] == "")
+                                {
+                                    colours[posX - 3, posY] = leavesColour;
+                                    character[posX - 3, posY] = ' ';
+                                }
+                                if (colours[posX - 2, posY] == "")
+                                {
+                                    colours[posX - 2, posY] = leavesColour;
+                                    character[posX - 2, posY] = ' ';
+                                }
+                                if (colours[posX + 1, posY] == "")
+                                {
+                                    colours[posX + 1, posY] = leavesColour;
+                                    character[posX + 1, posY] = ' ';
+                                }
+                                if (colours[posX + 2, posY] == leavesColour)
+                                {
+                                    colours[posX + 2, posY] = leavesColour;
+                                    character[posX + 2, posY] = ' ';
+                                }
+
 
                                 colours[posX - 1, posY] = leavesColour;
                                 colours[posX, posY] = leavesColour;
+
 
                                 character[posX - 1, posY] = '(';
                                 character[posX, posY] = ')';
                             }
                             else
                             {
+                                colours[posX - 3, posY] = leavesColour;
                                 colours[posX - 2, posY] = leavesColour;
+                                colours[posX - 1, posY] = leavesColour;
+                                colours[posX, posY] = leavesColour;
                                 colours[posX + 1, posY] = leavesColour;
+                                colours[posX + 2, posY] = leavesColour;
 
+                                character[posX - 3, posY] = ' ';
                                 character[posX - 2, posY] = '{';
+                                character[posX - 1, posY] = ' ';
+                                character[posX, posY] = ' ';
                                 character[posX + 1, posY] = '}';
+                                character[posX + 2, posY] = ' ';
                                 posY--;
 
                                 colours[posX - 3, posY] = leavesColour;
+                                colours[posX - 2, posY] = leavesColour;
                                 colours[posX - 1, posY] = leavesColour;
                                 colours[posX, posY] = leavesColour;
+                                colours[posX + 1, posY] = leavesColour;
                                 colours[posX + 2, posY] = leavesColour;
 
                                 character[posX - 3, posY] = '{';
+                                character[posX - 2, posY] = ' ';
                                 character[posX - 1, posY] = '(';
                                 character[posX, posY] = ')';
+                                character[posX + 1, posY] = ' ';
                                 character[posX + 2, posY] = '}';
                                 posY--;
                             }
                         }
 
                     }
+                    //Step 3 : Grass
+                    else if (pixelColor.R == 182 && pixelColor.G == 255 && pixelColor.B == 0)
+                    {
+                        int posX = x * 2;
+
+                        char grass = '#';
+                        string grassColour = "\x1b[38;2;109;192;103m";
+
+                        character[posX - 1, y] = grass;
+                        character[posX, y] = grass;
+
+                        colours[posX - 1, y] = grassColour;
+                        colours[posX, y] = grassColour;
+                    }
+                    
                     //Roads
                     else if (pixelColor.R == 255 && pixelColor.G == 216 && pixelColor.B == 0)
                     {
@@ -255,6 +313,20 @@ namespace Pokemon_Beep.Factory
 
                         colours[posX - 1, y] = roadColour;
                         colours[posX, y] = roadColour;
+                    }
+                    //splash Water
+                    else if (pixelColor.R == 0 && pixelColor.G == 19 && pixelColor.B == 127)
+                    {
+                        int posX = x * 2;
+
+                        char water = '█';
+                        string waterColour = "\x1b[38;2;0;148;255m";
+
+                        character[posX - 1, y] = water;
+                        character[posX, y] = water;
+
+                        colours[posX - 1, y] = waterColour;
+                        colours[posX, y] = waterColour;
                     }
                     //Water
                     else if (pixelColor.R == 0 && pixelColor.G == 148 && pixelColor.B == 255)
@@ -270,19 +342,19 @@ namespace Pokemon_Beep.Factory
                         colours[posX - 1, y] = waterColour;
                         colours[posX, y] = waterColour;
                     }
-                    //splash Water
-                    else if (pixelColor.R == 0 && pixelColor.G == 19 && pixelColor.B == 127)
+                    //Right Slope
+                    else if (pixelColor.R == 255 && pixelColor.G == 100 && pixelColor.B == 0)
                     {
                         int posX = x * 2;
 
-                        char water = '█';
-                        string waterColour = "\x1b[38;2;0;148;255m";
+                        char slope = '║';
+                        string slopeColour = "\x1b[38;2;198;142;105m";
 
-                        character[posX - 1, y] = water;
-                        character[posX, y] = water;
+                        character[posX - 1, y] = ' ';
+                        character[posX, y] = slope;
 
-                        colours[posX - 1, y] = waterColour;
-                        colours[posX, y] = waterColour;
+                        colours[posX - 1, y] = slopeColour;
+                        colours[posX, y] = slopeColour;
                     }
                 }
             }

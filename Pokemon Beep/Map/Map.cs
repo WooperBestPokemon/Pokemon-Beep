@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pokemon_Beep.Graphic;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Pokemon_Beep
 {
     class Map
     {
+        private Camera cam;
         private int mapID, submapID;
         private List<Building> buildings = new List<Building>();
         Background background;
@@ -17,6 +19,7 @@ namespace Pokemon_Beep
             this.buildings = buildings;
             this.hitbox = hitbox;
             this.background = background;
+            cam = new Camera(background);
         }
         public bool hit(int posX, int posY)
         {
@@ -25,12 +28,9 @@ namespace Pokemon_Beep
             else
                 return false;
         }
-        public void printMap()
+        public void printMap(int posX, int posY)
         {
-            for (int i = 0; i < buildings.Count; i++)
-            {
-                buildings[i].writeBuilding();
-            }
+            cam.printBackground(posX, posY);
         }
     }
 }

@@ -6,6 +6,7 @@ namespace Pokemon_Beep.Graphic
 {
     class Camera
     {
+
         private Background background;
         public Camera(Background background)
         {
@@ -13,15 +14,26 @@ namespace Pokemon_Beep.Graphic
         }
         public void printBackground(int posX, int posY)
         {
-            for (int x = 2; x < 81; x++)
+            List<StringBuilder> stringBuilders = new List<StringBuilder>();
+
+
+            for (int y = 1; y < 28; y++)
             {
+
                 int xPrint = posX - 40;
                 int yPrint = posY - 13;
-                for (int y = 1; y < 28; y++)
+                string line = "";
+                for (int x = 2; x < 81; x++)
                 {
-                    Console.SetCursorPosition(x, y);
-                    Console.Write(background.Colors[(xPrint + x - 2), (yPrint + y - 1)] + background.Characters[(xPrint + x - 2), (yPrint + y - 1)]);
+                    line += background.Colors[(xPrint + x - 2), (yPrint + y - 1)] + background.Characters[(xPrint + x - 2), (yPrint + y - 1)];
                 }
+                stringBuilders.Add(new StringBuilder(line));
+            }
+            for (int i = 1; i < stringBuilders.Count + 1; i++)
+            {
+                Console.SetCursorPosition(2, i);
+                Console.Write(stringBuilders[i - 1]);
+
             }
         }
     }
