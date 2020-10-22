@@ -3062,21 +3062,6 @@ namespace Pokemon_Beep.Other
             music.Start();
             Console.ReadKey();
         }
-        public void layerTesting()
-        {
-            Console.SetWindowSize(152, 41);
-            Console.SetBufferSize(152, 41);
-            Utilities.changeBackgroundColor(50, 50, 50);
-            Console.Clear();
-            Background back = new Background();
-            string[,] background = back.getBackground();
-
-
-
-            BattleBackground background2 = new BattleBackground();
-            background2.writeBackground(2);
-
-        }
         public void battletest()
         {
             PokemonFactory factory = new PokemonFactory();
@@ -3092,115 +3077,82 @@ namespace Pokemon_Beep.Other
             BattleField arena = new BattleField(playerField, foeField);
 
         }
-        public void treeTest()
+        public void cameraTest()
         {
+            Console.SetWindowSize(82, 30);
+            Console.SetBufferSize(82, 30);
             Console.CursorVisible = false;
-            Utilities.changeForegroundColor(0, 127, 14);
-            Console.WriteLine("  ()  ");
-            Console.WriteLine(" (  )");
-            Console.WriteLine("(____)");
-            Utilities.changeForegroundColor(127, 51, 0);
-            Console.WriteLine("  )( ");
+
+            Utilities.changeBackgroundColor(5, 5, 5);
+
+            ConsoleKeyInfo keyinfo;
+
+            int posJX = 100;
+            int posJY = 30;
+
+            while (true)
+            {
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ║                                                                               ║");
+                Console.WriteLine(" ╚═══════════════════════════════════════════════════════════════════════════════╝");
+                Console.SetCursorPosition(41, 14);
+                Utilities.changeForegroundColor(255, 163, 255);
+                Console.WriteLine("+");
+
+                MapFactory mapFactory = new MapFactory();
+                List<Background> back = mapFactory.getBackground();
+                Camera camera = new Camera(back[0]);
 
 
-            Utilities.changeForegroundColor(0, 127, 14);
-            Console.WriteLine("  ()  ");
-            Console.WriteLine(" (  )");
-            Console.WriteLine(" (__)");
-            Utilities.changeForegroundColor(127, 51, 0);
-            Console.WriteLine("  )( ");
+                camera.printBackground(posJX, posJY);
+                
+                keyinfo = Console.ReadKey(true);
 
-
-            Console.WriteLine("");
-            Utilities.changeForegroundColor(0, 127, 14);
-            Console.WriteLine("  () ");
-            Console.WriteLine(" {  }");
-            Console.WriteLine("{ () }");
-            Console.WriteLine(" {  }");
-            Console.WriteLine("{ () }");
-            Console.WriteLine(" {  }");
-            Console.WriteLine("{ () }");
-            Console.WriteLine(" {  }");
-            Console.WriteLine("{____}");
-            Utilities.changeForegroundColor(127, 51, 0);
-            Console.WriteLine("  )( ");
-
-
-
-            Utilities.changeForegroundColor(222, 206, 132);
-            Console.SetCursorPosition(37, 27);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            Console.SetCursorPosition(37, 28);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            Console.SetCursorPosition(37, 29);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-
-            Console.SetCursorPosition(10, 12);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            Console.SetCursorPosition(10, 13);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-            Console.SetCursorPosition(10, 14);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-
-            Console.SetCursorPosition(103, 21);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░");
-            Console.SetCursorPosition(103, 22);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░");
-            Console.SetCursorPosition(103, 23);
-            Console.WriteLine("░░░░░░░░░░░░░░░░░");
-
-            Console.SetCursorPosition(103, 12);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 13);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 14);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 15);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 16);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 17);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 18);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 19);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 20);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 21);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 22);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 23);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 24);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 25);
-            Console.WriteLine("░░░░░░");
-            Console.SetCursorPosition(103, 26);
-            Console.WriteLine("░░░░░░");
-
-            Utilities.changeForegroundColor(255, 255, 255);
-            Console.SetCursorPosition(9, 5);
-            Console.WriteLine("  ____________/\\____");
-            Console.SetCursorPosition(9, 6);
-            Console.WriteLine(" /           /  \\   \\");
-            Console.SetCursorPosition(9, 7);
-            Console.WriteLine("/___________/_[]_\\___\\");
-            Console.SetCursorPosition(9, 8);
-            Console.WriteLine(" |         /      \\  |");
-            Console.SetCursorPosition(9, 9);
-            Console.WriteLine(" |   _      [][]     |");
-            Console.SetCursorPosition(9, 10);
-            Console.WriteLine(" |  /o\\     [][]     |");
-            Console.SetCursorPosition(9, 11);
-            Console.WriteLine(" |__|_|______________|");
-        }
-        public void ressource()
-        {
-            MapFactory map = new MapFactory();
-            List<Hitbox> hitboxes = map.getHitboxes();
-            Console.Write(hitboxes[0].returnCollision(100,60));
+                if (keyinfo.Key == ConsoleKey.S)
+                {
+                    posJY += 1;
+                }
+                else if (keyinfo.Key == ConsoleKey.A)
+                {
+                    posJX -= 2;
+                }
+                else if (keyinfo.Key == ConsoleKey.W)
+                {
+                    posJY -= 1;
+                }
+                else if (keyinfo.Key == ConsoleKey.D)
+                {
+                    posJX += 2;
+                }
+            }
+         
         }
     }
 }

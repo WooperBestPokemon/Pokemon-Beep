@@ -93,14 +93,13 @@
     <Compile Include="Game.cs" />
     <Compile Include="Graphic\Animation.cs" />
     <Compile Include="Graphic\Ascii.cs" />
-    <Compile Include="Graphic\Background.cs" />
     <Compile Include="Graphic\BattleBackground.cs" />
     <Compile Include="Graphic\BattleScene.cs" />
     <Compile Include="Graphic\Camera.cs" />
     <Compile Include="Graphic\Layer.cs" />
     <Compile Include="Graphic\WorldGraphics.cs" />
     <Compile Include="Map\Building.cs" />
-    <Compile Include="Map\Character.cs" />
+    <Compile Include="Map\Background.cs" />
     <Compile Include="Map\Hitbox.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Map\World.cs" />
