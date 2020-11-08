@@ -1,25 +1,20 @@
 ﻿using Pokemon_Beep.Factory;
+using Pokemon_Beep.Pokemon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pokemon_Beep.Pokemon
+namespace Pokemon_Beep
 {
-    class Pokedex
+    static class Pokedex
     {
         /// <summary>
-        /// This class is where all the Pokémons informations are. Its only purpose is to return a Pokemon.
+        /// This class is where all the Pokémons informations are. Its only purpose is to return a Pokemon information.
         /// </summary>
-        private List<PocketMonster> pokemons = new List<PocketMonster>();
-        private PokemonFactory factory = new PokemonFactory();
-        public Pokedex()
+        private static PokemonFactory factory = new PokemonFactory();
+        public static PokemonInfo getInfo(int pokedexID)
         {
-            pokemons = factory.GetPokemons();
+            return factory.getPokemon(pokedexID);
         }
-        public PocketMonster getPokemon(int pokedexID)
-        {
-            return pokemons[pokedexID];
-        }
-
     }
 }

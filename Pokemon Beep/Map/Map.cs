@@ -1,4 +1,5 @@
 ﻿using Pokemon_Beep.Graphic;
+using Pokemon_Beep.Other;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,14 +10,13 @@ namespace Pokemon_Beep
     {
         private Camera cam;
         private int mapID, submapID;
-        private List<Building> buildings = new List<Building>();
-        Background background;
+        private Background background;
         private Hitbox hitbox;
-        public Map(int mapID, int submapID, List<Building> buildings, Hitbox hitbox, Background background)
+        private Animation animation = new Animation();
+        public Map(int mapID, int submapID, Hitbox hitbox, Background background)
         {
             this.mapID = mapID;
             this.submapID = submapID;
-            this.buildings = buildings;
             this.hitbox = hitbox;
             this.background = background;
             cam = new Camera(background);
@@ -31,6 +31,16 @@ namespace Pokemon_Beep
         public void printMap(int posX, int posY)
         {
             cam.printBackground(posX, posY);
+        }
+        public void wildPokemon(int posX, int posY)
+        {
+            if (hitbox.returnCollision(posX, posY) == 2)
+            {
+                if(Utilities.RandomNumber(1,10) == 1)
+                {
+                    animation.wildPokemonBattleAnimation();
+                }
+            }
         }
     }
 }

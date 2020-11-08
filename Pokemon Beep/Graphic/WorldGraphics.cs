@@ -8,7 +8,7 @@ namespace Pokemon_Beep.Graphic
 {
     class WorldGraphics
     {
-        private Layer background = new Layer();
-        private Layer npc = new Layer();
+        //private Layer background = new Layer();
+        //private Layer npc = new Layer();
     }
 }

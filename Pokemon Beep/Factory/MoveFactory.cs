@@ -21,22 +21,22 @@ namespace Pokemon_Beep.Factory
             //Lower Attack
             void foeLowerAttack1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] -= 1; 
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] -= 1; 
             }
             void lowerA2(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] -= 2;
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] = -6;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] -= 2;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] = -6;
             }
             void foeMayLowerAttack1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) == 1)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] -= 1;
                 }
             }
             effect foeLowerAttack1Stage = new effect(foeLowerAttack1StageVoid);
@@ -45,38 +45,38 @@ namespace Pokemon_Beep.Factory
             //Lower Defense
             void foeLowerDefense1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] -= 1; 
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] -= 1; 
             }
             void foeLowerDefense2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] -= 2;
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] < -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] = -6;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] -= 2;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] < -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] = -6;
             }
             void foeMayLowerDefense1StageVoid20(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) <= 2)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] -= 1;
                 }
             }
             void foeMayLowerDefense1StageVoid30(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             { 
                 if (Utilities.RandomNumber(1, 11) <= 3)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] -= 1;
                 }
             }
             void foeMayLowerDefense1StageVoid50(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) <= 5)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] -= 1;
                 }
             }
             effect foeLowerDefense1Stage = new effect(foeLowerDefense1StageVoid);
@@ -87,22 +87,22 @@ namespace Pokemon_Beep.Factory
             //Lower Special Attack
             void foeLowerSpecialAttack1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] -= 1; 
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] -= 1; 
             }
             void foeLowerSpecialAttack2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] -= 2;
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] < -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] = -6;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] -= 2;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] < -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] = -6;
             }
             void foeMayLowerSpecialAttack1StageVoid30(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) <= 3)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] -= 1;
                 }
             }
             effect foeLowerSpecialAttack1Stage = new effect(foeLowerSpecialAttack1StageVoid);
@@ -111,25 +111,25 @@ namespace Pokemon_Beep.Factory
             //Lower Special Defense
             void foeLowerSpecialDefense2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] -= 2;
-                if(defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] < -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] = -6;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] -= 2;
+                if(defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] < -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] = -6;
             }
             void foeMayLowerSpecialDefense1StageVoid10(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) <= 1)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] -= 1;
                 }
             }
             void foeMayLowerSpecialDefense1StageVoid20(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) <= 2)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] -= 1;
                 }                  
             }
             effect foeLowerSpecialDefense2Stages = new effect(foeLowerSpecialDefense2StageVoid);
@@ -138,45 +138,45 @@ namespace Pokemon_Beep.Factory
             //Lower Speed
             void foeLowerSpeed1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] -= 1; 
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] -= 1; 
             }
             void foeLowerSpeed2StagesVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] -= 2;
-                if(defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] < -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] = -6;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] -= 2;
+                if(defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] < -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] = -6;
             }
             effect foeLowerSpeed1Stage = new effect(foeLowerSpeed1StageVoid);
             effect foeLowerSpeed2Stages = new effect(foeLowerSpeed2StagesVoid);
             //Lower Evasion
             void foeLowerEvasivenessVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] -= 1; 
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] -= 1; 
             }
             effect foeLowerEvasiveness = new effect(foeLowerEvasivenessVoid);
             //Lower Accuracy
             void foeLowerAccuracy1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] -= 1; 
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] -= 1; 
             }
             void foeMayLowerAccuracy1StageVoid30(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) <= 3)
                 {
-                    if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] -= 1;
+                    if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] -= 1;
                 }
             }
             void foeMayLowerAccuracy1StageVoid50(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (Utilities.RandomNumber(1, 11) <= 5)
                 {
-                    if(defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] > -6)
-                        defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] -= 1;
+                    if(defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] > -6)
+                        defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] -= 1;
                 }
             }
             effect foeLowerAccuracy1Stage = new effect(foeLowerAccuracy1StageVoid);
@@ -185,46 +185,46 @@ namespace Pokemon_Beep.Factory
             //Raise Attack
             void selfRaiseAttack1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
             }
             effect selfRaiseAttack1Stage = new effect(selfRaiseAttack1StageVoid);
             void selfRaiseAttack2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 2;
-                if(attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] = 6;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 2;
+                if(attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] = 6;
             }
             effect selfRaiseAttack2Stage = new effect(selfRaiseAttack2StageVoid);
             void selfRaiseAttack1StageVoid10(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if(Utilities.RandomNumber(1, 11) == 1)
                 {
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
                 }
             }
             effect selfRaiseAttack1Stage10 = new effect(selfRaiseAttack1StageVoid10);
             //Raise Defense
             void selfRaiseDefense1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] += 1;
             }
             void selfRaiseDefense2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] += 2;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] = 6;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] += 2;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] = 6;
             }           
             void selfRaiseDefense3StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] += 3;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] = 6;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] += 3;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] = 6;
             }
             effect selfRaiseDefense1Stage = new effect(selfRaiseDefense1StageVoid);
             effect selfRaiseDefense2Stage = new effect(selfRaiseDefense2StageVoid);
@@ -234,63 +234,63 @@ namespace Pokemon_Beep.Factory
             {
                 if (Utilities.RandomNumber(1, 11) <= 7)
                 {
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] += 1;
                 }
             }
             void selfRaiseSpecialAttack2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] += 2;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] > 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] = 6;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] += 2;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] > 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] = 6;
             }
             effect selfRaiseSpecialAttack1Stage70 = new effect(selfRaiseSpecialAttack1Stage70Void);
             effect selfRaiseSpecialAttack2Stage = new effect(selfRaiseSpecialAttack2StageVoid);
             //Raise Special Defense
             void selfRaiseSpecialDefense2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] += 2;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] > 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] = 6;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] += 2;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] > 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] = 6;
             }
             effect selfRaiseSpecialDefense2Stage = new effect(selfRaiseSpecialDefense2StageVoid);
             //Speed
             void selfRaiseSpeed1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] += 1;
             }
             void selfRaiseSpeed2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] += 2;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] > 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] = 6;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] += 2;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] > 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] = 6;
             }
             effect selfRaiseSpeed1Stage = new effect(selfRaiseSpeed1StageVoid);
             effect selfRaiseSpeed2Stage = new effect(selfRaiseSpeed2StageVoid);
             //Evasion
             void selfRaiseEvasion1StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] += 1;
             }
             void selfRaiseEvasion2StageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] += 2;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] > 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Evasion] = 6;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] += 2;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] > 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Evasion] = 6;
             }
             effect selfRaiseEvasion1Stage = new effect(selfRaiseEvasion1StageVoid);
             effect selfRaiseEvasion2Stage = new effect(selfRaiseEvasion2StageVoid);
             //Critical
             void focusEnergyVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Critical] < 2)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Critical] = 2;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Critical] < 2)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Critical] = 2;
             }
             effect focusEnergy = new effect(focusEnergyVoid);
             //Meteo
@@ -513,17 +513,17 @@ namespace Pokemon_Beep.Factory
             void recoilTwoVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 double recoilHP = damage / 2;
-                attacker.PokemonInfo.Pokemon.currentHP -= (int)Math.Round(recoilHP, 0);
+                attacker.PokemonInfo.Pokemon.CurrentHP -= (int)Math.Round(recoilHP, 0);
             }
             void recoilThreeVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 double recoilHP = damage / 3;
-                attacker.PokemonInfo.Pokemon.currentHP -= (int)Math.Round(recoilHP, 0);
+                attacker.PokemonInfo.Pokemon.CurrentHP -= (int)Math.Round(recoilHP, 0);
             }
             void recoilFourVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 double recoilHP = damage / 4;
-                attacker.PokemonInfo.Pokemon.currentHP -= (int)Math.Round(recoilHP, 0);
+                attacker.PokemonInfo.Pokemon.CurrentHP -= (int)Math.Round(recoilHP, 0);
             }
             effect recoilTwo = new effect(recoilTwoVoid);
             effect recoilThree = new effect(recoilThreeVoid);
@@ -533,7 +533,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Grass, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Grass, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect bulletSeed = new effect(bulletSeedVoid);
@@ -541,7 +541,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 18, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 18, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect cometPunch = new effect(cometPunchVoid);
@@ -549,7 +549,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Ice, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Ice, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect icicle = new effect(icicleVoid);
@@ -557,7 +557,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Bug, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Bug, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect pin = new effect(pinVoid);
@@ -565,7 +565,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Rock, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Rock, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect rockBlast = new effect(rockBlastVoid);
@@ -573,7 +573,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Dragon, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Dragon, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect scaleShot = new effect(scaleShotVoid);
@@ -581,7 +581,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 20, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 20, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect spikeCannon = new effect(spikeCannonVoid);
@@ -589,7 +589,7 @@ namespace Pokemon_Beep.Factory
             {
                 int nbOfHit = Utilities.RandomNumber(1, 5);
                 for (int i = 0; i < nbOfHit; i++)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 25, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 //nbOfHit + 1 = total number of hit
             }
             effect tailSlap = new effect(tailSlapVoid);
@@ -652,10 +652,10 @@ namespace Pokemon_Beep.Factory
             effect crossPoison = new effect(crossPoisonVoid);
             void dragonDanceVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] += 1;
             }
             effect dragonDance = new effect(dragonDanceVoid);
             //Growth
@@ -663,92 +663,92 @@ namespace Pokemon_Beep.Factory
             {
                 if(WeatherID == (int)Enum.weather.Sunny)
                 {
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 2;
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] += 2;
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] = 6;
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] > 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] = 6;
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 2;
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] += 2;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] = 6;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] > 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] = 6;
                 }
                 else
                 {
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] += 1;
                 }
             }
             effect growth = new effect(growthVoid);
             void coilVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] += 1;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] += 1;
             }
             effect coil = new effect(coilVoid);
             void superpowerVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > -6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] -= 1;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > -6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] -= 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > -6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] -= 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > -6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] -= 1;
             }
             effect superpower = new effect(superpowerVoid);
             void ancientPowerVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if(Utilities.RandomNumber(1,11) == 1)
                 {
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] += 1;
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] += 1;
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialDefense] += 1;
-                    if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] < 6)
-                        attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Speed] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialDefense] += 1;
+                    if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] < 6)
+                        attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Speed] += 1;
                 }
             }
             effect ancientPower = new effect(ancientPowerVoid);
             void psychVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                attacker.PokemonInfo.Pokemon.stages = defender.PokemonInfo.Pokemon.stages;
+                attacker.PokemonInfo.Pokemon.Stages = defender.PokemonInfo.Pokemon.Stages;
             }
             effect psych = new effect(psychVoid);
             void tickleVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] -= 1;
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] > -6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Defense] -= 1;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] -= 1;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] > -6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Defense] -= 1;
             }
             effect tickle = new effect(tickleVoid);
             void honeClawsVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Accuracy] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Accuracy] += 1;
             }
             effect honeClaws = new effect(honeClawsVoid);
             void workUpVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 1;
-                if (attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] < 6)
-                    attacker.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 1;
+                if (attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] < 6)
+                    attacker.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] += 1;
             }
             effect workUp = new effect(workUpVoid);
             void resetStatVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                for (int i = 0; i < attacker.PokemonInfo.Pokemon.stages.Count(); i++)
+                for (int i = 0; i < attacker.PokemonInfo.Pokemon.Stages.Count(); i++)
                 {
-                    attacker.PokemonInfo.Pokemon.stages[i] = 0;
-                    defender.PokemonInfo.Pokemon.stages[i] = 0;
+                    attacker.PokemonInfo.Pokemon.Stages[i] = 0;
+                    defender.PokemonInfo.Pokemon.Stages[i] = 0;
                 }
             }
             effect resetStat = new effect(resetStatVoid);
@@ -756,49 +756,49 @@ namespace Pokemon_Beep.Factory
             {
                 double ratio = attacker.PokemonInfo.Pokemon.Speed / defender.PokemonInfo.Pokemon.Speed;
                 if (4 <= ratio)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 150, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 150, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
                 else if (3 <= ratio)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 120, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 120, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
                 else if (2 <= ratio)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 80, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 80, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
                 else if (1 <= ratio)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 60, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 60, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
                 else
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 40, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 40, 100, 10, (int)Enum.type.Electric, noEffect, "Special", ""), WeatherID);
             }
             effect electroBall = new effect(electroBallVoid);
             void flailVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                double ratio = 48 * attacker.PokemonInfo.Pokemon.currentHP / attacker.PokemonInfo.Pokemon.HP;
+                double ratio = 48 * attacker.PokemonInfo.Pokemon.CurrentHP / attacker.PokemonInfo.Pokemon.HP;
                 if(0 <= ratio && ratio <= 2)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 200, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 200, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 else if (2 <= ratio && ratio <= 4)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 150, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 150, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 else if(5 <= ratio && ratio <= 9)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 100, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 100, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 else if (10 <= ratio && ratio <= 16)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 80, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 80, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 else if (17 <= ratio && ratio <= 32)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 40, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 40, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 else
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 20, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 20, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
             }
             effect flail = new effect(flailVoid);
             void superFangVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                int damageHP = defender.PokemonInfo.Pokemon.currentHP / 2;
-                defender.PokemonInfo.Pokemon.currentHP -= damageHP;
+                int damageHP = defender.PokemonInfo.Pokemon.CurrentHP / 2;
+                defender.PokemonInfo.Pokemon.CurrentHP -= damageHP;
             }
             effect superFang = new effect(superFangVoid);
             void dragonRageVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                defender.PokemonInfo.Pokemon.currentHP -= 40;
+                defender.PokemonInfo.Pokemon.CurrentHP -= 40;
             }
             effect dragonRage = new effect(dragonRageVoid);
             void suckerPunchVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (defender.PokemonInfo.Pokemon.Moveset[foeMove].Category != "Status")
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 70, 100, 5, (int)Enum.type.Dark, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 70, 100, 5, (int)Enum.type.Dark, noEffect, "Physical", ""), WeatherID);
             }
             effect suckerPunch = new effect(suckerPunchVoid);
             void flameBlitzVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
@@ -806,28 +806,28 @@ namespace Pokemon_Beep.Factory
                 double recoilHP = damage / 3;
                 if (Utilities.RandomNumber(1, 11) == 1)
                     attacker.PokemonInfo.Pokemon.Status = (int)Enum.status.Burned;
-                attacker.PokemonInfo.Pokemon.currentHP -= (int)Math.Round(recoilHP, 0);
+                attacker.PokemonInfo.Pokemon.CurrentHP -= (int)Math.Round(recoilHP, 0);
             }
             effect flameBlitz = new effect(flameBlitzVoid);
             void restVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                attacker.PokemonInfo.Pokemon.currentHP = attacker.PokemonInfo.Pokemon.HP;
+                attacker.PokemonInfo.Pokemon.CurrentHP = attacker.PokemonInfo.Pokemon.HP;
                 attacker.PokemonInfo.Pokemon.Status = (int)Enum.status.Sleep;
             }
             effect rest = new effect(restVoid);
             void roostVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                attacker.PokemonInfo.Pokemon.currentHP += attacker.PokemonInfo.Pokemon.HP / 2;
-                if (attacker.PokemonInfo.Pokemon.currentHP > attacker.PokemonInfo.Pokemon.HP)
-                    attacker.PokemonInfo.Pokemon.currentHP = attacker.PokemonInfo.Pokemon.HP;
+                attacker.PokemonInfo.Pokemon.CurrentHP += attacker.PokemonInfo.Pokemon.HP / 2;
+                if (attacker.PokemonInfo.Pokemon.CurrentHP > attacker.PokemonInfo.Pokemon.HP)
+                    attacker.PokemonInfo.Pokemon.CurrentHP = attacker.PokemonInfo.Pokemon.HP;
             }
             effect roost = new effect(roostVoid);
             void swaggerVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] < 6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] += 2;
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] > 6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.Attack] = 6;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] < 6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] += 2;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] > 6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.Attack] = 6;
                 if (defender.PokemonInfo.Confused == 0)
                 {
                     int nbTurn = Utilities.RandomNumber(1, 5);
@@ -837,10 +837,10 @@ namespace Pokemon_Beep.Factory
             effect swagger = new effect(swaggerVoid);
             void flatterVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] < 6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] += 2;
-                if (defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] > 6)
-                    defender.PokemonInfo.Pokemon.stages[(int)Enum.stat.SpecialAttack] = 6;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] < 6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] += 2;
+                if (defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] > 6)
+                    defender.PokemonInfo.Pokemon.Stages[(int)Enum.stat.SpecialAttack] = 6;
                 if (defender.PokemonInfo.Confused == 0)
                 {
                     int nbTurn = Utilities.RandomNumber(1, 5);
@@ -856,24 +856,24 @@ namespace Pokemon_Beep.Factory
             effect storm = new effect(stormVoid);
             void endeavorVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if(attacker.PokemonInfo.Pokemon.currentHP < defender.PokemonInfo.Pokemon.currentHP)
-                    defender.PokemonInfo.Pokemon.currentHP = attacker.PokemonInfo.Pokemon.currentHP;
+                if(attacker.PokemonInfo.Pokemon.CurrentHP < defender.PokemonInfo.Pokemon.CurrentHP)
+                    defender.PokemonInfo.Pokemon.CurrentHP = attacker.PokemonInfo.Pokemon.CurrentHP;
             }
             effect endeavor = new effect(endeavorVoid);
             void facadeVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if (attacker.PokemonInfo.Pokemon.Status == (int)Enum.status.Burned || attacker.PokemonInfo.Pokemon.Status == (int)Enum.status.Poisoned || attacker.PokemonInfo.Pokemon.Status == (int)Enum.status.Badly_Poisoned || attacker.PokemonInfo.Pokemon.Status == (int)Enum.status.Paralyzed)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 140, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 140, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
                 else
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 70, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 70, 100, 10, (int)Enum.type.Normal, noEffect, "Physical", ""), WeatherID);
             }
             effect facade = new effect(facadeVoid);
             void brineVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                if (defender.PokemonInfo.Pokemon.currentHP <= defender.PokemonInfo.Pokemon.HP/2)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 130, 100, 10, (int)Enum.type.Water, noEffect, "Special", ""), WeatherID);
+                if (defender.PokemonInfo.Pokemon.CurrentHP <= defender.PokemonInfo.Pokemon.HP/2)
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 130, 100, 10, (int)Enum.type.Water, noEffect, "Special", ""), WeatherID);
                 else
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 65, 100, 10, (int)Enum.type.Water, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 65, 100, 10, (int)Enum.type.Water, noEffect, "Special", ""), WeatherID);
             }
             effect brine = new effect(brineVoid);
             void splashVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
@@ -884,9 +884,9 @@ namespace Pokemon_Beep.Factory
             void assuranceVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
                 if(defender.PokemonInfo.tookDamage)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 120, 100, 10, (int)Enum.type.Dark, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 120, 100, 10, (int)Enum.type.Dark, noEffect, "Physical", ""), WeatherID);
                 else
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 60, 100, 10, (int)Enum.type.Dark, noEffect, "Physical", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 60, 100, 10, (int)Enum.type.Dark, noEffect, "Physical", ""), WeatherID);
             }
             effect assurance = new effect(assuranceVoid);
             void tormentVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
@@ -928,19 +928,19 @@ namespace Pokemon_Beep.Factory
             effect aromatherapy = new effect(aromatherapyVoid);
             void grassKnotVoid(Protagonist player, Field attacker, Field defender, int WeatherID, int foeMove, int damage, int foeDamage)
             {
-                double weight = defender.PokemonInfo.Pokemon.Weight;
+                double weight = Pokedex.getInfo(defender.PokemonInfo.Pokemon.PokedexID).Weight;
                 if(weight < 10)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 20, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 20, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
                 else if(weight < 25)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 40, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 40, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
                 else if (weight < 50)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 60, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 60, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
                 else if (weight < 100)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 80, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 80, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
                 else if (weight < 200)
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 100, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 100, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
                 else
-                    defender.PokemonInfo.Pokemon.currentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 120, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
+                    defender.PokemonInfo.Pokemon.CurrentHP -= calculator.getDamage(attacker.PokemonInfo.Pokemon, defender.PokemonInfo.Pokemon, new Move("", 120, 100, 20, (int)Enum.type.Grass, noEffect, "Special", ""), WeatherID);
 
             }
             effect grassKnot = new effect(grassKnotVoid);

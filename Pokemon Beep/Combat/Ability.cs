@@ -1,5 +1,8 @@
-﻿namespace Pokemon_Beep.Combat
+﻿using System;
+
+namespace Pokemon_Beep.Combat
 {
+    [Serializable]
     class Ability
     {
         public Ability(string name, string description, int effect)

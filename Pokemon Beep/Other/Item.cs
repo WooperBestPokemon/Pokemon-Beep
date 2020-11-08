@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Pokemon_Beep.Other
 {
+    [Serializable]
     class Item
     {
         public Item(int id, string name, string description)

@@ -17,7 +17,7 @@ namespace Pokemon_Beep.AI
         public int getChoice(PocketMonster defender)
         {
             int choice;
-            double percent = defender.currentHP / defender.HP * 100;
+            double percent = defender.CurrentHP / defender.HP * 100;
 
             if (percent <= 10)
             {

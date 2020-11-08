@@ -8,7 +8,7 @@ namespace Pokemon_Beep
 {
     class World
     {
-        private List<PocketMonster> pokemons = new List<PocketMonster>();
+        private List<PokemonInfo> pokemons = new List<PokemonInfo>();
         private List<Map> maps = new List<Map>();
         private Map currentMap;
         public bool hit(int posX, int posY)

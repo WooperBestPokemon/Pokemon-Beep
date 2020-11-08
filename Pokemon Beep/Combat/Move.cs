@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Pokemon_Beep.Combat
 {
+    [Serializable]
     partial class Move
     {
         public Move(string name, int power, int accuracy, int pp, int type, Delegate effect, string category, string description)

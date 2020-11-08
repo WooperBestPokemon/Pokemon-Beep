@@ -8,6 +8,7 @@ namespace Pokemon_Beep.Player
     /// <summary>
     /// Class that store the information of the player, like the name, the gender, ect... 
     /// </summary>
+    [Serializable]
     class Protagonist
     {
         //When you create a character

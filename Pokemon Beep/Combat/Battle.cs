@@ -39,17 +39,17 @@ namespace Pokemon_Beep.Combat
                 Console.WriteLine("Weather : " + battleField.Weather);
                 Console.WriteLine("------------------------------");
                 Utilities.changeForegroundColor(255, 0, 0);
-                Console.WriteLine(wildPokemon.Pokemon.Name);
+                Console.WriteLine(wildPokemon.Pokemon.Nickname);
                 Console.WriteLine("Lv. " + wildPokemon.Pokemon.Level);
                 Utilities.changeForegroundColor(0, 255, 0);
-                Console.WriteLine(wildPokemon.Pokemon.currentHP + "/" + wildPokemon.Pokemon.HP);
+                Console.WriteLine(wildPokemon.Pokemon.CurrentHP + "/" + wildPokemon.Pokemon.HP);
                 Utilities.changeForegroundColor(255, 255, 255);
                 Console.WriteLine("------------------------------");
                 Utilities.changeForegroundColor(0, 255, 255);
-                Console.WriteLine(playerPokemon.Pokemon.Name);
+                Console.WriteLine(playerPokemon.Pokemon.Nickname);
                 Console.WriteLine("Lv. " + playerPokemon.Pokemon.Level);
                 Utilities.changeForegroundColor(0, 255, 0);
-                Console.WriteLine(playerPokemon.Pokemon.currentHP + "/" + playerPokemon.Pokemon.HP);
+                Console.WriteLine(playerPokemon.Pokemon.CurrentHP + "/" + playerPokemon.Pokemon.HP);
                 Utilities.changeForegroundColor(255, 255, 255);
                 Console.WriteLine("------------------------------");
                 Utilities.changeForegroundColor(255, 255, 0);
@@ -73,10 +73,10 @@ namespace Pokemon_Beep.Combat
                         playerPokemon.Pokemon.Moveset[playerChoice].Effect.DynamicInvoke(player, playerField, wildField, battleField.Weather, aiChoice, 0, 0);
                     else
                     {
-                        wildPokemon.Pokemon.currentHP -= damage;
+                        wildPokemon.Pokemon.CurrentHP -= damage;
                         playerPokemon.Pokemon.Moveset[playerChoice].Effect.DynamicInvoke(player, playerField, wildField, battleField.Weather, aiChoice, damage, 0);
                     }
-                    if(wildPokemon.Pokemon.currentHP <= 0)
+                    if(wildPokemon.Pokemon.CurrentHP <= 0)
                     {
                         Console.WriteLine("The Wild Pokemon is dead !");
                         break;
@@ -86,10 +86,10 @@ namespace Pokemon_Beep.Combat
                         wildPokemon.Pokemon.Moveset[aiChoice].Effect.DynamicInvoke(player, wildField, playerField, battleField.Weather, playerChoice, 0, damage);
                     else
                     {
-                        playerPokemon.Pokemon.currentHP -= damage;
+                        playerPokemon.Pokemon.CurrentHP -= damage;
                         wildPokemon.Pokemon.Moveset[playerChoice].Effect.DynamicInvoke(player, playerField, wildField, battleField.Weather, playerChoice, foeDamage, damage);
                     }
-                    if (playerPokemon.Pokemon.currentHP <= 0)
+                    if (playerPokemon.Pokemon.CurrentHP <= 0)
                     {
                         Console.WriteLine("Your Pokemon is dead !");
                         break;
@@ -103,10 +103,10 @@ namespace Pokemon_Beep.Combat
                         wildPokemon.Pokemon.Moveset[aiChoice].Effect.DynamicInvoke(player, wildField, playerField, battleField.Weather, playerChoice, 0, 0);
                     else
                     {                     
-                        playerPokemon.Pokemon.currentHP -= damage;
+                        playerPokemon.Pokemon.CurrentHP -= damage;
                         wildPokemon.Pokemon.Moveset[playerChoice].Effect.DynamicInvoke(player, playerField, wildField, battleField.Weather, playerChoice, damage, 0);
                     }
-                    if (playerPokemon.Pokemon.currentHP <= 0)
+                    if (playerPokemon.Pokemon.CurrentHP <= 0)
                     {
                         Console.WriteLine("Your Pokemon is dead !");
                         break;
@@ -117,10 +117,10 @@ namespace Pokemon_Beep.Combat
                         playerPokemon.Pokemon.Moveset[playerChoice].Effect.DynamicInvoke(player, playerField, wildField, battleField.Weather, aiChoice, 0, damage);
                     else
                     {
-                        wildPokemon.Pokemon.currentHP -= damage;
+                        wildPokemon.Pokemon.CurrentHP -= damage;
                         playerPokemon.Pokemon.Moveset[playerChoice].Effect.DynamicInvoke(player, playerField, wildField, battleField.Weather, aiChoice, playerDamage, damage);
                     }
-                    if (wildPokemon.Pokemon.currentHP <= 0)
+                    if (wildPokemon.Pokemon.CurrentHP <= 0)
                     {
                         Console.WriteLine("The Wild Pokemon is dead !");
                         break;

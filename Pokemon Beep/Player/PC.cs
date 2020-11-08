@@ -8,6 +8,7 @@ namespace Pokemon_Beep.Player
     /// <summary>
     /// This class will be used for storing the pokemon that aren't with the player.
     /// </summary>
+    [Serializable]
     class PC
     {
     }

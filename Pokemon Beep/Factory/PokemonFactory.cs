@@ -7,6 +7,7 @@ namespace Pokemon_Beep.Factory
 {
     class PokemonFactory
     {
+        private List<PokemonInfo> PokemonList = new List<PokemonInfo>();
         private AbilityFactory abilityFactory = new AbilityFactory();
         private MoveFactory moveFactory = new MoveFactory();
         private List<Ability> abilities;
@@ -15,18 +16,59 @@ namespace Pokemon_Beep.Factory
         {
             moves = moveFactory.GetMoves();
             abilities = abilityFactory.GetAbilities();
+            PokemonList = GetPokemons();
 
         }
-        public List<PocketMonster> GetPokemons()
+        public PokemonInfo getPokemon(int pokedexID)
         {
-            List<PocketMonster> pokemons = new List<PocketMonster>();
-            //pokemons.Add(Pachirisu());
+            return PokemonList[pokedexID - 1];
+        }
+        private List<PokemonInfo> GetPokemons()
+        {
+            List<PokemonInfo> pokemons = new List<PokemonInfo>();
+            pokemons.Add(Chikorita());
+            pokemons.Add(Bayleef());
+            pokemons.Add(Meganium());
+            pokemons.Add(Cyndaquil());
+            pokemons.Add(Quilava());
+            pokemons.Add(Typhlosion()); 
+            pokemons.Add(Totodile());
+            pokemons.Add(Croconaw());
+            pokemons.Add(Feraligatr());
+            pokemons.Add(Rattata());
+            pokemons.Add(Raticate());
+            pokemons.Add(Sentret());
+            pokemons.Add(Furret());
 
             //sorting by Pokedex
             pokemons = pokemons.OrderBy(q => q.PokedexID).ToList();
 
             return pokemons;
         }
+        /*
+        public PokemonInfo getPokemon(int PokemonInfo)
+        {
+            
+            PokemonInfo pokemon;
+            switch(PokemonInfo)
+            {
+                case 1:
+                    pokemon = Chikorita();
+                    break;
+                case 2:
+                    pokemon = Bayleef();
+                    break;
+                case 3:
+                    pokemon = Meganium();
+                    break;
+                default:
+                    pokemon = MissingNo();
+                    break;
+            }
+            return pokemon;
+            
+        }
+        */
         /*
         public PocketMonster Wooper()
         {
@@ -84,7 +126,7 @@ namespace Pokemon_Beep.Factory
             return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefence, baseSpeed, learnset);
         }
         */
-        public PocketMonster MissingNo()
+        private PokemonInfo MissingNo()
         {
             //General Information
             int pokedex = 000;
@@ -124,9 +166,9 @@ namespace Pokemon_Beep.Factory
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Leer]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster testing()
+        private PokemonInfo testing()
         {
             //General Information
             int pokedex = 000;
@@ -166,10 +208,10 @@ namespace Pokemon_Beep.Factory
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Leer]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         //---------------------------------------------------------
-        public PocketMonster Chikorita()
+        private PokemonInfo Chikorita()
         {
             //General Information
             int pokedex = 001;
@@ -254,9 +296,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Bayleef(), 16);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Bayleef(), 16);
         }
-        public PocketMonster Bayleef()
+        private PokemonInfo Bayleef()
         {
             //General Information
             int pokedex = 002;
@@ -342,9 +384,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Meganium(), 32);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Meganium(), 32);
         }
-        public PocketMonster Meganium()
+        private PokemonInfo Meganium()
         {
             //General Information
             int pokedex = 003;
@@ -435,9 +477,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Cyndaquil()
+        private PokemonInfo Cyndaquil()
         {
             //General Information
             int pokedex = 004;
@@ -521,9 +563,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Thrash]);
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Quilava(), 14);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Quilava(), 14);
         }
-        public PocketMonster Quilava()
+        private PokemonInfo Quilava()
         {
             //General Information
             int pokedex = 005;
@@ -613,9 +655,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Typhlosion(), 36);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Typhlosion(), 36);
         }
-        public PocketMonster Typhlosion()
+        private PokemonInfo Typhlosion()
         {
             //General Information
             int pokedex = 006;
@@ -717,9 +759,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Totodile()
+        private PokemonInfo Totodile()
         {
             //General Information
             int pokedex = 007;
@@ -815,9 +857,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Croconaw(), 18);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Croconaw(), 18);
         }
-        public PocketMonster Croconaw()
+        private PokemonInfo Croconaw()
         {
             //General Information
             int pokedex = 008;
@@ -913,9 +955,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Feraligatr(), 30);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Feraligatr(), 30);
         }
-        public PocketMonster Feraligatr()
+        private PokemonInfo Feraligatr()
         {
             //General Information
             int pokedex = 009;
@@ -1018,9 +1060,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Rattata()
+        private PokemonInfo Rattata()
         {
             //General Information
             int pokedex = 010;
@@ -1109,9 +1151,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
             tmPokemon.Add(moves[(int)Enum.move.Cut]);                     
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Raticate(), 20);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Raticate(), 20);
         }
-        public PocketMonster Raticate()
+        private PokemonInfo Raticate()
         {
             //General Information
             int pokedex = 011;
@@ -1206,9 +1248,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
          
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Sentret()
+        private PokemonInfo Sentret()
         {
             //General Information
             int pokedex = 012;
@@ -1296,9 +1338,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
             //tmPokemon.Add(moves[(int)Enum.move.Surf]);           
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Furret(), 15);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Furret(), 15);
         }
-        public PocketMonster Furret()
+        private PokemonInfo Furret()
         {
             //General Information
             int pokedex = 013;
@@ -1394,7 +1436,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Surf]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         //Zigzagoon
         //Linoone
@@ -1403,7 +1445,7 @@ namespace Pokemon_Beep.Factory
         //Pidgey
         //Pidgeotto
         //Pidgeot
-        public PocketMonster Hoothoot()
+        private PokemonInfo Hoothoot()
         {
             //General Information
             int pokedex = 022;
@@ -1487,9 +1529,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Wing_Attack]);
             //tmPokemon.Add(moves[(int)Enum.move.Fly]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Noctowl(), 20);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Noctowl(), 20);
         }
-        public PocketMonster Noctowl()
+        private PokemonInfo Noctowl()
         {
             //General Information
             int pokedex = 022;
@@ -1576,9 +1618,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Wing_Attack]);
             //tmPokemon.Add(moves[(int)Enum.move.Fly]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Taillow()
+        private PokemonInfo Taillow()
         {
             //General Information
             int pokedex = 023;
@@ -1652,9 +1694,9 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Whirlwind]);
             //tmPokemon.Add(moves[(int)Enum.move.Fly]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Swellow(), 22);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Swellow(), 22);
         }
-        public PocketMonster Swellow()
+        private PokemonInfo Swellow()
         {
             //General Information
             int pokedex = 024;
@@ -1731,7 +1773,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Whirlwind]);
             //tmPokemon.Add(moves[(int)Enum.move.Fly]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         //Starly
         //Staravia
@@ -1746,7 +1788,7 @@ namespace Pokemon_Beep.Factory
         //Gloom
         //Vileplume
         //Bellossom
-        public PocketMonster Paras()
+        private PokemonInfo Paras()
         {
             //General Information
             int pokedex = 038;
@@ -1838,9 +1880,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Parasect()
+        private PokemonInfo Parasect()
         {
             //General Information
             int pokedex = 039;
@@ -1935,7 +1977,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Rock_Smash]);
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         //Spinarak
         //Ariados
@@ -1947,7 +1989,7 @@ namespace Pokemon_Beep.Factory
         //Horsea
         //Seadra
         //Kingdra
-        public PocketMonster Finneon()
+        private PokemonInfo Finneon()
         {
             //General Information
             int pokedex = 050;
@@ -2031,9 +2073,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Lumineon()
+        private PokemonInfo Lumineon()
         {
             //General Information
             int pokedex = 051;
@@ -2119,9 +2161,9 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Waterfall]);
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
-        public PocketMonster Magikarp()
+        private PokemonInfo Magikarp()
         {
             //General Information
             int pokedex = 052;
@@ -2161,9 +2203,9 @@ namespace Pokemon_Beep.Factory
             //========================================================TM
             tmPokemon.Add(moves[(int)Enum.move.Bounce]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Gyarados(), 20);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon, Gyarados(), 20);
         }
-        public PocketMonster Gyarados()
+        private PokemonInfo Gyarados()
         {
             //General Information
             int pokedex = 053;
@@ -2246,7 +2288,7 @@ namespace Pokemon_Beep.Factory
             //tmPokemon.Add(moves[(int)Enum.move.Dive]);
             tmPokemon.Add(moves[(int)Enum.move.Strength]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, types, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
         //Nidoran♀
         //Nidorina
@@ -2273,10 +2315,10 @@ namespace Pokemon_Beep.Factory
         //Sudowoodo
         //Swablu
         //Altaria
-        public PocketMonster Pachirisu()
+        private PokemonInfo Pachirisu()
         {
             //General Information
-            int pokedex = 002;
+            int pokedex = 420;
             string name = "Pachirisu";
             string description = "It’s one of the kinds of Pokémon with electric cheek pouches. It shoots charges from its tail.";
             int gender = (int)Enum.gender.Both;
@@ -2354,7 +2396,7 @@ namespace Pokemon_Beep.Factory
             tmPokemon.Add(moves[(int)Enum.move.Tail_Whip]);
             tmPokemon.Add(moves[(int)Enum.move.Cut]);
 
-            return new PocketMonster(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
+            return new PokemonInfo(pokedex, name, description, gender, height, weight, type, abilitiesPokemon, catchrate, experience, experienceYield, baseHP, baseAttack, baseDefense, baseSpecialAttack, baseSpecialDefense, baseSpeed, learnset, tmPokemon);
         }
     }
 }

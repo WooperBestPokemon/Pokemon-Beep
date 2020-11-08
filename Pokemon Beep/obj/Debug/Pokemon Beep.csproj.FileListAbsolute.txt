@@ -31,3 +31,12 @@ T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Memory.xml
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Numerics.Vectors.xml
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\System.ValueTuple.xml
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Map\Plankalkul&Road1.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Map\Plankalkul&Road1Hitbox.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\Cave.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\City - Day.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\City - Night.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\Default.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\Forest - Day.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\Forest - Night.png
+T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\WindowsXP.png

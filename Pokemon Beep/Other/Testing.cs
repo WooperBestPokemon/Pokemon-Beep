@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Permissions;
 using System.Threading;
+using System.Windows.Input;
+using System.Xml.Serialization;
 using Pokemon_Beep.Combat;
 using Pokemon_Beep.Factory;
 using Pokemon_Beep.Graphic;
@@ -21,74 +27,29 @@ namespace Pokemon_Beep.Other
         {
             Protagonist protag = new Protagonist("James", 0);
             PokemonFactory factory = new PokemonFactory();
-            PocketMonster player = factory.Furret();
-            PocketMonster foe = factory.Finneon();
-            player.generateWildPokemon(50);
-            foe.generateWildPokemon(50);
+            //PokemonInfo player = factory.Furret();
+            //PokemonInfo foe = factory.Finneon();
+            //player.generateWildPokemon(50);
+            //foe.generateWildPokemon(50);
 
-            protag.Pokemons.Add(player);
+            //protag.Pokemons.Add(player);
 
             Battle battle = new Battle();
 
             Console.Clear();
 
-            battle.startWildBattle(protag, foe, 0);
+            //battle.startWildBattle(protag, foe, 0);
             
-        }
-        public void asciiTest()
-        {
-            Animation animation = new Animation();
-            Console.SetWindowSize(83, 30);
-            Console.SetBufferSize(83, 30);
-            Console.CursorVisible = false;
-            Utilities.changeBackgroundColor(47, 53, 32);
-            Console.Clear();
-            Console.SetCursorPosition(0, 0);
-            Console.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                               ╔══════════╗    ║");
-            Console.WriteLine(" ║                                                               ║Pokédex < ║    ║");
-            Console.WriteLine(" ║                                                               ║Pokémon   ║    ║");
-            Console.WriteLine(" ║                                                               ║Bag       ║    ║");
-            Console.WriteLine(" ║                                                               ║PlayerName║    ║");
-            Console.WriteLine(" ║                                                               ║Save      ║    ║");
-            Console.WriteLine(" ║                                                               ║Option    ║    ║");
-            Console.WriteLine(" ║                                                               ║Exit      ║    ║");
-            Console.WriteLine(" ║                                                               ║          ║    ║");
-            Console.WriteLine(" ║                                                               ╚══════════╝    ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                               ║");
-            Console.WriteLine(" ║                                                                ╔════╗         ║");
-            Console.WriteLine(" ║                                                                ║Yes<║         ║");
-            Console.WriteLine(" ║                                                                ║No< ║         ║");
-            Console.WriteLine(" ║                                                                ╚════╝         ║");
-            Console.WriteLine(" ║    ╔═════════════════════════════════════════════════════════════════════╗    ║");
-            Console.WriteLine(" ║    ║ Hi ! Welcome to the Poké-center. Would you like me to heal your     ║    ║");
-            Console.WriteLine(" ║    ║ Pokémon ?                                                           ║    ║");
-            Console.WriteLine(" ║    ╚═════════════════════════════════════════════════════════════════════╝    ║");
-            Console.WriteLine(" ╚═══════════════════════════════════════════════════════════════════════════════╝");
-            Console.SetCursorPosition(41, 14);
-            Utilities.changeForegroundColor(255, 163, 255);
-            Console.WriteLine("+");
-            Console.ReadKey();
-            animation.wildPokemonBattleAnimation();
-            Console.ReadKey();
         }
         public void battleGraphic()
         {
-            BattleBackground background = new BattleBackground();
+            //BattleBackground background = new BattleBackground();
             Console.SetWindowSize(152, 41);
             Console.SetBufferSize(152, 41);
             Utilities.changeBackgroundColor(50, 50, 50);
             Console.Clear();
             //Background
-            background.writeBackground(3);
+            //background.writeBackground(3);
             //Player's Pokemon
             writePlayerPokemon(8, 16);
             //Foe's Pokemon
@@ -1583,13 +1544,13 @@ namespace Pokemon_Beep.Other
         public void testAudio()
         {
             Console.CursorVisible = false;
-            BattleBackground background = new BattleBackground();
+            //BattleBackground background = new BattleBackground();
             Console.SetWindowSize(152, 41);
             Console.SetBufferSize(152, 41);
             Utilities.changeBackgroundColor(50, 50, 50);
             Console.Clear();
             //Background
-            background.writeBackground(3);
+            //background.writeBackground(3);
             //Player's Pokemon
             writePlayerPokemon(8, 16);
             writeFoePokemon(90, 16);
@@ -3065,30 +3026,64 @@ namespace Pokemon_Beep.Other
         public void battletest()
         {
             PokemonFactory factory = new PokemonFactory();
-            PocketMonster player = factory.MissingNo();
-            PocketMonster foe = factory.testing();
+            //PokemonInfo player = factory.MissingNo();
+            //PokemonInfo foe = factory.testing();
             Battle battle = new Battle();
 
 
-            PkmnBattleInfo playerInfo = new PkmnBattleInfo(player);
-            PkmnBattleInfo foeInfo = new PkmnBattleInfo(foe);
-            Field playerField = new Field(playerInfo);
-            Field foeField = new Field(foeInfo);
-            BattleField arena = new BattleField(playerField, foeField);
+            //PkmnBattleInfo playerInfo = new PkmnBattleInfo(player);
+            //PkmnBattleInfo foeInfo = new PkmnBattleInfo(foe);
+            //Field playerField = new Field(playerInfo);
+            //Field foeField = new Field(foeInfo);
+            //BattleField arena = new BattleField(playerField, foeField);
 
+        }
+        public void saveTest()
+        {
+            /*
+            PokemonFactory factory = new PokemonFactory();
+            Protagonist player = new Protagonist("James", 1);
+            PocketMonster pokemon = new PocketMonster(10, 10);
+            pokemon.Nickname = "TopTierRattata";
+            player.Pokemons.Add(pokemon);
+
+            // Create a new StreamWriter
+
+            using (Stream stream = File.Open("C:/Users/Jqcob/Documents/Pokemon_Beep/save.beep", true ? FileMode.Append : FileMode.Create))
+            {
+                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                binaryFormatter.Serialize(stream, player);
+            }
+
+            
+            
+            Stream stream = new FileStream(@"C:/Users/Jqcob/Documents/Pokemon_Beep/save.beep", FileMode.Create, FileAccess.Write);
+
+            formatter.Serialize(stream, player);
+            stream.Close();
+
+            Console.ReadKey();
+            */
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(@"C:/Users/Jqcob/Documents/Pokemon_Beep/save.beep", FileMode.Open, FileAccess.Read);
+            Protagonist objnew = (Protagonist)formatter.Deserialize(stream);
+
+            Console.WriteLine(objnew.Pokemons[0].Moveset[0].Name);
+
+            Console.ReadKey();
         }
         public void cameraTest()
         {
-            Console.SetWindowSize(82, 30);
-            Console.SetBufferSize(82, 30);
+            //Console.SetWindowSize(82, 30);
+            //Console.SetBufferSize(82, 30);
+            Console.SetWindowSize(152, 41);
+            Console.SetBufferSize(152, 41);
             Console.CursorVisible = false;
 
-            Utilities.changeBackgroundColor(5, 5, 5);
+            Utilities.changeBackgroundColor(5, 5, 5);         
 
-            ConsoleKeyInfo keyinfo;
-
-            int posJX = 100;
-            int posJY = 30;
+            int posJX = 240;
+            int posJY = 40;
 
             Console.SetCursorPosition(0, 0);
             Console.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
@@ -3123,34 +3118,64 @@ namespace Pokemon_Beep.Other
 
 
             MapFactory mapFactory = new MapFactory();
-            List<Background> back = mapFactory.getBackground();
-            Camera camera = new Camera(back[0]);
+            List<Map> maps = mapFactory.getMaps();
+            Map currentMap = maps[0];
+
+            bool asMoved = true;
 
             while (true)
-            {
-                camera.printBackground(posJX, posJY);
+            {              
 
-                Console.SetCursorPosition(41, 14);
-                Utilities.changeForegroundColor(255, 163, 255);
-                Console.WriteLine("■");
+                if (asMoved)
+                {
+                    currentMap.printMap(posJX, posJY);
+                    Console.SetCursorPosition(41, 14);
+                    Utilities.changeForegroundColor(255, 163, 255);
+                    Console.WriteLine("■");
+                }
 
-                keyinfo = Console.ReadKey(true);
+                //Tick on va dire
+                Thread.Sleep(50);
 
-                if (keyinfo.Key == ConsoleKey.S)
+                if (Keyboard.IsKeyDown(Key.S))
                 {
                     posJY += 1;
+
+                    if(currentMap.hit(posJX, posJY))
+                        posJY -= 1;
+                    currentMap.wildPokemon(posJX, posJY);
+                    asMoved = true;
                 }
-                else if (keyinfo.Key == ConsoleKey.A)
+                else if (Keyboard.IsKeyDown(Key.A))
                 {
                     posJX -= 2;
+
+                    if (currentMap.hit(posJX, posJY))
+                        posJX += 2;
+                    currentMap.wildPokemon(posJX, posJY);
+                    asMoved = true;
                 }
-                else if (keyinfo.Key == ConsoleKey.W)
+                else if (Keyboard.IsKeyDown(Key.W))
                 {
                     posJY -= 1;
+
+                    if (currentMap.hit(posJX, posJY))
+                        posJY += 1;
+                    currentMap.wildPokemon(posJX, posJY);
+                    asMoved = true;
                 }
-                else if (keyinfo.Key == ConsoleKey.D)
+                else if (Keyboard.IsKeyDown(Key.D))
                 {
                     posJX += 2;
+
+                    if (currentMap.hit(posJX, posJY))
+                        posJX -= 2;
+                    currentMap.wildPokemon(posJX, posJY);
+                    asMoved = true;
+                }
+                else
+                {
+                    asMoved = false;
                 }
             }
          

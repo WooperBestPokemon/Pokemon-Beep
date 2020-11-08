@@ -549,5 +549,15 @@ namespace Pokemon_Beep
         {
             test,
         }
+        public enum background
+        {
+            Default,
+            Forest_Day,
+            Forest_Night,
+            City_Day,
+            City_Night,
+            Cave,
+            WindowsXP,
+        }
     }
 }

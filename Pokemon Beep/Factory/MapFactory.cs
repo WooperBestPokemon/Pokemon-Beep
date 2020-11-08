@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
 using System.Drawing;
 
 namespace Pokemon_Beep.Factory
@@ -14,13 +9,17 @@ namespace Pokemon_Beep.Factory
         public List<Map> getMaps()
         {
             List<Map> maps = new List<Map>();
+            List<Hitbox> hitboxes = getHitboxes();
+            List<Background> backgrounds = getBackgrounds();
+
+            maps.Add(new Map(1, 1, hitboxes[0], backgrounds[0]));
 
             return maps;
         }
-        public List<Background> getBackground()
+        public List<Background> getBackgrounds()
         {
             List<Background> backgrounds = new List<Background>();
-            backgrounds.Add(getBackground("Pokemon_Beep.Data.Map.Plankalkul&Road1.png"));
+            backgrounds.Add(getBackground("Ressource/Map/Plankalkul&Road1.png"));
 
             return backgrounds;
         }
@@ -29,7 +28,7 @@ namespace Pokemon_Beep.Factory
             List<Hitbox> hitboxes = new List<Hitbox>();
 
             //Plankalkul + road 1
-            hitboxes.Add(getHitbox("Pokemon_Beep.Data.Map.Plankalkul&Road1Hitbox.png"));
+            hitboxes.Add(getHitbox("Ressource/Map/Plankalkul&Road1Hitbox.png"));
 
 
 
@@ -37,9 +36,7 @@ namespace Pokemon_Beep.Factory
         }
         private Hitbox getHitbox(string path)
         {
-            Assembly myAssembly = Assembly.GetExecutingAssembly();
-            Stream myStream = myAssembly.GetManifestResourceStream(path);
-            Bitmap bmp = new Bitmap(myStream);
+            Bitmap bmp = new Bitmap(path);
 
             int height = bmp.Height;
             int width = bmp.Width;
@@ -104,8 +101,8 @@ namespace Pokemon_Beep.Factory
                         collision[posX - 1, y] = 8;
                         collision[posX, y] = 8;
                     }
-                    //Nothing
-                    else
+                    //Can Move
+                    else if(pixelColor.R == 255 && pixelColor.G == 255 && pixelColor.B == 255)
                     {
                         int posX = x * 2;
                         collision[posX - 1, y] = 0;
@@ -117,9 +114,7 @@ namespace Pokemon_Beep.Factory
         }
         private Background getBackground(string path)
         {
-            Assembly myAssembly = Assembly.GetExecutingAssembly();
-            Stream myStream = myAssembly.GetManifestResourceStream(path);
-            Bitmap bmp = new Bitmap(myStream);
+            Bitmap bmp = new Bitmap(path);
 
             int height = bmp.Height;
             int width = bmp.Width;
@@ -127,13 +122,13 @@ namespace Pokemon_Beep.Factory
             char[,] character = new char[width * 2, height];
             string[,] colours = new string[width * 2, height];
 
+            //Replace every white pixel with nothing
             for (int y = 0; y < bmp.Height; y++)
             {
                 for (int x = 0; x < bmp.Width; x++)
                 {
                     Color pixelColor = bmp.GetPixel(x, y);
 
-                    //Step 1 : Nothing
                     if (pixelColor.R == 255 && pixelColor.G == 255 && pixelColor.B == 255)
                     {
                         int posX = x * 2;
@@ -147,8 +142,17 @@ namespace Pokemon_Beep.Factory
                         colours[posX - 1, y] = nothingColour;
                         colours[posX, y] = nothingColour;
                     }
+                }
+            }
+
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    Color pixelColor = bmp.GetPixel(x, y);
+                    
                     //Step 2 : Trees
-                    else if (pixelColor.R == 127 && pixelColor.G == 51 && pixelColor.B == 0)
+                    if (pixelColor.R == 127 && pixelColor.G == 51 && pixelColor.B == 0)
                     {
                         //Calculate how much there is green pixel
                         int nbGreenPixel = 0;
@@ -355,6 +359,59 @@ namespace Pokemon_Beep.Factory
 
                         colours[posX - 1, y] = slopeColour;
                         colours[posX, y] = slopeColour;
+                    }
+                    //Buildings
+                    //Player's House
+                    else if(pixelColor.R == 161 && pixelColor.G == 127 && pixelColor.B == 255)
+                    {
+                        int posX = (x * 2) - 1;
+                        string houseColour = "\x1b[38;2;255;255;255m";
+
+                        //Door
+
+                        character[posX, y] = '_';
+                        colours[posX, y] = houseColour;
+
+                        character[posX -1, y] = '|';
+                        colours[posX - 1, y] = houseColour;
+
+                        character[posX + 1, y] = '|';
+                        colours[posX + 1, y] = houseColour;
+
+                        character[posX - 1, y - 1] = '/';
+                        colours[posX - 1, y - 1] = houseColour;
+
+                        character[posX + 1, y - 1] = '\\';
+                        colours[posX + 1, y - 1] = houseColour;
+
+                        character[posX, y - 1] = 'o';
+                        colours[posX, y - 1] = houseColour;
+
+                        character[posX, y - 2] = '_';
+                        colours[posX, y - 2] = houseColour;
+
+                        //Floor
+                        for (int i = 1; i < 3; i++)
+                        {
+                            character[posX - 1 -i, y] = '_';
+                            colours[posX - 1 - i, y] = houseColour;
+                        }
+
+                        for (int i = 1; i < 15; i++)
+                        {
+                            character[posX + 1 + i, y] = '_';
+                            colours[posX + 1 + i, y] = houseColour;
+                        }
+                        //Walls
+                        for (int i = 0; i < 4; i++)
+                        {
+                            character[posX + 16, y - i] = '|';
+                            colours[posX + 16, y - i] = houseColour;
+
+                            character[posX - 4, y - i] = '|';
+                            colours[posX - 4, y - i] = houseColour;
+                        }
+                        //Windows
                     }
                 }
             }

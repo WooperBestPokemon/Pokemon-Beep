@@ -17,15 +17,15 @@ namespace Pokemon_Beep.Combat
             //Physical Attack
             if (move.Category == "Physical")
             {
-                double attackAttacker = attacker.Attack * getStageMultiplicator(attacker.stages[(int)Enum.stat.Attack]);
-                double defenseDefender = defender.Defense * getStageMultiplicator(defender.stages[(int)Enum.stat.Defense]);
+                double attackAttacker = attacker.Attack * getStageMultiplicator(attacker.Stages[(int)Enum.stat.Attack]);
+                double defenseDefender = defender.Defense * getStageMultiplicator(defender.Stages[(int)Enum.stat.Defense]);
                 damage = ((((2 * attacker.Level / 5) + 2) * attackAttacker * move.Power / defenseDefender / 50) + 2) * modifier(weatherID, attacker, defender, move);
             }
             //Special Attack
             else
             {
-                double specialAttackAttacker = attacker.SpecialAttack * getStageMultiplicator(attacker.stages[(int)Enum.stat.SpecialAttack]);
-                double specialDefenseDefender = defender.SpecialDefense * getStageMultiplicator(defender.stages[(int)Enum.stat.SpecialDefense]);
+                double specialAttackAttacker = attacker.SpAttack * getStageMultiplicator(attacker.Stages[(int)Enum.stat.SpecialAttack]);
+                double specialDefenseDefender = defender.SpDefense * getStageMultiplicator(defender.Stages[(int)Enum.stat.SpecialDefense]);
                 damage = ((((2 * attacker.Level / 5) + 2) * specialAttackAttacker * move.Power / specialDefenseDefender / 50) + 2) * modifier(weatherID, attacker, defender, move);
             }                
             return (int) Math.Round(damage, 0);
@@ -33,7 +33,7 @@ namespace Pokemon_Beep.Combat
         //Modifier
         private double modifier(int weatherID, PocketMonster attacker, PocketMonster defender, Move move)
         {
-            return weather(weatherID, move.Type) * criticalHit(attacker.stages[(int)Enum.stat.Critical]) * randomDamage() * stab(attacker.Types, move.Type) * effectiveness(move.Type, defender) * burn(attacker, move.Category) * other();
+            return weather(weatherID, move.Type) * criticalHit(attacker.Stages[(int)Enum.stat.Critical]) * randomDamage() * stab(attacker.Types, move.Type) * effectiveness(move.Type, defender) * burn(attacker, move.Category) * other();
         }
         //Private Function used by Modifier
         private double weather(int weatherID, int typeAttack)
@@ -117,7 +117,7 @@ namespace Pokemon_Beep.Combat
             {
                 if (categoryMove == "Physical")
                 {
-                    if (!(attacker.Ability.Name == "Guts"))
+                    if (!(attacker.PkmnAbility.Name == "Guts"))
                     {
                         burn = 0.5;
                     }
@@ -165,4 +165,3 @@ namespace Pokemon_Beep.Combat
         }
     }
 }
-     

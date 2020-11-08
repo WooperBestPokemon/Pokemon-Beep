@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Pokemon_Beep.Pokemon
 {
+    [Serializable]
     class Learnset
     {
         public Learnset(Move pkmMove, int level)

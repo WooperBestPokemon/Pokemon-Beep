@@ -9,6 +9,7 @@ namespace Pokemon_Beep.Player
     /// <summary>
     /// This class will be used for the story/event. It will also track what the player did.
     /// </summary>
+    [Serializable]
     class Story
     {
         PokemonFactory pokemonFactory = new PokemonFactory();

@@ -31,6 +31,7 @@ namespace Pokemon_Beep
 
         [DllImport("kernel32.dll", ExactSpelling = true)]
         private static extern IntPtr GetConsoleWindow();
+        [STAThread]
         static void Main(string[] args)
         {
             IntPtr handle = GetConsoleWindow();
@@ -47,9 +48,9 @@ namespace Pokemon_Beep
             int mode;
             GetConsoleMode(hand, out mode);
             SetConsoleMode(hand, mode | 0x4);
-            
+
             Testing testing = new Testing();
-            testing.cameraTest();
+            testing.saveTest();
             Console.ReadKey();
         }
     }

@@ -42,6 +42,7 @@
     <Reference Include="NVorbis, Version=0.10.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\NVorbis.0.10.0\lib\net45\NVorbis.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -68,6 +69,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\GymLeaderAI.cs" />
@@ -86,17 +88,19 @@
     <Compile Include="Combat\TypeChart.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="Factory\AbilityFactory.cs" />
+    <Compile Include="Factory\BackgroundFactory.cs" />
     <Compile Include="Factory\ItemFactory.cs" />
     <Compile Include="Factory\MapFactory.cs" />
     <Compile Include="Factory\MoveFactory.cs" />
     <Compile Include="Factory\PokemonFactory.cs" />
-    <Compile Include="Game.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameLoop.cs" />
     <Compile Include="Graphic\Animation.cs" />
     <Compile Include="Graphic\Ascii.cs" />
     <Compile Include="Graphic\BattleBackground.cs" />
     <Compile Include="Graphic\BattleScene.cs" />
     <Compile Include="Graphic\Camera.cs" />
-    <Compile Include="Graphic\Layer.cs" />
+    <Compile Include="Graphic\INT_to_String.cs" />
     <Compile Include="Graphic\WorldGraphics.cs" />
     <Compile Include="Map\Building.cs" />
     <Compile Include="Map\Background.cs" />
@@ -104,6 +108,7 @@
     <Compile Include="Map\Map.cs" />
     <Compile Include="Map\World.cs" />
     <Compile Include="Other\Item.cs" />
+    <Compile Include="Other\NPC.cs" />
     <Compile Include="Other\Testing.cs" />
     <Compile Include="Player\Inventory.cs" />
     <Compile Include="Player\PC.cs" />
@@ -112,6 +117,8 @@
     <Compile Include="Player\Story.cs" />
     <Compile Include="Pokemon\Learnset.cs" />
     <Compile Include="Pokemon\PocketMonster.cs" />
+    <Compile Include="Pokemon\PocketMonsterGeneration.cs" />
+    <Compile Include="Pokemon\PokemonInfo.cs" />
     <Compile Include="Pokemon\Pokedex.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,11 +129,38 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Music\" />
+    <Folder Include="Ressource\Music\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Data\Map\Plankalkul&amp;Road1.png" />
-    <EmbeddedResource Include="Data\Map\Plankalkul&amp;Road1Hitbox.png" />
+    <None Include="Ressource\Map\Plankalkul&amp;Road1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Ressource\Map\Plankalkul&amp;Road1Hitbox.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ressource\Background\Cave.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ressource\Background\City - Day.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ressource\Background\City - Night.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ressource\Background\Default.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ressource\Background\Forest - Day.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ressource\Background\Forest - Night.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ressource\Background\WindowsXP.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
