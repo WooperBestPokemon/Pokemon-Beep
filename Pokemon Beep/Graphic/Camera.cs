@@ -25,7 +25,11 @@ namespace Pokemon_Beep.Graphic
                 string line = "";
                 for (int x = 2; x < 81; x++)
                 {
-                    line += background.Colors[(xPrint + x - 2), (yPrint + y - 1)] + background.Characters[(xPrint + x - 2), (yPrint + y - 1)];
+                    //If you see farther than the char[,] It will write an empty space instead of crashing
+                    if((xPrint + x - 2) < 0 || background.Characters.GetLength(0) <= (xPrint + x - 2) || (yPrint + y - 1) < 0 || background.Characters.GetLength(1) <= (yPrint + y - 1))
+                        line += " ";
+                    else
+                        line += background.Colors[(xPrint + x - 2), (yPrint + y - 1)] + background.Characters[(xPrint + x - 2), (yPrint + y - 1)];
                 }
                 stringBuilders.Add(new StringBuilder(line));
             }

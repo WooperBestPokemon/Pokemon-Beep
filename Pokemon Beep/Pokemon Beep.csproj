@@ -88,7 +88,6 @@
     <Compile Include="Combat\TypeChart.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="Factory\AbilityFactory.cs" />
-    <Compile Include="Factory\BackgroundFactory.cs" />
     <Compile Include="Factory\ItemFactory.cs" />
     <Compile Include="Factory\MapFactory.cs" />
     <Compile Include="Factory\MoveFactory.cs" />

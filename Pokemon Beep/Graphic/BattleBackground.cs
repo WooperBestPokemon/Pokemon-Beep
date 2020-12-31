@@ -8,11 +8,8 @@ namespace Pokemon_Beep.Graphic
 {
     class BattleBackground
     {
-        private Background background;
-        public BattleBackground(Background background)
-        {
-            this.background = background;
-        }
+        public BattleBackground()
+        {  }
         public void writeBackground(int id)
         {
             Console.SetCursorPosition(0, 0);

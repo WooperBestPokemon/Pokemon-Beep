@@ -12,7 +12,6 @@ namespace Pokemon_Beep.Player
     [Serializable]
     class Story
     {
-        PokemonFactory pokemonFactory = new PokemonFactory();
         /*
         public PocketMonster starter(int choice)
         {

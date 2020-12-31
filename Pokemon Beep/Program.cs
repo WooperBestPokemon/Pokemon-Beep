@@ -34,6 +34,7 @@ namespace Pokemon_Beep
         [STAThread]
         static void Main(string[] args)
         {
+
             IntPtr handle = GetConsoleWindow();
             IntPtr sysMenu = GetSystemMenu(handle, false);
 
@@ -50,7 +51,7 @@ namespace Pokemon_Beep
             SetConsoleMode(hand, mode | 0x4);
 
             Testing testing = new Testing();
-            testing.saveTest();
+            testing.item();
             Console.ReadKey();
         }
     }

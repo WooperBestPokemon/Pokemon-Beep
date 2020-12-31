@@ -40,9 +40,9 @@ namespace Pokemon_Beep
             Caterpie,
             Metapod,
             Butterfree,
-            Wurmple,
-            Silcoon,
-            Beautifly,
+            Scatterbug,
+            Spewpa,
+            Vivillon,
             Oddish,
             Gloom,
             Vileplume,
@@ -93,6 +93,7 @@ namespace Pokemon_Beep
         {
             Arena_Trap,
             Battle_Armor,
+            Big_Pecks,
             Blaze,
             Chlorophyll,
             Clear_Body,
@@ -108,6 +109,7 @@ namespace Pokemon_Beep
             Flame_Body,
             Flash_Fire,
             Frisk,
+            Gluttony,
             Guts,
             Huge_Power,
             Hustle,
@@ -126,6 +128,7 @@ namespace Pokemon_Beep
             Magnet_Pull,
             Marvel_Scale,
             Minus,
+            Moody,
             Natural_Cure,
             Oblivious,
             Overgrow,
@@ -135,10 +138,12 @@ namespace Pokemon_Beep
             Poison_Point,
             Pressure,
             Pure_Power,
+            Quick_Feet,
             Rain_Dish,
             Rock_Head,
             Rough_Skin,
             Run_Away,
+            Sand_Rush,
             Sand_Stream,
             Sand_Veil,
             Scrappy,
@@ -148,6 +153,7 @@ namespace Pokemon_Beep
             Sheer_Force,
             Shell_Armor,
             Shield_Dust,
+            Simple,
             Soundproof,
             Speed_Boost,
             Static,
@@ -159,6 +165,7 @@ namespace Pokemon_Beep
             Swarm,
             Swift_Swim,
             Synchronize,
+            Tangled_Feet,
             Thick_Fat,
             Torrent,
             Trace,
@@ -558,6 +565,19 @@ namespace Pokemon_Beep
             City_Night,
             Cave,
             WindowsXP,
+        }
+        public enum categorie
+        {
+            Healing,
+            HeldItems,
+            Pokeballs,
+            Berries,
+            Treasures,
+            Keys
+        }
+        public enum Count
+        {
+            Items = 1000,
         }
     }
 }

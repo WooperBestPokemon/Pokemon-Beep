@@ -16,6 +16,7 @@ namespace Pokemon_Beep.Factory
 
             abilities.Add(new Ability("Arena Trap", "Prevents the foe from fleeing.", (int)Enum.ability.Arena_Trap));
             abilities.Add(new Ability("Battle Armor", "The Pokémon is protected against critical hits.", (int)Enum.ability.Battle_Armor));
+            abilities.Add(new Ability("Big Pecks", "Protects the Pokémon from Defense-lowering attacks.", (int)Enum.ability.Big_Pecks));
             abilities.Add(new Ability("Blaze", "Powers up Fire-type moves when health is below 1/3.", (int)Enum.ability.Blaze));
             abilities.Add(new Ability("Chlorophyll", "Boosts the Pokémon's Speed in sunshine.", (int)Enum.ability.Chlorophyll));
             abilities.Add(new Ability("Clear Body", "Prevents other Pokémon from lowering its stats.", (int)Enum.ability.Clear_Body));
@@ -31,6 +32,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Flame Body", "Contact with the Pokémon may burn the attacker.", (int)Enum.ability.Flame_Body));
             abilities.Add(new Ability("Flash Fire", "It powers up Fire-type moves if it's hit by one.", (int)Enum.ability.Flash_Fire));
             abilities.Add(new Ability("Frisk", "The Pokémon can check the foe’s held item.", (int)Enum.ability.Frisk));
+            abilities.Add(new Ability("Gluttony", "Encourages the early use of a held Berry.", (int)Enum.ability.Gluttony));
             abilities.Add(new Ability("Guts", "Boosts Attack if there is a status problem.", (int)Enum.ability.Guts));
             abilities.Add(new Ability("Huge Power", "Raises the Pokémon's Attack stat.", (int)Enum.ability.Huge_Power));
             abilities.Add(new Ability("Hustle", "Boosts the Attack stat, but lowers accuracy.", (int)Enum.ability.Hustle));
@@ -49,6 +51,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Magnet Pull", "Prevents Steel-type Pokémon from escaping.", (int)Enum.ability.Magnet_Pull));
             abilities.Add(new Ability("Marvel Scale", "Ups Defense if there is a status problem.", (int)Enum.ability.Marvel_Scale));
             abilities.Add(new Ability("Minus", "Ups Sp. Atk if another Pokémon has Plus or Minus.", (int)Enum.ability.Minus));
+            abilities.Add(new Ability("Moody", "Raises one stat and lowers another.", (int)Enum.ability.Moody));
             abilities.Add(new Ability("Natural Cure", "All status problems heal when it switches out.", (int)Enum.ability.Natural_Cure));
             abilities.Add(new Ability("Oblivious", "Prevents it from becoming infatuated.", (int)Enum.ability.Oblivious));
             abilities.Add(new Ability("Overgrow", "Powers up Grass-type moves in a pinch.", (int)Enum.ability.Overgrow));
@@ -58,10 +61,12 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Poison Point", "Contact with the Pokémon may poison the attacker.", (int)Enum.ability.Poison_Point));
             abilities.Add(new Ability("Pressure", "The Pokémon raises the foe's PP usage.", (int)Enum.ability.Pressure));
             abilities.Add(new Ability("Pure Power", "Boosts the Pokémon’s Attack stat.", (int)Enum.ability.Pressure));
+            abilities.Add(new Ability("Quick Feet", "Boosts Speed if there is a status problem.", (int)Enum.ability.Quick_Feet));
             abilities.Add(new Ability("Rain Dish", "Raises the Pokémon's Attack stat.", (int)Enum.ability.Rain_Dish));
             abilities.Add(new Ability("Rock_Head", "Protects the Pokémon from recoil damage.", (int)Enum.ability.Rock_Head));
             abilities.Add(new Ability("Rough Skin", "Inflicts damage to the attacker on contact.", (int)Enum.ability.Rough_Skin));
             abilities.Add(new Ability("Run Away", "Enables a sure getaway from wild Pokémon.", (int)Enum.ability.Run_Away));
+            abilities.Add(new Ability("Sand Rush", "Boosts the Pokémon’s Speed in a sandstorm.", (int)Enum.ability.Sand_Rush));
             abilities.Add(new Ability("Sand Stream", "The Pokémon summons a sandstorm in battle.", (int)Enum.ability.Sand_Stream));
             abilities.Add(new Ability("Sand Veil", "Boosts the Pokémon's evasion in a sandstorm.", (int)Enum.ability.Sand_Veil));
             abilities.Add(new Ability("Scrappy", "Enables moves to hit Ghost-type foes.", (int)Enum.ability.Scrappy));
@@ -71,6 +76,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Sheer Force", "Increases the power of moves that have beneficial secondary effects by 30%, but removes those additional effects.", (int)Enum.ability.Sheer_Force));
             abilities.Add(new Ability("Shell Armor", "The Pokémon is protected against critical hits.", (int)Enum.ability.Shell_Armor));
             abilities.Add(new Ability("Shield Dust", "Blocks the added effects of attacks taken.", (int)Enum.ability.Shield_Dust));
+            abilities.Add(new Ability("Simple", "The stat changes the Pokémon receives are doubled.", (int)Enum.ability.Simple));
             abilities.Add(new Ability("Soundproof", "Gives immunity to 'sound - based' moves.", (int)Enum.ability.Soundproof));
             abilities.Add(new Ability("Speed Boost", "Its Speed stat is gradually boosted.", (int)Enum.ability.Speed_Boost));
             abilities.Add(new Ability("Static", "Contact with the Pokémon may cause paralysis.", (int)Enum.ability.Static));
@@ -82,6 +88,7 @@ namespace Pokemon_Beep.Factory
             abilities.Add(new Ability("Swarm", "Powers up Bug-type moves when health is below 1/3.", (int)Enum.ability.Swarm));
             abilities.Add(new Ability("Swift Swim", "Boosts the Pokémon's Speed in rain.", (int)Enum.ability.Swift_Swim));
             abilities.Add(new Ability("Synchronize", "Passes a burn, poison, or paralysis to the foe.", (int)Enum.ability.Synchronize));
+            abilities.Add(new Ability("Tangled Feet", "Raises evasion if the Pokémon is confused.", (int)Enum.ability.Tangled_Feet));
             abilities.Add(new Ability("Thick Fat", "Ups resistance to Fire- and Ice-type moves.", (int)Enum.ability.Thick_Fat));
             abilities.Add(new Ability("Torrent", "Powers up Water-type moves in a pinch.", (int)Enum.ability.Torrent));
             abilities.Add(new Ability("Trace", "The Pokémon copies a foe's Ability.", (int)Enum.ability.Trace));
