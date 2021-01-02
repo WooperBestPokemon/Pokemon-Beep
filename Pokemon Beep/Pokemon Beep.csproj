@@ -106,6 +106,7 @@
     <Compile Include="Map\Hitbox.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Map\World.cs" />
+    <Compile Include="Info.cs" />
     <Compile Include="Other\Item.cs" />
     <Compile Include="Other\NPC.cs" />
     <Compile Include="Other\Testing.cs" />
