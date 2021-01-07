@@ -1,5 +1,6 @@
 ﻿using Pokemon_Beep.Player;
 using Pokemon_Beep.Pokemon;
+using System;
 
 namespace Pokemon_Beep.Combat
 {
@@ -91,6 +92,36 @@ namespace Pokemon_Beep.Combat
                 return (double)2 / 8;
             else
                 return 1;
+        }
+        public int shakes(PocketMonster pokemon, int pokeballBonus)
+        {
+            int nbShake = 0;
+
+            double a = ((3 * pokemon.HP - 2 * pokemon.CurrentHP) * Pokedex.getInfo(pokemon.PokedexID).CatchRate * pokeballBonus) / (3 * pokemon.HP);
+
+            if (pokemon.Status == (int)Enum.status.Sleep || pokemon.Status == (int)Enum.status.Frozen)
+                a *= 2;
+            else if(pokemon.Status != 0)
+                a *= 1.5;
+
+            double shakeProbability = 1048560 / Math.Sqrt(Math.Sqrt(16711680 / a));
+
+
+            bool stillGoing = true;
+
+            while(stillGoing)
+            {
+                int check = Utilities.RandomNumber(0, 65536);
+                if (check >= shakeProbability)
+                    stillGoing = false;
+                else
+                    nbShake++;
+                if(nbShake == 4)
+                    stillGoing = false;
+            }
+
+            //If the nb < 3, then the pokemon has been catched !
+            return nbShake;
         }
     }
 }

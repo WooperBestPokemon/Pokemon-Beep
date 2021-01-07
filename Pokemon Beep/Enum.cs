@@ -34,6 +34,7 @@ namespace Pokemon_Beep
             Noctowl,
             Taillow,
             Swellow,
+            /*
             Starly,
             Staravia,
             Staraptor,
@@ -88,6 +89,7 @@ namespace Pokemon_Beep
             Sudowoodo,
             Swablu,
             Altaria,
+            */
         }
         public enum ability
         {

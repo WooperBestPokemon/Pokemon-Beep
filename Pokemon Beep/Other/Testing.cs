@@ -27,18 +27,18 @@ namespace Pokemon_Beep.Other
         {
             Protagonist protag = new Protagonist("James", 0);
             PokemonFactory factory = new PokemonFactory();
-            //PokemonInfo player = factory.Furret();
-            //PokemonInfo foe = factory.Finneon();
-            //player.generateWildPokemon(50);
-            //foe.generateWildPokemon(50);
+            PokemonInfo player = factory.getPokemon(2);
+            PokemonInfo foe = factory.getPokemon(5);
+            PocketMonster playerPkmn = new PocketMonster(2, 10);
+            PocketMonster foePkmn = new PocketMonster(7, 10);
 
-            //protag.Pokemons.Add(player);
+            protag.Pokemons.Add(playerPkmn);
 
             Battle battle = new Battle();
 
             Console.Clear();
 
-            //battle.startWildBattle(protag, foe, 0);
+            battle.startWildBattle(protag, foePkmn, 0);
             
         }
         public void battleGraphic()
@@ -1694,6 +1694,49 @@ namespace Pokemon_Beep.Other
 
 
 
+        }
+        public void catchTest()
+        {
+            PocketMonster pkm = new PocketMonster((int)Enum.pokemon.Zigzagoon, 13);
+            pkm.CurrentHP = pkm.HP / 2;
+            Battle battle = new Battle();
+            while (true)
+            {
+                Utilities.changeForegroundColor(255, 255, 255);
+                Console.WriteLine("===============================");
+                Console.WriteLine(pkm.Nickname + "  HP:" + pkm.CurrentHP + "/" +  pkm.HP);
+                Console.WriteLine("===============================");
+                int shakes = battle.shakes(pkm, 1);
+                Utilities.changeForegroundColor(255, 216, 0);
+                Console.WriteLine("The Human throws a Pokéball at the wild " + pkm.Nickname);
+                Thread.Sleep(800);
+                if(shakes != 0)
+                {
+                    for (int i = 0; i < shakes; i++)
+                    {
+                        if( i != 3 )
+                            Console.Write(".");
+                        Thread.Sleep(800);
+                    }
+                    if (shakes == 4)
+                    {
+                        Utilities.changeForegroundColor(76, 255, 0);
+                        Console.Write("Gotcha !");
+                    }                      
+                    else
+                    {
+                        Utilities.changeForegroundColor(255, 0, 0);
+                        Console.Write("The wild Pokémon got Free !");
+                    }
+                }
+                else
+                {
+                    Utilities.changeForegroundColor(255, 0, 0);
+                    Console.WriteLine("The wild Pokémon got Free !");
+                }
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
     }
 }

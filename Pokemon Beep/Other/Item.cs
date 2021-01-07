@@ -23,10 +23,20 @@ namespace Pokemon_Beep.Other
             Effect = effect;
             Price = price;
         }
+        public Item(string name, string description, int categorie, Delegate effect, int price, double catchrate)
+        {
+            Name = name;
+            Description = description;
+            Categorie = categorie;
+            Effect = effect;
+            Price = price;
+            Catchrate = catchrate;
+        }
         public string Name { get; }
         public string Description { get; }
         public int Categorie { get; }
         public Delegate Effect { get; }
         public int Price { get; }
+        public double Catchrate { get; }
     }
 }
