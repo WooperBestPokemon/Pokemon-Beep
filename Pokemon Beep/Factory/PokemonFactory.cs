@@ -311,7 +311,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 142;
+            int experienceYield = 141;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -399,7 +399,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 236;
+            int experienceYield = 208;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -492,7 +492,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 62;
+            int experienceYield = 65;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -670,7 +670,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 240;
+            int experienceYield = 209;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -774,7 +774,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 63;
+            int experienceYield = 66;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -872,7 +872,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 142;
+            int experienceYield = 143;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -970,7 +970,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 239;
+            int experienceYield = 210;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -1159,7 +1159,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 200;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 127;
+            int experienceYield = 116;
 
             //Stats
             int baseHP = 55;
@@ -1264,7 +1264,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 43;
+            int experienceYield = 57;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -1452,7 +1452,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 56;
+            int experienceYield = 60;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -1542,7 +1542,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 90;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 147;
+            int experienceYield = 128;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -1638,7 +1638,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 50;
+            int experienceYield = 58;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -1734,7 +1734,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 127;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 144;
+            int experienceYield = 116;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -1838,7 +1838,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 50;
+            int experienceYield = 55;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -1920,7 +1920,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 120;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 122;
+            int experienceYield = 113;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2002,7 +2002,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 216;
+            int experienceYield = 172;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2085,7 +2085,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 52;
+            int experienceYield = 58;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2171,7 +2171,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 90;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 158;
+            int experienceYield = 162;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2260,7 +2260,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 200;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 54;
+            int experienceYield = 59;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2336,7 +2336,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Medium_Slow;
-            int experienceYield = 159;
+            int experienceYield = 162;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2429,7 +2429,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 190;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 57;
+            int experienceYield = 70;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2523,7 +2523,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 75;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 142;
+            int experienceYield = 128;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2629,7 +2629,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 190;
             int experience = (int)Enum.experience.Erratic;
-            int experienceYield = 66;
+            int experienceYield = 90;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2715,7 +2715,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 75;
             int experience = (int)Enum.experience.Erratic;
-            int experienceYield = 161;
+            int experienceYield = 156;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2800,7 +2800,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Slow;
-            int experienceYield = 40;
+            int experienceYield = 20;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2844,7 +2844,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 45;
             int experience = (int)Enum.experience.Slow;
-            int experienceYield = 189;
+            int experienceYield = 214;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -2948,7 +2948,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 255;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 60;
+            int experienceYield = 93;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();
@@ -3044,7 +3044,7 @@ namespace Pokemon_Beep.Factory
             //Battle
             int catchrate = 90;
             int experience = (int)Enum.experience.Medium_Fast;
-            int experienceYield = 158;
+            int experienceYield = 163;
 
             //Moves
             List<Learnset> learnset = new List<Learnset>();

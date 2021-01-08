@@ -1697,8 +1697,8 @@ namespace Pokemon_Beep.Other
         }
         public void catchTest()
         {
-            PocketMonster pkm = new PocketMonster((int)Enum.pokemon.Zigzagoon, 13);
-            pkm.CurrentHP = pkm.HP / 2;
+            PocketMonster pkm = new PocketMonster((int)Enum.pokemon.Cyndaquil, 69);
+            pkm.CurrentHP = 42;
             Battle battle = new Battle();
             while (true)
             {
@@ -1706,9 +1706,9 @@ namespace Pokemon_Beep.Other
                 Console.WriteLine("===============================");
                 Console.WriteLine(pkm.Nickname + "  HP:" + pkm.CurrentHP + "/" +  pkm.HP);
                 Console.WriteLine("===============================");
-                int shakes = battle.shakes(pkm, 1);
+                int shakes = battle.shakes(pkm, 1.5);
                 Utilities.changeForegroundColor(255, 216, 0);
-                Console.WriteLine("The Human throws a Pokéball at the wild " + pkm.Nickname);
+                Console.WriteLine("The Human throws a Greatball at the wild " + pkm.Nickname);
                 Thread.Sleep(800);
                 if(shakes != 0)
                 {
@@ -1737,6 +1737,13 @@ namespace Pokemon_Beep.Other
                 Console.ReadKey();
                 Console.Clear();
             }
+        }
+        public void xpTest()
+        {
+            PocketMonster pkm = new PocketMonster((int)Enum.pokemon.Noctowl, 17);
+            Battle battle = new Battle();
+
+            Console.WriteLine(battle.calculXPGain(true, pkm));
         }
     }
 }

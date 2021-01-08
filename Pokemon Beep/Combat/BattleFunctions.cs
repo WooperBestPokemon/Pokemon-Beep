@@ -93,7 +93,7 @@ namespace Pokemon_Beep.Combat
             else
                 return 1;
         }
-        public int shakes(PocketMonster pokemon, int pokeballBonus)
+        public int shakes(PocketMonster pokemon, double pokeballBonus)
         {
             int nbShake = 0;
 
@@ -122,6 +122,18 @@ namespace Pokemon_Beep.Combat
 
             //If the nb < 3, then the pokemon has been catched !
             return nbShake;
+        }
+        public int calculXPGain(bool wildPokemon, PocketMonster foe)
+        {
+            double a;
+            if (wildPokemon)
+                a = 1;
+            else
+                a = 1.5;
+
+            double experience = a * Pokedex.getInfo(foe.PokedexID).BaseExperienceYield * foe.Level/7;
+
+            return (int)Math.Round(experience);
         }
     }
 }

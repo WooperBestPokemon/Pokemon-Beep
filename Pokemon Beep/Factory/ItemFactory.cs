@@ -11,12 +11,12 @@ namespace Pokemon_Beep.Factory
 {
     class ItemFactory
     {
-        delegate void effect(Protagonist player, PocketMonster foe);
+        delegate void effect(Protagonist player);
         public List<Item> GetItems()
         {
             List<Item> items = new List<Item>();
 
-            void Nothing(Protagonist player, PocketMonster foe)
+            void Nothing(Protagonist player)
             { noEffect(); }
             effect NoEffect = new effect(Nothing);
 
@@ -24,49 +24,49 @@ namespace Pokemon_Beep.Factory
 
             //Potions --
 
-            void Potion(Protagonist player, PocketMonster foe)
+            void Potion(Protagonist player)
             { heal(player, 30); }
             effect PotionEffect = new effect(Potion);
             items.Add(new Item("Potion", "Instruction: Use the bottle to spray on the wounded Pokémon. It can restores up to 30 HP.", (int)Enum.categorie.Healing, PotionEffect, 300));
             
-            void SuperPotion(Protagonist player, PocketMonster foe)
+            void SuperPotion(Protagonist player)
             { heal(player, 60); }
             effect SuperPotionEffect = new effect(SuperPotion);
             items.Add(new Item("Super Potion", "Instruction: Use the bottle to spray on the wounded Pokémon. It can restores up to 60 HP.", (int)Enum.categorie.Healing, SuperPotionEffect, 700));
             
-            void HyperPotion(Protagonist player, PocketMonster foe)
+            void HyperPotion(Protagonist player)
             { heal(player, 120); }
             effect HyperPotionEffect = new effect(HyperPotion);
             items.Add(new Item("Hyper Potion", "Instruction: Use the bottle to spray on the wounded Pokémon. It can restores up to 120 HP.", (int)Enum.categorie.Healing, HyperPotionEffect, 1200));
 
             //Status --
 
-            void Antidote(Protagonist player, PocketMonster foe)
+            void Antidote(Protagonist player)
             { cure(player, (int)Enum.status.Poisoned); }
             effect AntidoteEffect = new effect(Antidote);
             items.Add(new Item("Antidote", "Instruction: Use the bottle to spray on the affected area. It can cure POISON.", (int)Enum.categorie.Healing, AntidoteEffect, 250));
            
-            void ParalyzeHeal(Protagonist player, PocketMonster foe)
+            void ParalyzeHeal(Protagonist player)
             { cure(player, (int)Enum.status.Paralyzed); }
             effect ParalyzeHealEffect = new effect(ParalyzeHeal);
             items.Add(new Item("Paralyze Heal", "Instruction: Use the bottle to spray on the affected area. It can cure PARALYSIS.", (int)Enum.categorie.Healing, ParalyzeHealEffect, 250));           
             
-            void BurnHeal(Protagonist player, PocketMonster foe)
+            void BurnHeal(Protagonist player)
             { cure(player, (int)Enum.status.Burned); }
             effect BurnHealEffect = new effect(BurnHeal);
             items.Add(new Item("Burn Heal", "Instruction: Use the bottle to spray on the affected area. It can cure BURN.", (int)Enum.categorie.Healing, BurnHealEffect, 250));
 
-            void Awakening(Protagonist player, PocketMonster foe)
+            void Awakening(Protagonist player)
             { cure(player, (int)Enum.status.Sleep); }
             effect AwakeningEffect = new effect(Awakening);
             items.Add(new Item("Awakening", "Instruction: Use the bottle to spray on the affected area. It can cure SLEEP.", (int)Enum.categorie.Healing, AwakeningEffect, 250));
 
-            void IceHeal(Protagonist player, PocketMonster foe)
+            void IceHeal(Protagonist player)
             { cure(player, (int)Enum.status.Frozen); }
             effect IceHealEffect = new effect(IceHeal);
             items.Add(new Item("Ice Heal", "Instruction: Use the bottle to spray on the affected area. It can cure FROZE.", (int)Enum.categorie.Healing, IceHealEffect, 250));
 
-            void FullHeal(Protagonist player, PocketMonster foe)
+            void FullHeal(Protagonist player)
             { cure(player, 10); }
             effect FullHealEffect = new effect(FullHeal);
             items.Add(new Item("Full Heal", "Instruction: Use the bottle to spray on the affected area. It can cure ANY status.", (int)Enum.categorie.Healing, FullHealEffect, 600));
@@ -76,7 +76,7 @@ namespace Pokemon_Beep.Factory
             //HP --
 
             //Oran Berry
-            void OranBerry(Protagonist player, PocketMonster foe)
+            void OranBerry(Protagonist player)
             { heal(player, 10); }
             effect OranBerryEffect = new effect(OranBerry);
             items.Add(new Item("Oran Berry", "A tasteful berry that can be held by a Pokémon and restores up to 10 HP.", (int)Enum.categorie.Berries, OranBerryEffect, 150));
@@ -84,32 +84,32 @@ namespace Pokemon_Beep.Factory
             //Status --
 
             //Chesto Berry
-            void ChestoBerry(Protagonist player, PocketMonster foe)
+            void ChestoBerry(Protagonist player)
             { cure(player, (int)Enum.status.Sleep); }
             effect ChestoBerryEffect = new effect(ChestoBerry);
             items.Add(new Item("Chesto Berry", "A dry berry that can held by a Pokémon and cure SLEEP status.", (int)Enum.categorie.Berries, ChestoBerryEffect, 450));
             //Cheri Berry
-            void CheriBerry(Protagonist player, PocketMonster foe)
+            void CheriBerry(Protagonist player)
             { cure(player, (int)Enum.status.Paralyzed); }
             effect CheriBerryEffect = new effect(CheriBerry);
             items.Add(new Item("Cheri Berry", "A spicy berry that can held by a Pokémon and cure PARALYSIS status.", (int)Enum.categorie.Berries, CheriBerryEffect, 450));
             //Pecha Berry
-            void PechaBerry(Protagonist player, PocketMonster foe)
+            void PechaBerry(Protagonist player)
             { cure(player, (int)Enum.status.Poisoned); }
             effect PechaBerryEffect = new effect(PechaBerry);
             items.Add(new Item("Pecha Berry", "A spicy berry that can held by a Pokémon and cure POISON status.", (int)Enum.categorie.Berries, PechaBerryEffect, 450));
             //Rawst Berry
-            void RawstBerry(Protagonist player, PocketMonster foe)
+            void RawstBerry(Protagonist player)
             { cure(player, (int)Enum.status.Burned); }
             effect RawstBerryEffect = new effect(RawstBerry);
             items.Add(new Item("Rawst Berry", "A bitter berry that can held by a Pokémon and cure BURN status.", (int)Enum.categorie.Berries, RawstBerryEffect, 450));
             //Aspear Berry
-            void AspearBerry(Protagonist player, PocketMonster foe)
+            void AspearBerry(Protagonist player)
             { cure(player, (int)Enum.status.Frozen); }
             effect AspearBerryEffect = new effect(AspearBerry);
             items.Add(new Item("Aspear Berry", "A sour berry that can held by a Pokémon and cure FROZE status.", (int)Enum.categorie.Berries, AspearBerryEffect, 450));
             //Lum Berry
-            void LumBerry(Protagonist player, PocketMonster foe)
+            void LumBerry(Protagonist player)
             { cure(player, 10); }
             effect LumBerryEffect = new effect(LumBerry);
             items.Add(new Item("Lum Berry", "A tasteful berry that can held by a Pokémon and cure ANY status.", (int)Enum.categorie.Berries, LumBerryEffect, 800));
