@@ -117,6 +117,7 @@
     <Compile Include="Player\Story.cs" />
     <Compile Include="Pokemon\Learnset.cs" />
     <Compile Include="Pokemon\PocketMonster.cs" />
+    <Compile Include="Pokemon\Experience.cs" />
     <Compile Include="Pokemon\PocketMonsterGeneration.cs" />
     <Compile Include="Pokemon\PokemonInfo.cs" />
     <Compile Include="Pokemon\Pokedex.cs" />

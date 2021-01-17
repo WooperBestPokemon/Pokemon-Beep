@@ -44,5 +44,6 @@ Gym 8: Dark      -  Dart
 =========
 Team JS
 =========
- Leader : Lucie
-
+Admin : Node
+Moderator : Ember
+Moderator : Vue

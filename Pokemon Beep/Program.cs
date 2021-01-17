@@ -51,7 +51,7 @@ namespace Pokemon_Beep
             SetConsoleMode(hand, mode | 0x4);
 
             Testing testing = new Testing();
-            testing.xpTest();
+            testing.levelUp();
             Console.ReadKey();
         }
     }

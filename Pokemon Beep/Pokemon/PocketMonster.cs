@@ -47,6 +47,7 @@ namespace Pokemon_Beep.Pokemon
         public string Nickname { get; set; }
         public List<int> Types { get; set; }
         public int Level { get; set; }
+        public int XP { get; set; }
         public int Gender { get; set; }
         public bool Shiny { get; set; }
         //Battle Information
@@ -74,6 +75,12 @@ namespace Pokemon_Beep.Pokemon
         public int Status { get; set; }
 
         //Level void
+        public void receiveXP(int amountXP)
+        {
+            XP += amountXP;
+
+         
+        }
         public void levelUp()
         {
             //todo - create a leveling up system that will check if the pokemon can learn a move
