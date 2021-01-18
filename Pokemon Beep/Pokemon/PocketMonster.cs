@@ -77,12 +77,14 @@ namespace Pokemon_Beep.Pokemon
         //Level void
         public void receiveXP(int amountXP)
         {
-            XP += amountXP;
+            Experience exp = new Experience();
 
+            exp.getXP(this, amountXP);
          
         }
         public void levelUp()
         {
+            Level++;
             //todo - create a leveling up system that will check if the pokemon can learn a move
         }
         public void resetStage()

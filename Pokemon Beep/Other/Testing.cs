@@ -1747,48 +1747,19 @@ namespace Pokemon_Beep.Other
         }
         public void levelUp()
         {
-            int nbXP = 14060;
-            int level = 26;
-            //205
-
-            int mediumFast()
-            {
-                if(level <= 15)
-                {
-                    return (int)Math.Floor(Math.Pow(level + 1, 3) * ((((level + 2.0) / 3.0) + 24.0) / 50.0));
-                }
-                else if(level <= 36)
-                {
-                    return (int)Math.Floor(Math.Pow(level + 1, 3) * (((level + 15.0) / 50.0)));
-                }
-                else
-                {
-                    return (int)Math.Floor(Math.Pow(level + 1, 3) * ((((level + 1.0) / 2.0) + 32.0) / 50.0));
-                }
-            }
-            bool levelUpgrade(int currentXP, int currentLevel)
-            {
-
-                if(currentXP >= mediumFast())
-                    return true;
-                else
-                    return false;
-            }
+            PocketMonster pocketMonster = new PocketMonster(1, 1);
 
             while (true)
             {
-                Console.WriteLine("LV: " + level);
-                Console.WriteLine(nbXP + " XP");
-                Console.WriteLine("You need " + (mediumFast() - nbXP) + " XP to level up");
+                Console.WriteLine(pocketMonster.Nickname);
+                Console.WriteLine("LV : " + pocketMonster.Level);
+                Console.WriteLine("XP : " + pocketMonster.XP);
+
 
                 Console.ReadKey();
 
-                nbXP += 5000;
+                pocketMonster.receiveXP(560);
 
-                while (levelUpgrade(nbXP, level))
-                {
-                    level += 1;
-                }
                 Console.Clear();
             }
         }
