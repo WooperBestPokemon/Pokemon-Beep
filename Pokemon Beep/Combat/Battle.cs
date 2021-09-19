@@ -26,9 +26,6 @@ namespace Pokemon_Beep.Combat
             WildPokemonAI ai = new WildPokemonAI(wildPokemon.Pokemon);      
             bool battleIsOver = false;
 
-            //Battle Music
-            Thread music = new Thread(() => Utilities.startMusic(0, 1));
-            music.Start();
 
             //TODO Battle Animation
             //LOOP until the wild pokemon is defeated or the player doesn't have any healty pokemon left

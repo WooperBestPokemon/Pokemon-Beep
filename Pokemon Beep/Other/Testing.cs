@@ -22,7 +22,6 @@ namespace Pokemon_Beep.Other
         /// <summary>
         /// This class is used for testing. Will be removed when the game is done.
         /// </summary>
-        private Thread music = new Thread(() => Utilities.startMusic(0));
         public void battleTest()
         {
             Protagonist protag = new Protagonist("James", 0);
@@ -39,7 +38,7 @@ namespace Pokemon_Beep.Other
             Console.Clear();
 
             battle.startWildBattle(protag, foePkmn, 0);
-            
+
         }
         public void battleGraphic()
         {
@@ -1539,31 +1538,7 @@ namespace Pokemon_Beep.Other
                 Console.SetCursorPosition(x, y);
                 Console.WriteLine(text);
             }
-            
-        }
-        public void testAudio()
-        {
-            Console.CursorVisible = false;
-            //BattleBackground background = new BattleBackground();
-            Console.SetWindowSize(152, 41);
-            Console.SetBufferSize(152, 41);
-            Utilities.changeBackgroundColor(50, 50, 50);
-            Console.Clear();
-            //Background
-            //background.writeBackground(3);
-            //Player's Pokemon
-            music.Start();
-            Console.Beep(100, 1000);
-            Console.ReadKey();
-            Utilities.ChangeMusic(2);
-            Console.ReadKey();
-            Utilities.ChangeMusic(0,1);
-        }
-        public void testThread()
-        {
-            Thread music = new Thread(() => Utilities.startMusic(0));
-            music.Start();
-            Console.ReadKey();
+
         }
         public void cameraTest()
         {
@@ -1573,10 +1548,10 @@ namespace Pokemon_Beep.Other
             Console.SetBufferSize(152, 41);
             Console.CursorVisible = false;
 
-            Utilities.changeBackgroundColor(5, 5, 5);         
+            Utilities.changeBackgroundColor(5, 5, 5);
 
-            int posJX = 240;
-            int posJY = 40;
+            int posJX = 255;
+            int posJY = 120;
 
             Console.SetCursorPosition(0, 0);
             Console.WriteLine(" ╔═══════════════════════════════════════════════════════════════════════════════╗");
@@ -1617,7 +1592,7 @@ namespace Pokemon_Beep.Other
             bool asMoved = true;
 
             while (true)
-            {              
+            {
 
                 if (asMoved)
                 {
@@ -1634,9 +1609,9 @@ namespace Pokemon_Beep.Other
                 {
                     posJY += 1;
 
-                    if(currentMap.hit(posJX, posJY))
+                    if (currentMap.hit(posJX, posJY))
                         posJY -= 1;
-                    currentMap.wildPokemon(posJX, posJY);
+                    //currentMap.wildPokemon(posJX, posJY);
                     asMoved = true;
                 }
                 else if (Keyboard.IsKeyDown(Key.A))
@@ -1645,7 +1620,7 @@ namespace Pokemon_Beep.Other
 
                     if (currentMap.hit(posJX, posJY))
                         posJX += 2;
-                    currentMap.wildPokemon(posJX, posJY);
+                    //currentMap.wildPokemon(posJX, posJY);
                     asMoved = true;
                 }
                 else if (Keyboard.IsKeyDown(Key.W))
@@ -1654,7 +1629,7 @@ namespace Pokemon_Beep.Other
 
                     if (currentMap.hit(posJX, posJY))
                         posJY += 1;
-                    currentMap.wildPokemon(posJX, posJY);
+                    //currentMap.wildPokemon(posJX, posJY);
                     asMoved = true;
                 }
                 else if (Keyboard.IsKeyDown(Key.D))
@@ -1663,7 +1638,7 @@ namespace Pokemon_Beep.Other
 
                     if (currentMap.hit(posJX, posJY))
                         posJX -= 2;
-                    currentMap.wildPokemon(posJX, posJY);
+                    //currentMap.wildPokemon(posJX, posJY);
                     asMoved = true;
                 }
                 else
@@ -1671,7 +1646,7 @@ namespace Pokemon_Beep.Other
                     asMoved = false;
                 }
             }
-         
+
         }
         public void item()
         {
@@ -1704,17 +1679,17 @@ namespace Pokemon_Beep.Other
             {
                 Utilities.changeForegroundColor(255, 255, 255);
                 Console.WriteLine("===============================");
-                Console.WriteLine(pkm.Nickname + "  HP:" + pkm.CurrentHP + "/" +  pkm.HP);
+                Console.WriteLine(pkm.Nickname + "  HP:" + pkm.CurrentHP + "/" + pkm.HP);
                 Console.WriteLine("===============================");
                 int shakes = battle.shakes(pkm, 1.5);
                 Utilities.changeForegroundColor(255, 216, 0);
                 Console.WriteLine("The Human throws a Greatball at the wild " + pkm.Nickname);
                 Thread.Sleep(800);
-                if(shakes != 0)
+                if (shakes != 0)
                 {
                     for (int i = 0; i < shakes; i++)
                     {
-                        if( i != 3 )
+                        if (i != 3)
                             Console.Write(".");
                         Thread.Sleep(800);
                     }
@@ -1722,7 +1697,7 @@ namespace Pokemon_Beep.Other
                     {
                         Utilities.changeForegroundColor(76, 255, 0);
                         Console.Write("Gotcha !");
-                    }                      
+                    }
                     else
                     {
                         Utilities.changeForegroundColor(255, 0, 0);
@@ -1762,6 +1737,29 @@ namespace Pokemon_Beep.Other
 
                 Console.Clear();
             }
+        }
+        public void readText()
+        {
+            string[] buildings = System.IO.File.ReadAllLines("Ressource/Map/ASCII/Buildings.txt");
+
+            int start = getLine(0, "[Professor Lab]", buildings) + 1;
+            int finish = getLine(start, "&", buildings) - 1;
+
+            Console.WriteLine("The building start from line " + start + " to line " + finish);
+            Console.WriteLine(buildings[1][2]);
+        }
+        private int getLine(int start, string target, string[] textfile)
+        {
+            int result = -1;
+            for (int i = start; i < textfile.Length; i++)
+            {
+                if (textfile[i] == target)
+                {
+                    result = i;
+                    break;
+                }
+            }
+            return result;
         }
     }
 }

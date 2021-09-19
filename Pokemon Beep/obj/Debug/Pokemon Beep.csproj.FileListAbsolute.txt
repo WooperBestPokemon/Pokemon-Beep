@@ -40,3 +40,17 @@ T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\Default.png
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\Forest - Day.png
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\Forest - Night.png
 T:\Git\Pokemon Beep\Pokemon Beep\bin\Debug\Ressource\Background\WindowsXP.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Ressource\Background\Cave.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Ressource\Background\City - Day.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Ressource\Background\City - Night.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Ressource\Background\Default.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Ressource\Background\Forest - Day.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Ressource\Background\Forest - Night.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Ressource\Background\WindowsXP.png
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Pokemon Beep.exe.config
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Pokemon Beep.exe
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\bin\Debug\Pokemon Beep.pdb
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.AssemblyReference.cache
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\obj\Debug\Pokemon Beep.csproj.CoreCompileInputs.cache
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\obj\Debug\Pokemon Beep.exe
+C:\Users\Felix\Desktop\Github\Pokemon-Beep-master\Pokemon Beep\obj\Debug\Pokemon Beep.pdb

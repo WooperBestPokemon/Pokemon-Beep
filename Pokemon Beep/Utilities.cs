@@ -34,25 +34,5 @@ namespace Pokemon_Beep
         {
             Console.Write("\x1b[38;2;" + r + ";" + g + ";" + b + "m");
         }
-        //Audio
-        private static Audio audio = new Audio();
-        public static void startMusic(int musicID)
-        {
-            audio.init();
-            audio.startMusic(musicID);
-        }
-        public static void startMusic(int musicIDIntro, int musicIDLoop)
-        {
-            audio.init();
-            audio.startMusic(musicIDIntro, musicIDLoop);
-        }
-        public static void ChangeMusic(int musicID)
-        {
-            audio.ChangeMusic(musicID);
-        }
-        public static void ChangeMusic(int musicIDIntro, int musicIDLoop)
-        {
-            audio.ChangeMusic(musicIDIntro, musicIDLoop);
-        }
     }
 }

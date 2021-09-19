@@ -1,4 +1,3 @@
-Pokémon Beep
-========================================================================
+##Pokémon Beep
 
-This is my code for my personal project called "Pokemon Beep". Basically, I want to make a small Pokemon Game using the Windows Console.
+Pokemon Beep is a proof of concept of making pokemon game without using any library except for .NET on a c# console app.

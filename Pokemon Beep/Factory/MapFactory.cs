@@ -19,7 +19,7 @@ namespace Pokemon_Beep.Factory
         public List<Background> getBackgrounds()
         {
             List<Background> backgrounds = new List<Background>();
-            backgrounds.Add(getBackground("Ressource/Map/Plankalkul&Road1.png"));
+            backgrounds.Add(getBackground("Ressource/Map/Map.png"));
 
             return backgrounds;
         }
@@ -28,7 +28,7 @@ namespace Pokemon_Beep.Factory
             List<Hitbox> hitboxes = new List<Hitbox>();
 
             //Plankalkul + road 1
-            hitboxes.Add(getHitbox("Ressource/Map/Plankalkul&Road1Hitbox.png"));
+            hitboxes.Add(getHitbox("Ressource/Map/Map_Hitbox.png"));
 
 
 
@@ -52,61 +52,54 @@ namespace Pokemon_Beep.Factory
                     if (pixelColor.R == 255 && pixelColor.G == 0 && pixelColor.B == 110)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 1;
                         collision[posX, y] = 1;
+                        collision[posX + 1, y] = 1;
                     }
                     //Grass
                     else if (pixelColor.R == 182 && pixelColor.G == 255 && pixelColor.B == 0)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 2;
                         collision[posX, y] = 2;
+                        collision[posX + 1, y] = 2;
                     }
                     //Water
                     else if(pixelColor.R == 0 && pixelColor.G == 255 && pixelColor.B == 255)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 3;
                         collision[posX, y] = 3;
-                    }
-                    //Warp
-                    else if (pixelColor.R == 255 && pixelColor.G == 216 && pixelColor.B == 0)
-                    {
-                        int posX = x * 2;
-                        collision[posX - 1, y] = 4;
-                        collision[posX, y] = 4;
+                        collision[posX + 1, y] = 3;
                     }
                     //Slopes
                     else if (pixelColor.R == 255 && pixelColor.G == 0 && pixelColor.B == 50)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 5;
                         collision[posX, y] = 5;
+                        collision[posX + 1, y] = 5;
                     }
                     else if (pixelColor.R == 255 && pixelColor.G == 0 && pixelColor.B == 25)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 6;
                         collision[posX, y] = 6;
+                        collision[posX + 1, y] = 6;
                     }
                     else if (pixelColor.R == 255 && pixelColor.G == 200 && pixelColor.B == 0)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 7;
                         collision[posX, y] = 7;
+                        collision[posX + 1, y] = 7;
                     }
                     else if (pixelColor.R == 255 && pixelColor.G == 100 && pixelColor.B == 0)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 8;
                         collision[posX, y] = 8;
+                        collision[posX + 1, y] = 8;
                     }
                     //Can Move
                     else if(pixelColor.R == 255 && pixelColor.G == 255 && pixelColor.B == 255)
                     {
                         int posX = x * 2;
-                        collision[posX - 1, y] = 0;
                         collision[posX, y] = 0;
+                        collision[posX + 1, y] = 0;
                     }
                 }
             }
@@ -114,6 +107,7 @@ namespace Pokemon_Beep.Factory
         }
         private Background getBackground(string path)
         {
+            string[] buildings = System.IO.File.ReadAllLines("Ressource/Map/ASCII/Buildings.txt");
             Bitmap bmp = new Bitmap(path);
 
             int height = bmp.Height;
@@ -122,7 +116,7 @@ namespace Pokemon_Beep.Factory
             char[,] character = new char[width * 2, height];
             string[,] colours = new string[width * 2, height];
 
-            //Replace every white pixel with nothing
+            //Replace EVERYTHING with nothing
             for (int y = 0; y < bmp.Height; y++)
             {
                 for (int x = 0; x < bmp.Width; x++)
@@ -360,63 +354,112 @@ namespace Pokemon_Beep.Factory
                         colours[posX - 1, y] = slopeColour;
                         colours[posX, y] = slopeColour;
                     }
+                    //Sand
+                    else if(pixelColor.R == 255 && pixelColor.G == 216 && pixelColor.B == 159)
+                    {
+                        int posX = x * 2;
+
+                        char sand = '░';
+                        string sandColour = "\x1b[38;2;255;216;159m";
+
+                        character[posX - 1, y] = sand;
+                        character[posX, y] = sand;
+
+                        colours[posX - 1, y] = sandColour;
+                        colours[posX, y] = sandColour;
+                    }
                     //Buildings
-                    //Player's House
                     else if(pixelColor.R == 161 && pixelColor.G == 127 && pixelColor.B == 255)
                     {
-                        int posX = (x * 2) - 1;
-                        string houseColour = "\x1b[38;2;255;255;255m";
+                        writebuilding(x, y, "[Player House]", buildings, character, colours);
+                    }
+                    else if (pixelColor.R == 72 && pixelColor.G == 0 && pixelColor.B == 255)
+                    {
+                        writebuilding(x, y, "[Professor Lab]", buildings, character, colours);
+                    }
+                    else if (pixelColor.R == 87 && pixelColor.G == 0 && pixelColor.B == 127)
+                    {
+                        writebuilding(x, y, "[House 1]", buildings, character, colours);
+                    }
+                    else if (pixelColor.R == 127 && pixelColor.G == 0 && pixelColor.B == 110)
+                    {
+                        writebuilding(x, y, "[House 2]", buildings, character, colours);
+                    }
+                    else if (pixelColor.R == 0 && pixelColor.G == 127 && pixelColor.B == 127)
+                    {
+                        writebuilding(x, y, "[Pet Shop]", buildings, character, colours);
+                    }
+                    else if (pixelColor.R == 255 && pixelColor.G == 0 && pixelColor.B == 0)
+                    {
+                        int start = getLine(0, "[Pokemon Center]", buildings) + 1;
+                        int finish = getLine(start, "&", buildings) - 1;
 
-                        //Door
+                        int posX = x * 2;
+                        int posY = y;
 
-                        character[posX, y] = '_';
-                        colours[posX, y] = houseColour;
+                        character[posX - 1, posY] = ' ';
 
-                        character[posX -1, y] = '|';
-                        colours[posX - 1, y] = houseColour;
+                        int tempX = posX;
+                        string buildingColour = "\x1b[38;2;255;255;255m";
 
-                        character[posX + 1, y] = '|';
-                        colours[posX + 1, y] = houseColour;
-
-                        character[posX - 1, y - 1] = '/';
-                        colours[posX - 1, y - 1] = houseColour;
-
-                        character[posX + 1, y - 1] = '\\';
-                        colours[posX + 1, y - 1] = houseColour;
-
-                        character[posX, y - 1] = 'o';
-                        colours[posX, y - 1] = houseColour;
-
-                        character[posX, y - 2] = '_';
-                        colours[posX, y - 2] = houseColour;
-
-                        //Floor
-                        for (int i = 1; i < 3; i++)
+                        for (int i = start; i < (finish + 1); i++)
                         {
-                            character[posX - 1 -i, y] = '_';
-                            colours[posX - 1 - i, y] = houseColour;
+                            for (int j = 0; j < buildings[i].Length; j++)
+                            {
+                                character[tempX, posY] = buildings[i][j];
+                                if(i > (start + 4))
+                                    colours[tempX, posY] = buildingColour;
+                                else
+                                    colours[tempX, posY] = "\x1b[38;2;255;0;0m";
+                                tempX++;
+                            }
+                            tempX = posX;
+                            posY++;
                         }
-
-                        for (int i = 1; i < 15; i++)
-                        {
-                            character[posX + 1 + i, y] = '_';
-                            colours[posX + 1 + i, y] = houseColour;
-                        }
-                        //Walls
-                        for (int i = 0; i < 4; i++)
-                        {
-                            character[posX + 16, y - i] = '|';
-                            colours[posX + 16, y - i] = houseColour;
-
-                            character[posX - 4, y - i] = '|';
-                            colours[posX - 4, y - i] = houseColour;
-                        }
-                        //Windows
                     }
                 }
             }
-
             return new Background(character, colours);
+        }
+        //char[,] character = new char[width * 2, height];
+        //string[,] colours = new string[width * 2, height];
+        private void writebuilding(int x, int y, string buildingName, string[] buildings, char[,] character, string[,] colours)
+        {
+            int start = getLine(0, buildingName, buildings) + 1;
+            int finish = getLine(start, "&", buildings) - 1;
+
+            int posX = x * 2;
+            int posY = y;
+
+            character[posX - 1, posY] = ' ';
+
+            int tempX = posX;
+            string buildingColour = "\x1b[38;2;255;255;255m";
+
+            for (int i = start; i < (finish + 1); i++)
+            {
+                for (int j = 0; j < buildings[i].Length; j++)
+                {
+                    character[tempX, posY] = buildings[i][j];
+                    colours[tempX, posY] = buildingColour;
+                    tempX++;
+                }
+                tempX = posX;
+                posY++;
+            }
+        }
+        private int getLine(int start, string target, string[] textfile)
+        {
+            int result = -1;
+            for (int i = start; i < textfile.Length; i++)
+            {
+                if (textfile[i] == target)
+                {
+                    result = i;
+                    break;
+                }
+            }
+            return result;
         }
     }
 }
