@@ -1590,6 +1590,7 @@ namespace Pokemon_Beep.Other
             Map currentMap = maps[0];
 
             bool asMoved = true;
+            bool devMode = false;
 
             while (true)
             {
@@ -1599,7 +1600,10 @@ namespace Pokemon_Beep.Other
                     currentMap.printMap(posJX, posJY);
                     Console.SetCursorPosition(41, 14);
                     Utilities.changeForegroundColor(255, 163, 255);
-                    Console.WriteLine("■");
+                    if(devMode)
+                        Console.WriteLine("■("+posJX + "," + posJY + ")");
+                    else
+                        Console.WriteLine("■");
                 }
 
                 //Tick on va dire
@@ -1639,6 +1643,15 @@ namespace Pokemon_Beep.Other
                     if (currentMap.hit(posJX, posJY))
                         posJX -= 2;
                     //currentMap.wildPokemon(posJX, posJY);
+                    asMoved = true;
+                }
+                //toggle dev mode
+                else if (Keyboard.IsKeyDown(Key.K))
+                {
+                    if(devMode)
+                        devMode = false;
+                    else
+                        devMode = true;
                     asMoved = true;
                 }
                 else

@@ -417,14 +417,38 @@ namespace Pokemon_Beep.Factory
                             posY++;
                         }
                     }
+                    else if (pixelColor.R == 73 && pixelColor.G == 29 && pixelColor.B == 0)
+                    {
+                        int start = getLine(0, "[Grotto]", buildings) + 1;
+                        int finish = getLine(start, "&", buildings) - 1;
+
+                        int posX = x * 2;
+                        int posY = y;
+
+                        character[posX - 1, posY] = ' ';
+
+                        int tempX = posX;
+                        string buildingColour = "\x1b[38;2;127;93;71m";
+
+                        for (int i = start; i < (finish + 1); i++)
+                        {
+                            for (int j = 0; j < buildings[i].Length; j++)
+                            {
+                                character[tempX, posY] = buildings[i][j];
+                                colours[tempX, posY] = buildingColour;
+                                tempX++;
+                            }
+                            tempX = posX;
+                            posY++;
+                        }
+                    }
                 }
             }
             return new Background(character, colours);
         }
-        //char[,] character = new char[width * 2, height];
-        //string[,] colours = new string[width * 2, height];
         private void writebuilding(int x, int y, string buildingName, string[] buildings, char[,] character, string[,] colours)
         {
+
             int start = getLine(0, buildingName, buildings) + 1;
             int finish = getLine(start, "&", buildings) - 1;
 
@@ -435,13 +459,17 @@ namespace Pokemon_Beep.Factory
 
             int tempX = posX;
             string buildingColour = "\x1b[38;2;255;255;255m";
+            string windowColour = "\x1b[38;2;135;224;242m";
 
             for (int i = start; i < (finish + 1); i++)
             {
                 for (int j = 0; j < buildings[i].Length; j++)
                 {
                     character[tempX, posY] = buildings[i][j];
-                    colours[tempX, posY] = buildingColour;
+                    if (buildings[i][j] == '[' || buildings[i][j] == ']')
+                        colours[tempX, posY] = windowColour;
+                    else
+                        colours[tempX, posY] = buildingColour;
                     tempX++;
                 }
                 tempX = posX;
